@@ -1,0 +1,391 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<References xmlns="http://xmlns.oracle.com/adf/jndi">
+   <Reference name="RealizarAtendimento_ProcessoTriagem" className="oracle.adf.model.connection.webservice.impl.WebServiceConnectionImpl" xmlns="">
+      <Factory className="oracle.adf.model.connection.webservice.api.WebServiceConnectionFactory"/>
+      <RefAddresses>
+         <XmlRefAddr addrType="WebServiceConnection">
+            <Contents>
+               <wsconnection description="http://192.168.30.89:7001/soa-infra/services/default/PasseLivre/ProcessoTriagem.service?WSDL" service="{http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem}ProcessoTriagem.service">
+                  <model name="{http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem}wsdl" xmlns="http://oracle.com/ws/model">
+                     <types xmlns="http://oracle.com/oracle/webservices/mdds">
+                        <types-in-elements/>
+                     </types>
+                     <service name="{http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem}ProcessoTriagem.service">
+                        <port name="ProcessoTriagemPort" binding="{http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem}ProcessoTriagemBinding" portType="{http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem}ProcessoTriagemPortType">
+                           <soap addressUrl="http://192.168.30.89:7001/soa-infra/services/default/PasseLivre/ProcessoTriagem.service" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                           <operation name="finalizarAtendimento">
+                              <soap soapAction="finalizarAtendimento" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <input name="" message="{http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem}finalizarAtendimento">
+                                 <message style="2" use="1" soapVersion="1" encodingStyle="" docLitWrapped="true" namespace="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" localPart="finalizarAtendimento" xmlns="http://oracle.com/oracle/webservices/mdds">
+                                    <part name="parameters" required="true" xmlns="">
+                                       <type>
+                                          <complexType elementQualified="false">
+                                             <sequence minOccurs="1" maxOccurs="1">
+                                                <part name="cpfCidadao" required="true" namespace="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" elementQualified="false">
+                                                   <type namespace="http://www.w3.org/2001/XMLSchema" localPart="string"/>
+                                                </part>
+                                             </sequence>
+                                          </complexType>
+                                       </type>
+                                    </part>
+                                 </message>
+                              </input>
+                              <output name=""/>
+                           </operation>
+                           <operation name="iniciarAtendimento">
+                              <soap soapAction="iniciarAtendimento" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <input name="" message="{http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem}iniciarAtendimento">
+                                 <message style="2" use="1" soapVersion="1" encodingStyle="" docLitWrapped="true" namespace="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" localPart="iniciarAtendimento" xmlns="http://oracle.com/oracle/webservices/mdds">
+                                    <part name="parameters" required="true" xmlns="">
+                                       <type>
+                                          <complexType elementQualified="false">
+                                             <sequence minOccurs="1" maxOccurs="1">
+                                                <part name="cpfCidadao" required="true" namespace="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" elementQualified="false">
+                                                   <type namespace="http://www.w3.org/2001/XMLSchema" localPart="string"/>
+                                                </part>
+                                             </sequence>
+                                          </complexType>
+                                       </type>
+                                    </part>
+                                 </message>
+                              </input>
+                              <output name=""/>
+                           </operation>
+                           <operation name="gerarProtocolo">
+                              <soap soapAction="gerarProtocolo" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <input name="" message="{http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem}gerarProtocolo">
+                                 <message style="2" use="1" soapVersion="1" encodingStyle="" docLitWrapped="true" namespace="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" localPart="gerarProtocolo" xmlns="http://oracle.com/oracle/webservices/mdds">
+                                    <part name="parameters" required="true" xmlns="">
+                                       <type>
+                                          <complexType elementQualified="false">
+                                             <sequence minOccurs="1" maxOccurs="1">
+                                                <part name="cpfCidadao" required="true" namespace="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" elementQualified="false">
+                                                   <type namespace="http://www.w3.org/2001/XMLSchema" localPart="string"/>
+                                                </part>
+                                                <part name="codigoProtocoloPai" required="true" namespace="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" elementQualified="false">
+                                                   <type namespace="http://www.w3.org/2001/XMLSchema" localPart="string"/>
+                                                </part>
+                                                <part name="senhaAtendimento" required="true" namespace="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" elementQualified="false">
+                                                   <type namespace="http://www.w3.org/2001/XMLSchema" localPart="string"/>
+                                                </part>
+                                             </sequence>
+                                          </complexType>
+                                       </type>
+                                    </part>
+                                 </message>
+                              </input>
+                              <output name=""/>
+                           </operation>
+                        </port>
+                     </service>
+                  </model>
+               </wsconnection>
+            </Contents>
+         </XmlRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="QualificarAtendimento_PasseLivreIdoso" className="oracle.adf.model.connection.webservice.impl.WebServiceConnectionImpl" xmlns="">
+      <Factory className="oracle.adf.model.connection.webservice.api.WebServiceConnectionFactory"/>
+      <RefAddresses>
+         <XmlRefAddr addrType="WebServiceConnection">
+            <Contents>
+               <wsconnection description="http://192.168.30.89:7001/soa-infra/services/default/PasseLivre/PasseLivreIdoso.service?WSDL" service="{http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso}PasseLivreIdoso.service">
+                  <model name="{http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso}wsdl" xmlns="http://oracle.com/ws/model">
+                     <types xmlns="http://oracle.com/oracle/webservices/mdds">
+                        <complexType elementQualified="true" namespace="http://br.gov.sedurb" localPart="payloadPasseLivreIdoso" prefix="" xmlns="">
+                           <sequence minOccurs="1" maxOccurs="1">
+                              <part name="cpfCidadao" required="true" namespace="http://br.gov.sedurb" elementQualified="true">
+                                 <type namespace="http://www.w3.org/2001/XMLSchema" localPart="string"/>
+                              </part>
+                              <part name="dataAgendamentoAtendimento" required="true" namespace="http://br.gov.sedurb" elementQualified="true">
+                                 <type namespace="http://www.w3.org/2001/XMLSchema" localPart="dateTime"/>
+                              </part>
+                              <part name="nomeServico" required="true" namespace="http://br.gov.sedurb" elementQualified="true">
+                                 <type namespace="http://www.w3.org/2001/XMLSchema" localPart="string"/>
+                              </part>
+                              <part name="nomeUnidadeAtendimento" required="true" namespace="http://br.gov.sedurb" elementQualified="true">
+                                 <type namespace="http://www.w3.org/2001/XMLSchema" localPart="string"/>
+                              </part>
+                              <part name="codigoProtocolo" required="true" namespace="http://br.gov.sedurb" elementQualified="true">
+                                 <type namespace="http://www.w3.org/2001/XMLSchema" localPart="string"/>
+                              </part>
+                              <part name="codigoProtocoloPai" required="true" namespace="http://br.gov.sedurb" elementQualified="true">
+                                 <type namespace="http://www.w3.org/2001/XMLSchema" localPart="string"/>
+                              </part>
+                              <part name="dataSolicitacaoImpressaoCarteira" required="false" namespace="http://br.gov.sedurb" elementQualified="true">
+                                 <type namespace="http://www.w3.org/2001/XMLSchema" localPart="dateTime"/>
+                              </part>
+                              <part name="dataImpressaoCarteira" required="false" namespace="http://br.gov.sedurb" elementQualified="true">
+                                 <type namespace="http://www.w3.org/2001/XMLSchema" localPart="dateTime"/>
+                              </part>
+                           </sequence>
+                        </complexType>
+                        <types-in-elements/>
+                     </types>
+                     <service name="{http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso}PasseLivreIdoso.service">
+                        <port name="PasseLivreIdosoPort" binding="{http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso}PasseLivreIdosoBinding" portType="{http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso}PasseLivreIdosoPortType">
+                           <soap addressUrl="http://192.168.30.89:7001/soa-infra/services/default/PasseLivre/PasseLivreIdoso.service" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                           <operation name="carteriaImpressa">
+                              <soap soapAction="carteriaImpressa" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <input name="" message="{http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso}carteriaImpressa">
+                                 <message style="2" use="1" soapVersion="1" encodingStyle="" docLitWrapped="true" namespace="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" localPart="carteriaImpressa" xmlns="http://oracle.com/oracle/webservices/mdds">
+                                    <part name="parameters" required="true" xmlns="">
+                                       <type>
+                                          <complexType elementQualified="false">
+                                             <sequence minOccurs="1" maxOccurs="1">
+                                                <part name="dataImpressao" required="true" namespace="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" elementQualified="false">
+                                                   <type namespace="http://www.w3.org/2001/XMLSchema" localPart="string"/>
+                                                </part>
+                                                <part name="protocoloAtendimento" required="true" namespace="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" elementQualified="false">
+                                                   <type namespace="http://www.w3.org/2001/XMLSchema" localPart="string"/>
+                                                </part>
+                                             </sequence>
+                                          </complexType>
+                                       </type>
+                                    </part>
+                                 </message>
+                              </input>
+                              <output name=""/>
+                           </operation>
+                           <operation name="solicitarEmissaoCarteira">
+                              <soap soapAction="solicitarEmissaoCarteira" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <input name="" message="{http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso}solicitarEmissaoCarteira">
+                                 <message style="2" use="1" soapVersion="1" encodingStyle="" docLitWrapped="true" namespace="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" localPart="solicitarEmissaoCarteira" xmlns="http://oracle.com/oracle/webservices/mdds">
+                                    <part name="parameters" required="true" xmlns="">
+                                       <type>
+                                          <complexType elementQualified="false">
+                                             <sequence minOccurs="1" maxOccurs="1">
+                                                <part name="dataSolicitacaoEmissaoCarteira" required="true" namespace="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" elementQualified="false">
+                                                   <type namespace="http://www.w3.org/2001/XMLSchema" localPart="dateTime"/>
+                                                </part>
+                                                <part name="codigoProtocolo" required="true" namespace="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" elementQualified="false">
+                                                   <type namespace="http://www.w3.org/2001/XMLSchema" localPart="string"/>
+                                                </part>
+                                             </sequence>
+                                          </complexType>
+                                       </type>
+                                    </part>
+                                 </message>
+                              </input>
+                              <output name=""/>
+                           </operation>
+                           <operation name="cadastrarAtendimentoServico">
+                              <soap soapAction="cadastrarAtendimentoServico" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <input name="" message="{http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso}cadastrarAtendimentoServico">
+                                 <message style="2" use="1" soapVersion="1" encodingStyle="" docLitWrapped="true" namespace="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" localPart="cadastrarAtendimentoServico" xmlns="http://oracle.com/oracle/webservices/mdds">
+                                    <part name="parameters" required="true" xmlns="">
+                                       <type>
+                                          <complexType elementQualified="false">
+                                             <sequence minOccurs="1" maxOccurs="1">
+                                                <part name="payload" required="true" namespace="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" elementQualified="false">
+                                                   <type namespace="http://br.gov.sedurb" localPart="payloadPasseLivreIdoso" prefix=""/>
+                                                </part>
+                                             </sequence>
+                                          </complexType>
+                                       </type>
+                                    </part>
+                                 </message>
+                              </input>
+                              <output name=""/>
+                           </operation>
+                        </port>
+                     </service>
+                  </model>
+               </wsconnection>
+            </Contents>
+         </XmlRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="RealizarAtendimento_PasseLivreIdoso" className="oracle.adf.model.connection.webservice.impl.WebServiceConnectionImpl" xmlns="">
+      <Factory className="oracle.adf.model.connection.webservice.api.WebServiceConnectionFactory"/>
+      <RefAddresses>
+         <XmlRefAddr addrType="WebServiceConnection">
+            <Contents>
+               <wsconnection description="http://192.168.30.89:7001/soa-infra/services/default/PasseLivre/PasseLivreIdoso.service?WSDL" service="{http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso}PasseLivreIdoso.service">
+                  <model name="{http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso}wsdl" xmlns="http://oracle.com/ws/model">
+                     <types xmlns="http://oracle.com/oracle/webservices/mdds">
+                        <complexType elementQualified="true" namespace="http://br.gov.sedurb" localPart="payloadPasseLivreIdoso" prefix="" xmlns="">
+                           <sequence minOccurs="1" maxOccurs="1">
+                              <part name="cpfCidadao" required="true" namespace="http://br.gov.sedurb" elementQualified="true">
+                                 <type namespace="http://www.w3.org/2001/XMLSchema" localPart="string"/>
+                              </part>
+                              <part name="dataAgendamentoAtendimento" required="true" namespace="http://br.gov.sedurb" elementQualified="true">
+                                 <type namespace="http://www.w3.org/2001/XMLSchema" localPart="dateTime"/>
+                              </part>
+                              <part name="nomeServico" required="true" namespace="http://br.gov.sedurb" elementQualified="true">
+                                 <type namespace="http://www.w3.org/2001/XMLSchema" localPart="string"/>
+                              </part>
+                              <part name="nomeUnidadeAtendimento" required="true" namespace="http://br.gov.sedurb" elementQualified="true">
+                                 <type namespace="http://www.w3.org/2001/XMLSchema" localPart="string"/>
+                              </part>
+                              <part name="codigoProtocolo" required="true" namespace="http://br.gov.sedurb" elementQualified="true">
+                                 <type namespace="http://www.w3.org/2001/XMLSchema" localPart="string"/>
+                              </part>
+                              <part name="codigoProtocoloPai" required="true" namespace="http://br.gov.sedurb" elementQualified="true">
+                                 <type namespace="http://www.w3.org/2001/XMLSchema" localPart="string"/>
+                              </part>
+                              <part name="dataSolicitacaoImpressaoCarteira" required="false" namespace="http://br.gov.sedurb" elementQualified="true">
+                                 <type namespace="http://www.w3.org/2001/XMLSchema" localPart="dateTime"/>
+                              </part>
+                              <part name="dataImpressaoCarteira" required="false" namespace="http://br.gov.sedurb" elementQualified="true">
+                                 <type namespace="http://www.w3.org/2001/XMLSchema" localPart="dateTime"/>
+                              </part>
+                           </sequence>
+                        </complexType>
+                        <types-in-elements/>
+                     </types>
+                     <service name="{http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso}PasseLivreIdoso.service">
+                        <port name="PasseLivreIdosoPort" binding="{http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso}PasseLivreIdosoBinding" portType="{http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso}PasseLivreIdosoPortType">
+                           <soap addressUrl="http://192.168.30.89:7001/soa-infra/services/default/PasseLivre/PasseLivreIdoso.service" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                           <operation name="carteriaImpressa">
+                              <soap soapAction="carteriaImpressa" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <input name="" message="{http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso}carteriaImpressa">
+                                 <message style="2" use="1" soapVersion="1" encodingStyle="" docLitWrapped="true" namespace="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" localPart="carteriaImpressa" xmlns="http://oracle.com/oracle/webservices/mdds">
+                                    <part name="parameters" required="true" xmlns="">
+                                       <type>
+                                          <complexType elementQualified="false">
+                                             <sequence minOccurs="1" maxOccurs="1">
+                                                <part name="dataImpressao" required="true" namespace="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" elementQualified="false">
+                                                   <type namespace="http://www.w3.org/2001/XMLSchema" localPart="string"/>
+                                                </part>
+                                                <part name="protocoloAtendimento" required="true" namespace="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" elementQualified="false">
+                                                   <type namespace="http://www.w3.org/2001/XMLSchema" localPart="string"/>
+                                                </part>
+                                             </sequence>
+                                          </complexType>
+                                       </type>
+                                    </part>
+                                 </message>
+                              </input>
+                              <output name=""/>
+                           </operation>
+                           <operation name="solicitarEmissaoCarteira">
+                              <soap soapAction="solicitarEmissaoCarteira" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <input name="" message="{http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso}solicitarEmissaoCarteira">
+                                 <message style="2" use="1" soapVersion="1" encodingStyle="" docLitWrapped="true" namespace="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" localPart="solicitarEmissaoCarteira" xmlns="http://oracle.com/oracle/webservices/mdds">
+                                    <part name="parameters" required="true" xmlns="">
+                                       <type>
+                                          <complexType elementQualified="false">
+                                             <sequence minOccurs="1" maxOccurs="1">
+                                                <part name="dataSolicitacaoEmissaoCarteira" required="true" namespace="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" elementQualified="false">
+                                                   <type namespace="http://www.w3.org/2001/XMLSchema" localPart="dateTime"/>
+                                                </part>
+                                                <part name="codigoProtocolo" required="true" namespace="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" elementQualified="false">
+                                                   <type namespace="http://www.w3.org/2001/XMLSchema" localPart="string"/>
+                                                </part>
+                                             </sequence>
+                                          </complexType>
+                                       </type>
+                                    </part>
+                                 </message>
+                              </input>
+                              <output name=""/>
+                           </operation>
+                           <operation name="cadastrarAtendimentoServico">
+                              <soap soapAction="cadastrarAtendimentoServico" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <input name="" message="{http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso}cadastrarAtendimentoServico">
+                                 <message style="2" use="1" soapVersion="1" encodingStyle="" docLitWrapped="true" namespace="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" localPart="cadastrarAtendimentoServico" xmlns="http://oracle.com/oracle/webservices/mdds">
+                                    <part name="parameters" required="true" xmlns="">
+                                       <type>
+                                          <complexType elementQualified="false">
+                                             <sequence minOccurs="1" maxOccurs="1">
+                                                <part name="payload" required="true" namespace="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" elementQualified="false">
+                                                   <type namespace="http://br.gov.sedurb" localPart="payloadPasseLivreIdoso" prefix=""/>
+                                                </part>
+                                             </sequence>
+                                          </complexType>
+                                       </type>
+                                    </part>
+                                 </message>
+                              </input>
+                              <output name=""/>
+                           </operation>
+                        </port>
+                     </service>
+                  </model>
+               </wsconnection>
+            </Contents>
+         </XmlRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="ProcessoTriagem" className="oracle.adf.model.connection.webservice.impl.WebServiceConnectionImpl" xmlns="">
+      <Factory className="oracle.adf.model.connection.webservice.api.WebServiceConnectionFactory"/>
+      <RefAddresses>
+         <XmlRefAddr addrType="WebServiceConnection">
+            <Contents>
+               <wsconnection description="http://localhost:7001/soa-infra/services/default/PasseLivre/ProcessoTriagem.service?WSDL" service="{http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem}ProcessoTriagem.service">
+                  <model name="{http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem}wsdl" xmlns="http://oracle.com/ws/model">
+                     <types xmlns="http://oracle.com/oracle/webservices/mdds">
+                        <types-in-elements/>
+                     </types>
+                     <service name="{http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem}ProcessoTriagem.service">
+                        <port name="ProcessoTriagemPort" binding="{http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem}ProcessoTriagemBinding" portType="{http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem}ProcessoTriagemPortType">
+                           <soap addressUrl="http://localhost:7001/soa-infra/services/default/PasseLivre/ProcessoTriagem.service" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                           <operation name="iniciarAtendimento">
+                              <soap soapAction="iniciarAtendimento" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <input name="" message="{http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem}iniciarAtendimento">
+                                 <message style="2" use="1" soapVersion="1" encodingStyle="" docLitWrapped="true" namespace="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" localPart="iniciarAtendimento" xmlns="http://oracle.com/oracle/webservices/mdds">
+                                    <part name="parameters" required="true" xmlns="">
+                                       <type>
+                                          <complexType elementQualified="false">
+                                             <sequence minOccurs="1" maxOccurs="1">
+                                                <part name="cpfCidadao" required="true" namespace="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" elementQualified="false">
+                                                   <type namespace="http://www.w3.org/2001/XMLSchema" localPart="string"/>
+                                                </part>
+                                             </sequence>
+                                          </complexType>
+                                       </type>
+                                    </part>
+                                 </message>
+                              </input>
+                              <output name=""/>
+                           </operation>
+                        </port>
+                     </service>
+                  </model>
+               </wsconnection>
+            </Contents>
+         </XmlRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="QualificarAtendimento_ProcessoTriagem" className="oracle.adf.model.connection.webservice.impl.WebServiceConnectionImpl" xmlns="">
+      <Factory className="oracle.adf.model.connection.webservice.api.WebServiceConnectionFactory"/>
+      <RefAddresses>
+         <XmlRefAddr addrType="WebServiceConnection">
+            <Contents>
+               <wsconnection description="http://localhost:7001/soa-infra/services/default/PasseLivre/ProcessoTriagem.service?WSDL" service="{http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem}ProcessoTriagem.service">
+                  <model name="{http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem}wsdl" xmlns="http://oracle.com/ws/model">
+                     <types xmlns="http://oracle.com/oracle/webservices/mdds">
+                        <types-in-elements/>
+                     </types>
+                     <service name="{http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem}ProcessoTriagem.service">
+                        <port name="ProcessoTriagemPort" binding="{http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem}ProcessoTriagemBinding" portType="{http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem}ProcessoTriagemPortType">
+                           <soap addressUrl="http://localhost:7001/soa-infra/services/default/PasseLivre/ProcessoTriagem.service" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                           <operation name="iniciarAtendimento">
+                              <soap soapAction="iniciarAtendimento" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <input name="" message="{http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem}iniciarAtendimento">
+                                 <message style="2" use="1" soapVersion="1" encodingStyle="" docLitWrapped="true" namespace="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" localPart="iniciarAtendimento" xmlns="http://oracle.com/oracle/webservices/mdds">
+                                    <part name="parameters" required="true" xmlns="">
+                                       <type>
+                                          <complexType elementQualified="false">
+                                             <sequence minOccurs="1" maxOccurs="1">
+                                                <part name="cpfCidadao" required="true" namespace="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" elementQualified="false">
+                                                   <type namespace="http://www.w3.org/2001/XMLSchema" localPart="string"/>
+                                                </part>
+                                             </sequence>
+                                          </complexType>
+                                       </type>
+                                    </part>
+                                 </message>
+                              </input>
+                              <output name=""/>
+                           </operation>
+                        </port>
+                     </service>
+                  </model>
+               </wsconnection>
+            </Contents>
+         </XmlRefAddr>
+      </RefAddresses>
+   </Reference>
+</References>

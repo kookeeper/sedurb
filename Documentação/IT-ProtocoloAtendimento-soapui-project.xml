@@ -1,0 +1,779 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="IT-ProtocoloAtendimento" soapui-version="5.0.0" abortOnError="false" runType="SEQUENTIAL" resourceRoot="${projectDir}" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="ProtocoloAtendimentoSOAP" type="wsdl" bindingName="{http://www.seplag.se.gov.br/ProtocoloAtendimento}ProtocoloAtendimentoSOAP" soapVersion="1_2" anonymous="optional" definition="http://localhost:7001/V1/ProtocoloAtendimento?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:7001/V1/ProtocoloAtendimento?WSDL"><con:part><con:url>http://localhost:7001/V1/ProtocoloAtendimento?WSDL</con:url><con:content><![CDATA[<WL5G3N0:definitions name="ProtocoloAtendimento" targetNamespace="http://www.seplag.se.gov.br/ProtocoloAtendimento" xmlns:WL5G3N0="http://schemas.xmlsoap.org/wsdl/" xmlns:WL5G3N1="http://www.seplag.se.gov.br/ProtocoloAtendimento" xmlns:WL5G3N2="http://www.seplag.se.gov.br/commons/v1" xmlns:WL5G3N3="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <WL5G3N0:types>
+    <xsd:schema targetNamespace="http://www.seplag.se.gov.br/ProtocoloAtendimento" xmlns:cab="http://www.seplag.se.gov.br/commons/v1" xmlns:erro="http://www.seplag.se.gov.br/commons/v1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://www.seplag.se.gov.br/ProtocoloAtendimento" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:include schemaLocation="http://localhost:7001/V1/ProtocoloAtendimento?SCHEMA%2FNegocio%2FProtocoloAtendimento%2FV1%2Fschema%2FProtocoloAtendimento"/>
+    </xsd:schema>
+    <xsd:schema xmlns:cab="http://www.seplag.se.gov.br/commons/v1" xmlns:erro="http://www.seplag.se.gov.br/commons/v1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://www.seplag.se.gov.br/ProtocoloAtendimento" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="http://www.seplag.se.gov.br/commons/v1" schemaLocation="http://localhost:7001/V1/ProtocoloAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2Fcommons%2Fv1%2FErroInfo"/>
+      <xsd:import namespace="http://www.seplag.se.gov.br/commons/v1" schemaLocation="http://localhost:7001/V1/ProtocoloAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2Fcommons%2Fv1%2FCabecalhoSeplag"/>
+    </xsd:schema>
+  </WL5G3N0:types>
+  <WL5G3N0:message name="ParametroEmitirProtocoloAtendimentoRequest">
+    <WL5G3N0:part element="WL5G3N1:ParametroEmitirProtocoloAtendimento" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="ResultadoEmitirProtocoloAtendimentoResponse">
+    <WL5G3N0:part element="WL5G3N1:ResultadoEmitirProtocoloAtendimento" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="ParametroAtualizarProtocoloAtendimentoRequest">
+    <WL5G3N0:part element="WL5G3N1:ParametroAtualizarProtocoloAtendimento" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="ResultadoAtualizarProtocoloAtendimentoResponse">
+    <WL5G3N0:part element="WL5G3N1:ResultadoAtualizarProtocoloAtendimento" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="ParametroObterProtocoloAtendimentoRequest">
+    <WL5G3N0:part element="WL5G3N1:ParametroObterProtocoloAtendimento" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="ResultadoObterProtocoloAtendimentoResponse">
+    <WL5G3N0:part element="WL5G3N1:ResultadoObterProtocoloAtendimento" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="ParametroGerarCodigoProtocoloAtendimentoRequest">
+    <WL5G3N0:part element="WL5G3N1:ParametroGerarCodigoProtocoloAtendimento" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="ResultadoGerarCodigoProtocoloAtendimentoResponse">
+    <WL5G3N0:part element="WL5G3N1:ResultadoGerarCodigoProtocoloAtendimento" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="ParametroConsultarProtocoloAtendimentoRequest">
+    <WL5G3N0:part element="WL5G3N1:ParametroConsultarProtocoloAtendimento" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="ResultadoConsultarProtocoloAtendimentoResponse">
+    <WL5G3N0:part element="WL5G3N1:ResultadoConsultarProtocoloAtendimento" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="ErroInfoMessage">
+    <WL5G3N0:part element="WL5G3N2:erroInfo" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="CabecalhoSeplagMessage">
+    <WL5G3N0:part element="WL5G3N2:cabecalhoSeplag" name="cabecalho"/>
+  </WL5G3N0:message>
+  <WL5G3N0:portType name="ProtocoloAtendimento">
+    <WL5G3N0:operation name="EmitirProtocoloAtendimento">
+      <WL5G3N0:input message="WL5G3N1:ParametroEmitirProtocoloAtendimentoRequest"/>
+      <WL5G3N0:output message="WL5G3N1:ResultadoEmitirProtocoloAtendimentoResponse"/>
+      <WL5G3N0:fault message="WL5G3N1:ErroInfoMessage" name="erroInfo"/>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="AtualizarProtocoloAtendimento">
+      <WL5G3N0:input message="WL5G3N1:ParametroAtualizarProtocoloAtendimentoRequest"/>
+      <WL5G3N0:output message="WL5G3N1:ResultadoAtualizarProtocoloAtendimentoResponse"/>
+      <WL5G3N0:fault message="WL5G3N1:ErroInfoMessage" name="erroInfo"/>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="ObterProtocoloAtendimento">
+      <WL5G3N0:input message="WL5G3N1:ParametroObterProtocoloAtendimentoRequest"/>
+      <WL5G3N0:output message="WL5G3N1:ResultadoObterProtocoloAtendimentoResponse"/>
+      <WL5G3N0:fault message="WL5G3N1:ErroInfoMessage" name="erroInfo"/>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="GerarCodigoProtocoloAtendimento">
+      <WL5G3N0:input message="WL5G3N1:ParametroGerarCodigoProtocoloAtendimentoRequest"/>
+      <WL5G3N0:output message="WL5G3N1:ResultadoGerarCodigoProtocoloAtendimentoResponse"/>
+      <WL5G3N0:fault message="WL5G3N1:ErroInfoMessage" name="erroInfo"/>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="ConsultarProtocoloAtendimento">
+      <WL5G3N0:input message="WL5G3N1:ParametroConsultarProtocoloAtendimentoRequest"/>
+      <WL5G3N0:output message="WL5G3N1:ResultadoConsultarProtocoloAtendimentoResponse"/>
+      <WL5G3N0:fault message="WL5G3N1:ErroInfoMessage" name="erroInfo"/>
+    </WL5G3N0:operation>
+  </WL5G3N0:portType>
+  <WL5G3N0:binding name="ProtocoloAtendimentoSOAP" type="WL5G3N1:ProtocoloAtendimento">
+    <WL5G3N3:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <WL5G3N0:operation name="EmitirProtocoloAtendimento">
+      <WL5G3N3:operation soapAction="http://www.seplag.se.gov.br/ProtocoloAtendimento/EmitirProtocoloAtendimento"/>
+      <WL5G3N0:input>
+        <WL5G3N3:body use="literal"/>
+        <WL5G3N3:header message="WL5G3N1:CabecalhoSeplagMessage" part="cabecalho" use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N3:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="AtualizarProtocoloAtendimento">
+      <WL5G3N3:operation soapAction="http://www.seplag.se.gov.br/ProtocoloAtendimento/AtualizarProtocoloAtendimento"/>
+      <WL5G3N0:input>
+        <WL5G3N3:body use="literal"/>
+        <WL5G3N3:header message="WL5G3N1:CabecalhoSeplagMessage" part="cabecalho" use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N3:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="ObterProtocoloAtendimento">
+      <WL5G3N3:operation soapAction="http://www.seplag.se.gov.br/ProtocoloAtendimento/ObterProtocoloAtendimento"/>
+      <WL5G3N0:input>
+        <WL5G3N3:body use="literal"/>
+        <WL5G3N3:header message="WL5G3N1:CabecalhoSeplagMessage" part="cabecalho" use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N3:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="GerarCodigoProtocoloAtendimento">
+      <WL5G3N3:operation soapAction="http://www.seplag.se.gov.br/ProtocoloAtendimento/GerarCodigoProtocoloAtendimento"/>
+      <WL5G3N0:input>
+        <WL5G3N3:body use="literal"/>
+        <WL5G3N3:header message="WL5G3N1:CabecalhoSeplagMessage" part="cabecalho" use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N3:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="ConsultarProtocoloAtendimento">
+      <WL5G3N3:operation soapAction="http://www.seplag.se.gov.br/ProtocoloAtendimento/GerarCodigoProtocoloAtendimento"/>
+      <WL5G3N0:input>
+        <WL5G3N3:body use="literal"/>
+        <WL5G3N3:header message="WL5G3N1:CabecalhoSeplagMessage" part="cabecalho" use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N3:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+  </WL5G3N0:binding>
+  <WL5G3N0:service name="ProtocoloAtendimento">
+    <WL5G3N0:port binding="WL5G3N1:ProtocoloAtendimentoSOAP" name="ProtocoloAtendimentoSOAP">
+      <WL5G3N3:address location="http://localhost:7001/V1/ProtocoloAtendimento"/>
+    </WL5G3N0:port>
+  </WL5G3N0:service>
+</WL5G3N0:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:7001/V1/ProtocoloAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2Fcommons%2Fv1%2FErroInfo</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://www.seplag.se.gov.br/commons/v1" xmlns:gr="http://www.seplag.se.gov.br/commons/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ErroInfo">
+    <xs:annotation>
+      <xs:documentation>Elemento padrao de definição das mensagens de erro.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigo">
+        <xs:annotation>
+          <xs:documentation>Codigo que identifica o erro.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="20"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="descricao">
+        <xs:annotation>
+          <xs:documentation>Descricao do erro ocorrido retornado.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="4000"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="dataTransacao">
+        <xs:simpleType>
+          <xs:restriction base="xs:dateTime"/>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="dadosAdicionais" type="xs:anyType">
+        <xs:annotation>
+          <xs:documentation>Dados adicionais que podem ser necessarios para
+						identificar um erro.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="erroInfo" type="gr:ErroInfo"/>
+  <xs:complexType name="ErrosInfo">
+    <xs:sequence>
+      <xs:element name="erroInfo" type="gr:ErroInfo" maxOccurs="unbounded" minOccurs="0"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:7001/V1/ProtocoloAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2Fcommons%2Fv1%2FCabecalhoSeplag</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://www.seplag.se.gov.br/commons/v1" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gr="http://www.seplag.se.gov.br/commons/v1">
+  <xs:complexType name="CabecalhoSeplag" final="restriction">
+    <xs:sequence>
+      <xs:element name="loginUsuario" minOccurs="1">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="canalAtendimento" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Descricao do canal de atendimento: portal, Ceac,etc.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="32"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="codigoSessao" nillable="true" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Codigo da sessao, codigo unico que identifica
+						uma sessao.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="256"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="nomeAplicacao" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="50"/>
+            <xs:enumeration value="Seides"/>
+            <xs:enumeration value="Detran"/>
+            <xs:enumeration value="Nat"/>
+            <xs:enumeration value="Sedurb"/>
+            <xs:enumeration value="Ssp"/>
+            <xs:enumeration value="Integracao"/>
+            <xs:enumeration value="Seguranca"/>
+            <xs:enumeration value="Infra"/>
+            <xs:enumeration value="Ses"/>
+            <xs:enumeration value="Seplag"/>
+            <xs:enumeration value="Banese"/>
+            <xs:enumeration value="ReceitaFederal"/>
+            <xs:enumeration value="Ceac"/>
+            <xs:enumeration value="IpeSaude"/>
+            <xs:enumeration value="Ctransp"/>
+            <xs:enumeration value="Case"/>
+            <xs:enumeration value="Portal"/>
+            <xs:enumeration value="Mobile"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="token" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="255"/>
+            <xs:minLength value="1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="enderecoIP" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="([01]?\d\d?|2[0-4]\d|25[0-5])\.([01]?\d\d?|2[0-4]\d|25[0-5])\.([01]?\d\d?|2[0-4]\d|25[0-5])\.([01]?\d\d?|2[0-4]\d|25[0-5])"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="codigoFuncionalidade" nillable="true" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Codigo que identifica uma funcionalidade do
+						sistema. Exemplos de funcionalidade para o
+						sistema: Ativacao e desativacao de
+						servicos, emitir carteira de identidade, emitir CNH, etc.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="10"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="dataTransacao" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:dateTime"/>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="nomeServico" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Nome do servico que foi invocado, exemplo:
+						consultaClienteCidadao, consultaFuncionario, etc.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="versao" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Define a versao do servico que esta sendo
+						invocado. O formato da versao deve sempre ser
+						99.99</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="\d?\d.\d\d?"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="cabecalhoSeplag" type="gr:CabecalhoSeplag"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:7001/V1/ProtocoloAtendimento?SCHEMA%2FNegocio%2FProtocoloAtendimento%2FV1%2Fschema%2FProtocoloAtendimento</con:url><con:content><![CDATA[<schema targetNamespace="http://www.seplag.se.gov.br/ProtocoloAtendimento" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:pa="http://www.seplag.se.gov.br/ProtocoloAtendimento" xmlns:ebo="http://www.seplag.se.gov.br/EBO/v1">
+  <import schemaLocation="http://localhost:7001/V1/ProtocoloAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FProtocolo" namespace="http://www.seplag.se.gov.br/EBO/v1"/>
+  <import schemaLocation="http://localhost:7001/V1/ProtocoloAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FStatusProtocolo" namespace="http://www.seplag.se.gov.br/EBO/v1"/>
+  <import schemaLocation="http://localhost:7001/V1/ProtocoloAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FCpf" namespace="http://www.seplag.se.gov.br/EBO/v1"/>
+  <element name="ParametroEmitirProtocoloAtendimento">
+    <complexType>
+      <sequence>
+        <element name="nmUnidade" type="string"/>
+        <element name="nmServico" type="string" minOccurs="0"/>
+        <element name="cdProtocoloPai" minOccurs="0">
+          <simpleType>
+            <restriction base="string">
+              <minLength value="22"/>
+              <maxLength value="22"/>
+            </restriction>
+          </simpleType>
+        </element>
+        <element name="cpf" type="ebo:DocumentoCPF"/>
+        <element name="idAgendamentoAgendaFacil" minOccurs="0" nillable="false" maxOccurs="1" type="integer"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="ResultadoEmitirProtocoloAtendimento">
+    <complexType>
+      <sequence>
+        <element name="codigoProtocolo" type="string"/>
+        <element name="senhaAtendimento" type="string" minOccurs="0"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="ParametroAtualizarProtocoloAtendimento">
+    <complexType>
+      <sequence>
+        <element name="cdProtocolo">
+          <simpleType>
+            <restriction base="string">
+              <minLength value="22"/>
+              <maxLength value="22"/>
+            </restriction>
+          </simpleType>
+        </element>
+        <element name="status" type="ebo:EstadoProtocolo"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="ResultadoAtualizarProtocoloAtendimento">
+    <complexType>
+      <sequence>
+        <element name="status" type="string"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="ParametroObterProtocoloAtendimento">
+    <complexType>
+      <sequence>
+        <element name="cdProtocolo">
+          <simpleType>
+            <restriction base="string">
+              <minLength value="22"/>
+              <maxLength value="22"/>
+            </restriction>
+          </simpleType>
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="ResultadoObterProtocoloAtendimento">
+    <complexType>
+      <sequence>
+        <element name="protocolo" type="ebo:Protocolo" minOccurs="0"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="ParametroGerarCodigoProtocoloAtendimento">
+    <complexType>
+      <sequence>
+        <element name="idOrgao" type="integer"/>
+        <element name="idServico" type="integer"/>
+        <element name="senha" type="integer"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="ResultadoGerarCodigoProtocoloAtendimento">
+    <complexType>
+      <sequence>
+        <element name="codigoProtocolo" type="string"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="ParametroConsultarProtocoloAtendimento">
+    <complexType>
+      <sequence>
+        <choice>
+          <element name="cdProtocoloPai" minOccurs="0">
+            <simpleType>
+              <restriction base="string">
+                <minLength value="22"/>
+                <maxLength value="22"/>
+              </restriction>
+            </simpleType>
+          </element>
+          <element name="cpf" type="ebo:DocumentoCPF" minOccurs="0"/>
+        </choice>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="ResultadoConsultarProtocoloAtendimento">
+    <complexType>
+      <sequence>
+        <element name="protocolos" minOccurs="0" maxOccurs="1">
+          <complexType>
+            <sequence>
+              <element name="protocolo" minOccurs="0" maxOccurs="unbounded">
+                <complexType>
+                  <sequence>
+                    <element name="cdProtocolo">
+                      <simpleType>
+                        <restriction base="string">
+                          <minLength value="22"/>
+                          <maxLength value="22"/>
+                        </restriction>
+                      </simpleType>
+                    </element>
+                    <element name="cdProtocoloPai" minOccurs="0">
+                      <simpleType>
+                        <restriction base="string">
+                          <minLength value="22"/>
+                          <maxLength value="22"/>
+                        </restriction>
+                      </simpleType>
+                    </element>
+                    <element name="cpf" type="ebo:DocumentoCPF"/>
+                    <element name="codigoServico" type="integer"/>
+                    <element name="nomeServico" type="string"/>
+                    <element name="status" type="ebo:EstadoProtocolo"/>
+                  </sequence>
+                </complexType>
+              </element>
+            </sequence>
+          </complexType>
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:7001/V1/ProtocoloAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FProtocolo</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.seplag.se.gov.br/EBO/v1" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:seplag="http://www.seplag.se.gov.br/EBO/v1">
+  <xsd:include schemaLocation="http://localhost:7001/V1/ProtocoloAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FCpf"/>
+  <xsd:include schemaLocation="http://localhost:7001/V1/ProtocoloAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FStatusProtocolo"/>
+  <xsd:element name="listaProtocolo" nillable="true" type="seplag:ListaProtocolo"/>
+  <xsd:complexType name="ListaProtocolo">
+    <xsd:sequence>
+      <xsd:element name="protocolo" type="seplag:Protocolo" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Protocolo">
+    <xsd:sequence>
+      <xsd:element name="codigoProtocolo" minOccurs="0" nillable="true" maxOccurs="1">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="22"/>
+            <xsd:pattern value="([0-9])*"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="codigoProtocoloPai" minOccurs="0" maxOccurs="1" nillable="true">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="22"/>
+            <xsd:pattern value="([0-9])*"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="documentoCPF" minOccurs="0" nillable="true" type="seplag:DocumentoCPF"/>
+      <xsd:element name="numeroSequencia" minOccurs="0" nillable="true" type="xsd:integer"/>
+      <xsd:element name="idAgendamentoAgendaFacil" minOccurs="0" nillable="true" maxOccurs="1" type="xsd:integer"/>
+      <xsd:element name="listaStatusProtocolo" minOccurs="0" nillable="true" type="seplag:ListaStatusProtocolo"/>
+      <xsd:element name="listaSubProtocolos" minOccurs="0" nillable="true" type="seplag:ListaProtocolo"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:7001/V1/ProtocoloAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FCpf</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.seplag.se.gov.br/EBO/v1" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:seplag="http://www.seplag.se.gov.br/EBO/v1">
+  <xsd:element name="listaCpf" nillable="true" type="seplag:ListaCpf"/>
+  <xsd:complexType name="ListaCpf">
+    <xsd:sequence>
+      <xsd:element name="documentoCPF" type="seplag:DocumentoCPF" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="DocumentoCPF">
+    <xsd:restriction base="xsd:string">
+      <xsd:length value="11"/>
+      <xsd:pattern value="([0-9])*"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:7001/V1/ProtocoloAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FStatusProtocolo</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.seplag.se.gov.br/EBO/v1" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:seplag="http://www.seplag.se.gov.br/EBO/v1">
+  <xsd:element name="listaStatusProtocolo" nillable="true" type="seplag:ListaStatusProtocolo"/>
+  <xsd:complexType name="ListaStatusProtocolo">
+    <xsd:sequence>
+      <xsd:element name="statusProtocolo" type="seplag:StatusProtocolo" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="StatusProtocolo">
+    <xsd:sequence>
+      <xsd:element name="codigoProtocolo" minOccurs="0" nillable="true" maxOccurs="1">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="22"/>
+            <xsd:pattern value="([0-9])*"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="estadoProcoloco" minOccurs="0" nillable="true" type="seplag:EstadoProtocolo"></xsd:element>
+      <xsd:element name="dataStatus" minOccurs="0" type="xsd:dateTime" nillable="true"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="EstadoProtocolo">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="ABERTO"/>
+      <xsd:enumeration value="PARADO"/>
+      <xsd:enumeration value="CANCELADO"/>
+      <xsd:enumeration value="CONCLUIDO_NAOAVALIADO"/>
+      <xsd:enumeration value="CONCLUIDO"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://POSEIDON.local:8088/mockProtocoloAtendimentoSOAP</con:endpoint><con:endpoint>http://localhost:7001/V1/ProtocoloAtendimento</con:endpoint><con:endpoint>http://osb.itconsulting.com.br:8011/V1/ProtocoloAtendimento</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://www.seplag.se.gov.br/ProtocoloAtendimento/AtualizarProtocoloAtendimento" name="AtualizarProtocoloAtendimento" bindingOperationName="AtualizarProtocoloAtendimento" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://osb.itconsulting.com.br:8011/V1/ProtocoloAtendimento</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.seplag.se.gov.br/commons/v1" xmlns:prot="http://www.seplag.se.gov.br/ProtocoloAtendimento">
+   <soap:Header>
+      <v1:cabecalhoSeplag>
+         <v1:loginUsuario>marcio.dantas</v1:loginUsuario>
+         <v1:canalAtendimento>Ceac</v1:canalAtendimento>
+         <v1:nomeAplicacao>Ceac</v1:nomeAplicacao>
+         <v1:enderecoIP>192.168.0.153</v1:enderecoIP>
+      </v1:cabecalhoSeplag>
+   </soap:Header>
+   <soap:Body>
+      <prot:ParametroAtualizarProtocoloAtendimento>
+         <!--anonymous type-->
+         <prot:cdProtocolo>0222010360000070320142</prot:cdProtocolo>
+         <!--type: EstadoProtocolo - enumeration: [ABERTO,PARADO,CANCELADO,CONCLUIDO_NAOAVALIADO,CONCLUIDO]-->
+         <prot:status>CONCLUIDO</prot:status>
+      </prot:ParametroAtualizarProtocoloAtendimento>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.seplag.se.gov.br/ProtocoloAtendimento/ProtocoloAtendimento/AtualizarProtocoloAtendimentoRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://www.seplag.se.gov.br/ProtocoloAtendimento/EmitirProtocoloAtendimento" name="EmitirProtocoloAtendimento" bindingOperationName="EmitirProtocoloAtendimento" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://osb.itconsulting.com.br:8011/V1/ProtocoloAtendimento</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.seplag.se.gov.br/commons/v1" xmlns:prot="http://www.seplag.se.gov.br/ProtocoloAtendimento" xmlns="http://www.seplag.se.gov.br/commons/v1" xmlns:ns2="http://www.seplag.se.gov.br/EBO/v1" xmlns:ns3="http://www.seplag.se.gov.br/ProtocoloAtendimento">
+   <soap:Header>
+      <v1:cabecalhoSeplag>
+         <v1:loginUsuario>marcio.dantas</v1:loginUsuario>
+         <v1:canalAtendimento>Ceac</v1:canalAtendimento>
+         <v1:nomeAplicacao>Ceac</v1:nomeAplicacao>
+         <v1:enderecoIP>192.168.0.153</v1:enderecoIP>
+      </v1:cabecalhoSeplag>
+   </soap:Header>
+   <soap:Body>
+      <ns3:ParametroEmitirProtocoloAtendimento>
+         <ns3:nmUnidade>CEAC - Rodoviaria</ns3:nmUnidade>
+         <ns3:nmServico>Solicitar Passe livre idoso</ns3:nmServico>
+         <ns3:cpf>47455418485</ns3:cpf>
+      </ns3:ParametroEmitirProtocoloAtendimento>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.seplag.se.gov.br/ProtocoloAtendimento/ProtocoloAtendimento/EmitirProtocoloAtendimentoRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Request 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://POSEIDON.local:8088/mockProtocoloAtendimentoSOAP</con:endpoint><con:request><![CDATA[<soap:Body xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.seplag.se.gov.br/commons/v1" xmlns:prot="http://www.seplag.se.gov.br/ProtocoloAtendimento">
+   <atu:AtualizarProtocoloPaiInput xmlns:atu="http://xmlns.oracle.com/pcbpel/adapter/db/AtualizarProtocoloPai">
+      <atu:protocoloPai>0220000020000029820146</atu:protocoloPai>
+      <atu:protocolo>0220000020000029820146</atu:protocolo>
+   </atu:AtualizarProtocoloPaiInput>
+</soap:Body>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.seplag.se.gov.br/ProtocoloAtendimento/ProtocoloAtendimento/EmitirProtocoloAtendimentoRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Request 3"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://POSEIDON.local:8088/mockProtocoloAtendimentoSOAP</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.seplag.se.gov.br/commons/v1" xmlns:prot="http://www.seplag.se.gov.br/ProtocoloAtendimento">
+   <soap:Header>
+      <v1:cabecalhoSeplag>
+         <!--anonymous type-->
+         <v1:loginUsuario>?</v1:loginUsuario>
+         <!--anonymous type-->
+         <v1:canalAtendimento>?</v1:canalAtendimento>
+         <!--Optional:-->
+         <!--anonymous type-->
+         <v1:codigoSessao>?</v1:codigoSessao>
+         <!--Optional:-->
+         <!--anonymous type - enumeration: [Seides,Detran,Nat,Sedurb,Ssp,Integracao,Seguranca,Infra,Ses,Seplag,Banese,ReceitaFederal,Ceac,IpeSaude,Ctransp,Case,Portal,Mobile]-->
+         <v1:nomeAplicacao>?</v1:nomeAplicacao>
+         <!--Optional:-->
+         <!--anonymous type-->
+         <v1:token>?</v1:token>
+         <!--Optional:-->
+         <!--anonymous type-->
+         <v1:enderecoIP>?</v1:enderecoIP>
+         <!--Optional:-->
+         <!--anonymous type-->
+         <v1:codigoFuncionalidade>?</v1:codigoFuncionalidade>
+         <!--Optional:-->
+         <!--anonymous type-->
+         <v1:dataTransacao>?</v1:dataTransacao>
+         <!--Optional:-->
+         <!--anonymous type-->
+         <v1:nomeServico>?</v1:nomeServico>
+         <!--Optional:-->
+         <!--anonymous type-->
+         <v1:versao>?</v1:versao>
+      </v1:cabecalhoSeplag>
+   </soap:Header>
+   <soap:Body>
+      <prot:ParametroEmitirProtocoloAtendimento>
+         <!--type: string-->
+         <prot:nmUnidade>?</prot:nmUnidade>
+         <!--Optional:-->
+         <!--type: string-->
+         <prot:nmServico>?</prot:nmServico>
+         <!--Optional:-->
+         <!--anonymous type-->
+         <prot:cdProtocoloPai>?</prot:cdProtocoloPai>
+         <!--type: DocumentoCPF-->
+         <prot:cpf>?</prot:cpf>
+         <!--Optional:-->
+         <!--type: integer-->
+         <prot:idAgendamentoAgendaFacil>?</prot:idAgendamentoAgendaFacil>
+      </prot:ParametroEmitirProtocoloAtendimento>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.seplag.se.gov.br/ProtocoloAtendimento/ProtocoloAtendimento/EmitirProtocoloAtendimentoRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://www.seplag.se.gov.br/ProtocoloAtendimento/GerarCodigoProtocoloAtendimento" name="GerarCodigoProtocoloAtendimento" bindingOperationName="GerarCodigoProtocoloAtendimento" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:7001/V1/ProtocoloAtendimento</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.seplag.se.gov.br/commons/v1" xmlns:prot="http://www.seplag.se.gov.br/ProtocoloAtendimento">
+   <soap:Header>
+      <v1:cabecalhoSeplag>
+         <!--anonymous type-->
+         <v1:loginUsuario>?</v1:loginUsuario>
+         <!--anonymous type-->
+         <v1:canalAtendimento>?</v1:canalAtendimento>
+         <!--Optional:-->
+         <!--anonymous type-->
+         <v1:codigoSessao>?</v1:codigoSessao>
+         <!--Optional:-->
+         <!--anonymous type - enumeration: [Seides,Detran,Nat,Sedurb,Ssp,Integracao,Seguranca,Infra,Ses,Seplag,Banese,ReceitaFederal,Ceac,IpeSaude,Ctransp,Case,Portal,Mobile]-->
+         <v1:nomeAplicacao>?</v1:nomeAplicacao>
+         <!--Optional:-->
+         <!--anonymous type-->
+         <v1:token>?</v1:token>
+         <!--Optional:-->
+         <!--anonymous type-->
+         <v1:enderecoIP>?</v1:enderecoIP>
+         <!--Optional:-->
+         <!--anonymous type-->
+         <v1:codigoFuncionalidade>?</v1:codigoFuncionalidade>
+         <!--Optional:-->
+         <!--anonymous type-->
+         <v1:dataTransacao>?</v1:dataTransacao>
+         <!--Optional:-->
+         <!--anonymous type-->
+         <v1:nomeServico>?</v1:nomeServico>
+         <!--Optional:-->
+         <!--anonymous type-->
+         <v1:versao>?</v1:versao>
+      </v1:cabecalhoSeplag>
+   </soap:Header>
+   <soap:Body>
+      <prot:ParametroGerarCodigoProtocoloAtendimento>
+         <!--type: integer-->
+         <prot:idOrgao>?</prot:idOrgao>
+         <!--type: integer-->
+         <prot:idServico>?</prot:idServico>
+         <!--type: integer-->
+         <prot:senha>?</prot:senha>
+      </prot:ParametroGerarCodigoProtocoloAtendimento>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.seplag.se.gov.br/ProtocoloAtendimento/ProtocoloAtendimento/GerarCodigoProtocoloAtendimentoRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://www.seplag.se.gov.br/ProtocoloAtendimento/ObterProtocoloAtendimento" name="ObterProtocoloAtendimento" bindingOperationName="ObterProtocoloAtendimento" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://osb.itconsulting.com.br:8011/V1/ProtocoloAtendimento</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.seplag.se.gov.br/commons/v1" xmlns:prot="http://www.seplag.se.gov.br/ProtocoloAtendimento">
+   <soap:Header>
+      <v1:cabecalhoSeplag>
+         <v1:loginUsuario>marcio.dantas</v1:loginUsuario>
+         <v1:canalAtendimento>Ceac</v1:canalAtendimento>
+         <v1:nomeAplicacao>Ceac</v1:nomeAplicacao>
+         <v1:enderecoIP>192.168.0.153</v1:enderecoIP>
+      </v1:cabecalhoSeplag>
+   </soap:Header>
+   <soap:Body>
+      <prot:ParametroObterProtocoloAtendimento>
+         <prot:cdProtocolo>0140000000000078620145</prot:cdProtocolo>
+      </prot:ParametroObterProtocoloAtendimento>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.seplag.se.gov.br/ProtocoloAtendimento/ProtocoloAtendimento/ObterProtocoloAtendimentoRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://www.seplag.se.gov.br/ProtocoloAtendimento/GerarCodigoProtocoloAtendimento" name="ConsultarProtocoloAtendimento" bindingOperationName="ConsultarProtocoloAtendimento" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1" timeout="0"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://osb.itconsulting.com.br:8011/V1/ProtocoloAtendimento</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.seplag.se.gov.br/commons/v1" xmlns:prot="http://www.seplag.se.gov.br/ProtocoloAtendimento">
+   <soap:Header>
+      <v1:cabecalhoSeplag>
+         <v1:loginUsuario>marcio.dantas</v1:loginUsuario>
+         <v1:canalAtendimento>Ceac</v1:canalAtendimento>
+         <v1:nomeAplicacao>Ceac</v1:nomeAplicacao>
+         <v1:enderecoIP>192.168.0.153</v1:enderecoIP>
+      </v1:cabecalhoSeplag>
+   </soap:Header>
+   <soap:Body>
+      <prot:ParametroConsultarProtocoloAtendimento>
+         <prot:cpf>47455418485</prot:cpf>
+      </prot:ParametroConsultarProtocoloAtendimento>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.seplag.se.gov.br/ProtocoloAtendimento/ProtocoloAtendimento/ConsultarProtocoloAtendimentoRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Request 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://POSEIDON.local:8088/mockProtocoloAtendimentoSOAP</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.seplag.se.gov.br/commons/v1" xmlns:prot="http://www.seplag.se.gov.br/ProtocoloAtendimento">
+   <soap:Header>
+      <v1:cabecalhoSeplag>
+         <v1:loginUsuario>?</v1:loginUsuario>
+         <v1:canalAtendimento>?</v1:canalAtendimento>
+         <!--Optional:-->
+         <v1:codigoSessao>?</v1:codigoSessao>
+         <!--Optional:-->
+         <v1:nomeAplicacao>?</v1:nomeAplicacao>
+         <!--Optional:-->
+         <v1:token>?</v1:token>
+         <!--Optional:-->
+         <v1:enderecoIP>?</v1:enderecoIP>
+         <!--Optional:-->
+         <v1:codigoFuncionalidade>?</v1:codigoFuncionalidade>
+         <!--Optional:-->
+         <v1:dataTransacao>?</v1:dataTransacao>
+         <!--Optional:-->
+         <v1:nomeServico>?</v1:nomeServico>
+         <!--Optional:-->
+         <v1:versao>?</v1:versao>
+      </v1:cabecalhoSeplag>
+   </soap:Header>
+   <soap:Body>
+      <prot:ParametroConsultarProtocoloAtendimento>
+         <!--You have a CHOICE of the next 2 items at this level-->
+         <!--Optional:-->
+         <prot:cdProtocoloPai>0140000000000053220143</prot:cdProtocoloPai>
+         <!--Optional:-->
+         <prot:cpf>?</prot:cpf>
+      </prot:ParametroConsultarProtocoloAtendimento>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.seplag.se.gov.br/ProtocoloAtendimento/ProtocoloAtendimento/ConsultarProtocoloAtendimentoRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:mockService port="8088" path="/mockProtocoloAtendimentoSOAP" host="POSEIDON.local" name="ProtocoloAtendimentoSOAP MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="AtualizarProtocoloAtendimento" interface="ProtocoloAtendimentoSOAP" operation="AtualizarProtocoloAtendimento"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:prot="http://www.seplag.se.gov.br/ProtocoloAtendimento">
+   <soap:Header/>
+   <soap:Body>
+      <prot:ResultadoAtualizarProtocoloAtendimento>
+         <!--type: string-->
+         <prot:status>?</prot:status>
+      </prot:ResultadoAtualizarProtocoloAtendimento>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.seplag.se.gov.br/ProtocoloAtendimento/ProtocoloAtendimento/AtualizarProtocoloAtendimentoResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="EmitirProtocoloAtendimento" interface="ProtocoloAtendimentoSOAP" operation="EmitirProtocoloAtendimento"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:prot="http://www.seplag.se.gov.br/ProtocoloAtendimento">
+   <soap:Header/>
+   <soap:Body>
+      <prot:ResultadoEmitirProtocoloAtendimento>
+         <!--type: string-->
+         <prot:codigoProtocolo>?</prot:codigoProtocolo>
+         <!--Optional:-->
+         <!--type: string-->
+         <prot:senhaAtendimento>?</prot:senhaAtendimento>
+      </prot:ResultadoEmitirProtocoloAtendimento>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.seplag.se.gov.br/ProtocoloAtendimento/ProtocoloAtendimento/EmitirProtocoloAtendimentoResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="GerarCodigoProtocoloAtendimento" interface="ProtocoloAtendimentoSOAP" operation="GerarCodigoProtocoloAtendimento"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:prot="http://www.seplag.se.gov.br/ProtocoloAtendimento">
+   <soap:Header/>
+   <soap:Body>
+      <prot:ResultadoGerarCodigoProtocoloAtendimento>
+         <!--type: string-->
+         <prot:codigoProtocolo>?</prot:codigoProtocolo>
+      </prot:ResultadoGerarCodigoProtocoloAtendimento>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.seplag.se.gov.br/ProtocoloAtendimento/ProtocoloAtendimento/GerarCodigoProtocoloAtendimentoResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="ObterProtocoloAtendimento" interface="ProtocoloAtendimentoSOAP" operation="ObterProtocoloAtendimento"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:prot="http://www.seplag.se.gov.br/ProtocoloAtendimento" xmlns:v1="http://www.seplag.se.gov.br/EBO/v1">
+   <soap:Header/>
+   <soap:Body>
+      <prot:ResultadoObterProtocoloAtendimento>
+         <!--Optional:-->
+         <prot:protocolo>
+            <!--Optional:-->
+            <!--anonymous type-->
+            <v1:codigoProtocolo>?</v1:codigoProtocolo>
+            <!--Optional:-->
+            <!--anonymous type-->
+            <v1:codigoProtocoloPai>?</v1:codigoProtocoloPai>
+            <!--Optional:-->
+            <!--type: DocumentoCPF-->
+            <v1:documentoCPF>?</v1:documentoCPF>
+            <!--Optional:-->
+            <!--type: integer-->
+            <v1:numeroSequencia>?</v1:numeroSequencia>
+            <!--Optional:-->
+            <!--type: integer-->
+            <v1:idAgendamentoAgendaFacil>?</v1:idAgendamentoAgendaFacil>
+            <!--Optional:-->
+            <v1:listaStatusProtocolo>
+               <!--Zero or more repetitions:-->
+               <v1:statusProtocolo>
+                  <!--Optional:-->
+                  <!--anonymous type-->
+                  <v1:codigoProtocolo>?</v1:codigoProtocolo>
+                  <!--Optional:-->
+                  <!--type: EstadoProtocolo - enumeration: [ABERTO,PARADO,CANCELADO,CONCLUIDO_NAOAVALIADO,CONCLUIDO]-->
+                  <v1:estadoProcoloco>?</v1:estadoProcoloco>
+                  <!--Optional:-->
+                  <!--type: dateTime-->
+                  <v1:dataStatus>?</v1:dataStatus>
+               </v1:statusProtocolo>
+            </v1:listaStatusProtocolo>
+            <!--Optional:-->
+            <v1:listaSubProtocolos>
+               <!--Zero or more repetitions:-->
+               <v1:protocolo/>
+            </v1:listaSubProtocolos>
+         </prot:protocolo>
+      </prot:ResultadoObterProtocoloAtendimento>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.seplag.se.gov.br/ProtocoloAtendimento/ProtocoloAtendimento/ObterProtocoloAtendimentoResponse"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>

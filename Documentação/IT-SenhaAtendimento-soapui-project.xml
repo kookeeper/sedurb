@@ -1,0 +1,1727 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="IT-SenhaAtendimento" soapui-version="5.0.0" abortOnError="false" runType="SEQUENTIAL" resourceRoot="${projectDir}" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="SenhaAtendimentoSOAP" type="wsdl" bindingName="{http://www.seplag.se.gov.br/SenhaAtendimento}SenhaAtendimentoSOAP" soapVersion="1_2" anonymous="optional" definition="http://osb.itconsulting.com.br:8011/V1/SenhaAtendimento?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://osb.itconsulting.com.br:8011/V1/SenhaAtendimento?wsdl"><con:part><con:url>http://osb.itconsulting.com.br:8011/V1/SenhaAtendimento?wsdl</con:url><con:content><![CDATA[<WL5G3N0:definitions name="SenhaAtendimento" targetNamespace="http://www.seplag.se.gov.br/SenhaAtendimento" xmlns:WL5G3N0="http://schemas.xmlsoap.org/wsdl/" xmlns:WL5G3N1="http://www.seplag.se.gov.br/SenhaAtendimento" xmlns:WL5G3N2="http://www.seplag.se.gov.br/commons/v1" xmlns:WL5G3N3="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <WL5G3N0:types>
+    <xsd:schema targetNamespace="http://www.seplag.se.gov.br/SenhaAtendimento" xmlns:cab="http://www.seplag.se.gov.br/commons/v1" xmlns:erro="http://www.seplag.se.gov.br/commons/v1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://www.seplag.se.gov.br/SenhaAtendimento" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:include schemaLocation="http://osb.itconsulting.com.br:8011/V1/SenhaAtendimento?SCHEMA%2FNegocio%2FSenhaAtendimento%2FV1%2Fschema%2FSenhaAtendimento"/>
+    </xsd:schema>
+    <xsd:schema xmlns:cab="http://www.seplag.se.gov.br/commons/v1" xmlns:erro="http://www.seplag.se.gov.br/commons/v1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://www.seplag.se.gov.br/SenhaAtendimento" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="http://www.seplag.se.gov.br/commons/v1" schemaLocation="http://osb.itconsulting.com.br:8011/V1/SenhaAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2Fcommons%2Fv1%2FErroInfo"/>
+      <xsd:import namespace="http://www.seplag.se.gov.br/commons/v1" schemaLocation="http://osb.itconsulting.com.br:8011/V1/SenhaAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2Fcommons%2Fv1%2FCabecalhoSeplag"/>
+    </xsd:schema>
+  </WL5G3N0:types>
+  <WL5G3N0:message name="ParametroEmitirSenhaAtendimentoMessage">
+    <WL5G3N0:part element="WL5G3N1:ParametroEmitirSenhaAtendimento" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="ResultadoListarServicosAtendimentoMessage">
+    <WL5G3N0:part element="WL5G3N1:ResultadoEmitirSenhaAtendimento" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="ErroInfoMessage">
+    <WL5G3N0:part element="WL5G3N2:erroInfo" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="CabecalhoSeplagMessage">
+    <WL5G3N0:part element="WL5G3N2:cabecalhoSeplag" name="cabecalho"/>
+  </WL5G3N0:message>
+  <WL5G3N0:portType name="SenhaAtendimento">
+    <WL5G3N0:operation name="EmitirSenhaAtendimento">
+      <WL5G3N0:input message="WL5G3N1:ParametroEmitirSenhaAtendimentoMessage"/>
+      <WL5G3N0:output message="WL5G3N1:ResultadoListarServicosAtendimentoMessage"/>
+      <WL5G3N0:fault message="WL5G3N1:ErroInfoMessage" name="erroInfo"/>
+    </WL5G3N0:operation>
+  </WL5G3N0:portType>
+  <WL5G3N0:binding name="SenhaAtendimentoSOAP" type="WL5G3N1:SenhaAtendimento">
+    <WL5G3N3:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <WL5G3N0:operation name="EmitirSenhaAtendimento">
+      <WL5G3N3:operation soapAction="http://www.seplag.se.gov.br/SenhaAtendimento/EmitirSenhaAtendimento"/>
+      <WL5G3N0:input>
+        <WL5G3N3:body use="literal"/>
+        <WL5G3N3:header message="WL5G3N1:CabecalhoSeplagMessage" part="cabecalho" use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N3:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+  </WL5G3N0:binding>
+  <WL5G3N0:service name="SenhaAtendimento">
+    <WL5G3N0:port binding="WL5G3N1:SenhaAtendimentoSOAP" name="SenhaAtendimentoSOAP">
+      <WL5G3N3:address location="http://osb02.itconsulting.com.br:8011/V1/SenhaAtendimento"/>
+    </WL5G3N0:port>
+  </WL5G3N0:service>
+</WL5G3N0:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://osb.itconsulting.com.br:8011/V1/SenhaAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2Fcommons%2Fv1%2FErroInfo</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://www.seplag.se.gov.br/commons/v1" xmlns:gr="http://www.seplag.se.gov.br/commons/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ErroInfo">
+    <xs:annotation>
+      <xs:documentation>Elemento padrao de definicao das mensagens de erro.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigo">
+        <xs:annotation>
+          <xs:documentation>Codigo que identifica o erro.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="20"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="descricao">
+        <xs:annotation>
+          <xs:documentation>Descricao do erro ocorrido retornado.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="4000"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="dataTransacao">
+        <xs:simpleType>
+          <xs:restriction base="xs:dateTime"/>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="dadosAdicionais" type="xs:anyType">
+        <xs:annotation>
+          <xs:documentation>Dados adicionais que podem ser necessarios para
+						identificar um erro.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="erroInfo" type="gr:ErroInfo"/>
+  <xs:complexType name="ErrosInfo">
+    <xs:sequence>
+      <xs:element name="erroInfo" type="gr:ErroInfo" maxOccurs="unbounded" minOccurs="0"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://osb.itconsulting.com.br:8011/V1/SenhaAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2Fcommons%2Fv1%2FCabecalhoSeplag</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://www.seplag.se.gov.br/commons/v1" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gr="http://www.seplag.se.gov.br/commons/v1">
+  <xs:complexType name="CabecalhoSeplag" final="restriction">
+    <xs:sequence>
+      <xs:element name="loginUsuario" minOccurs="1">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="canalAtendimento" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Descricao do canal de atendimento: portal, Ceac,etc.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="32"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="codigoSessao" nillable="true" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Codigo da sessao, codigo unico que identifica
+						uma sessao.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="256"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="nomeAplicacao" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="50"/>
+            <xs:enumeration value="Seides"/>
+            <xs:enumeration value="Detran"/>
+            <xs:enumeration value="Nat"/>
+            <xs:enumeration value="Sedurb"/>
+            <xs:enumeration value="Ssp"/>
+            <xs:enumeration value="Integracao"/>
+            <xs:enumeration value="Seguranca"/>
+            <xs:enumeration value="Infra"/>
+            <xs:enumeration value="Ses"/>
+            <xs:enumeration value="Seplag"/>
+            <xs:enumeration value="Banese"/>
+            <xs:enumeration value="ReceitaFederal"/>
+            <xs:enumeration value="Ceac"/>
+            <xs:enumeration value="IpeSaude"/>
+            <xs:enumeration value="Ctransp"/>
+            <xs:enumeration value="Case"/>
+            <xs:enumeration value="Portal"/>
+            <xs:enumeration value="Mobile"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="token" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="255"/>
+            <xs:minLength value="1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="enderecoIP" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="([01]?\d\d?|2[0-4]\d|25[0-5])\.([01]?\d\d?|2[0-4]\d|25[0-5])\.([01]?\d\d?|2[0-4]\d|25[0-5])\.([01]?\d\d?|2[0-4]\d|25[0-5])"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="codigoFuncionalidade" nillable="true" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Codigo que identifica uma funcionalidade do
+						sistema. Exemplos de funcionalidade para o
+						sistema: Ativacao e desativacao de
+						servicos, emitir carteira de identidade, emitir CNH, etc.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="10"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="dataTransacao" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:dateTime"/>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="nomeServico" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Nome do servico que foi invocado, exemplo:
+						consultaClienteCidadao, consultaFuncionario, etc.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="versao" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Define a versao do servico que esta sendo
+						invocado. O formato da versao deve sempre ser
+						99.99</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="\d?\d.\d\d?"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="cabecalhoSeplag" type="gr:CabecalhoSeplag"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://osb.itconsulting.com.br:8011/V1/SenhaAtendimento?SCHEMA%2FNegocio%2FSenhaAtendimento%2FV1%2Fschema%2FSenhaAtendimento</con:url><con:content><![CDATA[<schema targetNamespace="http://www.seplag.se.gov.br/SenhaAtendimento" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.seplag.se.gov.br/SenhaAtendimento" xmlns:ebo="http://www.seplag.se.gov.br/EBO/v1" xmlns:com="http://www.seplag.se.gov.br/commons/v1">
+  <import schemaLocation="http://osb.itconsulting.com.br:8011/V1/SenhaAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FSenhaAtendimento" namespace="http://www.seplag.se.gov.br/EBO/v1"/>
+  <import schemaLocation="http://osb.itconsulting.com.br:8011/V1/SenhaAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FCidadao" namespace="http://www.seplag.se.gov.br/EBO/v1"/>
+  <import schemaLocation="http://osb.itconsulting.com.br:8011/V1/SenhaAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FUnidadeAtendimento" namespace="http://www.seplag.se.gov.br/EBO/v1"/>
+  <import schemaLocation="http://osb.itconsulting.com.br:8011/V1/SenhaAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FServicoAtendimento" namespace="http://www.seplag.se.gov.br/EBO/v1"/>
+  <element name="ParametroEmitirSenhaAtendimento">
+    <complexType>
+      <sequence>
+        <element name="cdProtocoloServico" minOccurs="1" nillable="false">
+          <simpleType>
+            <restriction base="string">
+              <minLength value="22"/>
+              <maxLength value="22"/>
+            </restriction>
+          </simpleType>
+        </element>
+        <element name="atendimentoPreferencial" type="boolean" minOccurs="1" nillable="false" default="false"/>
+        <element name="mensagemObservacao" type="string" minOccurs="0" nillable="false"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="ResultadoEmitirSenhaAtendimento">
+    <complexType>
+      <sequence>
+        <element name="senha" type="ebo:SenhaAtendimento"/>
+      </sequence>
+    </complexType>
+  </element>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://osb.itconsulting.com.br:8011/V1/SenhaAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FSenhaAtendimento</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.seplag.se.gov.br/EBO/v1" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:seplag="http://www.seplag.se.gov.br/EBO/v1">
+  <xsd:include schemaLocation="http://osb.itconsulting.com.br:8011/V1/SenhaAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FPostoAtendimento"/>
+  <xsd:complexType name="SenhaAtendimento">
+    <xsd:sequence>
+      <xsd:element name="numeroSequencial" minOccurs="0" nillable="true" maxOccurs="1" type="xsd:integer"/>
+      <xsd:element name="senha" minOccurs="0" nillable="true" maxOccurs="1" type="xsd:string"/>
+      <xsd:element name="letras" minOccurs="0" nillable="true" maxOccurs="1" type="xsd:string"/>
+      <xsd:element name="faixa" minOccurs="0" nillable="true" maxOccurs="1" type="xsd:integer"/>
+      <xsd:element name="posto" minOccurs="0" nillable="true" maxOccurs="1" type="seplag:PostoAtendimento"/>
+      <xsd:element name="dataHoraEmissao" minOccurs="0" nillable="true" type="xsd:dateTime"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="senhaAtendimento" nillable="true" type="seplag:SenhaAtendimento"/>
+  <xsd:complexType name="ListaSenhaAtendimento">
+    <xsd:sequence>
+      <xsd:element name="SenhaAtendimento" type="seplag:SenhaAtendimento" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="listaSenhaAtendimento" nillable="true" type="seplag:ListaSenhaAtendimento"/>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://osb.itconsulting.com.br:8011/V1/SenhaAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FPostoAtendimento</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.seplag.se.gov.br/EBO/v1" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:seplag="http://www.seplag.se.gov.br/EBO/v1">
+  <xsd:include schemaLocation="http://osb.itconsulting.com.br:8011/V1/SenhaAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FUnidadeAtendimento"/>
+  <xsd:complexType name="PostoAtendimento">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="nome">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="100"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="unidade" type="seplag:UnidadeAtendimento"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="sigla">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="10"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="descricao">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="200"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="nomeSala">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="100"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="flagAgendamento" type="xsd:integer"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="diasLimiteAgendamento" type="xsd:integer"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ListaPostoAtendimento">
+    <xsd:sequence>
+      <xsd:element name="PostoAtendimento" type="seplag:PostoAtendimento" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="listaPostoAtendimento" nillable="true" type="seplag:ListaPostoAtendimento"/>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://osb.itconsulting.com.br:8011/V1/SenhaAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FUnidadeAtendimento</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.seplag.se.gov.br/EBO/v1" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:seplag="http://www.seplag.se.gov.br/EBO/v1">
+  <xsd:complexType name="UnidadeAtendimento">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="nome">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="100"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ListaUnidadeAtendimento">
+    <xsd:sequence>
+      <xsd:element name="unidadeAtendimento" type="seplag:UnidadeAtendimento" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="listaUnidadeAtendimento" nillable="true" type="seplag:ListaUnidadeAtendimento"/>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://osb.itconsulting.com.br:8011/V1/SenhaAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FCidadao</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.seplag.se.gov.br/EBO/v1" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:seplag="http://www.seplag.se.gov.br/EBO/v1">
+  <xsd:include schemaLocation="http://osb.itconsulting.com.br:8011/V1/SenhaAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FCpf"/>
+  <xsd:include schemaLocation="http://osb.itconsulting.com.br:8011/V1/SenhaAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FCarteiraIdentidade"/>
+  <xsd:include schemaLocation="http://osb.itconsulting.com.br:8011/V1/SenhaAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FEndereco"/>
+  <xsd:include schemaLocation="http://osb.itconsulting.com.br:8011/V1/SenhaAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FProfissao"/>
+  <xsd:include schemaLocation="http://osb.itconsulting.com.br:8011/V1/SenhaAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FTelefone"/>
+  <xsd:include schemaLocation="http://osb.itconsulting.com.br:8011/V1/SenhaAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FEscolaridade"/>
+  <xsd:include schemaLocation="http://osb.itconsulting.com.br:8011/V1/SenhaAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FSexo"/>
+  <xsd:include schemaLocation="http://osb.itconsulting.com.br:8011/V1/SenhaAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FEmail"/>
+  <xsd:complexType name="Cidadao">
+    <xsd:sequence>
+      <xsd:element name="documentoCPF" minOccurs="0" nillable="true" maxOccurs="1" type="seplag:DocumentoCPF"/>
+      <xsd:element name="nomeCompleto" minOccurs="0" nillable="true" maxOccurs="1">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="200"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="carteiraIdentidade" minOccurs="0" nillable="true" maxOccurs="1" type="seplag:CarteiraIdentidade"/>
+      <xsd:element name="endereco" minOccurs="0" nillable="true" maxOccurs="1" type="seplag:Endereco"/>
+      <xsd:element name="dataNascimento" minOccurs="0" nillable="true" type="xsd:dateTime"/>
+      <xsd:element name="profissao" minOccurs="0" nillable="true" type="seplag:Profissao"/>
+      <xsd:element name="listaTelefone" minOccurs="0" nillable="true" type="seplag:ListaTelefone"/>
+      <xsd:element name="sexo" minOccurs="0" nillable="true" type="seplag:Sexo"/>
+      <xsd:element name="escolaridade" minOccurs="0" nillable="true" type="seplag:Escolaridade"/>
+      <xsd:element name="foto" minOccurs="0" nillable="true" type="xsd:anyURI"/>
+      <xsd:element name="email" minOccurs="0" nillable="true" type="seplag:EnderecoEmail"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ListaCidadao">
+    <xsd:sequence>
+      <xsd:element name="cidadao" type="seplag:Cidadao" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="listaCidadao" nillable="true" type="seplag:ListaCidadao"/>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://osb.itconsulting.com.br:8011/V1/SenhaAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FCpf</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.seplag.se.gov.br/EBO/v1" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:seplag="http://www.seplag.se.gov.br/EBO/v1">
+  <xsd:element name="listaCpf" nillable="true" type="seplag:ListaCpf"/>
+  <xsd:complexType name="ListaCpf">
+    <xsd:sequence>
+      <xsd:element name="documentoCPF" type="seplag:DocumentoCPF" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="DocumentoCPF">
+    <xsd:restriction base="xsd:string">
+      <xsd:length value="11"/>
+      <xsd:pattern value="([0-9])*"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://osb.itconsulting.com.br:8011/V1/SenhaAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FCarteiraIdentidade</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.seplag.se.gov.br/EBO/v1" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:seplag="http://www.seplag.se.gov.br/EBO/v1">
+  <xsd:include schemaLocation="http://osb.itconsulting.com.br:8011/V1/SenhaAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FUnidadeFederativa"/>
+  <xsd:element name="listaCarteiraIdentidade" nillable="true" type="seplag:ListaCarteiraIdentidade"/>
+  <xsd:complexType name="ListaCarteiraIdentidade">
+    <xsd:sequence>
+      <xsd:element name="carteiraIdentidade" type="seplag:CarteiraIdentidade" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CarteiraIdentidade">
+    <xsd:sequence>
+      <xsd:element name="numeroIdentidade" minOccurs="0" nillable="true" maxOccurs="1">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="80"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="numeroIdentidadeComplemento" nillable="true" minOccurs="0" maxOccurs="1">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="80"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="dataEmissao" type="xsd:dateTime" nillable="true" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="siglaUnidadeFederativa" nillable="true" type="seplag:UnidadeFederativa" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="orgaoEmissor" nillable="true" minOccurs="0" maxOccurs="1">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="80"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://osb.itconsulting.com.br:8011/V1/SenhaAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FUnidadeFederativa</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.seplag.se.gov.br/EBO/v1" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.0" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:seplag="http://www.seplag.se.gov.br/EBO/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="listaUnidadeFederativa" nillable="true" type="seplag:ListaUnidadeFederativa"/>
+  <xsd:complexType name="ListaUnidadeFederativa">
+    <xsd:sequence>
+      <xsd:element name="unidadeFederativa" type="seplag:UnidadeFederativa" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="UnidadeFederativa">
+    <xsd:annotation>
+      <xsd:documentation>Corresponde as possíveis siglas das unidades federativas do país
+
+				Acre - AC
+				Alagoas - AL
+				Amapá - AP
+				Amazonas - AM
+				Bahia - BA
+				Ceará - CE
+				Distrito Federal  - DF
+				Espírito Santo - ES
+				Goiás - GO
+				Maranhão - MA 
+				Mato Grosso - MT 
+				Mato Grosso do Sul - MS 
+				Minas Gerais - MG 
+				Pará - PA 
+				Paraíba - PB 
+				Paraná - PR 
+				Pernambuco - PE 
+				Piauí - PI 
+				Rio de Janeiro  - RJ
+				Rio Grande do Norte  - RN 
+				Rio Grande do Sul - RS 
+				Rondônia - RO 
+				Roraima - RR 
+				Santa Catarina - SC 
+				São Paulo - SP 
+				Sergipe - SE 
+				Tocantins - TO
+
+				Exemplo de Sigla de Unidade Federativa: SE</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="AC"/>
+      <xsd:enumeration value="AL"/>
+      <xsd:enumeration value="AP"/>
+      <xsd:enumeration value="AM"/>
+      <xsd:enumeration value="BA"/>
+      <xsd:enumeration value="CE"/>
+      <xsd:enumeration value="DF"/>
+      <xsd:enumeration value="ES"/>
+      <xsd:enumeration value="GO"/>
+      <xsd:enumeration value="MA"/>
+      <xsd:enumeration value="MT"/>
+      <xsd:enumeration value="MS"/>
+      <xsd:enumeration value="MG"/>
+      <xsd:enumeration value="PA"/>
+      <xsd:enumeration value="PB"/>
+      <xsd:enumeration value="PR"/>
+      <xsd:enumeration value="PE"/>
+      <xsd:enumeration value="PI"/>
+      <xsd:enumeration value="RJ"/>
+      <xsd:enumeration value="RN"/>
+      <xsd:enumeration value="RS"/>
+      <xsd:enumeration value="RO"/>
+      <xsd:enumeration value="RR"/>
+      <xsd:enumeration value="SC"/>
+      <xsd:enumeration value="SP"/>
+      <xsd:enumeration value="SE"/>
+      <xsd:enumeration value="TO"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://osb.itconsulting.com.br:8011/V1/SenhaAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FEndereco</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.seplag.se.gov.br/EBO/v1" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:seplag="http://www.seplag.se.gov.br/EBO/v1">
+  <xsd:include schemaLocation="http://osb.itconsulting.com.br:8011/V1/SenhaAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FCep"/>
+  <xsd:include schemaLocation="http://osb.itconsulting.com.br:8011/V1/SenhaAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FUnidadeFederativa"/>
+  <xsd:element name="listaEndereco" nillable="true" type="seplag:ListaEndereco"/>
+  <xsd:complexType name="ListaEndereco">
+    <xsd:sequence>
+      <xsd:element name="endereco" type="seplag:Endereco" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Endereco">
+    <xsd:sequence>
+      <xsd:element name="tipoLogradouro" minOccurs="0" nillable="true" maxOccurs="1">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="nomeLogradouro" minOccurs="0" nillable="true" maxOccurs="1">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="200"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="numeroLogradouro" minOccurs="0" nillable="true" maxOccurs="1">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="30"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="complemento" minOccurs="0" maxOccurs="1" nillable="true">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="bairro" minOccurs="0" maxOccurs="1" nillable="true">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="cep" minOccurs="0" maxOccurs="1" nillable="true" type="seplag:Cep"/>
+      <xsd:element name="municipio" minOccurs="0" maxOccurs="1" nillable="true">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="unidadeFederativa" minOccurs="0" maxOccurs="1" nillable="true">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="pais" minOccurs="0" maxOccurs="1" nillable="true">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://osb.itconsulting.com.br:8011/V1/SenhaAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FCep</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.seplag.se.gov.br/EBO/v1" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:seplag="http://www.seplag.se.gov.br/EBO/v1">
+  <xsd:simpleType name="Cep">
+    <xsd:restriction base="xsd:string">
+      <xsd:length value="8"/>
+      <xsd:pattern value="([0-9])*"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="ListaCep">
+    <xsd:sequence>
+      <xsd:element name="cep" type="seplag:Cep" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="listaCep" nillable="true" type="seplag:ListaCep"/>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://osb.itconsulting.com.br:8011/V1/SenhaAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FProfissao</con:url><con:content><![CDATA[<schema targetNamespace="http://www.seplag.se.gov.br/EBO/v1" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:seplag="http://www.seplag.se.gov.br/EBO/v1">
+  <element name="profissao" nillable="true" type="seplag:Profissao"/>
+  <element name="listaProfissao" nillable="true" type="seplag:ListaProfissao"/>
+  <complexType name="ListaProfissao">
+    <sequence>
+      <element name="profissao" type="seplag:Profissao" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+  <simpleType name="Profissao">
+    <restriction base="string">
+      <enumeration value="ACOUGUEIRO"/>
+      <enumeration value="ADIDO_ESTRANGEIRO"/>
+      <enumeration value="ADJUNTO_ADMINISTRATIVO"/>
+      <enumeration value="ADMINISTRADOR"/>
+      <enumeration value="ADMINISTRADOR_DE_AEROPORTO"/>
+      <enumeration value="ADMINISTRADOR_DE_BANCOS_DE_DADOS"/>
+      <enumeration value="ADMINISTRADOR_DE_EMPRESA"/>
+      <enumeration value="ADMINISTRADOR_DE_FAZENDA"/>
+      <enumeration value="ADMINISTRADOR_DE_REDES"/>
+      <enumeration value="ADMINISTRADOR_RURAL"/>
+      <enumeration value="ADUBADO"/>
+      <enumeration value="ADVOGADO"/>
+      <enumeration value="AEROMOCA"/>
+      <enumeration value="AERONAUTA"/>
+      <enumeration value="AEROVIARIO"/>
+      <enumeration value="AFIADOR_DE_FERRAMENTAS"/>
+      <enumeration value="AFIADOR_DE_METAIS_PRECIOSOS"/>
+      <enumeration value="AGENCIADOR"/>
+      <enumeration value="AGENTE_ADMINISTRATIVO"/>
+      <enumeration value="AGENTE_AUTONOMO"/>
+      <enumeration value="AGENTE_COMERCIAL"/>
+      <enumeration value="AGENTE_DE_CORREIO"/>
+      <enumeration value="AGENTE_DE_ESTACAO"/>
+      <enumeration value="AGENTE_DE_FISCALIZACAO_DE_IMPOSTO"/>
+      <enumeration value="AGENTE_DE_INVESTIMENTO"/>
+      <enumeration value="AGENTE_DE_POLICIA"/>
+      <enumeration value="AGENTE_DE_SEGUROS"/>
+      <enumeration value="AGENTE_DE_TELECOMUNICACOES"/>
+      <enumeration value="AGENTE_DE_TURISMO"/>
+      <enumeration value="AGENTE_DE_VENDAS"/>
+      <enumeration value="AGENTE_DE_VIAGEM_E_AFINS"/>
+      <enumeration value="AGENTE_E_REPRESENTANTE_COMERCIAL"/>
+      <enumeration value="AGENTE_EXPORTACAO"/>
+      <enumeration value="AGENTE_FISCAL"/>
+      <enumeration value="AGENTE_PENITENCIARIO"/>
+      <enumeration value="AGENTE_TECNICO"/>
+      <enumeration value="AGENTE_TRIBUTARIO"/>
+      <enumeration value="AGENTE_TRIBUTARIO_ESTADUAL"/>
+      <enumeration value="AGRICULTOR"/>
+      <enumeration value="AGRIMENSOR"/>
+      <enumeration value="AGROINDUSTRIAL"/>
+      <enumeration value="AGRONOMO_E_AFINS"/>
+      <enumeration value="AGROPECUARISTA"/>
+      <enumeration value="AJUDANTE"/>
+      <enumeration value="AJUDANTE_DE_ARMADOR"/>
+      <enumeration value="AJUDANTE_DE_BOMBEIRO"/>
+      <enumeration value="AJUDANTE_DE_CAMINHAO"/>
+      <enumeration value="AJUDANTE_DE_CARPINTEIRO"/>
+      <enumeration value="AJUDANTE_DE_DESPACHANTE"/>
+      <enumeration value="AJUDANTE_DE_ELETRICISTA"/>
+      <enumeration value="AJUDANTE_DE_ENCANADOR"/>
+      <enumeration value="AJUDANTE_DE_FERREIRO"/>
+      <enumeration value="AJUDANTE_DE_FUNILEIRO"/>
+      <enumeration value="AJUDANTE_DE_GARCOM"/>
+      <enumeration value="AJUDANTE_DE_LANTERNEIRO"/>
+      <enumeration value="AJUDANTE_DE_MAQUINISTA"/>
+      <enumeration value="AJUDANTE_DE_MECANICO"/>
+      <enumeration value="AJUDANTE_DE_PEDREIRO"/>
+      <enumeration value="AJUDANTE_DE_SERRALHEIRO"/>
+      <enumeration value="AJUDANTE_DE_VITRINISTA"/>
+      <enumeration value="AJUDANTE_GERAL"/>
+      <enumeration value="AJUSTADO_MECANICO"/>
+      <enumeration value="ALFAIATE"/>
+      <enumeration value="ALMOXARIFE"/>
+      <enumeration value="AMBULANTE"/>
+      <enumeration value="ANALISTA_DE_SEGUROS_E_DE_SEGURANCA_NO_TRABALHO"/>
+      <enumeration value="ANALISTA_DE_SISTEMAS"/>
+      <enumeration value="ANALISTA_JUDICIARIO"/>
+      <enumeration value="ANTROPOLOGO"/>
+      <enumeration value="APICULTOR"/>
+      <enumeration value="APLICADOR_DE_SINTECO"/>
+      <enumeration value="APONTADOR"/>
+      <enumeration value="APOSENTADO"/>
+      <enumeration value="APRESENTADOR"/>
+      <enumeration value="ARMADOR"/>
+      <enumeration value="ARMADOR_DE_CIMENTO"/>
+      <enumeration value="ARMADOR_DE_PESCA"/>
+      <enumeration value="ARMAZENADOR"/>
+      <enumeration value="ARMEIRO"/>
+      <enumeration value="ARQUEOLOGO"/>
+      <enumeration value="ARQUITETO"/>
+      <enumeration value="ARQUIVISTA"/>
+      <enumeration value="ARQUIVOLOGO"/>
+      <enumeration value="ARRANJADOR"/>
+      <enumeration value="ARRENDATARIO"/>
+      <enumeration value="ARRUMADEIRA"/>
+      <enumeration value="ARRUMADOR"/>
+      <enumeration value="ARTESAO"/>
+      <enumeration value="ARTISTA"/>
+      <enumeration value="ARTISTA_PINTOR"/>
+      <enumeration value="ARTISTA_PLASTICO"/>
+      <enumeration value="ARTISTAS_DE_ARTES_POPULARES_E_MODELOS"/>
+      <enumeration value="ASCENSORISTA"/>
+      <enumeration value="ASSESSOR"/>
+      <enumeration value="ASSESSOR_DE_SEGURANCA_AEREA"/>
+      <enumeration value="ASSESSOR_POSTAL_TELEGRAFICO"/>
+      <enumeration value="ASSESSOR_TECNICO"/>
+      <enumeration value="ASSISTENTE"/>
+      <enumeration value="ASSISTENTE_ADMINISTRATIVO"/>
+      <enumeration value="ASSISTENTE_COMERCIAL"/>
+      <enumeration value="ASSISTENTE_DE_ADMINISTRACAO"/>
+      <enumeration value="ASSISTENTE_DE_DIRETOR"/>
+      <enumeration value="ASSISTENTE_DE_LABORATORIO"/>
+      <enumeration value="ASSISTENTE_SOCIAL"/>
+      <enumeration value="ASSISTENTE_TECNICO"/>
+      <enumeration value="ASTRONAUTA"/>
+      <enumeration value="ASTRONOMO"/>
+      <enumeration value="ATACADISTA"/>
+      <enumeration value="ATENDENTE"/>
+      <enumeration value="ATENDENTE_DE_ENFERMAGEM"/>
+      <enumeration value="ATENDENTE_DE_FARMACIA"/>
+      <enumeration value="ATLETA"/>
+      <enumeration value="DESPORTISTA"/>
+      <enumeration value="ATOR"/>
+      <enumeration value="ATRIZ"/>
+      <enumeration value="ATUARIO"/>
+      <enumeration value="AUDITOR"/>
+      <enumeration value="AUTONOMO"/>
+      <enumeration value="AUXILIAR_ACADEMICO"/>
+      <enumeration value="AUXILIAR_ADMINISTRATIVO"/>
+      <enumeration value="AUXILIAR_AGRICOLA"/>
+      <enumeration value="AUXILIAR_DE_ADMINISTRACAO"/>
+      <enumeration value="AUXILIAR_DE_ALMOXARIFADO"/>
+      <enumeration value="AUXILIAR_DE_AREAS_GRAFICAS"/>
+      <enumeration value="AUXILIAR_DE_CARTORIO"/>
+      <enumeration value="AUXILIAR_DE_CIRURGIA"/>
+      <enumeration value="AUXILIAR_DE_COMERCIO"/>
+      <enumeration value="AUXILIAR_DE_CONTABILIDADE"/>
+      <enumeration value="AUXILIAR_DE_COZINHA"/>
+      <enumeration value="AUXILIAR_DE_EDUCACAO"/>
+      <enumeration value="AUXILIAR_DE_ELETRICISTA"/>
+      <enumeration value="AUXILIAR_DE_ENFERMAGEM"/>
+      <enumeration value="AUXILIAR_DE_ESCRITORIO"/>
+      <enumeration value="AUXILIAR_DE_EXPEDIENTE"/>
+      <enumeration value="AUXILIAR_DE_FARMACIA"/>
+      <enumeration value="AUXILIAR_DE_INFORMATICA"/>
+      <enumeration value="AUXILIAR_DE_LABORATORIO"/>
+      <enumeration value="AUXILIAR_DE_MAGAREFE"/>
+      <enumeration value="AUXILIAR_DE_MECANICO"/>
+      <enumeration value="AUXILIAR_DE_METEOROLOGISTA"/>
+      <enumeration value="AUXILIAR_DE_MONTAGEM"/>
+      <enumeration value="AUXILIAR_DE_OBSERVADOR_METER."/>
+      <enumeration value="AUXILIAR_DE_PEDREIRO"/>
+      <enumeration value="AUXILIAR_DE_PRODUCAO"/>
+      <enumeration value="AUXILIAR_DE_PROFESSOR"/>
+      <enumeration value="AUXILIAR_DE_PROPAGANDISTA"/>
+      <enumeration value="AUXILIAR_DE_SERVI_OS_GERAIS"/>
+      <enumeration value="AUXILIAR_DE_SOLDADOR"/>
+      <enumeration value="AUXILIAR_DE_TESOUREIRO"/>
+      <enumeration value="AUXILIAR_DE_TOPOGRAFO"/>
+      <enumeration value="AUXILIAR_DE_TRAFEGO"/>
+      <enumeration value="AUXILIAR._DE_TRAFEGO_TELEGRAFICO"/>
+      <enumeration value="AUXILIAR_DE_VENDAS"/>
+      <enumeration value="AUXILIAR_LEGISLATIVO"/>
+      <enumeration value="AUXILIAR_TECNICO"/>
+      <enumeration value="AVALIADOR"/>
+      <enumeration value="AVALIADOR_COMERCIAL"/>
+      <enumeration value="AVICULTOR"/>
+      <enumeration value="AZULEJADOR"/>
+      <enumeration value="BABA"/>
+      <enumeration value="BAILARINO"/>
+      <enumeration value="BALCONISTA"/>
+      <enumeration value="BANCARIO"/>
+      <enumeration value="BANQUEIRO"/>
+      <enumeration value="BAPTISTA"/>
+      <enumeration value="BARBEIRO"/>
+      <enumeration value="BARMAN"/>
+      <enumeration value="BARQUEIRO"/>
+      <enumeration value="BATERISTA"/>
+      <enumeration value="BETONEIRA"/>
+      <enumeration value="BIBLIOTECARIO"/>
+      <enumeration value="BILHETEIRO"/>
+      <enumeration value="BIOLOGO"/>
+      <enumeration value="BIOMEDICO_E_AFINS"/>
+      <enumeration value="BIOQUIMICO"/>
+      <enumeration value="BISCATEIRO"/>
+      <enumeration value="BLOQUISTA"/>
+      <enumeration value="BOBINADO"/>
+      <enumeration value="BOIADEIRO"/>
+      <enumeration value="BOLSISTA"/>
+      <enumeration value="BOMBEIRO"/>
+      <enumeration value="BOMBEIRO_DE_GASOLINA"/>
+      <enumeration value="BOMBEIRO_ELETRICISTA"/>
+      <enumeration value="BOMBEIRO_ENCANADOR"/>
+      <enumeration value="BOMBEIRO_HIDRAULICO"/>
+      <enumeration value="BOMBEIRO_MILITAR"/>
+      <enumeration value="BORDADOR"/>
+      <enumeration value="BORRACHEIRO"/>
+      <enumeration value="BOTANICO"/>
+      <enumeration value="BRITADOR"/>
+      <enumeration value="BROQUEIRO"/>
+      <enumeration value="BUSINESS"/>
+      <enumeration value="CABELEIREIRO"/>
+      <enumeration value="CABELEREIRO"/>
+      <enumeration value="BARBEIRO"/>
+      <enumeration value="CACADOR"/>
+      <enumeration value="CAIXA"/>
+      <enumeration value="CAIXEIRO"/>
+      <enumeration value="CAIXEIRO-VIAJANTE"/>
+      <enumeration value="CALAFATE"/>
+      <enumeration value="CALCULISTA"/>
+      <enumeration value="CALDEIREIRO"/>
+      <enumeration value="CAMAREIRO"/>
+      <enumeration value="CAMBISTA"/>
+      <enumeration value="CAMELO"/>
+      <enumeration value="CAMINHONEIRO"/>
+      <enumeration value="CAMISEIRO"/>
+      <enumeration value="CAMPEIRO"/>
+      <enumeration value="CANOEIRO"/>
+      <enumeration value="CANTOR"/>
+      <enumeration value="CANTOR_E_COMPOSITOR"/>
+      <enumeration value="CAPATAZ"/>
+      <enumeration value="CAPITALISTA"/>
+      <enumeration value="CAPOTEIRO"/>
+      <enumeration value="CARCEREIRO"/>
+      <enumeration value="CARPINTEIRO"/>
+      <enumeration value="CARREGADOR"/>
+      <enumeration value="CARREGADOR_DE_CAMINHAO"/>
+      <enumeration value="CARREGADOR_DE_MALAS_POSTAIS"/>
+      <enumeration value="CARRETEIRO"/>
+      <enumeration value="CARROCEIRO"/>
+      <enumeration value="CARTAZISTA"/>
+      <enumeration value="CARTEIRO"/>
+      <enumeration value="CARTORARIO"/>
+      <enumeration value="CARVOEIRO"/>
+      <enumeration value="CASEIRO"/>
+      <enumeration value="CATADOR_DE_PAPEL"/>
+      <enumeration value="CENARISTA"/>
+      <enumeration value="CENOGRAFO"/>
+      <enumeration value="CERAMISTA"/>
+      <enumeration value="CEREALISTA"/>
+      <enumeration value="CERVEJEIRO"/>
+      <enumeration value="CHACAREIRO"/>
+      <enumeration value="CHAPEADOR"/>
+      <enumeration value="CHAPELEIRO"/>
+      <enumeration value="CHAPISTA"/>
+      <enumeration value="CHARRETEIRO"/>
+      <enumeration value="CHAVEIRO"/>
+      <enumeration value="CHEFE_DE_ESTACAO"/>
+      <enumeration value="CHEFE_DE_TREM"/>
+      <enumeration value="CICERONE"/>
+      <enumeration value="CICLISTA"/>
+      <enumeration value="CIENTISTA"/>
+      <enumeration value="CINEASTA"/>
+      <enumeration value="CINEGRAFISTA"/>
+      <enumeration value="CINETECNICO"/>
+      <enumeration value="CIRURGIAO"/>
+      <enumeration value="CISTERNEIRO"/>
+      <enumeration value="CO_PILOTO"/>
+      <enumeration value="COB._FISCAL_INSP."/>
+      <enumeration value="COBRADOR"/>
+      <enumeration value="COBRADOR_EM_TRANSP._COLETIVO"/>
+      <enumeration value="COLETOR"/>
+      <enumeration value="COLHEDOR"/>
+      <enumeration value="COLOCADOR_DE_ANDAIMES"/>
+      <enumeration value="COLONO"/>
+      <enumeration value="COMANDANTE_DE_EMBARCACOES_E_OFICIAIS_DE_MAQUINAS"/>
+      <enumeration value="COMANDANTE_DE_NAVIO"/>
+      <enumeration value="COMANDANTE_DE_VOO"/>
+      <enumeration value="COMERCIANTE"/>
+      <enumeration value="COMERCIARIO"/>
+      <enumeration value="COMISSARIO"/>
+      <enumeration value="COMISSARIO_DE_BORDO"/>
+      <enumeration value="COMISSARIO_DE_BORDO_NAVIO"/>
+      <enumeration value="COMISSARIO_DE_POLICIA"/>
+      <enumeration value="COMISSIONISTA"/>
+      <enumeration value="COMPOSITOR"/>
+      <enumeration value="COMPOSITOR_MECANICO"/>
+      <enumeration value="COMPOSITOR_MUSICAL"/>
+      <enumeration value="COMPOSITORA_MUSICAL"/>
+      <enumeration value="COMUNICACAO"/>
+      <enumeration value="CONDUTOR"/>
+      <enumeration value="CONDUTOR_DE_GADO"/>
+      <enumeration value="CONDUTOR_DE_MALAS"/>
+      <enumeration value="CONDUTOR_E_OPERADOR_DE_ROBOS"/>
+      <enumeration value="CONDUTOR_E_OPERADOR_DE_VEICULOS_E_EQUIPAMENTOS_DE_MOVIMENTACAO_DE_CARGA"/>
+      <enumeration value="CONDUTOR_MAQUINISTA"/>
+      <enumeration value="CONFEITEIRO"/>
+      <enumeration value="CONFERENTE_DE_CAIS_DO_PORTO"/>
+      <enumeration value="CONSTRUTOR"/>
+      <enumeration value="CONSUL"/>
+      <enumeration value="CONSULTOR"/>
+      <enumeration value="CONSULTOR_FINANCEIRO"/>
+      <enumeration value="CONSULTOR_JURIDICO"/>
+      <enumeration value="CONTADOR"/>
+      <enumeration value="CONTADOR_FINANCEIRO"/>
+      <enumeration value="CONTINUO"/>
+      <enumeration value="CONTORCIONISTA"/>
+      <enumeration value="CONTRA_ALMIRANTE"/>
+      <enumeration value="CONTROLADOR_DE_PRODUCAO"/>
+      <enumeration value="COPEIRO"/>
+      <enumeration value="COREOGRAFO"/>
+      <enumeration value="CORREEIRO"/>
+      <enumeration value="CORRETOR"/>
+      <enumeration value="CORRETOR_DE_CAFE"/>
+      <enumeration value="CORRETOR_DE_IMOVEIS"/>
+      <enumeration value="COSEDOR"/>
+      <enumeration value="COSTUREIRA"/>
+      <enumeration value="COZINHEIRO"/>
+      <enumeration value="CRIADOR_DE_GADO"/>
+      <enumeration value="CRONISTA"/>
+      <enumeration value="DANCARINO"/>
+      <enumeration value="DATILOGRAFO"/>
+      <enumeration value="DECORADOR"/>
+      <enumeration value="DECORADOR_DE_INTERIORES"/>
+      <enumeration value="DEFENSOR_PUBLICO"/>
+      <enumeration value="DELEGADO_DE_POLICIA"/>
+      <enumeration value="DENTISTA"/>
+      <enumeration value="DEPARTAMENTO_DE_PESSOAL"/>
+      <enumeration value="DEPUTADO_ESTADUAL"/>
+      <enumeration value="DEPUTADO_FEDERAL"/>
+      <enumeration value="DESEMBARGADOR"/>
+      <enumeration value="DESEMPREGADO"/>
+      <enumeration value="DESENHISTA"/>
+      <enumeration value="DESENHISTA_INDUSTRIAL_(DESIGNER)"/>
+      <enumeration value="DESENHISTA_TECNICO_E_MODELISTA"/>
+      <enumeration value="DESENVOLVEDOR_DE_SOFTWARE"/>
+      <enumeration value="DESIGNER"/>
+      <enumeration value="DESPACHANTE"/>
+      <enumeration value="DESPACHANTE_ADUANEIRO"/>
+      <enumeration value="DESPACHANTE_DO_DETRAN"/>
+      <enumeration value="DESPORTISTA"/>
+      <enumeration value="DETETIVE"/>
+      <enumeration value="DIAGRAMADOR"/>
+      <enumeration value="DIARISTA"/>
+      <enumeration value="DIGITADOR"/>
+      <enumeration value="DIPLOMATA_E_AFINS"/>
+      <enumeration value="DIRETOR_AGRICOLA"/>
+      <enumeration value="DIRETOR_COMERCIAL"/>
+      <enumeration value="DIRETOR_DE_COLEGIO"/>
+      <enumeration value="DIRETOR_DE_CORREIOS"/>
+      <enumeration value="DIRETOR_DE_ESPETACULOS"/>
+      <enumeration value="DIRETOR_DE_ESTABELECIMENTO_DE_ENSINO_OU_DE_OUTRAS_ORGANIZACOES"/>
+      <enumeration value="DIRETOR_DE_FINANCAS"/>
+      <enumeration value="DIRETOR_DE_HOSPITAL"/>
+      <enumeration value="DIRETOR_DE_HOTEL"/>
+      <enumeration value="DIRETOR_DE_ORGANISMO_NAO-GOVERNAMENTAL"/>
+      <enumeration value="DIRETOR_DE_TRANSPORTE"/>
+      <enumeration value="DIRETOR_PECUARIO"/>
+      <enumeration value="DIRETORA_DE_COLEGIO"/>
+      <enumeration value="DIRETORA_DE_HOSPITAL"/>
+      <enumeration value="DIRIGENTE_DA_ADMINISTRACAO_PUBLICA"/>
+      <enumeration value="DISTRIBUIDOR_DE_JORNAL"/>
+      <enumeration value="DO_LAR"/>
+      <enumeration value="DOCEIRO"/>
+      <enumeration value="DOCUMENTALISTA"/>
+      <enumeration value="ECONOMIARIO"/>
+      <enumeration value="ECONOMIARIO"/>
+      <enumeration value="ECONOMISTA"/>
+      <enumeration value="EDITOR"/>
+      <enumeration value="EDUCADORA"/>
+      <enumeration value="ELETRICISTA"/>
+      <enumeration value="ELETRICITARIO"/>
+      <enumeration value="ELETROMECANICO"/>
+      <enumeration value="ELETROTECNICO"/>
+      <enumeration value="EMBAIXADOR"/>
+      <enumeration value="EMBALADOR"/>
+      <enumeration value="EMBALSAMADOR"/>
+      <enumeration value="EMPACOTADOR"/>
+      <enumeration value="EMPAPELADOR"/>
+      <enumeration value="EMPILHADOR"/>
+      <enumeration value="EMPREITEIRO"/>
+      <enumeration value="EMPREITEIRO_DE_OBRAS"/>
+      <enumeration value="EMPRESA_COMERCIAL"/>
+      <enumeration value="EMPRESA_INDUSTRIAL"/>
+      <enumeration value="EMPRESA_PRESTADORA_DE_SERVICOS"/>
+      <enumeration value="EMPRESARIO"/>
+      <enumeration value="EMPRESARIO_E_PRODUTOR_DE_ESPETACULOS"/>
+      <enumeration value="ENCADERNADOR"/>
+      <enumeration value="ENCAIXOTADOR"/>
+      <enumeration value="ENCANADOR"/>
+      <enumeration value="ENCARREGADO"/>
+      <enumeration value="ENCARREGADO_DE_OBRAS"/>
+      <enumeration value="ENCARREGADO_DE_SERVICOS_GERAIS"/>
+      <enumeration value="ENFERMEIRO"/>
+      <enumeration value="ENFERMEIRO_DE_NIVEL_SUPERIOR"/>
+      <enumeration value="ENGARRAFADOR"/>
+      <enumeration value="ENGENHEIRO"/>
+      <enumeration value="ENGENHEIRO_AGRONOMO"/>
+      <enumeration value="ENGENHEIRO_CIVIL"/>
+      <enumeration value="ENGENHEIRO_ELETRICISTA"/>
+      <enumeration value="ENGENHEIRO_ELETROMECANICO"/>
+      <enumeration value="ENGENHEIRO_ELETRONICO"/>
+      <enumeration value="ENGENHEIRO_FLORESTAL"/>
+      <enumeration value="ENGENHEIRO_MECANICO"/>
+      <enumeration value="ENTALHADOR"/>
+      <enumeration value="ENTREGADOR"/>
+      <enumeration value="ENVERNIZADOR"/>
+      <enumeration value="ESCAFRANDISTA"/>
+      <enumeration value="ESCREVENTE"/>
+      <enumeration value="ESCRITOR"/>
+      <enumeration value="ESCRITURARIO"/>
+      <enumeration value="ESCRIVAO"/>
+      <enumeration value="ESCRIVE"/>
+      <enumeration value="ESCULTOR"/>
+      <enumeration value="ESPECIALISTA_DE_BELEZA"/>
+      <enumeration value="ESPECIALISTA_EM_INFORMATICA"/>
+      <enumeration value="ESPORTISTA"/>
+      <enumeration value="ESTAFETA"/>
+      <enumeration value="ESTAGIARIO_E_AFINS"/>
+      <enumeration value="ESTAMPADOR"/>
+      <enumeration value="ESTATISTICO"/>
+      <enumeration value="ESTEREOTIPISTA"/>
+      <enumeration value="ESTETICISTA"/>
+      <enumeration value="ESTILISTA"/>
+      <enumeration value="ESTIVADOR"/>
+      <enumeration value="ESTOCADOR_DE_GESSO"/>
+      <enumeration value="ESTOFADOR"/>
+      <enumeration value="ESTUDANTE"/>
+      <enumeration value="ETIQUETADOR"/>
+      <enumeration value="EXECUTIVO"/>
+      <enumeration value="EXPORTADOR"/>
+      <enumeration value="EXTRATIVISTA_FLORESTAL"/>
+      <enumeration value="FAQUEIRO"/>
+      <enumeration value="FARMACEUTICO"/>
+      <enumeration value="FAROLEIRO"/>
+      <enumeration value="FATURISTA"/>
+      <enumeration value="FAXINEIRO"/>
+      <enumeration value="FAZENDEIRO"/>
+      <enumeration value="FEIRANTE"/>
+      <enumeration value="FERRAMENTEIRO"/>
+      <enumeration value="FERREIRO"/>
+      <enumeration value="FERROVIARIO"/>
+      <enumeration value="FIADOR"/>
+      <enumeration value="FIANDEIRA"/>
+      <enumeration value="FINANCISTA"/>
+      <enumeration value="FISCAL"/>
+      <enumeration value="FISCAL_AGRICOLA"/>
+      <enumeration value="FISCAL_DE_AEROPORTO"/>
+      <enumeration value="FISCAL_DE_OBRA"/>
+      <enumeration value="FISCAL_DE_RENDAS"/>
+      <enumeration value="FISCAL_DE_RENDAS_PUBLICAS"/>
+      <enumeration value="FISCAL_DE_SANEAMENTO"/>
+      <enumeration value="FISCAL_DE_TRANSPORTE_COLETIVO"/>
+      <enumeration value="FISCAL_DE_TRIBUTACAO_DE_NIVEL_MEDIO"/>
+      <enumeration value="FISCAL_FLORESTAL"/>
+      <enumeration value="FISICO"/>
+      <enumeration value="FISIOTERAPEUTA"/>
+      <enumeration value="FLORICULTOR"/>
+      <enumeration value="FOGUISTA"/>
+      <enumeration value="FONOAUDIOLOGO"/>
+      <enumeration value="FORJADOR"/>
+      <enumeration value="FOTOGRAFO"/>
+      <enumeration value="FOTOGRAFO"/>
+      <enumeration value="FRENTISTA"/>
+      <enumeration value="FRETEIRO"/>
+      <enumeration value="FUNCIONARIO_PUBLICO_ESTADUAL"/>
+      <enumeration value="FUNCIONARIO_PUBLICO_FEDERAL"/>
+      <enumeration value="FUNCIONARIO_PUBLICO_MUNICIPAL"/>
+      <enumeration value="FUNDIDOR"/>
+      <enumeration value="FUNILEIRO"/>
+      <enumeration value="FUTEBOLISTA"/>
+      <enumeration value="FUZILEIRO_NAVAL"/>
+      <enumeration value="GALVANIZADOR"/>
+      <enumeration value="GARAGISTA"/>
+      <enumeration value="GARCOM"/>
+      <enumeration value="GARCONETE"/>
+      <enumeration value="GARI"/>
+      <enumeration value="GARIMPEIRO"/>
+      <enumeration value="GAROTA_DE_PROGRAMA"/>
+      <enumeration value="GENETICISTA"/>
+      <enumeration value="GEOFISICO"/>
+      <enumeration value="GEOGRAFO"/>
+      <enumeration value="GEOLOGISTA"/>
+      <enumeration value="GEOLOGO"/>
+      <enumeration value="GERENTE"/>
+      <enumeration value="GERENTE_DE_AREAS_DE_APOIO"/>
+      <enumeration value="GERENTE_DE_EXPORTACAO"/>
+      <enumeration value="GERENTE_DE_FAZENDA"/>
+      <enumeration value="GERENTE_DE_LOJA"/>
+      <enumeration value="GERENTE_DE_OPERACOES"/>
+      <enumeration value="GERENTE_DE_POSTO"/>
+      <enumeration value="GERENTE_DE_PRODUCAO"/>
+      <enumeration value="GERENTE_OU_SUPERVISOR"/>
+      <enumeration value="GESSEIRO"/>
+      <enumeration value="GOVERNADOR"/>
+      <enumeration value="GOVERNANTA"/>
+      <enumeration value="GRAFICO"/>
+      <enumeration value="GRANITEIRO"/>
+      <enumeration value="GRANJEIRO"/>
+      <enumeration value="GRAVADOR"/>
+      <enumeration value="GRAXEIRO"/>
+      <enumeration value="GUARDA"/>
+      <enumeration value="GUARDA_BANCARIO"/>
+      <enumeration value="GUARDA_DE_CARRO"/>
+      <enumeration value="GUARDA_NOTURNO"/>
+      <enumeration value="GUARDA_VIDAS"/>
+      <enumeration value="GUIA_DE_TURISMO"/>
+      <enumeration value="GUILHOTINADO"/>
+      <enumeration value="GUINCHEIRO"/>
+      <enumeration value="GUITARRISTA"/>
+      <enumeration value="HISTORIADOR"/>
+      <enumeration value="HISTORIADOR"/>
+      <enumeration value="IMEDIATO_DE_NAVIO"/>
+      <enumeration value="IMOBILIARIO"/>
+      <enumeration value="IMPORTADOR"/>
+      <enumeration value="IMPRESSOR"/>
+      <enumeration value="INCORPORADOR"/>
+      <enumeration value="INDUSTRIAL"/>
+      <enumeration value="INDUSTRIARIO"/>
+      <enumeration value="INSPETOR"/>
+      <enumeration value="INSPETOR_DE_POLICIA"/>
+      <enumeration value="INSTRUMENTISTA"/>
+      <enumeration value="INSTRUTOR_DE_AUTO_ESCOLA"/>
+      <enumeration value="INSTRUTOR_DE_MECANICO"/>
+      <enumeration value="INSTRUTOR_DE_MUSCULACAO"/>
+      <enumeration value="INSTRUTOR_E_PROFESSOR_DE_ESCOLAS_LIVRES"/>
+      <enumeration value="INSUFILMADOR_DE_VEICULO"/>
+      <enumeration value="INTERPRETE"/>
+      <enumeration value="JARDINEIRO"/>
+      <enumeration value="JOALHEIRO"/>
+      <enumeration value="JOGADOR_DE_FUTEBOL"/>
+      <enumeration value="JOQUEI"/>
+      <enumeration value="JORNALEIRO"/>
+      <enumeration value="JORNALISTA"/>
+      <enumeration value="JUBILADO"/>
+      <enumeration value="JUIZ"/>
+      <enumeration value="JUIZ_CRIMINAL"/>
+      <enumeration value="JUIZ_DE_FUTEBOL"/>
+      <enumeration value="JURISTA"/>
+      <enumeration value="LADRILHEIRO"/>
+      <enumeration value="LAMINADOR"/>
+      <enumeration value="LANTERNEIRO"/>
+      <enumeration value="LAPIDARIO"/>
+      <enumeration value="LAVADEIRA"/>
+      <enumeration value="LAVADOR_DE_CARROS"/>
+      <enumeration value="LAVOURISTA"/>
+      <enumeration value="LAVRADOR"/>
+      <enumeration value="LEILOEIRO"/>
+      <enumeration value="LEITEIRO"/>
+      <enumeration value="LEITURISTA"/>
+      <enumeration value="LENHADOR"/>
+      <enumeration value="LIMPADOR_DE_PARA-BRISA"/>
+      <enumeration value="LINOTIPISTA"/>
+      <enumeration value="LITOGRAFO"/>
+      <enumeration value="LIVREIRO"/>
+      <enumeration value="LIXADOR"/>
+      <enumeration value="LOCADOR_DE_APARELHO_DE_SOM"/>
+      <enumeration value="LOCUTOR"/>
+      <enumeration value="LOCUTOR"/>
+      <enumeration value="COMENTARISTA"/>
+      <enumeration value="LOCUTOR_DE_RODEIO"/>
+      <enumeration value="LUSTRADOR"/>
+      <enumeration value="LUTADOR"/>
+      <enumeration value="MADEIREIRO"/>
+      <enumeration value="MAESTRO"/>
+      <enumeration value="MAGAREFE"/>
+      <enumeration value="MAGISTRADO"/>
+      <enumeration value="MANEQUIM"/>
+      <enumeration value="MANICURE"/>
+      <enumeration value="MANICURE"/>
+      <enumeration value="PEDICURE"/>
+      <enumeration value="MANIPULADOR_PRODUTO_QUIMICO"/>
+      <enumeration value="MAQUETISTA"/>
+      <enumeration value="MAQUILADOR"/>
+      <enumeration value="MAQUINISTA"/>
+      <enumeration value="MAQUINISTA_DE_BORDO"/>
+      <enumeration value="MARCENEIRO"/>
+      <enumeration value="MARINHEIRO"/>
+      <enumeration value="MARITIMO"/>
+      <enumeration value="MARMORISTA"/>
+      <enumeration value="MASCATE"/>
+      <enumeration value="MASSAGISTA"/>
+      <enumeration value="MASSOTERAPEUTA"/>
+      <enumeration value="MATEMATICO"/>
+      <enumeration value="MECANICO"/>
+      <enumeration value="MECANICO_DE_AERONAVE"/>
+      <enumeration value="MECANICO_DE_ELETRONICA"/>
+      <enumeration value="MECANICO_OPERADOR"/>
+      <enumeration value="MECANOGRAFO"/>
+      <enumeration value="MEDICO"/>
+      <enumeration value="MEDICO"/>
+      <enumeration value="ODONTOLOGO_E_AFINS"/>
+      <enumeration value="MEIO_OFICIAL_TORNEIRO"/>
+      <enumeration value="MEMBRO_DE_ORDENS_OU_SEITAS_RELIGIOSAS"/>
+      <enumeration value="MEMBRO_DO_MINISTERIO_PUBLICO"/>
+      <enumeration value="MENSAGEIRO"/>
+      <enumeration value="MERGULHADOR"/>
+      <enumeration value="MESTRE_DE_OBRA"/>
+      <enumeration value="MESTRE_DE_PANIFICACAO"/>
+      <enumeration value="MESTRE_HOTEL"/>
+      <enumeration value="METEOROLOGISTA"/>
+      <enumeration value="MICROBIOLOGISTA"/>
+      <enumeration value="MICROEMPRESARIO"/>
+      <enumeration value="MILITAR"/>
+      <enumeration value="MILITAR_ATIVO"/>
+      <enumeration value="MILITAR_DA_AERONAUTICA"/>
+      <enumeration value="MILITAR_DA_MARINHA"/>
+      <enumeration value="MILITAR_DA_RESERVA"/>
+      <enumeration value="MILITAR_DO_EXERCITO"/>
+      <enumeration value="MILITAR_ESTRANGEIRO"/>
+      <enumeration value="MILITAR_INATIVO"/>
+      <enumeration value="MILITAR_REFORMADO"/>
+      <enumeration value="MINEIRO"/>
+      <enumeration value="MINISTRO"/>
+      <enumeration value="MINISTRO_DE_ESTADO_E_DA_DIPLOMACIA"/>
+      <enumeration value="MINISTRO_DE_TRIBUNAL"/>
+      <enumeration value="MODELO"/>
+      <enumeration value="MODISTA"/>
+      <enumeration value="MOLDADOR"/>
+      <enumeration value="MONTADOR"/>
+      <enumeration value="MORDOMO"/>
+      <enumeration value="MOTO_BOY"/>
+      <enumeration value="MOTORISTA"/>
+      <enumeration value="MOTORNEIRO"/>
+      <enumeration value="MOTOTAXISTA"/>
+      <enumeration value="MUSEOLOGO"/>
+      <enumeration value="MUSICO"/>
+      <enumeration value="NATURALISTA"/>
+      <enumeration value="NAVEGADOR"/>
+      <enumeration value="NEGOCIANTE"/>
+      <enumeration value="NUTRICIONISTA"/>
+      <enumeration value="OCEANOGRAFO"/>
+      <enumeration value="OCUPACAO_NAO_CLASSIFICADA"/>
+      <enumeration value="OCUPANTE_DE_CARGO_DE_ASSESSORAMENTO_SUPERIOR"/>
+      <enumeration value="OCUPANTE_DE_CARGO_DE_ASSISTENCIA_INTERMEDIARIA"/>
+      <enumeration value="OCUPANTE_DE_CARGO_DE_DIRECAO"/>
+      <enumeration value="ODONTOLOGO"/>
+      <enumeration value="OFFICE_BOY"/>
+      <enumeration value="OFICIAL"/>
+      <enumeration value="OFICIAL_DE_CARTORIO"/>
+      <enumeration value="OFICIAL_DE_JUSTICA"/>
+      <enumeration value="OFICIAL_LEGISLATIVO"/>
+      <enumeration value="OFTALMOLOGISTA"/>
+      <enumeration value="OLEIRO"/>
+      <enumeration value="OPERADOR_CINEMATOGRAFICO"/>
+      <enumeration value="OPERADOR_DE_AUDIO"/>
+      <enumeration value="OPERADOR_DE_COMPUTADOR"/>
+      <enumeration value="OPERADOR_DE_DRAGA"/>
+      <enumeration value="OPERADOR_DE_EMPILHADEIRA"/>
+      <enumeration value="OPERADOR_DE_FORNO"/>
+      <enumeration value="OPERADOR_DE_GAS"/>
+      <enumeration value="OPERADOR_DE_MAQUINA"/>
+      <enumeration value="OPERADOR_DE_MAQUINAS_AGRICOLAS"/>
+      <enumeration value="OPERADOR_DE_MAQUINAS_PESADAS"/>
+      <enumeration value="OPERADOR_DE_MOTO_SERRA"/>
+      <enumeration value="OPERADOR_DE_RADIO"/>
+      <enumeration value="OPERADOR_DE_REATORES_NUCLEARES"/>
+      <enumeration value="OPERADOR_DE_SUBESTACAO"/>
+      <enumeration value="OPERADOR_DE_TELEFONE"/>
+      <enumeration value="OPERADOR_DE_TRANSMISSAO"/>
+      <enumeration value="OPERADOR_DE_TV"/>
+      <enumeration value="OPERADOR_DE_XEROX"/>
+      <enumeration value="OPERARIO"/>
+      <enumeration value="ORIENTADOR_EDUCACIONAL"/>
+      <enumeration value="OURIVES"/>
+      <enumeration value="OUTROS_PROFISSIONAIS_DO_ESPETACULO_E_DAS_ARTES"/>
+      <enumeration value="PADEIRO"/>
+      <enumeration value="PADRE"/>
+      <enumeration value="PAISAGISTA"/>
+      <enumeration value="PAPILOSCOPISTA"/>
+      <enumeration value="PARASITOLOGISTA"/>
+      <enumeration value="PARTEIRA"/>
+      <enumeration value="PASSADOR"/>
+      <enumeration value="PASTELEIRO"/>
+      <enumeration value="PASTOR"/>
+      <enumeration value="PATINADOR"/>
+      <enumeration value="PATOLOGISTA"/>
+      <enumeration value="PATOLOGISTA_(VETERINARIO)"/>
+      <enumeration value="PEAO"/>
+      <enumeration value="PEAO_DE_CHACARA"/>
+      <enumeration value="PEAO_DE_RODEIO"/>
+      <enumeration value="PECUARISTA"/>
+      <enumeration value="PEDAGOGO"/>
+      <enumeration value="PEDREIRO"/>
+      <enumeration value="PEIXEIRO"/>
+      <enumeration value="PELETEIRO"/>
+      <enumeration value="PENSIONISTA"/>
+      <enumeration value="PERFURADOR"/>
+      <enumeration value="PERFURADOR_DE_POCOS_PETROLEO"/>
+      <enumeration value="PERITO_CRIMINAL"/>
+      <enumeration value="PERITO_POLICIAL"/>
+      <enumeration value="PESCADOR"/>
+      <enumeration value="PILOTO"/>
+      <enumeration value="PILOTO_DE_AERONAVES"/>
+      <enumeration value="PILOTO_DE_NAVIO"/>
+      <enumeration value="PINTOR"/>
+      <enumeration value="PINTOR_ARTISTICO_E_AFINS"/>
+      <enumeration value="PINTOR_DE_AUTO"/>
+      <enumeration value="PINTOR_DE_CONSTRUCAO_CIVIL"/>
+      <enumeration value="PINTOR_DE_QUADROS"/>
+      <enumeration value="PIZZAIOLLO"/>
+      <enumeration value="PLAINADOR"/>
+      <enumeration value="POLICIAL"/>
+      <enumeration value="POLICIAL_INATIVO"/>
+      <enumeration value="POLICIAL_MILITAR"/>
+      <enumeration value="POLIDOR"/>
+      <enumeration value="POLITICO"/>
+      <enumeration value="PORTEIRO"/>
+      <enumeration value="PRACISTA"/>
+      <enumeration value="PRATICO_DE_FARMACIA"/>
+      <enumeration value="PREFEITO"/>
+      <enumeration value="PRENSADOR"/>
+      <enumeration value="PRESIDENTE_DA_REPUBLICA"/>
+      <enumeration value="PRESTADOR_DE_SERVICOS_DO_COMERCIO"/>
+      <enumeration value="PROCURADOR"/>
+      <enumeration value="PROCURADOR_DA_REPUBLICA"/>
+      <enumeration value="PROCURADOR_DE_ESTADO"/>
+      <enumeration value="PROCURADOR_DO_INSS"/>
+      <enumeration value="PROCURADORA_DA_REPUBLICA"/>
+      <enumeration value="PROCURADORA_DE_ESTADO"/>
+      <enumeration value="PRODUTOR_DE_CINEMA"/>
+      <enumeration value="PRODUTOR_DE_TV"/>
+      <enumeration value="PRODUTOR_NA_EXPLORACAO_AGROPECUARIA"/>
+      <enumeration value="PRODUTOR_RURAL"/>
+      <enumeration value="PROFESSOR"/>
+      <enumeration value="PROFESSOR_DO_ENSINO_FUNDAMENTAL"/>
+      <enumeration value="PROFESSOR_DO_ENSINO_MEDIO"/>
+      <enumeration value="PROFESSOR_DO_ENSINO_SUPERIOR"/>
+      <enumeration value="PROFISSIONAL_DA_COMERCIALIZACAO"/>
+      <enumeration value="PROFISSIONAL_DA_EDUCACAO_FISICA_(EXCETO_PROFESSOR)"/>
+      <enumeration value="PROFISSIONAL_DE_MARKETING"/>
+      <enumeration value="PROFISSIONAL_DE_PUBLICIDADE"/>
+      <enumeration value="PROGRAMADOR"/>
+      <enumeration value="PROJETISTA"/>
+      <enumeration value="PROMOTOR"/>
+      <enumeration value="PROMOTOR_DE_EVENTOS"/>
+      <enumeration value="PROMOTOR_DE_JUSTICA"/>
+      <enumeration value="PROMOTOR_DE_VENDAS"/>
+      <enumeration value="PROMOTOR_JURIDICO"/>
+      <enumeration value="PROMOTOR_PUBLICO"/>
+      <enumeration value="PROPAGANDISTA"/>
+      <enumeration value="PROPRIETARIO_DE_IMOVEL"/>
+      <enumeration value="RECEBENDO_RENDIMENTO_DE_ALUGUEL"/>
+      <enumeration value="PROSTITUTA"/>
+      <enumeration value="PSICANALISTA"/>
+      <enumeration value="PSICOLOGO"/>
+      <enumeration value="PSIQUIATRA"/>
+      <enumeration value="PUBLICITARIO"/>
+      <enumeration value="PUGILISTA"/>
+      <enumeration value="QUIMICO"/>
+      <enumeration value="QUITANDEIRO"/>
+      <enumeration value="RADIALISTA"/>
+      <enumeration value="RADIOTECNICO"/>
+      <enumeration value="RADIOTELEGRAFISTA"/>
+      <enumeration value="RECENSEADOR"/>
+      <enumeration value="RECEPCIONISTA"/>
+      <enumeration value="REDATOR"/>
+      <enumeration value="REGENTE_DE_ORQUESTRA_OU_CORAL"/>
+      <enumeration value="RELACOES_PUBLICAS"/>
+      <enumeration value="RELIGIOSO"/>
+      <enumeration value="RELOJOEIRO"/>
+      <enumeration value="REMADOR"/>
+      <enumeration value="RENDEIRO"/>
+      <enumeration value="REPARADOR"/>
+      <enumeration value="REPORTER"/>
+      <enumeration value="REPOSITOR"/>
+      <enumeration value="REPRESENTANTE_COMERCIAL"/>
+      <enumeration value="REPRESENTANTE_DE_VENDAS"/>
+      <enumeration value="RETIFICADOR_DE_MOTOR"/>
+      <enumeration value="REVISOR_GRAFICO"/>
+      <enumeration value="SACERDOTE"/>
+      <enumeration value="SALGADEIRO"/>
+      <enumeration value="SALVA_VIDAS"/>
+      <enumeration value="SAPATEIRO"/>
+      <enumeration value="SECRETARIO"/>
+      <enumeration value="SEGURADOR"/>
+      <enumeration value="SEGURANCA"/>
+      <enumeration value="SEM_OCUPACAO"/>
+      <enumeration value="SENADOR"/>
+      <enumeration value="SERICULTOR"/>
+      <enumeration value="SERIGRAFISTA"/>
+      <enumeration value="SERINGUEIRO"/>
+      <enumeration value="SERRADOR"/>
+      <enumeration value="SERRALHEIRO"/>
+      <enumeration value="SERVENTE"/>
+      <enumeration value="SERVENTE_DE_PEDREIRO"/>
+      <enumeration value="SERVENTUARIO_DA_JUSTICA"/>
+      <enumeration value="SERVICOS_GERAIS"/>
+      <enumeration value="SERVIDOR_DE_NIVEL_SUPERIOR_NAS_ATIVIDADES_DE_CONTROLE"/>
+      <enumeration value="SERVIDOR_DE_NIVEL_SUPERIOR_NAS_ATIVIDADES_DE_FINANCAS"/>
+      <enumeration value="SERVIDOR_DE_NIVEL_SUPERIOR_NAS_ATIVIDADES_DE_FISCALIZACAO"/>
+      <enumeration value="SERVIDOR_DE_NIVEL_SUPERIOR_NAS_ATIVIDADES_DE_GESTAO_GOVERNAMENTAL"/>
+      <enumeration value="SERVIDOR_DE_NIVEL_SUPERIOR_NAS_ATIVIDADES_DE_PESQUISA_ECONOMICA"/>
+      <enumeration value="SERVIDOR_DE_NIVEL_SUPERIOR_NAS_ATIVIDADES_DE_PLANEJAMENTO"/>
+      <enumeration value="SERVIDOR_PUBLICO"/>
+      <enumeration value="SERVIDOR_PUBLICO_ESTADUAL"/>
+      <enumeration value="SERVIDOR_PUBLICO_FEDERAL"/>
+      <enumeration value="SERVIDOR_PUBLICO_MUNICIPAL"/>
+      <enumeration value="SERVIDOR_PUBLICO_MUNICIPAL"/>
+      <enumeration value="SOCIOLOGO"/>
+      <enumeration value="SOLDADOR"/>
+      <enumeration value="SONOPLASTA"/>
+      <enumeration value="SORVETEIRO"/>
+      <enumeration value="SUB-GERENTE"/>
+      <enumeration value="SUPERINTENDENTE_DE_AEROPORTO"/>
+      <enumeration value="SUPERVISOR_DE_OFICINA"/>
+      <enumeration value="SUPERVISOR_DE_VENDAS"/>
+      <enumeration value="SUPERVISOR_DE_VENDAS_E_PRESTACAO_DE_SERVICOS_DO_COMERCIO"/>
+      <enumeration value="TABELIAO"/>
+      <enumeration value="TABELIAO_E_DEMAIS_SERVENTUARIOS_DE_JUSTICA"/>
+      <enumeration value="TANOEIRO"/>
+      <enumeration value="TAPECEIRO"/>
+      <enumeration value="TAQUIGRAFO"/>
+      <enumeration value="TAXISTA"/>
+      <enumeration value="TECELAO"/>
+      <enumeration value="TECNICO"/>
+      <enumeration value="TECNICO_AGRARIO"/>
+      <enumeration value="TECNICO_AGROPECUARIO"/>
+      <enumeration value="TECNICO_ARQUIVISTA"/>
+      <enumeration value="TECNICO_COMPUTADOR"/>
+      <enumeration value="TECNICO_DA_PRODUCAO_AGROPECUARIA"/>
+      <enumeration value="TECNICO_DAS_CIENCIAS_ADMINISTRATIVAS"/>
+      <enumeration value="TECNICO_DAS_CIENCIAS_CONTABEIS"/>
+      <enumeration value="TECNICO_DE_ARTES_GRAFICAS"/>
+      <enumeration value="TECNICO_DE_CONTABILIDADE"/>
+      <enumeration value="TECNICO_DE_FROTA"/>
+      <enumeration value="TECNICO_DE_FUTEBOL"/>
+      <enumeration value="TECNICO_DE_IMPERMEABILIZACAO"/>
+      <enumeration value="TECNICO_DE_LABORATORIO"/>
+      <enumeration value="TECNICO_DE_LABORATORIO_E_RAIOS_X_E_OUTROS_EQUIPAMENTOS"/>
+      <enumeration value="TECNICO_DE_LATICINIOS"/>
+      <enumeration value="TECNICO_DE_MINERACAO"/>
+      <enumeration value="TECNICO_DE_NUTRICAO"/>
+      <enumeration value="TECNICO_DE_OBRAS"/>
+      <enumeration value="TECNICO_DE_PRODUCAO_ALIMENTICIOS"/>
+      <enumeration value="TECNICO_DE_RAIOS-X"/>
+      <enumeration value="TECNICO_DE_SERVICOS_ADMINISTRATIVO"/>
+      <enumeration value="TECNICO_DE_TV"/>
+      <enumeration value="TECNICO_EM_ADMINISTRACAO"/>
+      <enumeration value="TECNICO_EM_AGRONOMIA"/>
+      <enumeration value="TECNICO_EM_BIOLOGIA"/>
+      <enumeration value="TECNICO_EM_CIENCIAS_FISICAS"/>
+      <enumeration value="TECNICO_EM_CIENCIAS_QUIMICAS"/>
+      <enumeration value="TECNICO_EM_CONSTRUCAO_CIVIL"/>
+      <enumeration value="TECNICO_DE_EDIFICACOES_E_OBRAS_DE_INFRA-ESTRUTURA"/>
+      <enumeration value="TECNICO_EM_CONTABILIDADE"/>
+      <enumeration value="TECNICO_EM_ELETRO-ELETRONICA_E_FOTONICA"/>
+      <enumeration value="TECNICO_EM_ELETRONICA"/>
+      <enumeration value="TECNICO_EM_ENFERMAGEM"/>
+      <enumeration value="TECNICO_EM_INFORMATICA"/>
+      <enumeration value="TECNICO_EM_METALMECANICA"/>
+      <enumeration value="TECNICO_EM_NAVEGACAO_AEREA"/>
+      <enumeration value="TECNICO_EM_NAVEGACAO_FLUVIAL"/>
+      <enumeration value="TECNICO_EM_NAVEGACAO_MARITIMA"/>
+      <enumeration value="TECNICO_EM_NAVEGACAO_METROFERROVIARIA"/>
+      <enumeration value="TECNICO_EM_PAPILOSCOPIA"/>
+      <enumeration value="TECNICO_EM_PARAMEDICO"/>
+      <enumeration value="TECNICO_EM_PATOLOGIA"/>
+      <enumeration value="TECNICO_EM_PERFURACAO"/>
+      <enumeration value="TECNICO_EM_PESCA"/>
+      <enumeration value="TECNICO_EM_PETROLEO"/>
+      <enumeration value="TECNICO_EM_PROJETISTA"/>
+      <enumeration value="TECNICO_EM_PUBLICIDADE"/>
+      <enumeration value="TECNICO_EM_REFRIGERACAO"/>
+      <enumeration value="TECNICO_EM_SEG_DO_TRABALHO"/>
+      <enumeration value="TECNICO_EM_TELECOMUNICACAO"/>
+      <enumeration value="TECNICO_EM_TELEFONIA"/>
+      <enumeration value="TECNICO_EM_TRANSPORTE"/>
+      <enumeration value="TECNICO_EM_VULCANIZACOES"/>
+      <enumeration value="TECNICO_HIDRAULICO"/>
+      <enumeration value="TECNICO_INSTRUMENTISTA"/>
+      <enumeration value="TECNICO_LEGISLATIVO"/>
+      <enumeration value="TECNICO_QUIMICO"/>
+      <enumeration value="TECNICO_TRIBUTARIO"/>
+      <enumeration value="TECNICOS_EM_ESTATISTICA"/>
+      <enumeration value="TECNICOS_EM_OPERACAO_DE_MAQUINAS_DE_TRATAMENTO_DE_DADOS"/>
+      <enumeration value="TECNOLOGO_EM_SANEAMENTO_BASICO_E_OBRAS_HIDRAULICAS"/>
+      <enumeration value="TELEFONISTA"/>
+      <enumeration value="TELEGRAFISTA"/>
+      <enumeration value="TERAPEUTA_OCUPACIONAL"/>
+      <enumeration value="TESOUREIRO"/>
+      <enumeration value="TINTUREIRO"/>
+      <enumeration value="TIPOGRAFO"/>
+      <enumeration value="TOPOGRAFO"/>
+      <enumeration value="TORNEIRO"/>
+      <enumeration value="TORNEIRO_MECANICO"/>
+      <enumeration value="TRABALHADOR_AGRICOLA"/>
+      <enumeration value="TRABALHADOR_DA_CONSTRUCAO_CIVIL"/>
+      <enumeration value="TRABALHADOR_DA_FABRICACAO_DE__FUMO"/>
+      <enumeration value="TRABALHADOR_DA_FABRICACAO_DE_AGROINDUSTRIAS"/>
+      <enumeration value="TRABALHADOR_DA_FABRICACAO_DE_ALIMENTOS"/>
+      <enumeration value="TRABALHADOR_DA_FABRICACAO_DE_BEBIDAS"/>
+      <enumeration value="TRABALHADOR_DA_FABRICACAO_E_INSTALACAO_ELETRO-ELETRONICA"/>
+      <enumeration value="TRABALHADOR_DA_INDUSTRIA_DA_BORRACHA_E_PLASTICO_E_AFINS"/>
+      <enumeration value="TRABALHADOR_DA_INDUSTRIA_EXTRATIVA"/>
+      <enumeration value="TRABALHADOR_DA_INDUSTRIA_PETROQUIMICA"/>
+      <enumeration value="TRABALHADOR_DA_INDUSTRIA_QUIMICA"/>
+      <enumeration value="TRABALHADOR_DA_TRANSFORMACAO_DE_METAIS_E_COMPOSITOS"/>
+      <enumeration value="TRABALHADOR_DAS_INDUSTRIAS_DAS_ARTES_GRAFICAS"/>
+      <enumeration value="TRABALHADOR_DAS_INDUSTRIAS_DE_MADEIRA_E_DO_MOBILIARIO"/>
+      <enumeration value="TRABALHADOR_DAS_INDUSTRIAS_TEXTEIS"/>
+      <enumeration value="TRABALHADOR_DO_CURTIMENTO"/>
+      <enumeration value="TRABALHADOR_DO_VESTUARIO"/>
+      <enumeration value="TRABALHADOR_DE_ATENDIMENTO_AO_PUBLICO"/>
+      <enumeration value="TRABALHADOR_DE_INSTALACOES_E_MAQUINAS_DE_FABRICACAO_DE_CELULOSE_E_PAPEL"/>
+      <enumeration value="TRABALHADOR_DE_INSTALACOES_SIDERURGICAS_E_DE_MATERIAIS_DE_CONSTRUCAO"/>
+      <enumeration value="TRABALHADOR_DE_REPARACAO_E_MANUTENCAO"/>
+      <enumeration value="TRABALHADOR_DOS_SERVICOS_DE_ADMINISTRACAO_DE_EDIFICIOS"/>
+      <enumeration value="TRABALHADOR_DOS_SERVICOS_DE_ALIMENTACAO"/>
+      <enumeration value="TRABALHADOR_DOS_SERVICOS_DE_CONSERVACAO_DE_EDIFICIOS"/>
+      <enumeration value="TRABALHADOR_DOS_SERVICOS_DE_HOTELARIA"/>
+      <enumeration value="TRABALHADOR_DOS_SERVICOS_DE_MANUTENCAO_DE_EDIFICIOS"/>
+      <enumeration value="TRABALHADOR_DOS_SERVICOS_DE_SAUDE"/>
+      <enumeration value="TRABALHADOR_DOS_SERVICOS_DOMESTICOS_EM_GERAL"/>
+      <enumeration value="TRABALHADOR_NA_EXPLORACAO_AGROPECUARIA"/>
+      <enumeration value="TRABALHADOR_RURAL"/>
+      <enumeration value="TRABALHADORES_DA_INDUSTRIA_DE_CALCADOS"/>
+      <enumeration value="TRABALHADORES_DOS_SERVICOS_FUNERARIOS"/>
+      <enumeration value="TRADUTOR"/>
+      <enumeration value="TRATORISTA"/>
+      <enumeration value="TURISMO"/>
+      <enumeration value="VAQUEIRO"/>
+      <enumeration value="VAREJISTA"/>
+      <enumeration value="VENDEDOR"/>
+      <enumeration value="VENDEDOR_AMBULANTE"/>
+      <enumeration value="VEREADOR"/>
+      <enumeration value="VETERINARIO"/>
+      <enumeration value="VIDRACEIRO"/>
+      <enumeration value="VIDREIRO"/>
+      <enumeration value="VIGIA"/>
+      <enumeration value="VIGILANTE"/>
+      <enumeration value="VITRINISTA"/>
+      <enumeration value="VULCANIZADO"/>
+      <enumeration value="ZELADOR"/>
+      <enumeration value="ZOOTECNISTA"/>
+    </restriction>
+  </simpleType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://osb.itconsulting.com.br:8011/V1/SenhaAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FTelefone</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.seplag.se.gov.br/EBO/v1" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:seplag="http://www.seplag.se.gov.br/EBO/v1">
+  <xsd:element name="listaTelefone" nillable="true" type="seplag:ListaTelefone"/>
+  <xsd:complexType name="ListaTelefone">
+    <xsd:sequence>
+      <xsd:element name="telefone" type="seplag:Telefone" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Telefone">
+    <xsd:sequence>
+      <xsd:element name="numeroTelefone" nillable="true" minOccurs="0" maxOccurs="1">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="60"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="tipoTelefone" type="seplag:TipoTelefone" nillable="true" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="TipoTelefone">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="RESIDENCIAL"/>
+      <xsd:enumeration value="COMERCIAL"/>
+      <xsd:enumeration value="CELULAR"/>
+      <xsd:enumeration value="FIXO"/>
+      <xsd:enumeration value="FAX"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://osb.itconsulting.com.br:8011/V1/SenhaAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FEscolaridade</con:url><con:content><![CDATA[<schema targetNamespace="http://www.seplag.se.gov.br/EBO/v1" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:seplag="http://www.seplag.se.gov.br/EBO/v1">
+  <simpleType name="Escolaridade">
+    <restriction base="string">
+      <enumeration value="ANALFABETO"/>
+      <enumeration value="BASICA"/>
+      <enumeration value="FUNDAMENTAL"/>
+      <enumeration value="MEDIA"/>
+      <enumeration value="SUPERIOR"/>
+    </restriction>
+  </simpleType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://osb.itconsulting.com.br:8011/V1/SenhaAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FSexo</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.seplag.se.gov.br/EBO/v1" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:seplag="http://www.seplag.se.gov.br/EBO/v1">
+  <xsd:simpleType name="Sexo">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="MASCULINO"/>
+      <xsd:enumeration value="FEMININO"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://osb.itconsulting.com.br:8011/V1/SenhaAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FEmail</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.seplag.se.gov.br/EBO/v1" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:seplag="http://www.seplag.se.gov.br/EBO/v1">
+  <xsd:simpleType name="EnderecoEmail">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://osb.itconsulting.com.br:8011/V1/SenhaAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FServicoAtendimento</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.seplag.se.gov.br/EBO/v1" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:seplag="http://www.seplag.se.gov.br/EBO/v1">
+  <xsd:include schemaLocation="http://osb.itconsulting.com.br:8011/V1/SenhaAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FOrgao"/>
+  <xsd:complexType name="Servico">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="nome">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="100"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="orgao" type="seplag:Orgao"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="processoAtendimento" type="xsd:boolean"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ListaServico">
+    <xsd:sequence>
+      <xsd:element name="Servico" type="seplag:Servico" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="listaServico" nillable="true" type="seplag:ListaServico"/>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://osb.itconsulting.com.br:8011/V1/SenhaAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FOrgao</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.seplag.se.gov.br/EBO/v1" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:seplag="http://www.seplag.se.gov.br/EBO/v1">
+  <xsd:complexType name="Orgao">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="sigla">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="100"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="nome">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="100"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="codigoGoverno">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="6"/>
+            <xsd:minLength value="6"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ListaOrgao">
+    <xsd:sequence>
+      <xsd:element name="Orgao" type="seplag:Orgao" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="listaOrgao" nillable="true" type="seplag:ListaOrgao"/>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://POSEIDON.local:8088/mockSenhaAtendimentoSOAP</con:endpoint><con:endpoint>http://localhost:7001/V1/SenhaAtendimento</con:endpoint><con:endpoint>http://osb.itconsulting.com.br:8011/V1/SenhaAtendimento</con:endpoint><con:endpoint>http://osb02.itconsulting.com.br:8011/V1/SenhaAtendimento</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://www.seplag.se.gov.br/SenhaAtendimento/EmitirSenhaAtendimento" name="EmitirSenhaAtendimento" bindingOperationName="EmitirSenhaAtendimento" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1" timeout="0"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@bind_address"/></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://osb.itconsulting.com.br:8011/V1/SenhaAtendimento</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.seplag.se.gov.br/commons/v1" xmlns:sen="http://www.seplag.se.gov.br/SenhaAtendimento">
+   <soap:Header>
+      <v1:cabecalhoSeplag>
+         <v1:loginUsuario>marcio.dantas</v1:loginUsuario>
+         <v1:canalAtendimento>Ceac</v1:canalAtendimento>
+         <v1:nomeAplicacao>Ceac</v1:nomeAplicacao>
+         <v1:enderecoIP>192.168.0.153</v1:enderecoIP>
+      </v1:cabecalhoSeplag>
+   </soap:Header>
+   <soap:Body>
+      <sen:ParametroEmitirSenhaAtendimento>
+         <sen:cdProtocoloServico>0000000000000040920143</sen:cdProtocoloServico>
+         <sen:atendimentoPreferencial>false</sen:atendimentoPreferencial>
+      </sen:ParametroEmitirSenhaAtendimento>
+   </soap:Body>
+</soap:Envelope>
+]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.seplag.se.gov.br/SenhaAtendimento/SenhaAtendimento/EmitirSenhaAtendimentoRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Request 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://POSEIDON.local:8088/mockSenhaAtendimentoSOAP</con:endpoint><con:request>&lt;con:consultarDadosProtocoloPostoECidadaoPorProtocoloInput xmlns:con="http://xmlns.oracle.com/pcbpel/adapter/db/consultarDadosProtocoloPostoECidadaoPorProtocolo">
+   &lt;con:codigoProtocolo>0220000020000004120140&lt;/con:codigoProtocolo>
+&lt;/con:consultarDadosProtocoloPostoECidadaoPorProtocoloInput></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.seplag.se.gov.br/SenhaAtendimento/SenhaAtendimento/EmitirSenhaAtendimentoRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Request 3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://POSEIDON.local:8088/mockSenhaAtendimentoSOAP</con:endpoint><con:request><![CDATA[<con:consultarDadosProtocoloPostoECidadaoPorProtocoloOutputCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:con="http://xmlns.oracle.com/pcbpel/adapter/db/consultarDadosProtocoloPostoECidadaoPorProtocolo">
+   <con:consultarDadosProtocoloPostoECidadaoPorProtocoloOutput>
+      <con:PRT_CD_PROTOCOLO>0220000020000004120140</con:PRT_CD_PROTOCOLO>
+      <con:id_agendamento_af>100</con:id_agendamento_af>
+      <con:PRT_CD_PROTOCOLO_PAI>0000030060000004120148</con:PRT_CD_PROTOCOLO_PAI>
+      <con:senha_af_pai>32</con:senha_af_pai>
+      <con:seq_af_pai>32</con:seq_af_pai>
+      <con:PRT_NR_CPF>11122244432</con:PRT_NR_CPF>
+      <con:SRVAF_CD_SERVICO_AG_FACIL>1</con:SRVAF_CD_SERVICO_AG_FACIL>
+      <con:PST_CD_POSTO>2</con:PST_CD_POSTO>
+      <con:PST_NM_POSTO>SEFAZ</con:PST_NM_POSTO>
+      <con:PST_DESCRICAO xsi:nil="true"/>
+      <con:PST_SIGLA_POSTO xsi:nil="true"/>
+      <con:PST_NOME_SALA xsi:nil="true"/>
+      <con:PST_DIAS_LIMITE_AGENDAMENTO xsi:nil="true"/>
+      <con:PST_FG_AGENDAMENTO>1</con:PST_FG_AGENDAMENTO>
+      <con:UND_NM_UNIDADE>CEAC - Shopping Riomar</con:UND_NM_UNIDADE>
+      <con:PES_NM_COMPLETO xsi:nil="true"/>
+   </con:consultarDadosProtocoloPostoECidadaoPorProtocoloOutput>
+   <con:consultarDadosProtocoloPostoECidadaoPorProtocoloOutput>
+      <con:PRT_CD_PROTOCOLO>0220000020000004120140</con:PRT_CD_PROTOCOLO>
+      <con:id_agendamento_af>100</con:id_agendamento_af>
+      <con:PRT_CD_PROTOCOLO_PAI>0000030060000004120148</con:PRT_CD_PROTOCOLO_PAI>
+      <con:senha_af_pai>32</con:senha_af_pai>
+      <con:seq_af_pai>32</con:seq_af_pai>
+      <con:PRT_NR_CPF>11122244432</con:PRT_NR_CPF>
+      <con:SRVAF_CD_SERVICO_AG_FACIL>200</con:SRVAF_CD_SERVICO_AG_FACIL>
+      <con:PST_CD_POSTO>2</con:PST_CD_POSTO>
+      <con:PST_NM_POSTO>SEFAZ</con:PST_NM_POSTO>
+      <con:PST_DESCRICAO xsi:nil="true"/>
+      <con:PST_SIGLA_POSTO xsi:nil="true"/>
+      <con:PST_NOME_SALA xsi:nil="true"/>
+      <con:PST_DIAS_LIMITE_AGENDAMENTO xsi:nil="true"/>
+      <con:PST_FG_AGENDAMENTO>1</con:PST_FG_AGENDAMENTO>
+      <con:UND_NM_UNIDADE>CEAC - Shopping Riomar</con:UND_NM_UNIDADE>
+      <con:PES_NM_COMPLETO xsi:nil="true"/>
+   </con:consultarDadosProtocoloPostoECidadaoPorProtocoloOutput>
+</con:consultarDadosProtocoloPostoECidadaoPorProtocoloOutputCollection>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.seplag.se.gov.br/SenhaAtendimento/SenhaAtendimento/EmitirSenhaAtendimentoRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Request 4"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://POSEIDON.local:8088/mockSenhaAtendimentoSOAP</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.seplag.se.gov.br/commons/v1" xmlns:sen="http://www.seplag.se.gov.br/SenhaAtendimento">
+   <soap:Header>
+      <v1:cabecalhoSeplag>
+         <v1:loginUsuario>?</v1:loginUsuario>
+         <v1:canalAtendimento>?</v1:canalAtendimento>
+         <!--Optional:-->
+         <v1:codigoSessao>?</v1:codigoSessao>
+         <!--Optional:-->
+         <v1:nomeAplicacao>?</v1:nomeAplicacao>
+         <!--Optional:-->
+         <v1:token>?</v1:token>
+         <!--Optional:-->
+         <v1:enderecoIP>?</v1:enderecoIP>
+         <!--Optional:-->
+         <v1:codigoFuncionalidade>?</v1:codigoFuncionalidade>
+         <!--Optional:-->
+         <v1:dataTransacao>?</v1:dataTransacao>
+         <!--Optional:-->
+         <v1:nomeServico>?</v1:nomeServico>
+         <!--Optional:-->
+         <v1:versao>?</v1:versao>
+      </v1:cabecalhoSeplag>
+   </soap:Header>
+   <soap:Body>
+      <sen:ParametroEmitirSenhaAtendimento>
+         <sen:cdProtocoloServico>?</sen:cdProtocoloServico>
+         <sen:atendimentoPreferencial>false</sen:atendimentoPreferencial>
+         <!--Optional:-->
+         <sen:mensagemObservacao>?</sen:mensagemObservacao>
+      </sen:ParametroEmitirSenhaAtendimento>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.seplag.se.gov.br/SenhaAtendimento/SenhaAtendimento/EmitirSenhaAtendimentoRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:mockService port="8088" path="/mockSenhaAtendimentoSOAP" host="POSEIDON.local" name="SenhaAtendimentoSOAP MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="EmitirSenhaAtendimento" interface="SenhaAtendimentoSOAP" operation="EmitirSenhaAtendimento"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:sen="http://www.seplag.se.gov.br/SenhaAtendimento" xmlns:v1="http://www.seplag.se.gov.br/EBO/v1">
+   <soap:Header/>
+   <soap:Body>
+      <sen:ResultadoEmitirSenhaAtendimento>
+         <sen:senha>
+            <!--Optional:-->
+            <!--type: integer-->
+            <v1:numeroSequencial>?</v1:numeroSequencial>
+            <!--Optional:-->
+            <!--type: string-->
+            <v1:senha>?</v1:senha>
+            <!--Optional:-->
+            <!--type: string-->
+            <v1:letras>?</v1:letras>
+            <!--Optional:-->
+            <!--type: integer-->
+            <v1:faixa>?</v1:faixa>
+            <!--Optional:-->
+            <v1:posto>
+               <!--Optional:-->
+               <!--anonymous type-->
+               <v1:nome>?</v1:nome>
+               <!--Optional:-->
+               <v1:unidade>
+                  <!--Optional:-->
+                  <!--anonymous type-->
+                  <v1:nome>?</v1:nome>
+               </v1:unidade>
+               <!--Optional:-->
+               <!--anonymous type-->
+               <v1:sigla>?</v1:sigla>
+               <!--Optional:-->
+               <!--anonymous type-->
+               <v1:descricao>?</v1:descricao>
+               <!--Optional:-->
+               <!--anonymous type-->
+               <v1:nomeSala>?</v1:nomeSala>
+               <!--Optional:-->
+               <!--type: integer-->
+               <v1:flagAgendamento>?</v1:flagAgendamento>
+               <!--Optional:-->
+               <!--type: integer-->
+               <v1:diasLimiteAgendamento>?</v1:diasLimiteAgendamento>
+            </v1:posto>
+            <!--Optional:-->
+            <!--type: dateTime-->
+            <v1:dataHoraEmissao>?</v1:dataHoraEmissao>
+         </sen:senha>
+      </sen:ResultadoEmitirSenhaAtendimento>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.seplag.se.gov.br/SenhaAtendimento/SenhaAtendimento/EmitirSenhaAtendimentoResponse"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>

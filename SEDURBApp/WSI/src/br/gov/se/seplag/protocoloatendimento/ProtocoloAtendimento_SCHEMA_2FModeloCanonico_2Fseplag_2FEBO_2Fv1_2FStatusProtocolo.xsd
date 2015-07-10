@@ -1,0 +1,32 @@
+<xsd:schema targetNamespace="http://www.seplag.se.gov.br/EBO/v1" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+     xmlns:seplag="http://www.seplag.se.gov.br/EBO/v1">
+    <xsd:element name="listaStatusProtocolo" nillable="true" type="seplag:ListaStatusProtocolo"/>
+    <xsd:complexType name="ListaStatusProtocolo">
+        <xsd:sequence>
+            <xsd:element name="statusProtocolo" type="seplag:StatusProtocolo" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="StatusProtocolo">
+        <xsd:sequence>
+            <xsd:element name="codigoProtocolo" minOccurs="0" nillable="true" maxOccurs="1">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="22"/>
+                        <xsd:pattern value="([0-9])*"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="estadoProcoloco" minOccurs="0" nillable="true" type="seplag:EstadoProtocolo"/>
+            <xsd:element name="dataStatus" minOccurs="0" type="xsd:dateTime" nillable="true"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:simpleType name="EstadoProtocolo">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="ABERTO"/>
+            <xsd:enumeration value="PARADO"/>
+            <xsd:enumeration value="CANCELADO"/>
+            <xsd:enumeration value="CONCLUIDO_NAOAVALIADO"/>
+            <xsd:enumeration value="CONCLUIDO"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

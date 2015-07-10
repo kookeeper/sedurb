@@ -1,0 +1,437 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1"
+                 binding="#{backingBeanScope.backing_confirmarPericiaMedica.d1}">
+      <af:form id="f1"
+               binding="#{backingBeanScope.backing_confirmarPericiaMedica.f1}">
+        <af:pageTemplate viewId="/oracle/templates/threeColumnTemplate.jspx"
+                         id="pt1">
+          <f:facet name="center">
+            <af:panelGroupLayout binding="#{backingBeanScope.backing_confirmarPericiaMedica.pgl2}"
+                                 id="pgl2" layout="scroll">
+              <af:outputLabel value="Confirmar Perícia Médica"
+                              binding="#{backingBeanScope.backing_confirmarPericiaMedica.ol3}"
+                              id="ol3"
+                              inlineStyle="font-size:x-large; font-weight:bold;"/>
+              <af:spacer width="10" height="30"
+                         binding="#{backingBeanScope.backing_confirmarPericiaMedica.spacer1}"
+                         id="spacer1"/>
+              <af:panelGroupLayout binding="#{backingBeanScope.backing_confirmarPericiaMedica.pglConsultarCidadao}"
+                                   id="pglConsultarCidadao" layout="vertical">
+                <af:panelGroupLayout binding="#{backingBeanScope.backing_confirmarPericiaMedica.pgl4}"
+                                     id="pgl4" layout="horizontal">
+                  <af:panelLabelAndMessage label="Consultar cidadão:"
+                                           labelStyle="font-weight:bold; text-align:left;"
+                                           binding="#{backingBeanScope.backing_confirmarPericiaMedica.plam2}"
+                                           id="plam2">
+                    <af:inputText label="Consultar cidadão:" simple="true"
+                                  binding="#{backingBeanScope.backing_confirmarPericiaMedica.itCpfConsulta}"
+                                  id="itCpfConsulta" maximumLength="20"
+                                  required="true"
+                                  requiredMessageDetail="Falta preencher o campo CPF do Cidadão"/>
+                  </af:panelLabelAndMessage>
+                  <af:commandButton text="PESQUISAR"
+                                    binding="#{backingBeanScope.backing_confirmarPericiaMedica.cbConsultarCidadao}"
+                                    id="cbConsultarCidadao" partialSubmit="true"
+                                    actionListener="#{pageFlowScope.managedBean.consultarCidadaoActionListener}"/>
+                </af:panelGroupLayout>
+              </af:panelGroupLayout>
+              <af:panelGroupLayout binding="#{backingBeanScope.backing_confirmarPericiaMedica.pglCadastrarCidadao}"
+                                   id="pglCadastrarCidadao"
+                                   rendered="#{not empty pageFlowScope.managedBean.cidadao}"
+                                   partialTriggers="cbConsultarCidadao">
+                <af:showDetailHeader text="Dados do Cidadão"
+                                     disclosed="true"
+                                     binding="#{backingBeanScope.backing_confirmarPericiaMedica.sdh1}"
+                                     id="sdh1">
+                  <af:panelHeader text="Informações Pessoais"
+                                  binding="#{backingBeanScope.backing_confirmarPericiaMedica.ph2}"
+                                  id="ph2">
+                    <af:panelGridLayout binding="#{backingBeanScope.backing_confirmarPericiaMedica.pgl5}"
+                                        id="pgl5">
+                      <af:gridRow marginTop="5px" height="auto"
+                                  binding="#{backingBeanScope.backing_confirmarPericiaMedica.gr1}"
+                                  id="gr1">
+                        <af:gridCell marginStart="5px" marginEnd="5px"
+                                     width="100%"
+                                     binding="#{backingBeanScope.backing_confirmarPericiaMedica.gc1}"
+                                     id="gc1">
+                          <af:panelFormLayout binding="#{backingBeanScope.backing_confirmarPericiaMedica.pfl1}"
+                                              id="pfl1" labelWidth="140">
+                            <af:panelLabelAndMessage label="C.P.F.:"
+                                                     labelStyle="font-weight:bold; text-align:left;"
+                                                     binding="#{backingBeanScope.backing_confirmarPericiaMedica.plam3}"
+                                                     id="plam3">
+                              <af:inputText label="C.P.F." simple="true"
+                                            binding="#{backingBeanScope.backing_confirmarPericiaMedica.itCpf}"
+                                            id="itCpf"
+                                            value="#{pageFlowScope.managedBean.cidadao.documentoCPF}"
+                                            required="true" readOnly="true"/>
+                            </af:panelLabelAndMessage>
+                          </af:panelFormLayout>
+                        </af:gridCell>
+                      </af:gridRow>
+                      <af:gridRow marginTop="5px" marginBottom="5px"
+                                  height="auto"
+                                  binding="#{backingBeanScope.backing_confirmarPericiaMedica.gr2}"
+                                  id="gr2">
+                        <af:gridCell marginStart="5px" marginEnd="5px"
+                                     width="100%"
+                                     binding="#{backingBeanScope.backing_confirmarPericiaMedica.gc2}"
+                                     id="gc2">
+                          <af:panelFormLayout binding="#{backingBeanScope.backing_confirmarPericiaMedica.pfl4}"
+                                              id="pfl4" rows="5"
+                                              labelWidth="140">
+                            <af:panelLabelAndMessage label="Nome Completo:"
+                                                     labelStyle="font-weight:bold; text-align:left;"
+                                                     binding="#{backingBeanScope.backing_confirmarPericiaMedica.plam4}"
+                                                     id="plam4">
+                              <af:inputText label="Nome Completo:" simple="true"
+                                            binding="#{backingBeanScope.backing_confirmarPericiaMedica.itNomeCompleto}"
+                                            id="itNomeCompleto"
+                                            readOnly="true"
+                                            value="#{pageFlowScope.managedBean.cidadao.nomeCompleto}"
+                                            required="true" maximumLength="50"/>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="Data Nascimento:"
+                                                     labelStyle="font-weight:bold; text-align:left;"
+                                                     binding="#{backingBeanScope.backing_confirmarPericiaMedica.plam5}"
+                                                     id="plam5">
+                              <af:inputDate label="Data Nascimento:"
+                                            simple="true"
+                                            binding="#{backingBeanScope.backing_confirmarPericiaMedica.idDataNascimento}"
+                                            id="idDataNascimento"
+                                            readOnly="true"
+                                            required="true"/>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="Sexo:"
+                                                     labelStyle="font-weight:bold; text-align:left;"
+                                                     binding="#{backingBeanScope.backing_confirmarPericiaMedica.plam6}"
+                                                     id="plam6">
+                              <af:selectOneRadio label="Sexo:" simple="true"
+                                                 binding="#{backingBeanScope.backing_confirmarPericiaMedica.sorSexo}"
+                                                 id="sorSexo"
+                                                 layout="horizontal"
+                                                 readOnly="true"
+                                                 value="#{pageFlowScope.managedBean.cidadao.sexo}"
+                                                 required="true">
+                                <af:selectItem label="Masculino"
+                                               value="MASCULINO"
+                                               binding="#{backingBeanScope.backing_confirmarPericiaMedica.si1}"
+                                               id="si1"/>
+                                <af:selectItem label="Feminino" value="FEMININO"
+                                               binding="#{backingBeanScope.backing_confirmarPericiaMedica.si2}"
+                                               id="si2"/>
+                              </af:selectOneRadio>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="Telefone Celular:"
+                                                     labelStyle="font-weight:bold; text-align:left;"
+                                                     binding="#{backingBeanScope.backing_confirmarPericiaMedica.plam7}"
+                                                     id="plam7">
+                              <af:inputText label="Telefone Celular:"
+                                            simple="true"
+                                            binding="#{backingBeanScope.backing_confirmarPericiaMedica.itTelefoneCelular}"
+                                            id="itTelefoneCelular"
+                                            readOnly="true"
+                                            required="true" maximumLength="15"/>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="Telefone Residencial:"
+                                                     labelStyle="font-weight:bold; text-align:left;"
+                                                     binding="#{backingBeanScope.backing_confirmarPericiaMedica.plam8}"
+                                                     id="plam8">
+                              <af:inputText label="Telefone Residencial:"
+                                            simple="true"
+                                            binding="#{backingBeanScope.backing_confirmarPericiaMedica.itTelefoneResidencial}"
+                                            id="itTelefoneResidencial"
+                                            readOnly="true"
+                                            maximumLength="15"/>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="Número RG:"
+                                                     labelStyle="font-weight:bold; text-align:left;"
+                                                     binding="#{backingBeanScope.backing_confirmarPericiaMedica.plam9}"
+                                                     id="plam9">
+                              <af:inputText label="Número RG:" simple="true"
+                                            binding="#{backingBeanScope.backing_confirmarPericiaMedica.itIdentidadeNumero}"
+                                            id="itIdentidadeNumero"
+                                            readOnly="true"
+                                            value="#{pageFlowScope.managedBean.cidadao.carteiraIdentidade.numeroIdentidade}"
+                                            maximumLength="20"/>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="Complemento RG:"
+                                                     labelStyle="font-weight:bold; text-align:left;"
+                                                     binding="#{backingBeanScope.backing_confirmarPericiaMedica.plam10}"
+                                                     id="plam10">
+                              <af:inputText label="Complemento RG:"
+                                            simple="true"
+                                            binding="#{backingBeanScope.backing_confirmarPericiaMedica.itIdentidadeComplemento}"
+                                            id="itIdentidadeComplemento"
+                                            readOnly="true"
+                                            value="#{pageFlowScope.managedBean.cidadao.carteiraIdentidade.numeroIdentidadeComplemento}"
+                                            maximumLength="20"/>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="Data Emissão RG:"
+                                                     labelStyle="font-weight:bold; text-align:left;"
+                                                     binding="#{backingBeanScope.backing_confirmarPericiaMedica.plam11}"
+                                                     id="plam11">
+                              <af:inputDate label="Data Emissão RG:"
+                                            simple="true"
+                                            binding="#{backingBeanScope.backing_confirmarPericiaMedica.idIdentidadeDataEmissao}"
+                                            id="idIdentidadeDataEmissao"
+                                            readOnly="true"/>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="Órgão Emissor RG:"
+                                                     labelStyle="font-weight:bold; text-align:left;"
+                                                     binding="#{backingBeanScope.backing_confirmarPericiaMedica.plam12}"
+                                                     id="plam12">
+                              <af:inputText label="Órgão Emissor RG:"
+                                            simple="true"
+                                            binding="#{backingBeanScope.backing_confirmarPericiaMedica.itIdentidadeOrgaoEmissor}"
+                                            id="itIdentidadeOrgaoEmissor"
+                                            readOnly="true"
+                                            value="#{pageFlowScope.managedBean.cidadao.carteiraIdentidade.orgaoEmissor}"
+                                            maximumLength="10"/>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="Unidade Federativa RG:"
+                                                     labelStyle="font-weight:bold; text-align:left;"
+                                                     binding="#{backingBeanScope.backing_confirmarPericiaMedica.plam13}"
+                                                     id="plam13">
+                              <af:selectOneChoice label="Unidade Federativa RG:"
+                                                  simple="true"
+                                                  binding="#{backingBeanScope.backing_confirmarPericiaMedica.socIdentidadeUF}"
+                                                  id="socIdentidadeUF"
+                                                  readOnly="true">
+                                <f:selectItems value="#{pageFlowScope.managedBean.listaUnidadeFederativa}"
+                                               binding="#{backingBeanScope.backing_confirmarPericiaMedica.si3}"
+                                               id="si3"/>
+                              </af:selectOneChoice>
+                            </af:panelLabelAndMessage>
+                          </af:panelFormLayout>
+                        </af:gridCell>
+                      </af:gridRow>
+                    </af:panelGridLayout>
+                  </af:panelHeader>
+                  <af:panelHeader text="Informações de Endereço do Cidadão"
+                                  binding="#{backingBeanScope.backing_confirmarPericiaMedica.ph4}"
+                                  id="ph4">
+                    <af:panelGridLayout binding="#{backingBeanScope.backing_confirmarPericiaMedica.pgl7}"
+                                        id="pgl7">
+                      <af:gridRow marginTop="5px" marginBottom="5px"
+                                  height="auto"
+                                  binding="#{backingBeanScope.backing_confirmarPericiaMedica.gr3}"
+                                  id="gr3">
+                        <af:gridCell marginStart="5px" width="auto"
+                                     binding="#{backingBeanScope.backing_confirmarPericiaMedica.gc3}"
+                                     id="gc3">
+                          <af:panelFormLayout binding="#{backingBeanScope.backing_confirmarPericiaMedica.pfl3}"
+                                              id="pfl3" labelWidth="140">
+                            <af:panelLabelAndMessage label="C.E.P.:"
+                                                     labelStyle="font-weight:bold; text-align:left;"
+                                                     binding="#{backingBeanScope.backing_confirmarPericiaMedica.plam15}"
+                                                     id="plam15">
+                              <af:inputText label="C.E.P." simple="true"
+                                            binding="#{backingBeanScope.backing_confirmarPericiaMedica.itEnderecoCEP}"
+                                            id="itEnderecoCEP"
+                                            readOnly="true"
+                                            value="#{pageFlowScope.managedBean.cidadao.endereco.cep}"
+                                            required="true" maximumLength="10"
+                                            autoSubmit="true"/>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="País:"
+                                                     labelStyle="font-weight:bold; text-align:left;"
+                                                     binding="#{backingBeanScope.backing_confirmarPericiaMedica.plam16}"
+                                                     id="plam16">
+                              <af:inputText label="País" simple="true"
+                                            binding="#{backingBeanScope.backing_confirmarPericiaMedica.itEnderecoPais}"
+                                            id="itEnderecoPais"
+                                            readOnly="true"
+                                            value="#{pageFlowScope.managedBean.cidadao.endereco.pais}"
+                                            required="true" maximumLength="50"/>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="Unidade Federativa:"
+                                                     labelStyle="font-weight:bold; text-align:left;"
+                                                     binding="#{backingBeanScope.backing_confirmarPericiaMedica.plam17}"
+                                                     id="plam17">
+                              <af:selectOneChoice label="Unidade Federativa"
+                                                  simple="true"
+                                                  binding="#{backingBeanScope.backing_confirmarPericiaMedica.socEnderecoUF}"
+                                                  id="socEnderecoUF"
+                                                  readOnly="true"
+                                                  value="#{pageFlowScope.managedBean.cidadao.endereco.unidadeFederativa}"
+                                                  required="true">
+                                <f:selectItems value="#{pageFlowScope.managedBean.listaUnidadeFederativa}"
+                                               binding="#{backingBeanScope.backing_confirmarPericiaMedica.si4}"
+                                               id="si4"/>
+                              </af:selectOneChoice>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="Município:"
+                                                     labelStyle="font-weight:bold; text-align:left;"
+                                                     binding="#{backingBeanScope.backing_confirmarPericiaMedica.plam18}"
+                                                     id="plam18">
+                              <af:inputText label="Município" simple="true"
+                                            binding="#{backingBeanScope.backing_confirmarPericiaMedica.itEnderecoMunicipio}"
+                                            id="itEnderecoMunicipio"
+                                            readOnly="true"
+                                            value="#{pageFlowScope.managedBean.cidadao.endereco.municipio}"
+                                            required="true" maximumLength="50"/>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="Bairro:"
+                                                     labelStyle="font-weight:bold; text-align:left;"
+                                                     binding="#{backingBeanScope.backing_confirmarPericiaMedica.plam14}"
+                                                     id="plam14">
+                              <af:inputText label="Bairro" simple="true"
+                                            binding="#{backingBeanScope.backing_confirmarPericiaMedica.itEnderecoBairro}"
+                                            id="itEnderecoBairro"
+                                            readOnly="true"
+                                            value="#{pageFlowScope.managedBean.cidadao.endereco.bairro}"
+                                            required="true" maximumLength="50"/>
+                            </af:panelLabelAndMessage>
+                          </af:panelFormLayout>
+                        </af:gridCell>
+                        <af:gridCell binding="#{backingBeanScope.backing_confirmarPericiaMedica.gc5}"
+                                     id="gc5" width="auto">
+                          <af:panelFormLayout binding="#{backingBeanScope.backing_confirmarPericiaMedica.pfl2}"
+                                              id="pfl2" labelWidth="140">
+                            <af:panelLabelAndMessage label="Complemento:"
+                                                     labelStyle="font-weight:bold; text-align:left;"
+                                                     binding="#{backingBeanScope.backing_confirmarPericiaMedica.plam20}"
+                                                     id="plam20">
+                              <af:inputText label="Complemento" simple="true"
+                                            binding="#{backingBeanScope.backing_confirmarPericiaMedica.itEnderecoComplemento}"
+                                            id="itEnderecoComplemento"
+                                            readOnly="true"
+                                            value="#{pageFlowScope.managedBean.cidadao.endereco.complemento}"
+                                            maximumLength="100"/>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="Número Logradouro:"
+                                                     labelStyle="font-weight:bold; text-align:left;"
+                                                     binding="#{backingBeanScope.backing_confirmarPericiaMedica.plam21}"
+                                                     id="plam21">
+                              <af:inputText label="Número Logradouro"
+                                            simple="true"
+                                            binding="#{backingBeanScope.backing_confirmarPericiaMedica.itEnderecoNumeroLogradouro}"
+                                            id="itEnderecoNumeroLogradouro"
+                                            readOnly="true"
+                                            value="#{pageFlowScope.managedBean.cidadao.endereco.numeroLogradouro}"
+                                            required="true" maximumLength="20"/>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="Tipo Logradouro:"
+                                                     labelStyle="font-weight:bold; text-align:left;"
+                                                     binding="#{backingBeanScope.backing_confirmarPericiaMedica.plam22}"
+                                                     id="plam22">
+                              <af:inputText label="Tipo Logradouro"
+                                            simple="true"
+                                            binding="#{backingBeanScope.backing_confirmarPericiaMedica.itEnderecoTipoLogradouro}"
+                                            id="itEnderecoTipoLogradouro"
+                                            readOnly="true"
+                                            value="#{pageFlowScope.managedBean.cidadao.endereco.tipoLogradouro}"
+                                            maximumLength="30"/>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="Nome Logradouro:"
+                                                     labelStyle="font-weight:bold; text-align:left;"
+                                                     binding="#{backingBeanScope.backing_confirmarPericiaMedica.plam19}"
+                                                     id="plam19">
+                              <af:inputText label="Nome Logradouro"
+                                            simple="true"
+                                            binding="#{backingBeanScope.backing_confirmarPericiaMedica.itEnderecoNomeLogradouro}"
+                                            id="itEnderecoNomeLogradouro"
+                                            readOnly="true"
+                                            value="#{pageFlowScope.managedBean.cidadao.endereco.nomeLogradouro}"
+                                            maximumLength="50"/>
+                            </af:panelLabelAndMessage>
+                          </af:panelFormLayout>
+                        </af:gridCell>
+                      </af:gridRow>
+                    </af:panelGridLayout>
+                  </af:panelHeader>
+                </af:showDetailHeader>
+              </af:panelGroupLayout>
+              <af:panelGroupLayout binding="#{backingBeanScope.backing_confirmarPericiaMedica.pglAgend}"
+                                   id="pglAgend"
+                                   partialTriggers="cbConsultarCidadao">
+                <af:showDetailHeader text="Lista de serviços a serem realizados pelo Cidadão"
+                                     disclosed="true"
+                                     binding="#{backingBeanScope.backing_confirmarPericiaMedica.sdhAgend}"
+                                     id="sdhAgend"
+                                     rendered="#{not empty pageFlowScope.managedBean.cidadao}">
+                  <af:panelGroupLayout binding="#{backingBeanScope.backing_confirmarPericiaMedica.pgl9}"
+                                       id="pgl9" layout="scroll">
+                    <af:outputLabel value="PROTOCOLO DE ATENDIMENTO #{pageFlowScope.managedBean.protocolo.codigoProtocoloPai}"
+                                    binding="#{backingBeanScope.backing_confirmarPericiaMedica.ol1}"
+                                    id="ol1"/>
+                    <af:spacer width="10" height="10" id="s3"
+                               binding="#{backingBeanScope.backing_confirmarPericiaMedica.s3}"/>
+                    <af:panelGridLayout binding="#{backingBeanScope.backing_confirmarPericiaMedica.pgl10}"
+                                        id="pgl10">
+                      <af:forEach items="#{pageFlowScope.managedBean.listaAgendamentoAtendimentoProtocolo}"
+                                  var="agendamentoAtendimentoProtocolo"
+                                  varStatus="status">
+                        <af:gridRow marginTop="10px" marginBottom="10px"
+                                    height="auto" id="gr4">
+                          <af:gridCell marginStart="5px" width="25%" id="gc6"
+                                       inlineStyle="border-color:Black; border-style:solid; border-width:thin;">
+                            <af:panelGroupLayout id="pgl11" layout="scroll">
+                              <af:outputLabel value="Prot. de Serv. #{agendamentoAtendimentoProtocolo.protocolo.cdProtocolo}"
+                                              id="ol2"/>
+                              <af:forEach items="#{agendamentoAtendimentoProtocolo.listaDocumento}"
+                                          var="documento" varStatus="status">
+                                <af:outputLabel value="#{documento.nomeDocumento}"
+                                                id="outputLabel3"
+                                                inlineStyle="font-weight:bold;"/>
+                              </af:forEach>
+                            </af:panelGroupLayout>
+                          </af:gridCell>
+                          <af:gridCell marginStart="5px" width="25%" id="gc7"
+                                       inlineStyle="border-color:Black; border-style:solid; border-width:thin;">
+                            <af:outputLabel value="#{agendamentoAtendimentoProtocolo.protocolo.nomeServico}"
+                                            id="outputLabel1"/>
+                          </af:gridCell>
+                          <af:gridCell marginStart="5px" width="25%" id="gc8"
+                                       inlineStyle="border-color:Black; border-style:solid; border-width:thin;">
+                            <af:outputLabel id="outputLabel2"
+                                            converter="gregorianConverter"
+                                            value="#{agendamentoAtendimentoProtocolo.agendamento.dataAgendamento}"/>
+                          </af:gridCell>
+                          <af:gridCell marginStart="5px" marginEnd="5px"
+                                       width="25%" id="gc9"
+                                       inlineStyle="border-color:Black; border-style:solid; border-width:thin;">
+                            <af:commandButton text="Solicitar Emissão" id="cb5"
+                                              partialSubmit="true">
+                              <f:setPropertyActionListener target="#{pageFlowScope.managedBean.servicoAgendadoSelecionado}"
+                                                           value="#{agendamentoAtendimentoProtocolo}"/>
+                            </af:commandButton>
+                          </af:gridCell>
+                        </af:gridRow>
+                      </af:forEach>
+                    </af:panelGridLayout>
+                  </af:panelGroupLayout>
+                </af:showDetailHeader>
+              </af:panelGroupLayout>
+              <af:spacer width="10" height="30"
+                         binding="#{backingBeanScope.backing_confirmarPericiaMedica.s1}"
+                         id="s1"/>
+              <af:panelGroupLayout binding="#{backingBeanScope.backing_confirmarPericiaMedica.pglCommandButton}"
+                                   id="pglCommandButton" layout="horizontal">
+                <af:commandButton text="Emitir Senha e Protocolo(s)"
+                                  binding="#{backingBeanScope.backing_confirmarPericiaMedica.cb6}"
+                                  id="cb6"
+                                  rendered="#{not empty pageFlowScope.managedBean.cidadao}"/>
+                <af:commandButton text="Realizar Nova Consulta"
+                                  binding="#{backingBeanScope.backing_confirmarPericiaMedica.commandButton3}"
+                                  id="commandButton3" partialSubmit="true"
+                                  actionListener="#{pageFlowScope.managedBean.novaConsultaActionListener}"
+                                  rendered="#{not empty pageFlowScope.managedBean.cidadao}"
+                                  immediate="true"/>
+              </af:panelGroupLayout>
+            </af:panelGroupLayout>
+          </f:facet>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+  <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_confirmarPericiaMedica-->
+</jsp:root>

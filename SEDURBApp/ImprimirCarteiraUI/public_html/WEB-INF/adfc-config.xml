@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="imprimirCarteira">
+    <page>/imprimirCarteira.jspx</page>
+  </view>
+  <managed-bean id="__4">
+    <managed-bean-name id="__2">managedBean</managed-bean-name>
+    <managed-bean-class id="__3">br.gov.sedurb.bean.ManagedBean</managed-bean-class>
+    <managed-bean-scope id="__1">pageFlow</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__8">
+    <managed-bean-name id="__7">backing_imprimirCarteira</managed-bean-name>
+    <managed-bean-class id="__6">br.gov.sedurb.backing.ImprimirCarteira</managed-bean-class>
+    <managed-bean-scope id="__5">backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1imprimirCarteira.jspx-->
+  </managed-bean>
+</adfc-config>

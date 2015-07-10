@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <exception-handler id="__14">errorHandler</exception-handler>
+  <view id="realizarAtendimento">
+    <page>/realizarAtendimento.jspx</page>
+  </view>
+  <method-call id="errorHandler">
+    <method>#{pageFlowScope.managedBean.errorHandler}</method>
+    <outcome id="__15">
+      <fixed-outcome>*</fixed-outcome>
+    </outcome>
+  </method-call>
+  <control-flow-rule id="__10">
+    <from-activity-id id="__11">errorHandler</from-activity-id>
+    <control-flow-case id="__12">
+      <to-activity-id id="__13">realizarAtendimento</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <managed-bean id="__4">
+    <managed-bean-name id="__3">backing_realizarAtendimento</managed-bean-name>
+    <managed-bean-class id="__1">br.gov.sedurb.backing.RealizarAtendimento</managed-bean-class>
+    <managed-bean-scope id="__2">backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1realizarAtendimento.jspx-->
+  </managed-bean>
+  <managed-bean id="__8">
+    <managed-bean-name id="__7">managedBean</managed-bean-name>
+    <managed-bean-class id="__5">br.gov.sedurb.bean.ManagedBean</managed-bean-class>
+    <managed-bean-scope id="__6">pageFlow</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

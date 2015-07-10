@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application"
+             version="11.1.1.64.93" id="DataBindings" SeparateXMLFiles="false"
+             Package="br.gov.sedurb" ClientType="Generic">
+  <pageMap>
+    <page path="/realizarAtendimento.jspx"
+          usageId="br_gov_sedurb_realizarAtendimentoPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="br_gov_sedurb_realizarAtendimentoPageDef"
+          path="br.gov.sedurb.pageDefs.realizarAtendimentoPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="PasseLivreIdoso" path="br.gov.sedurb.RealizarAtendimento_PasseLivreIdoso"/>
+    <dc id="ProcessoTriagem" path="br.gov.sedurb.RealizarAtendimento_ProcessoTriagem"/>
+  </dataControlUsages>
+</Application>

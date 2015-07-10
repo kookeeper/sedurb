@@ -1,0 +1,9 @@
+<handler-chains xmlns="http://java.sun.com/xml/ns/javaee">
+   <handler-chain>
+      <port-name-pattern xmlns:ns1="http://www.seplag.se.gov.br/DocsProcsNecessariosAtendimento">ns1:DocsProcsNecessariosAtendimentoSOAP</port-name-pattern>
+      <handler>
+         <handler-name>SOAPLoggingHandler</handler-name>
+         <handler-class>br.gov.se.seplag.handlers.SOAPLoggingHandler</handler-class>
+      </handler>
+   </handler-chain>
+</handler-chains>

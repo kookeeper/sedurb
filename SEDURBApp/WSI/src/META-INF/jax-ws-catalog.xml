@@ -1,0 +1,24 @@
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+  <system systemId="http://osb.itconsulting.com.br:8011/V1/CICSergipe?wsdl"
+          uri="http://osb.itconsulting.com.br:8011/V1/CICSergipe?wsdl"/>
+  <system systemId="http://osb.itconsulting.com.br:8011/V1/AgendamentoAtendimento?wsdl"
+          uri="http://osb.itconsulting.com.br:8011/V1/AgendamentoAtendimento?wsdl"/>
+  <system systemId="http://osb.itconsulting.com.br:8011/V1/ServicoAtendimento?wsdl"
+          uri="http://osb.itconsulting.com.br:8011/V1/ServicoAtendimento?wsdl"/>
+  <system systemId="http://osb.itconsulting.com.br:8011/V1/UnidadeAtendimento?wsdl"
+          uri="http://osb.itconsulting.com.br:8011/V1/UnidadeAtendimento?wsdl"/>
+  <system systemId="http://osb.itconsulting.com.br:8011/V1/DocsProcsNecessariosAtendimento?wsdl"
+          uri="http://osb.itconsulting.com.br:8011/V1/DocsProcsNecessariosAtendimento?wsdl"/>
+  <system systemId="http://osb.itconsulting.com.br:8011/V1/AnexoProcessosAtendimento?wsdl"
+          uri="http://osb.itconsulting.com.br:8011/V1/AnexoProcessosAtendimento?wsdl"/>
+  <system systemId="http://osb.itconsulting.com.br:8011/V1/SenhaAtendimento?wsdl"
+          uri="http://osb.itconsulting.com.br:8011/V1/SenhaAtendimento?wsdl"/>
+  <system systemId="http://osb.itconsulting.com.br:8011/V1/ProtocoloAtendimento?wsdl"
+          uri="../br/gov/se/seplag/protocoloatendimento/ProtocoloAtendimento.wsdl"/>
+  <system systemId="http://osb.itconsulting.com.br:8011/V1/PasseLivre?Wsdl"
+          uri="http://osb.itconsulting.com.br:8011/V1/PasseLivre?Wsdl"/>
+  <system systemId="http://osb02.itconsulting.com.br:8011/V1/CorreiosCEP?WSDL"
+          uri="http://osb02.itconsulting.com.br:8011/V1/CorreiosCEP?WSDL"/>
+  <system systemId="http://osb02.itconsulting.com.br:8011/V1/ProtocoloAtendimento?WSDL"
+          uri="http://osb02.itconsulting.com.br:8011/V1/ProtocoloAtendimento?WSDL"/>
+</catalog>

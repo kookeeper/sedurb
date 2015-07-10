@@ -1,0 +1,651 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1"
+                 binding="#{backingBeanScope.backing_qualificarAtendimento.d1}"
+                 title="Qualificar Atendimento - Triagem">
+      <af:resource type="javascript" source="/js/jquery-1.11.1.min.js"/>
+      <af:messages binding="#{backingBeanScope.backing_qualificarAtendimento.m1}"
+                   id="m1"/>
+      <af:form id="f1"
+               binding="#{backingBeanScope.backing_qualificarAtendimento.f1}"
+               usesUpload="true" partialTriggers="pt1:cb2 pt1:commandButton3">
+        <af:pageTemplate viewId="/oracle/templates/threeColumnTemplate.jspx"
+                         id="pt1">
+          <f:facet name="center">
+            <af:group binding="#{backingBeanScope.backing_qualificarAtendimento.g1}"
+                      id="g1">
+              <af:panelGroupLayout binding="#{backingBeanScope.backing_qualificarAtendimento.pgl2}"
+                                   id="pgl2" layout="scroll">
+                <af:outputLabel value="Qualificar Atendimento - Triagem"
+                                binding="#{backingBeanScope.backing_qualificarAtendimento.ol3}"
+                                id="ol3"
+                                inlineStyle="font-size:x-large; font-weight:bold;"/>
+                <af:spacer width="10" height="30"
+                           binding="#{backingBeanScope.backing_qualificarAtendimento.spacer1}"
+                           id="spacer1"/>
+                <af:panelGroupLayout binding="#{backingBeanScope.backing_qualificarAtendimento.pglConsultarCidadao}"
+                                     id="pglConsultarCidadao" layout="vertical">
+                  <af:panelGroupLayout binding="#{backingBeanScope.backing_qualificarAtendimento.pgl4}"
+                                       id="pgl4" layout="horizontal"
+                                       rendered="#{pageFlowScope.managedBean.mostrarConsultarCidadao}">
+                    <af:panelLabelAndMessage label="Consultar cidadão:"
+                                             labelStyle="font-weight:bold; text-align:left;"
+                                             binding="#{backingBeanScope.backing_qualificarAtendimento.plam2}"
+                                             id="plam2">
+                      <af:inputText label="Consultar cidadão:" simple="true"
+                                    binding="#{backingBeanScope.backing_qualificarAtendimento.itCpfConsulta}"
+                                    id="itCpfConsulta" maximumLength="20"
+                                    required="true"
+                                    requiredMessageDetail="Falta preencher o campo CPF do Cidadão"/>
+                    </af:panelLabelAndMessage>
+                    <af:commandButton text="PESQUISAR"
+                                      binding="#{backingBeanScope.backing_qualificarAtendimento.cbConsultarCidadao}"
+                                      id="cbConsultarCidadao"
+                                      partialSubmit="true"
+                                      actionListener="#{pageFlowScope.managedBean.consultarCidadaoActionListener}"/>
+                  </af:panelGroupLayout>
+                </af:panelGroupLayout>
+                <af:panelGroupLayout binding="#{backingBeanScope.backing_qualificarAtendimento.pglCadastrarCidadao}"
+                                     id="pglCadastrarCidadao"
+                                     rendered="#{not empty pageFlowScope.managedBean.cidadao}"
+                                     partialTriggers="cbConsultarCidadao">
+                  <af:showDetailHeader text="#{pageFlowScope.managedBean.tituloCadastrarCidadao}"
+                                       disclosed="true"
+                                       binding="#{backingBeanScope.backing_qualificarAtendimento.sdh1}"
+                                       id="sdh1">
+                    <af:panelHeader text="Informações Pessoais"
+                                    binding="#{backingBeanScope.backing_qualificarAtendimento.ph2}"
+                                    id="ph2">
+                      <af:panelGridLayout binding="#{backingBeanScope.backing_qualificarAtendimento.pgl5}"
+                                          id="pgl5">
+                        <af:gridRow marginTop="5px" height="auto"
+                                    binding="#{backingBeanScope.backing_qualificarAtendimento.gr1}"
+                                    id="gr1">
+                          <af:gridCell marginStart="5px" marginEnd="5px"
+                                       width="100%"
+                                       binding="#{backingBeanScope.backing_qualificarAtendimento.gc1}"
+                                       id="gc1">
+                            <af:panelFormLayout binding="#{backingBeanScope.backing_qualificarAtendimento.pfl1}"
+                                                id="pfl1" labelWidth="140">
+                              <af:panelLabelAndMessage label="C.P.F.:"
+                                                       labelStyle="font-weight:bold; text-align:left;"
+                                                       binding="#{backingBeanScope.backing_qualificarAtendimento.plam3}"
+                                                       id="plam3">
+                                <af:inputText label="C.P.F." simple="true"
+                                              binding="#{backingBeanScope.backing_qualificarAtendimento.itCpf}"
+                                              id="itCpf"
+                                              value="#{pageFlowScope.managedBean.cidadao.documentoCPF}"
+                                              required="true" readOnly="true"/>
+                              </af:panelLabelAndMessage>
+                            </af:panelFormLayout>
+                          </af:gridCell>
+                        </af:gridRow>
+                        <af:gridRow marginTop="5px" marginBottom="5px"
+                                    height="auto"
+                                    binding="#{backingBeanScope.backing_qualificarAtendimento.gr2}"
+                                    id="gr2">
+                          <af:gridCell marginStart="5px" marginEnd="5px"
+                                       width="100%"
+                                       binding="#{backingBeanScope.backing_qualificarAtendimento.gc2}"
+                                       id="gc2">
+                            <af:panelFormLayout binding="#{backingBeanScope.backing_qualificarAtendimento.pfl4}"
+                                                id="pfl4" rows="5"
+                                                labelWidth="140">
+                              <af:panelLabelAndMessage label="Nome Completo:"
+                                                       labelStyle="font-weight:bold; text-align:left;"
+                                                       binding="#{backingBeanScope.backing_qualificarAtendimento.plam4}"
+                                                       id="plam4">
+                                <af:inputText label="Nome Completo:"
+                                              simple="true"
+                                              binding="#{backingBeanScope.backing_qualificarAtendimento.itNomeCompleto}"
+                                              id="itNomeCompleto"
+                                              readOnly="#{not pageFlowScope.managedBean.editandoCidadao}"
+                                              value="#{pageFlowScope.managedBean.cidadao.nomeCompleto}"
+                                              required="true"
+                                              maximumLength="50"/>
+                              </af:panelLabelAndMessage>
+                              <af:panelLabelAndMessage label="Data Nascimento:"
+                                                       labelStyle="font-weight:bold; text-align:left;"
+                                                       binding="#{backingBeanScope.backing_qualificarAtendimento.plam5}"
+                                                       id="plam5">
+                                <af:inputDate label="Data Nascimento:"
+                                              simple="true"
+                                              binding="#{backingBeanScope.backing_qualificarAtendimento.idDataNascimento}"
+                                              id="idDataNascimento"
+                                              readOnly="#{not pageFlowScope.managedBean.editandoCidadao}"
+                                              required="true"/>
+                              </af:panelLabelAndMessage>
+                              <af:panelLabelAndMessage label="Sexo:"
+                                                       labelStyle="font-weight:bold; text-align:left;"
+                                                       binding="#{backingBeanScope.backing_qualificarAtendimento.plam6}"
+                                                       id="plam6">
+                                <af:selectOneRadio label="Sexo:" simple="true"
+                                                   binding="#{backingBeanScope.backing_qualificarAtendimento.sorSexo}"
+                                                   id="sorSexo"
+                                                   layout="horizontal"
+                                                   readOnly="#{not pageFlowScope.managedBean.editandoCidadao}"
+                                                   value="#{pageFlowScope.managedBean.sexoCidadao}"
+                                                   required="true">
+                                  <af:selectItem label="Masculino"
+                                                 value="MASCULINO"
+                                                 binding="#{backingBeanScope.backing_qualificarAtendimento.si1}"
+                                                 id="si1"/>
+                                  <af:selectItem label="Feminino"
+                                                 value="FEMININO"
+                                                 binding="#{backingBeanScope.backing_qualificarAtendimento.si2}"
+                                                 id="si2"/>
+                                </af:selectOneRadio>
+                              </af:panelLabelAndMessage>
+                              <af:panelLabelAndMessage label="Telefone Celular:"
+                                                       labelStyle="font-weight:bold; text-align:left;"
+                                                       binding="#{backingBeanScope.backing_qualificarAtendimento.plam7}"
+                                                       id="plam7">
+                                <af:inputText label="Telefone Celular:"
+                                              simple="true"
+                                              binding="#{backingBeanScope.backing_qualificarAtendimento.itTelefoneCelular}"
+                                              id="itTelefoneCelular"
+                                              readOnly="#{not pageFlowScope.managedBean.editandoCidadao}"
+                                              required="true"
+                                              maximumLength="15"/>
+                              </af:panelLabelAndMessage>
+                              <af:panelLabelAndMessage label="Telefone Residencial:"
+                                                       labelStyle="font-weight:bold; text-align:left;"
+                                                       binding="#{backingBeanScope.backing_qualificarAtendimento.plam8}"
+                                                       id="plam8">
+                                <af:inputText label="Telefone Residencial:"
+                                              simple="true"
+                                              binding="#{backingBeanScope.backing_qualificarAtendimento.itTelefoneResidencial}"
+                                              id="itTelefoneResidencial"
+                                              readOnly="#{not pageFlowScope.managedBean.editandoCidadao}"
+                                              maximumLength="15"/>
+                              </af:panelLabelAndMessage>
+                              <af:panelLabelAndMessage label="Número RG:"
+                                                       labelStyle="font-weight:bold; text-align:left;"
+                                                       binding="#{backingBeanScope.backing_qualificarAtendimento.plam9}"
+                                                       id="plam9">
+                                <af:inputText label="Número RG:" simple="true"
+                                              binding="#{backingBeanScope.backing_qualificarAtendimento.itIdentidadeNumero}"
+                                              id="itIdentidadeNumero"
+                                              readOnly="#{not pageFlowScope.managedBean.editandoCidadao}"
+                                              value="#{pageFlowScope.managedBean.cidadao.carteiraIdentidade.numeroIdentidade}"
+                                              maximumLength="20"/>
+                              </af:panelLabelAndMessage>
+                              <af:panelLabelAndMessage label="Complemento RG:"
+                                                       labelStyle="font-weight:bold; text-align:left;"
+                                                       binding="#{backingBeanScope.backing_qualificarAtendimento.plam10}"
+                                                       id="plam10">
+                                <af:inputText label="Complemento RG:"
+                                              simple="true"
+                                              binding="#{backingBeanScope.backing_qualificarAtendimento.itIdentidadeComplemento}"
+                                              id="itIdentidadeComplemento"
+                                              readOnly="#{not pageFlowScope.managedBean.editandoCidadao}"
+                                              value="#{pageFlowScope.managedBean.cidadao.carteiraIdentidade.numeroIdentidadeComplemento}"
+                                              maximumLength="20"/>
+                              </af:panelLabelAndMessage>
+                              <af:panelLabelAndMessage label="Data Emissão RG:"
+                                                       labelStyle="font-weight:bold; text-align:left;"
+                                                       binding="#{backingBeanScope.backing_qualificarAtendimento.plam11}"
+                                                       id="plam11">
+                                <af:inputDate label="Data Emissão RG:"
+                                              simple="true"
+                                              binding="#{backingBeanScope.backing_qualificarAtendimento.idIdentidadeDataEmissao}"
+                                              id="idIdentidadeDataEmissao"
+                                              readOnly="#{not pageFlowScope.managedBean.editandoCidadao}"/>
+                              </af:panelLabelAndMessage>
+                              <af:panelLabelAndMessage label="Órgão Emissor RG:"
+                                                       labelStyle="font-weight:bold; text-align:left;"
+                                                       binding="#{backingBeanScope.backing_qualificarAtendimento.plam12}"
+                                                       id="plam12">
+                                <af:inputText label="Órgão Emissor RG:"
+                                              simple="true"
+                                              binding="#{backingBeanScope.backing_qualificarAtendimento.itIdentidadeOrgaoEmissor}"
+                                              id="itIdentidadeOrgaoEmissor"
+                                              readOnly="#{not pageFlowScope.managedBean.editandoCidadao}"
+                                              value="#{pageFlowScope.managedBean.cidadao.carteiraIdentidade.orgaoEmissor}"
+                                              maximumLength="10"/>
+                              </af:panelLabelAndMessage>
+                              <af:panelLabelAndMessage label="Unidade Federativa RG:"
+                                                       labelStyle="font-weight:bold; text-align:left;"
+                                                       binding="#{backingBeanScope.backing_qualificarAtendimento.plam13}"
+                                                       id="plam13">
+                                <af:selectOneChoice label="Unidade Federativa RG:"
+                                                    simple="true"
+                                                    binding="#{backingBeanScope.backing_qualificarAtendimento.socIdentidadeUF}"
+                                                    id="socIdentidadeUF"
+                                                    readOnly="#{not pageFlowScope.managedBean.editandoCidadao}">
+                                  <f:selectItems value="#{pageFlowScope.managedBean.listaUnidadeFederativa}"
+                                                 binding="#{backingBeanScope.backing_qualificarAtendimento.si3}"
+                                                 id="si3"/>
+                                </af:selectOneChoice>
+                              </af:panelLabelAndMessage>
+                            </af:panelFormLayout>
+                          </af:gridCell>
+                        </af:gridRow>
+                      </af:panelGridLayout>
+                    </af:panelHeader>
+                    <af:panelHeader text="Informações de Endereço do Cidadão"
+                                    binding="#{backingBeanScope.backing_qualificarAtendimento.ph4}"
+                                    id="ph4">
+                      <af:panelGridLayout binding="#{backingBeanScope.backing_qualificarAtendimento.pgl7}"
+                                          id="pgl7" partialTriggers="cb1">
+                        <af:gridRow marginTop="5px" marginBottom="5px"
+                                    height="auto"
+                                    binding="#{backingBeanScope.backing_qualificarAtendimento.gr3}"
+                                    id="gr3">
+                          <af:gridCell marginStart="5px" width="auto"
+                                       binding="#{backingBeanScope.backing_qualificarAtendimento.gc3}"
+                                       id="gc3">
+                            <af:panelFormLayout binding="#{backingBeanScope.backing_qualificarAtendimento.pfl3}"
+                                                id="pfl3" labelWidth="140">
+                              <af:panelLabelAndMessage label="C.E.P.:"
+                                                       labelStyle="font-weight:bold; text-align:left;"
+                                                       binding="#{backingBeanScope.backing_qualificarAtendimento.plam15}"
+                                                       id="plam15">
+                                <af:inputText label="C.E.P." simple="true"
+                                              binding="#{backingBeanScope.backing_qualificarAtendimento.itEnderecoCEP}"
+                                              id="itEnderecoCEP"
+                                              readOnly="#{not pageFlowScope.managedBean.editandoCidadao}"
+                                              value="#{pageFlowScope.managedBean.cidadao.endereco.cep}"
+                                              required="true" maximumLength="10"
+                                              autoSubmit="true"/>
+                              </af:panelLabelAndMessage>
+                              <af:panelLabelAndMessage label="País:"
+                                                       labelStyle="font-weight:bold; text-align:left;"
+                                                       binding="#{backingBeanScope.backing_qualificarAtendimento.plam16}"
+                                                       id="plam16">
+                                <af:inputText label="País" simple="true"
+                                              binding="#{backingBeanScope.backing_qualificarAtendimento.itEnderecoPais}"
+                                              id="itEnderecoPais"
+                                              readOnly="#{not pageFlowScope.managedBean.editandoCidadao}"
+                                              value="#{pageFlowScope.managedBean.cidadao.endereco.pais}"
+                                              required="true"
+                                              maximumLength="50"/>
+                              </af:panelLabelAndMessage>
+                              <af:panelLabelAndMessage label="Unidade Federativa:"
+                                                       labelStyle="font-weight:bold; text-align:left;"
+                                                       binding="#{backingBeanScope.backing_qualificarAtendimento.plam17}"
+                                                       id="plam17">
+                                <af:selectOneChoice label="Unidade Federativa"
+                                                    simple="true"
+                                                    binding="#{backingBeanScope.backing_qualificarAtendimento.socEnderecoUF}"
+                                                    id="socEnderecoUF"
+                                                    readOnly="#{not pageFlowScope.managedBean.editandoCidadao}"
+                                                    value="#{pageFlowScope.managedBean.cidadao.endereco.unidadeFederativa}"
+                                                    required="true">
+                                  <f:selectItems value="#{pageFlowScope.managedBean.listaUnidadeFederativa}"
+                                                 binding="#{backingBeanScope.backing_qualificarAtendimento.si4}"
+                                                 id="si4"/>
+                                </af:selectOneChoice>
+                              </af:panelLabelAndMessage>
+                              <af:panelLabelAndMessage label="Município:"
+                                                       labelStyle="font-weight:bold; text-align:left;"
+                                                       binding="#{backingBeanScope.backing_qualificarAtendimento.plam18}"
+                                                       id="plam18">
+                                <af:inputText label="Município" simple="true"
+                                              binding="#{backingBeanScope.backing_qualificarAtendimento.itEnderecoMunicipio}"
+                                              id="itEnderecoMunicipio"
+                                              readOnly="#{not pageFlowScope.managedBean.editandoCidadao}"
+                                              value="#{pageFlowScope.managedBean.cidadao.endereco.municipio}"
+                                              required="true"
+                                              maximumLength="50"/>
+                              </af:panelLabelAndMessage>
+                              <af:panelLabelAndMessage label="Bairro:"
+                                                       labelStyle="font-weight:bold; text-align:left;"
+                                                       binding="#{backingBeanScope.backing_qualificarAtendimento.plam14}"
+                                                       id="plam14">
+                                <af:inputText label="Bairro" simple="true"
+                                              binding="#{backingBeanScope.backing_qualificarAtendimento.itEnderecoBairro}"
+                                              id="itEnderecoBairro"
+                                              readOnly="#{not pageFlowScope.managedBean.editandoCidadao}"
+                                              value="#{pageFlowScope.managedBean.cidadao.endereco.bairro}"
+                                              required="true"
+                                              maximumLength="50"/>
+                              </af:panelLabelAndMessage>
+                            </af:panelFormLayout>
+                          </af:gridCell>
+                          <af:gridCell marginStart="5px" marginEnd="5px"
+                                       width="auto"
+                                       binding="#{backingBeanScope.backing_qualificarAtendimento.gc4}"
+                                       id="gc4">
+                            <af:commandButton text="Pesquisar C.E.P."
+                                              binding="#{backingBeanScope.backing_qualificarAtendimento.cb1}"
+                                              id="cb1"
+                                              rendered="#{pageFlowScope.managedBean.editandoCidadao}"
+                                              actionListener="#{pageFlowScope.managedBean.pesquisarCEPActionListener}"
+                                              partialSubmit="true"
+                                              immediate="true"/>
+                          </af:gridCell>
+                          <af:gridCell binding="#{backingBeanScope.backing_qualificarAtendimento.gc5}"
+                                       id="gc5" width="auto">
+                            <af:panelFormLayout binding="#{backingBeanScope.backing_qualificarAtendimento.pfl2}"
+                                                id="pfl2" labelWidth="140">
+                              <f:facet name="footer">
+                                <af:panelGroupLayout binding="#{backingBeanScope.backing_qualificarAtendimento.pgl1}"
+                                                     id="pgl1" halign="end"
+                                                     layout="horizontal"
+                                                     styleClass="AFStretchWidth">
+                                  <af:commandButton text="Cancelar"
+                                                    binding="#{backingBeanScope.backing_qualificarAtendimento.cb2}"
+                                                    id="cb2"
+                                                    rendered="#{pageFlowScope.managedBean.editandoCidadao}"
+                                                    immediate="true"
+                                                    partialSubmit="true"
+                                                    actionListener="#{pageFlowScope.managedBean.cancelarCadastroCidadaoActionListener}">
+                                    <af:resetActionListener/>
+                                  </af:commandButton>
+                                  <af:commandButton text="#{pageFlowScope.managedBean.labelCadastrarCidadao}"
+                                                    binding="#{backingBeanScope.backing_qualificarAtendimento.cb3}"
+                                                    id="cb3"
+                                                    actionListener="#{pageFlowScope.managedBean.cadastrarCidadaoActionListener}"
+                                                    rendered="#{pageFlowScope.managedBean.editandoCidadao}"/>
+                                  <af:commandButton text="Alterar Cadastro do Cidadão"
+                                                    binding="#{backingBeanScope.backing_qualificarAtendimento.cb4}"
+                                                    id="cb4"
+                                                    rendered="#{not pageFlowScope.managedBean.editandoCidadao and not empty pageFlowScope.managedBean.cidadao}"
+                                                    actionListener="#{pageFlowScope.managedBean.iniciarAlteracaoCadastroActionListener}"/>
+                                </af:panelGroupLayout>
+                              </f:facet>
+                              <af:panelLabelAndMessage label="Complemento:"
+                                                       labelStyle="font-weight:bold; text-align:left;"
+                                                       binding="#{backingBeanScope.backing_qualificarAtendimento.plam20}"
+                                                       id="plam20">
+                                <af:inputText label="Complemento" simple="true"
+                                              binding="#{backingBeanScope.backing_qualificarAtendimento.itEnderecoComplemento}"
+                                              id="itEnderecoComplemento"
+                                              readOnly="#{not pageFlowScope.managedBean.editandoCidadao}"
+                                              value="#{pageFlowScope.managedBean.cidadao.endereco.complemento}"
+                                              maximumLength="100"/>
+                              </af:panelLabelAndMessage>
+                              <af:panelLabelAndMessage label="Número Logradouro:"
+                                                       labelStyle="font-weight:bold; text-align:left;"
+                                                       binding="#{backingBeanScope.backing_qualificarAtendimento.plam21}"
+                                                       id="plam21">
+                                <af:inputText label="Número Logradouro"
+                                              simple="true"
+                                              binding="#{backingBeanScope.backing_qualificarAtendimento.itEnderecoNumeroLogradouro}"
+                                              id="itEnderecoNumeroLogradouro"
+                                              readOnly="#{not pageFlowScope.managedBean.editandoCidadao}"
+                                              value="#{pageFlowScope.managedBean.cidadao.endereco.numeroLogradouro}"
+                                              required="true"
+                                              maximumLength="20"/>
+                              </af:panelLabelAndMessage>
+                              <af:panelLabelAndMessage label="Tipo Logradouro:"
+                                                       labelStyle="font-weight:bold; text-align:left;"
+                                                       binding="#{backingBeanScope.backing_qualificarAtendimento.plam22}"
+                                                       id="plam22">
+                                <af:inputText label="Tipo Logradouro"
+                                              simple="true"
+                                              binding="#{backingBeanScope.backing_qualificarAtendimento.itEnderecoTipoLogradouro}"
+                                              id="itEnderecoTipoLogradouro"
+                                              readOnly="#{not pageFlowScope.managedBean.editandoCidadao}"
+                                              value="#{pageFlowScope.managedBean.cidadao.endereco.tipoLogradouro}"
+                                              maximumLength="30"/>
+                              </af:panelLabelAndMessage>
+                              <af:panelLabelAndMessage label="Nome Logradouro:"
+                                                       labelStyle="font-weight:bold; text-align:left;"
+                                                       binding="#{backingBeanScope.backing_qualificarAtendimento.plam19}"
+                                                       id="plam19">
+                                <af:inputText label="Nome Logradouro"
+                                              simple="true"
+                                              binding="#{backingBeanScope.backing_qualificarAtendimento.itEnderecoNomeLogradouro}"
+                                              id="itEnderecoNomeLogradouro"
+                                              readOnly="#{not pageFlowScope.managedBean.editandoCidadao}"
+                                              value="#{pageFlowScope.managedBean.cidadao.endereco.nomeLogradouro}"
+                                              maximumLength="50"/>
+                              </af:panelLabelAndMessage>
+                            </af:panelFormLayout>
+                          </af:gridCell>
+                        </af:gridRow>
+                      </af:panelGridLayout>
+                    </af:panelHeader>
+                  </af:showDetailHeader>
+                </af:panelGroupLayout>
+                <af:panelGroupLayout binding="#{backingBeanScope.backing_qualificarAtendimento.pglCadastrarAgendamento}"
+                                     id="pglCadastrarAgendamento"
+                                     rendered="#{not empty pageFlowScope.managedBean.cidadao}">
+                  <af:panelHeader text=" "
+                                  binding="#{backingBeanScope.backing_qualificarAtendimento.ph5}"
+                                  id="ph5" partialTriggers="cb5">
+                    <af:panelHeader text="Realizar agendamento de serviços"
+                                    binding="#{backingBeanScope.backing_qualificarAtendimento.panelHeader3}"
+                                    id="panelHeader3"
+                                    partialTriggers="socServicoAtendimento">
+                      <af:panelGroupLayout binding="#{backingBeanScope.backing_qualificarAtendimento.pgl6}"
+                                           id="pgl6" layout="horizontal">
+                        <af:panelFormLayout binding="#{backingBeanScope.backing_qualificarAtendimento.pfl5}"
+                                            id="pfl5" rows="2" labelWidth="140">
+                          <af:panelLabelAndMessage label="Consultar Cidadão:"
+                                                   labelStyle="font-weight:bold; text-align:left;"
+                                                   binding="#{backingBeanScope.backing_qualificarAtendimento.plam25}"
+                                                   id="plam25">
+                            <af:selectOneChoice label="Consultar cidadão:"
+                                                simple="true"
+                                                binding="#{backingBeanScope.backing_qualificarAtendimento.socServicoAtendimento}"
+                                                id="socServicoAtendimento"
+                                                valueChangeListener="#{pageFlowScope.managedBean.servicoAtendimentoChangeListener}"
+                                                autoSubmit="true">
+                              <f:selectItems value="#{pageFlowScope.managedBean.listaServicoAtendimento}"
+                                             binding="#{backingBeanScope.backing_qualificarAtendimento.si5}"
+                                             id="si5"/>
+                            </af:selectOneChoice>
+                          </af:panelLabelAndMessage>
+                          <af:panelLabelAndMessage label="Início:"
+                                                   labelStyle="font-weight:bold; text-align:left;"
+                                                   binding="#{backingBeanScope.backing_qualificarAtendimento.plam26}"
+                                                   id="plam26">
+                            <af:inputDate label="Início:" simple="true"
+                                          binding="#{backingBeanScope.backing_qualificarAtendimento.dtInicioFiltroHorario}"
+                                          id="dtInicioFiltroHorario"/>
+                          </af:panelLabelAndMessage>
+                          <af:panelLabelAndMessage label="Unid. Atendimento:"
+                                                   labelStyle="font-weight:bold; text-align:left;"
+                                                   binding="#{backingBeanScope.backing_qualificarAtendimento.plam23}"
+                                                   id="plam23">
+                            <af:selectOneChoice label="Unid. Atendimento:"
+                                                simple="true"
+                                                binding="#{backingBeanScope.backing_qualificarAtendimento.socUnidadeServicoAtendimento}"
+                                                id="socUnidadeServicoAtendimento"
+                                                valueChangeListener="#{pageFlowScope.managedBean.unidadeAtendimentoChangeListener}"
+                                                autoSubmit="true">
+                              <f:selectItems value="#{pageFlowScope.managedBean.listaUnidadeAtendimento}"
+                                             binding="#{backingBeanScope.backing_qualificarAtendimento.selectItems1}"
+                                             id="selectItems1"/>
+                            </af:selectOneChoice>
+                          </af:panelLabelAndMessage>
+                          <af:panelLabelAndMessage label="Término:"
+                                                   labelStyle="font-weight:bold; text-align:left;"
+                                                   binding="#{backingBeanScope.backing_qualificarAtendimento.plam1}"
+                                                   id="plam1">
+                            <af:inputDate label="Término:"
+                                          binding="#{backingBeanScope.backing_qualificarAtendimento.dtTerminoFiltroHorario}"
+                                          id="dtTerminoFiltroHorario"
+                                          simple="true"/>
+                            <f:facet name="end">
+                              <af:panelGroupLayout binding="#{backingBeanScope.backing_qualificarAtendimento.pgl8}"
+                                                   id="pgl8" halign="end"
+                                                   styleClass="AFStretchWidth"
+                                                   layout="horizontal">
+                                <af:commandButton text="Pesquisar"
+                                                  binding="#{backingBeanScope.backing_qualificarAtendimento.cb5}"
+                                                  id="cb5"
+                                                  actionListener="#{pageFlowScope.managedBean.pesquisarHorariosDisponiveis}"
+                                                  partialSubmit="true"/>
+                              </af:panelGroupLayout>
+                            </f:facet>
+                          </af:panelLabelAndMessage>
+                        </af:panelFormLayout>
+                      </af:panelGroupLayout>
+                    </af:panelHeader>
+                    <af:panelHeader text="Grade de horários"
+                                    binding="#{backingBeanScope.backing_qualificarAtendimento.ph3}"
+                                    id="ph3"
+                                    rendered="#{not empty pageFlowScope.managedBean.listaHorarioDisponivel}">
+                      <af:panelGroupLayout binding="#{backingBeanScope.backing_qualificarAtendimento.pgl12}"
+                                           id="pgl12"
+                                           styleClass="AFStretchWidth"
+                                           layout="scroll"
+                                           inlineStyle="height:120px;">
+                        <af:panelFormLayout binding="#{backingBeanScope.backing_qualificarAtendimento.pfl7}"
+                                            id="pfl7" maxColumns="5" rows="5"
+                                            styleClass="AFStretchWidth">
+                          <af:forEach items="#{pageFlowScope.managedBean.listaHorarioDisponivel}"
+                                      var="item" varStatus="status">
+                            <af:selectBooleanRadio text="#{item.label}"
+                                                   id="selectBooleanRadio23"
+                                                   group="horarioSelecionado"
+                                                   autoSubmit="true"
+                                                   valueChangeListener="#{pageFlowScope.managedBean.horarioAtendimentoChangeListener}"/>
+                          </af:forEach>
+                        </af:panelFormLayout>
+                      </af:panelGroupLayout>
+                      <af:panelGroupLayout binding="#{backingBeanScope.backing_qualificarAtendimento.pgl9}"
+                                           id="pgl9" styleClass="AFStretchWidth"
+                                           layout="horizontal" halign="end">
+                        <af:commandButton binding="#{backingBeanScope.backing_qualificarAtendimento.cbCadastrarAgendamento}"
+                                          id="cbCadastrarAgendamento"
+                                          actionListener="#{pageFlowScope.managedBean.cadastrarAgendamentoActionListener}"
+                                          partialSubmit="true"
+                                          text="Realizar Agendamento"/>
+                      </af:panelGroupLayout>
+                    </af:panelHeader>
+                  </af:panelHeader>
+                </af:panelGroupLayout>
+                <af:panelGroupLayout binding="#{backingBeanScope.backing_qualificarAtendimento.pglServicosAgendados}"
+                                     id="pglServicosAgendados"
+                                     rendered="#{not empty pageFlowScope.managedBean.cidadao}">
+                  <af:panelHeader text="  "
+                                  binding="#{backingBeanScope.backing_qualificarAtendimento.ph6}"
+                                  id="ph6">
+                    <af:panelHeader text="Lista de serviços agendados"
+                                    binding="#{backingBeanScope.backing_qualificarAtendimento.panelHeader4}"
+                                    id="panelHeader4">
+                      <af:panelGroupLayout binding="#{backingBeanScope.backing_qualificarAtendimento.pgl10}"
+                                           id="pgl10" layout="scroll"
+                                           inlineStyle="height:120.0px;"
+                                           rendered="#{not empty pageFlowScope.managedBean.listaServicoAgendadoListaDocumento}">
+                        <af:panelGridLayout id="pgl11"
+                                            styleClass="AFStretchWidth">
+                          <af:forEach items="#{pageFlowScope.managedBean.listaServicoAgendadoListaDocumento}"
+                                      var="servicoAgendadoListaDocumento"
+                                      varStatus="status">
+                            <af:gridRow marginTop="5px" marginBottom="5px"
+                                        height="auto" id="gr4">
+                              <af:gridCell marginStart="5px" width="33%"
+                                           id="gc8">
+                                <af:outputText value="#{servicoAgendadoListaDocumento.agendamento.servico.nome}"
+                                               id="ot1"
+                                               inlineStyle="font-weight:bold; text-align:left;"/>
+                              </af:gridCell>
+                              <af:gridCell marginStart="5px" width="33%"
+                                           id="gc9">
+                                <af:outputText value="#{servicoAgendadoListaDocumento.agendamento.posto.unidade.nome}"
+                                               id="ot2"
+                                               inlineStyle="font-weight:bold; text-align:left;"/>
+                              </af:gridCell>
+                              <af:gridCell marginStart="5px" marginEnd="5px"
+                                           width="34%" id="gc7">
+                                <af:outputText value="#{servicoAgendadoListaDocumento.agendamento.dataAgendamento}"
+                                               id="ot3"
+                                               inlineStyle="font-weight:bold; text-align:left;"
+                                               converter="gregorianConverter"/>
+                              </af:gridCell>
+                            </af:gridRow>
+                            <af:forEach items="#{servicoAgendadoListaDocumento.listaDocumento}"
+                                        var="doc">
+                              <af:gridRow marginTop="5px" marginBottom="5px"
+                                          height="auto" id="gr6">
+                                <af:gridCell id="gc11" width="10%"
+                                             marginStart="5px" marginEnd="5px"/>
+                                <af:gridCell marginStart="5px" marginEnd="5px"
+                                             width="90%" id="gc10">
+                                  <af:outputText value="#{doc.nomeDocumento}"
+                                                 id="ot4"/>
+                                </af:gridCell>
+                              </af:gridRow>
+                            </af:forEach>
+                          </af:forEach>
+                        </af:panelGridLayout>
+                      </af:panelGroupLayout>
+                    </af:panelHeader>
+                    <af:panelHeader text="Lista de documentos pendentes do cidadão"
+                                    binding="#{backingBeanScope.backing_qualificarAtendimento.panelHeader1}"
+                                    id="panelHeader1">
+                      <af:table var="row" rowBandingInterval="0"
+                                binding="#{backingBeanScope.backing_qualificarAtendimento.tbDoc}"
+                                id="tbDoc"
+                                value="#{pageFlowScope.managedBean.listaServicoAgendadoDocumento}"
+                                styleClass="AFStretchWidth"
+                                inlineStyle="height:149px;" varStatus="status"
+                                rendered="#{not empty pageFlowScope.managedBean.listaServicoAgendadoDocumento}">
+                        <af:column sortable="false" headerText="Nome Documento"
+                                   align="start" id="c11" width="400">
+                          <af:outputText value="#{row.documento.nomeDocumento}"
+                                         id="ot8"/>
+                        </af:column>
+                        <af:column sortable="false" headerText="Arquivo"
+                                   align="center" id="c12">
+                          <af:goLink text="Abrir Arquivo" id="gl1"
+                                     destination="#{row.documento.urlDocumento}"
+                                     targetFrame="_blank"
+                                     rendered="#{not empty row.documento.urlDocumento}"/>
+                        </af:column>
+                        <af:column sortable="false" align="center" id="c1"
+                                   headerText="Enviar Arquivo">
+                          <af:commandButton text="Enviar Arquivo"
+                                            id="cbUploadArquivo"
+                                            binding="#{backingBeanScope.backing_qualificarAtendimento.cbUploadArquivo}"
+                                            partialSubmit="true"
+                                            actionListener="#{pageFlowScope.managedBean.mostrarPopupUploadActionListener}">
+                            <af:setPropertyListener type="action" from="#{row}"
+                                                    to="#{pageFlowScope.managedBean.documentoUpload}"/>
+                          </af:commandButton>
+                        </af:column>
+                      </af:table>
+                    </af:panelHeader>
+                  </af:panelHeader>
+                </af:panelGroupLayout>
+                <af:spacer width="10" height="30"
+                           binding="#{backingBeanScope.backing_qualificarAtendimento.s1}"
+                           id="s1"/>
+                <af:panelGroupLayout binding="#{backingBeanScope.backing_qualificarAtendimento.pglCommandButton}"
+                                     id="pglCommandButton" layout="horizontal">
+                  <af:commandButton text="Emitir Senha e Protocolo(s)"
+                                    binding="#{backingBeanScope.backing_qualificarAtendimento.cb6}"
+                                    id="cb6"
+                                    actionListener="#{pageFlowScope.managedBean.emitirProtocolosParaHojeActionListener}"
+                                    rendered="#{not empty pageFlowScope.managedBean.cidadao}"/>
+                  <af:commandButton text="Realizar Nova Consulta"
+                                    binding="#{backingBeanScope.backing_qualificarAtendimento.commandButton3}"
+                                    id="commandButton3" partialSubmit="true"
+                                    actionListener="#{pageFlowScope.managedBean.novaConsultaActionListener}"
+                                    rendered="#{not empty pageFlowScope.managedBean.cidadao}"
+                                    immediate="true"/>
+                </af:panelGroupLayout>
+              </af:panelGroupLayout>
+            </af:group>
+          </f:facet>
+        </af:pageTemplate>
+        <af:popup binding="#{backingBeanScope.backing_qualificarAtendimento.popupUpload}"
+                  id="popupUpload" contentDelivery="lazyUncached">
+          <af:dialog binding="#{backingBeanScope.backing_qualificarAtendimento.dialogUpload}"
+                     id="dialogUpload"
+                     dialogListener="#{pageFlowScope.managedBean.uploadDialogListener}">
+            <af:panelGroupLayout binding="#{backingBeanScope.backing_qualificarAtendimento.pgl3}"
+                                 id="pgl3">
+              <af:inputFile label="Selecione um arquivo"
+                            binding="#{backingBeanScope.backing_qualificarAtendimento.inputFile}"
+                            id="inputFile"
+                            value="#{pageFlowScope.managedBean.fileUpload}"/>
+            </af:panelGroupLayout>
+          </af:dialog>
+        </af:popup>
+      </af:form>
+    </af:document>
+  </f:view>
+  <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_qualificarAtendimento-->
+</jsp:root>

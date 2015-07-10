@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.64.93"
+          id="RealizarAtendimento_ProcessoTriagem" Package="br.gov.sedurb"
+          BeanClass="br.gov.sedurb.RealizarAtendimento_ProcessoTriagem"
+          isJavaBased="false">
+  <MethodAccessor id="iniciarAtendimento">
+    <ParameterInfo id="cpfCidadao" Type="java.lang.String"
+                   isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor id="gerarProtocolo">
+    <ParameterInfo id="cpfCidadao" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="codigoProtocoloPai" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="senhaAtendimento" Type="java.lang.String"
+                   isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor id="finalizarAtendimento">
+    <ParameterInfo id="cpfCidadao" Type="java.lang.String"
+                   isStructured="false"/>
+  </MethodAccessor>
+</JavaBean>

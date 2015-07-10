@@ -1,0 +1,335 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1"
+                 binding="#{backingBeanScope.backing_imprimirCarteira.d1}"
+                 title="Realizar Impressão e Entrega de Carteiras">
+      <af:form id="f1"
+               binding="#{backingBeanScope.backing_imprimirCarteira.f1}"
+               usesUpload="true">
+        <af:resource type="javascript">
+          function downloadCarteira(event) {
+              var exportCmd = AdfPage.PAGE.findComponentByAbsoluteId("pt1:cbHiddenCarteira");
+              var actionEvent = new AdfActionEvent(exportCmd);
+              actionEvent.forceFullSubmit();
+              actionEvent.noResponseExpected();
+              actionEvent.queue();
+          }
+          function downloadRecibo(event) {
+              var exportCmd = AdfPage.PAGE.findComponentByAbsoluteId("pt1:cbHiddenRecibo");
+              var actionEvent = new AdfActionEvent(exportCmd);
+              actionEvent.forceFullSubmit();
+              actionEvent.noResponseExpected();
+              actionEvent.queue();
+          }
+        </af:resource>
+        <af:pageTemplate viewId="/oracle/templates/threeColumnTemplate.jspx"
+                         id="pt1">
+          <f:facet name="center">
+            <af:panelGroupLayout binding="#{backingBeanScope.backing_imprimirCarteira.pglPrincipal}"
+                                 id="pglPrincipal" partialTriggers="cb1">
+              <af:outputLabel value="Realizar Impressão e Entrega de Carteiras"
+                              id="ol3"
+                              inlineStyle="font-size:x-large; font-weight:bold;"/>
+              <af:spacer width="10" height="30" id="spacer1"/>
+              <af:panelGroupLayout binding="#{backingBeanScope.backing_imprimirCarteira.pglConsultarCidadao}"
+                                   id="pglConsultarCidadao">
+                <af:panelHeader text="Consultar Cidadão"
+                                binding="#{backingBeanScope.backing_imprimirCarteira.ph3}"
+                                id="ph3"
+                                rendered="#{empty pageFlowScope.managedBean.cidadao}">
+                  <af:panelGroupLayout binding="#{backingBeanScope.backing_imprimirCarteira.pgl3}"
+                                       id="pgl3" layout="horizontal">
+                    <af:inputText label="Digite o C.P.F. ou Protocolo para consulta"
+                                  binding="#{backingBeanScope.backing_imprimirCarteira.itCpfConsulta}"
+                                  id="itCpfConsulta"/>
+                    <af:commandButton text="Pesquisar Cidadão"
+                                      binding="#{backingBeanScope.backing_imprimirCarteira.cb1}"
+                                      id="cb1" partialSubmit="true"
+                                      actionListener="#{pageFlowScope.managedBean.consultarCidadaoActionListener}"
+                                      blocking="true"/>
+                  </af:panelGroupLayout>
+                </af:panelHeader>
+                <af:showDetailHeader text="Dados do Cidadão" disclosed="true"
+                                     binding="#{backingBeanScope.backing_imprimirCarteira.sdh2}"
+                                     id="sdh2"
+                                     rendered="#{not empty pageFlowScope.managedBean.cidadao}">
+                  <af:panelGroupLayout binding="#{backingBeanScope.backing_imprimirCarteira.pgl4}"
+                                       id="pgl4">
+                    <af:panelHeader text="Informações Pessoais do Cidadão"
+                                    binding="#{backingBeanScope.backing_imprimirCarteira.ph5}"
+                                    id="ph5">
+                      <af:panelGridLayout binding="#{backingBeanScope.backing_imprimirCarteira.pgl8}"
+                                          id="pgl8">
+                        <af:gridRow marginTop="5px" height="auto"
+                                    binding="#{backingBeanScope.backing_imprimirCarteira.gr4}"
+                                    id="gr4">
+                          <af:gridCell marginStart="5px" marginEnd="5px"
+                                       width="100%"
+                                       binding="#{backingBeanScope.backing_imprimirCarteira.gc6}"
+                                       id="gc6">
+                            <af:panelFormLayout binding="#{backingBeanScope.backing_imprimirCarteira.pfl1}"
+                                                id="pfl1">
+                              <af:inputText label="C.P.F."
+                                            binding="#{backingBeanScope.backing_imprimirCarteira.it2}"
+                                            id="it2"
+                                            value="#{pageFlowScope.managedBean.cidadao.documentoCPF}"
+                                            readOnly="true"/>
+                            </af:panelFormLayout>
+                          </af:gridCell>
+                        </af:gridRow>
+                        <af:gridRow marginTop="5px" marginBottom="5px"
+                                    height="auto"
+                                    binding="#{backingBeanScope.backing_imprimirCarteira.gr5}"
+                                    id="gr5">
+                          <af:gridCell marginStart="5px" marginEnd="5px"
+                                       width="auto"
+                                       binding="#{backingBeanScope.backing_imprimirCarteira.gc7}"
+                                       id="gc7">
+                            <af:panelFormLayout binding="#{backingBeanScope.backing_imprimirCarteira.pfl6}"
+                                                id="pfl6" rows="5">
+                              <af:inputText label="Nome Completo"
+                                            binding="#{backingBeanScope.backing_imprimirCarteira.it3}"
+                                            id="it3" readOnly="true"
+                                            value="#{pageFlowScope.managedBean.cidadao.nomeCompleto}"/>
+                              <af:inputDate label="Data Nascimento"
+                                            binding="#{backingBeanScope.backing_imprimirCarteira.idDataNascimento}"
+                                            id="idDataNascimento"
+                                            readOnly="true"/>
+                              <af:selectOneRadio label="Sexo"
+                                                 binding="#{backingBeanScope.backing_imprimirCarteira.sor1}"
+                                                 id="sor1" layout="horizontal"
+                                                 readOnly="true"
+                                                 value="#{pageFlowScope.managedBean.cidadao.sexo}">
+                                <af:selectItem label="Masculino"
+                                               value="MASCULINO"
+                                               binding="#{backingBeanScope.backing_imprimirCarteira.si5}"
+                                               id="si5"/>
+                                <af:selectItem label="Feminino" value="FEMININO"
+                                               binding="#{backingBeanScope.backing_imprimirCarteira.si6}"
+                                               id="si6"/>
+                              </af:selectOneRadio>
+                              <af:inputText label="Telefone Residencial"
+                                            binding="#{backingBeanScope.backing_imprimirCarteira.itTelefoneResidencial}"
+                                            id="itTelefoneResidencial"
+                                            readOnly="true"/>
+                              <af:inputText label="Telefone Celular"
+                                            binding="#{backingBeanScope.backing_imprimirCarteira.itTelefoneCelular}"
+                                            id="itTelefoneCelular"
+                                            readOnly="true"/>
+                              <af:inputText label="Número"
+                                            binding="#{backingBeanScope.backing_imprimirCarteira.it6}"
+                                            id="it6" readOnly="true"
+                                            value="#{pageFlowScope.managedBean.cidadao.carteiraIdentidade.numeroIdentidade}"/>
+                              <af:inputText label="Complemento"
+                                            binding="#{backingBeanScope.backing_imprimirCarteira.it7}"
+                                            id="it7" readOnly="true"
+                                            value="#{pageFlowScope.managedBean.cidadao.carteiraIdentidade.numeroIdentidadeComplemento}"/>
+                              <af:inputDate label="Data Emissão"
+                                            binding="#{backingBeanScope.backing_imprimirCarteira.idIdentidadeDataEmissao}"
+                                            id="idIdentidadeDataEmissao"
+                                            readOnly="true"/>
+                              <af:inputText label="Órgão Emissor"
+                                            binding="#{backingBeanScope.backing_imprimirCarteira.it8}"
+                                            id="it8" readOnly="true"
+                                            value="#{pageFlowScope.managedBean.cidadao.carteiraIdentidade.orgaoEmissor}"/>
+                              <af:selectOneChoice label="Unidade Federativa"
+                                                  binding="#{backingBeanScope.backing_imprimirCarteira.socIdentidadeUF}"
+                                                  id="socIdentidadeUF"
+                                                  readOnly="true">
+                                <f:selectItems value="#{pageFlowScope.managedBean.listaUnidadeFederativa}"
+                                               binding="#{backingBeanScope.backing_imprimirCarteira.si7}"
+                                               id="si7"/>
+                              </af:selectOneChoice>
+                            </af:panelFormLayout>
+                          </af:gridCell>
+                        </af:gridRow>
+                      </af:panelGridLayout>
+                    </af:panelHeader>
+                    <af:panelHeader text="Informações de Endereço do Cidadão"
+                                    binding="#{backingBeanScope.backing_imprimirCarteira.ph6}"
+                                    id="ph6">
+                      <af:panelGridLayout binding="#{backingBeanScope.backing_imprimirCarteira.pgl9}"
+                                          id="pgl9">
+                        <af:gridRow marginTop="5px" marginBottom="5px"
+                                    height="auto"
+                                    binding="#{backingBeanScope.backing_imprimirCarteira.gr6}"
+                                    id="gr6">
+                          <af:gridCell marginStart="5px" width="auto"
+                                       binding="#{backingBeanScope.backing_imprimirCarteira.gc8}"
+                                       id="gc8">
+                            <af:panelFormLayout binding="#{backingBeanScope.backing_imprimirCarteira.pfl7}"
+                                                id="pfl7">
+                              <af:inputText label="C.E.P."
+                                            binding="#{backingBeanScope.backing_imprimirCarteira.it9}"
+                                            id="it9" readOnly="true"
+                                            value="#{pageFlowScope.managedBean.cidadao.endereco.cep}"/>
+                              <af:inputText label="País"
+                                            binding="#{backingBeanScope.backing_imprimirCarteira.it10}"
+                                            id="it10" readOnly="true"
+                                            value="#{pageFlowScope.managedBean.cidadao.endereco.pais}"/>
+                              <af:selectOneChoice label="Unidade Federativa"
+                                                  binding="#{backingBeanScope.backing_imprimirCarteira.soc2}"
+                                                  id="soc2" readOnly="true"
+                                                  value="#{pageFlowScope.managedBean.cidadao.endereco.unidadeFederativa}">
+                                <f:selectItems value="#{pageFlowScope.managedBean.listaUnidadeFederativa}"
+                                               binding="#{backingBeanScope.backing_imprimirCarteira.si8}"
+                                               id="si8"/>
+                              </af:selectOneChoice>
+                              <af:inputText label="Município"
+                                            binding="#{backingBeanScope.backing_imprimirCarteira.it11}"
+                                            id="it11" readOnly="true"
+                                            value="#{pageFlowScope.managedBean.cidadao.endereco.municipio}"/>
+                              <af:inputText label="Bairro"
+                                            binding="#{backingBeanScope.backing_imprimirCarteira.it12}"
+                                            id="it12" readOnly="true"
+                                            value="#{pageFlowScope.managedBean.cidadao.endereco.bairro}"/>
+                            </af:panelFormLayout>
+                          </af:gridCell>
+                          <af:gridCell marginStart="5px" marginEnd="5px"
+                                       width="auto"
+                                       binding="#{backingBeanScope.backing_imprimirCarteira.gc10}"
+                                       id="gc10">
+                            <af:panelFormLayout binding="#{backingBeanScope.backing_imprimirCarteira.pfl8}"
+                                                id="pfl8">
+                              <af:inputText label="Complemento"
+                                            binding="#{backingBeanScope.backing_imprimirCarteira.it13}"
+                                            id="it13" readOnly="true"
+                                            value="#{pageFlowScope.managedBean.cidadao.endereco.complemento}"/>
+                              <af:inputText label="Número Logradouro"
+                                            binding="#{backingBeanScope.backing_imprimirCarteira.it14}"
+                                            id="it14" readOnly="true"
+                                            value="#{pageFlowScope.managedBean.cidadao.endereco.numeroLogradouro}"/>
+                              <af:inputText label="Tipo Logradouro"
+                                            binding="#{backingBeanScope.backing_imprimirCarteira.it15}"
+                                            id="it15" readOnly="true"
+                                            value="#{pageFlowScope.managedBean.cidadao.endereco.tipoLogradouro}"/>
+                              <af:inputText label="Nome Logradouro"
+                                            binding="#{backingBeanScope.backing_imprimirCarteira.it16}"
+                                            id="it16" readOnly="true"
+                                            value="#{pageFlowScope.managedBean.cidadao.endereco.nomeLogradouro}"/>
+                            </af:panelFormLayout>
+                          </af:gridCell>
+                        </af:gridRow>
+                      </af:panelGridLayout>
+                    </af:panelHeader>
+                  </af:panelGroupLayout>
+                </af:showDetailHeader>
+              </af:panelGroupLayout>
+              <af:panelGroupLayout binding="#{backingBeanScope.backing_imprimirCarteira.panelGroupLayout2}"
+                                   id="panelGroupLayout2">
+                <af:showDetailHeader text="Lista de serviços pendentes de impressão para o Cidadão"
+                                     disclosed="true"
+                                     binding="#{backingBeanScope.backing_imprimirCarteira.showDetailHeader1}"
+                                     id="showDetailHeader1"
+                                     rendered="#{not empty pageFlowScope.managedBean.cidadao}">
+                  <af:panelGroupLayout binding="#{backingBeanScope.backing_imprimirCarteira.panelGroupLayout3}"
+                                       id="panelGroupLayout3" layout="scroll"
+                                       partialTriggers="cb5">
+                    <af:outputLabel value="PROTOCOLO DE ATENDIMENTO #{pageFlowScope.managedBean.protocoloPai.codigoProtocoloPai}"
+                                    binding="#{backingBeanScope.backing_imprimirCarteira.ol1}"
+                                    id="ol1"/>
+                    <af:spacer width="10" height="10" id="s3"
+                               binding="#{backingBeanScope.backing_imprimirCarteira.s3}"/>
+                    <af:panelGridLayout binding="#{backingBeanScope.backing_imprimirCarteira.pgl10}"
+                                        id="pgl10">
+                      <af:forEach items="#{pageFlowScope.managedBean.listaServicoImpressao}"
+                                  var="item" varStatus="status">
+                        <af:gridRow marginTop="10px" marginBottom="10px"
+                                    height="auto" id="gridRow1">
+                          <af:gridCell marginStart="5px" width="auto"
+                                       id="gridCell1"
+                                       inlineStyle="border-color:Black; border-style:solid; border-width:thin;">
+                            <af:outputLabel value="Prot. de Serv. #{item.protocolo.cdProtocolo}"
+                                            id="ol2"/>
+                          </af:gridCell>
+                          <af:gridCell marginStart="5px" width="auto"
+                                       id="gridCell2"
+                                       inlineStyle="border-color:Black; border-style:solid; border-width:thin;">
+                            <af:outputLabel value="#{item.protocolo.nomeServico}"
+                                            id="outputLabel1"/>
+                          </af:gridCell>
+                          <af:gridCell marginStart="5px" width="auto"
+                                       id="gridCell3"
+                                       inlineStyle="border-color:Black; border-style:solid; border-width:thin;">
+                            <af:outputLabel id="outputLabel2"
+                                            converter="javax.faces.DateTime"
+                                            value="#{item.dataImpressao}"/>
+                          </af:gridCell>
+                          <af:gridCell marginStart="5px" width="auto"
+                                       id="gridCell4"
+                                       inlineStyle="border-color:Black; border-style:solid; border-width:thin;">
+                            <af:outputLabel id="outputLabel3"
+                                            converter="javax.faces.DateTime"
+                                            value="#{item.dataEntrega}"/>
+                          </af:gridCell>
+                          <af:gridCell marginStart="5px" marginEnd="5px"
+                                       width="auto" id="gc9"
+                                       inlineStyle="border-color:Black; border-style:solid; border-width:thin;">
+                            <af:panelGroupLayout id="pgl1" layout="horizontal">
+                              <af:commandButton text="Imprimir Carteira"
+                                                id="cb5"
+                                                actionListener="#{pageFlowScope.managedBean.imprimirCarteiraActionListener}"
+                                                partialSubmit="true">
+                                <f:setPropertyActionListener target="#{pageFlowScope.managedBean.servicoSelecionado}"
+                                                             value="#{item}"/>
+                              </af:commandButton>
+                              <af:commandButton text="Imprimir Recibo Entrega"
+                                                id="commandButton2"
+                                                actionListener="#{pageFlowScope.managedBean.imprimirReciboActionListener}"
+                                                partialSubmit="true"
+                                                disabled="#{empty item.dataImpressao}">
+                                <f:setPropertyActionListener target="#{pageFlowScope.managedBean.servicoSelecionado}"
+                                                             value="#{item}"/>
+                              </af:commandButton>
+                              <af:inputFile label="Recibo de Entrega" id="if1"
+                                            valueChangeListener="#{pageFlowScope.managedBean.uploadRecibo}"
+                                            autoSubmit="true">
+                                <af:setPropertyListener from="#{item}"
+                                                        to="#{pageFlowScope.managedBean.servicoSelecionado}"
+                                                        type="valueChange"/>
+                              </af:inputFile>
+                            </af:panelGroupLayout>
+                          </af:gridCell>
+                        </af:gridRow>
+                      </af:forEach>
+                    </af:panelGridLayout>
+                  </af:panelGroupLayout>
+                </af:showDetailHeader>
+              </af:panelGroupLayout>
+              <af:panelGroupLayout binding="#{backingBeanScope.backing_imprimirCarteira.panelGroupLayout1}"
+                                   id="panelGroupLayout1">
+                <af:commandButton text="Realizar Nova Consulta"
+                                  binding="#{backingBeanScope.backing_imprimirCarteira.cbNovaConsulta}"
+                                  id="cbNovaConsulta"
+                                  rendered="#{not empty pageFlowScope.managedBean.cidadao}"
+                                  actionListener="#{pageFlowScope.managedBean.realizarNovaConsultaActionListener}"/>
+                <af:commandButton text="downloadCarteira" id="cbHiddenCarteira"
+                                  binding="#{backingBeanScope.backing_imprimirCarteira.cbHiddenCarteira}"
+                                  partialSubmit="true" clientComponent="true"
+                                  visible="false">
+                  <af:fileDownloadActionListener contentType="application/pdf"
+                                                 filename="carteira.pdf"
+                                                 method="#{pageFlowScope.managedBean.imprimirCarteira}"/>
+                </af:commandButton>
+                <af:commandButton text="downloadRecibo" id="cbHiddenRecibo"
+                                  binding="#{backingBeanScope.backing_imprimirCarteira.chHiddenRecibo}"
+                                  partialSubmit="true" clientComponent="true"
+                                  visible="false">
+                  <af:fileDownloadActionListener contentType="application/pdf"
+                                                 filename="recibo.pdf"
+                                                 method="#{pageFlowScope.managedBean.imprimirRecibo}"/>
+                </af:commandButton>
+              </af:panelGroupLayout>
+            </af:panelGroupLayout>
+          </f:facet>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+  <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_imprimirCarteira-->
+</jsp:root>

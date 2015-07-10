@@ -1,0 +1,152 @@
+<WL5G3N0:definitions
+     name="ProtocoloAtendimento"
+     targetNamespace="http://www.seplag.se.gov.br/ProtocoloAtendimento"
+     xmlns:WL5G3N3="http://schemas.xmlsoap.org/wsdl/soap12/"
+     xmlns:WL5G3N2="http://www.seplag.se.gov.br/commons/v1"
+     xmlns:WL5G3N0="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:WL5G3N1="http://www.seplag.se.gov.br/ProtocoloAtendimento"
+    >
+    <WL5G3N0:types>
+        <xsd:schema targetNamespace="http://www.seplag.se.gov.br/ProtocoloAtendimento" xmlns:cab="http://www.seplag.se.gov.br/commons/v1"
+             xmlns:erro="http://www.seplag.se.gov.br/commons/v1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap12/"
+             xmlns:tns="http://www.seplag.se.gov.br/ProtocoloAtendimento" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:include schemaLocation="ProtocoloAtendimento_SCHEMA_2FNegocio_2FProtocoloAtendimento_2FV1_2Fschema_2FProtocoloAtendimento.xsd"/>
+        </xsd:schema>
+        <xsd:schema xmlns:cab="http://www.seplag.se.gov.br/commons/v1" xmlns:erro="http://www.seplag.se.gov.br/commons/v1"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://www.seplag.se.gov.br/ProtocoloAtendimento"
+             xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+             xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://www.seplag.se.gov.br/commons/v1" schemaLocation="ProtocoloAtendimento_SCHEMA_2FModeloCanonico_2Fseplag_2Fcommons_2Fv1_2FErroInfo.xsd"/>
+            <xsd:import namespace="http://www.seplag.se.gov.br/commons/v1" schemaLocation="ProtocoloAtendimento_SCHEMA_2FModeloCanonico_2Fseplag_2Fcommons_2Fv1_2FCabecalhoSeplag.xsd"/>
+        </xsd:schema>
+    </WL5G3N0:types>
+    <WL5G3N0:message name="ParametroEmitirProtocoloAtendimentoRequest">
+        <WL5G3N0:part name="parameters" element="WL5G3N1:ParametroEmitirProtocoloAtendimento"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="ResultadoEmitirProtocoloAtendimentoResponse">
+        <WL5G3N0:part name="parameters" element="WL5G3N1:ResultadoEmitirProtocoloAtendimento"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="ErroInfoMessage">
+        <WL5G3N0:part name="parameters" element="WL5G3N2:erroInfo"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="ParametroAtualizarProtocoloAtendimentoRequest">
+        <WL5G3N0:part name="parameters" element="WL5G3N1:ParametroAtualizarProtocoloAtendimento"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="ResultadoAtualizarProtocoloAtendimentoResponse">
+        <WL5G3N0:part name="parameters" element="WL5G3N1:ResultadoAtualizarProtocoloAtendimento"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="ParametroObterProtocoloAtendimentoRequest">
+        <WL5G3N0:part name="parameters" element="WL5G3N1:ParametroObterProtocoloAtendimento"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="ResultadoObterProtocoloAtendimentoResponse">
+        <WL5G3N0:part name="parameters" element="WL5G3N1:ResultadoObterProtocoloAtendimento"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="ParametroGerarCodigoProtocoloAtendimentoRequest">
+        <WL5G3N0:part name="parameters" element="WL5G3N1:ParametroGerarCodigoProtocoloAtendimento"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="ResultadoGerarCodigoProtocoloAtendimentoResponse">
+        <WL5G3N0:part name="parameters" element="WL5G3N1:ResultadoGerarCodigoProtocoloAtendimento"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="ParametroConsultarProtocoloAtendimentoRequest">
+        <WL5G3N0:part name="parameters" element="WL5G3N1:ParametroConsultarProtocoloAtendimento"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="ResultadoConsultarProtocoloAtendimentoResponse">
+        <WL5G3N0:part name="parameters" element="WL5G3N1:ResultadoConsultarProtocoloAtendimento"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="CabecalhoSeplagMessage">
+        <WL5G3N0:part name="cabecalho" element="WL5G3N2:cabecalhoSeplag"/>
+    </WL5G3N0:message>
+    <WL5G3N0:portType name="ProtocoloAtendimento">
+        <WL5G3N0:operation name="EmitirProtocoloAtendimento">
+            <WL5G3N0:input message="WL5G3N1:ParametroEmitirProtocoloAtendimentoRequest"/>
+            <WL5G3N0:output message="WL5G3N1:ResultadoEmitirProtocoloAtendimentoResponse"/>
+            <WL5G3N0:fault name="erroInfo" message="WL5G3N1:ErroInfoMessage"/>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="AtualizarProtocoloAtendimento">
+            <WL5G3N0:input message="WL5G3N1:ParametroAtualizarProtocoloAtendimentoRequest"/>
+            <WL5G3N0:output message="WL5G3N1:ResultadoAtualizarProtocoloAtendimentoResponse"/>
+            <WL5G3N0:fault name="erroInfo" message="WL5G3N1:ErroInfoMessage"/>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="ObterProtocoloAtendimento">
+            <WL5G3N0:input message="WL5G3N1:ParametroObterProtocoloAtendimentoRequest"/>
+            <WL5G3N0:output message="WL5G3N1:ResultadoObterProtocoloAtendimentoResponse"/>
+            <WL5G3N0:fault name="erroInfo" message="WL5G3N1:ErroInfoMessage"/>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="GerarCodigoProtocoloAtendimento">
+            <WL5G3N0:input message="WL5G3N1:ParametroGerarCodigoProtocoloAtendimentoRequest"/>
+            <WL5G3N0:output message="WL5G3N1:ResultadoGerarCodigoProtocoloAtendimentoResponse"/>
+            <WL5G3N0:fault name="erroInfo" message="WL5G3N1:ErroInfoMessage"/>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="ConsultarProtocoloAtendimento">
+            <WL5G3N0:input message="WL5G3N1:ParametroConsultarProtocoloAtendimentoRequest"/>
+            <WL5G3N0:output message="WL5G3N1:ResultadoConsultarProtocoloAtendimentoResponse"/>
+            <WL5G3N0:fault name="erroInfo" message="WL5G3N1:ErroInfoMessage"/>
+        </WL5G3N0:operation>
+    </WL5G3N0:portType>
+    <WL5G3N0:binding name="ProtocoloAtendimentoSOAP" type="WL5G3N1:ProtocoloAtendimento">
+        <WL5G3N3:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <WL5G3N0:operation name="EmitirProtocoloAtendimento">
+            <WL5G3N3:operation soapAction="http://www.seplag.se.gov.br/ProtocoloAtendimento/EmitirProtocoloAtendimento"
+                 soapActionRequired="false"/>
+            <WL5G3N0:input>
+                <WL5G3N3:body use="literal"/>
+                <WL5G3N3:header message="WL5G3N1:CabecalhoSeplagMessage" part="cabecalho" use="literal"/>
+            </WL5G3N0:input>
+            <WL5G3N0:output>
+                <WL5G3N3:body use="literal"/>
+            </WL5G3N0:output>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="AtualizarProtocoloAtendimento">
+            <WL5G3N3:operation soapAction="http://www.seplag.se.gov.br/ProtocoloAtendimento/AtualizarProtocoloAtendimento"
+                 soapActionRequired="false"/>
+            <WL5G3N0:input>
+                <WL5G3N3:body use="literal"/>
+                <WL5G3N3:header message="WL5G3N1:CabecalhoSeplagMessage" part="cabecalho" use="literal"/>
+            </WL5G3N0:input>
+            <WL5G3N0:output>
+                <WL5G3N3:body use="literal"/>
+            </WL5G3N0:output>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="ObterProtocoloAtendimento">
+            <WL5G3N3:operation soapAction="http://www.seplag.se.gov.br/ProtocoloAtendimento/ObterProtocoloAtendimento"
+                 soapActionRequired="false"/>
+            <WL5G3N0:input>
+                <WL5G3N3:body use="literal"/>
+                <WL5G3N3:header message="WL5G3N1:CabecalhoSeplagMessage" part="cabecalho" use="literal"/>
+            </WL5G3N0:input>
+            <WL5G3N0:output>
+                <WL5G3N3:body use="literal"/>
+            </WL5G3N0:output>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="GerarCodigoProtocoloAtendimento">
+            <WL5G3N3:operation soapAction="http://www.seplag.se.gov.br/ProtocoloAtendimento/GerarCodigoProtocoloAtendimento"
+                 soapActionRequired="false"/>
+            <WL5G3N0:input>
+                <WL5G3N3:body use="literal"/>
+                <WL5G3N3:header message="WL5G3N1:CabecalhoSeplagMessage" part="cabecalho" use="literal"/>
+            </WL5G3N0:input>
+            <WL5G3N0:output>
+                <WL5G3N3:body use="literal"/>
+            </WL5G3N0:output>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="ConsultarProtocoloAtendimento">
+            <WL5G3N3:operation soapAction="http://www.seplag.se.gov.br/ProtocoloAtendimento/GerarCodigoProtocoloAtendimento"
+                 soapActionRequired="false"/>
+            <WL5G3N0:input>
+                <WL5G3N3:body use="literal"/>
+                <WL5G3N3:header message="WL5G3N1:CabecalhoSeplagMessage" part="cabecalho" use="literal"/>
+            </WL5G3N0:input>
+            <WL5G3N0:output>
+                <WL5G3N3:body use="literal"/>
+            </WL5G3N0:output>
+        </WL5G3N0:operation>
+    </WL5G3N0:binding>
+    <WL5G3N0:service name="ProtocoloAtendimento">
+        <WL5G3N0:port name="ProtocoloAtendimentoSOAP" binding="WL5G3N1:ProtocoloAtendimentoSOAP">
+            <WL5G3N3:address location="http://osb.itconsulting.com.br:8011/V1/ProtocoloAtendimento"/>
+        </WL5G3N0:port>
+    </WL5G3N0:service>
+</WL5G3N0:definitions>

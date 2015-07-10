@@ -1,0 +1,151 @@
+<schema targetNamespace="http://www.seplag.se.gov.br/ProtocoloAtendimento" elementFormDefault="qualified"
+     xmlns="http://www.w3.org/2001/XMLSchema" xmlns:pa="http://www.seplag.se.gov.br/ProtocoloAtendimento"
+     xmlns:ebo="http://www.seplag.se.gov.br/EBO/v1">
+    <import schemaLocation="ProtocoloAtendimento_SCHEMA_2FModeloCanonico_2Fseplag_2FEBO_2Fv1_2FProtocolo.xsd"
+         namespace="http://www.seplag.se.gov.br/EBO/v1"/>
+    <import schemaLocation="ProtocoloAtendimento_SCHEMA_2FModeloCanonico_2Fseplag_2FEBO_2Fv1_2FStatusProtocolo.xsd"
+         namespace="http://www.seplag.se.gov.br/EBO/v1"/>
+    <import schemaLocation="ProtocoloAtendimento_SCHEMA_2FModeloCanonico_2Fseplag_2FEBO_2Fv1_2FCpf.xsd"
+         namespace="http://www.seplag.se.gov.br/EBO/v1"/>
+    <element name="ParametroEmitirProtocoloAtendimento">
+        <complexType>
+            <sequence>
+                <element name="nmUnidade" type="string"/>
+                <element name="nmServico" type="string" minOccurs="0"/>
+                <element name="cdProtocoloPai" minOccurs="0">
+                    <simpleType>
+                        <restriction base="string">
+                            <minLength value="22"/>
+                            <maxLength value="22"/>
+                        </restriction>
+                    </simpleType>
+                </element>
+                <element name="cpf" type="ebo:DocumentoCPF"/>
+                <element name="idAgendamentoAgendaFacil" minOccurs="0" nillable="false" maxOccurs="1"
+                     type="integer"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="ResultadoEmitirProtocoloAtendimento">
+        <complexType>
+            <sequence>
+                <element name="codigoProtocolo" type="string"/>
+                <element name="senhaAtendimento" type="string" minOccurs="0"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="ParametroAtualizarProtocoloAtendimento">
+        <complexType>
+            <sequence>
+                <element name="cdProtocolo">
+                    <simpleType>
+                        <restriction base="string">
+                            <minLength value="22"/>
+                            <maxLength value="22"/>
+                        </restriction>
+                    </simpleType>
+                </element>
+                <element name="status" type="ebo:EstadoProtocolo"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="ResultadoAtualizarProtocoloAtendimento">
+        <complexType>
+            <sequence>
+                <element name="status" type="string"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="ParametroObterProtocoloAtendimento">
+        <complexType>
+            <sequence>
+                <element name="cdProtocoloPai">
+                    <simpleType>
+                        <restriction base="string">
+                            <minLength value="22"/>
+                            <maxLength value="22"/>
+                        </restriction>
+                    </simpleType>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="ResultadoObterProtocoloAtendimento">
+        <complexType>
+            <sequence>
+                <element name="protocolo" type="ebo:Protocolo" minOccurs="0"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="ParametroGerarCodigoProtocoloAtendimento">
+        <complexType>
+            <sequence>
+                <element name="idOrgao" type="integer"/>
+                <element name="idServico" type="integer"/>
+                <element name="senha" type="integer"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="ResultadoGerarCodigoProtocoloAtendimento">
+        <complexType>
+            <sequence>
+                <element name="codigoProtocolo" type="string"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="ParametroConsultarProtocoloAtendimento">
+        <complexType>
+            <sequence>
+                <choice>
+                    <element name="cdProtocoloPai" minOccurs="0">
+                        <simpleType>
+                            <restriction base="string">
+                                <minLength value="22"/>
+                                <maxLength value="22"/>
+                            </restriction>
+                        </simpleType>
+                    </element>
+                    <element name="cpf" type="ebo:DocumentoCPF" minOccurs="0"/>
+                </choice>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="ResultadoConsultarProtocoloAtendimento">
+        <complexType>
+            <sequence>
+                <element name="protocolos" minOccurs="0" maxOccurs="1">
+                    <complexType>
+                        <sequence>
+                            <element name="protocolo" minOccurs="0" maxOccurs="unbounded">
+                                <complexType>
+                                    <sequence>
+                                        <element name="cdProtocolo">
+                                            <simpleType>
+                                                <restriction base="string">
+                                                    <minLength value="22"/>
+                                                    <maxLength value="22"/>
+                                                </restriction>
+                                            </simpleType>
+                                        </element>
+                                        <element name="cdProtocoloPai" minOccurs="0">
+                                            <simpleType>
+                                                <restriction base="string">
+                                                    <minLength value="22"/>
+                                                    <maxLength value="22"/>
+                                                </restriction>
+                                            </simpleType>
+                                        </element>
+                                        <element name="cpf" type="ebo:DocumentoCPF"/>
+                                        <element name="codigoServico" type="integer"/>
+                                        <element name="nomeServico" type="string"/>
+                                        <element name="status" type="ebo:EstadoProtocolo"/>
+                                    </sequence>
+                                </complexType>
+                            </element>
+                        </sequence>
+                    </complexType>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

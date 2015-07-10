@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 5.6.1.final using JasperReports Library version 5.6.1  -->
+<!-- 2014-10-15T12:06:23 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reciboEntrega" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6b55968f-fe60-49d5-97c4-05977c5db6c8">
+	<parameter name="numeroCPF" class="java.lang.String"/>
+	<parameter name="numeroRG" class="java.lang.String"/>
+	<parameter name="nomeCidadao" class="java.lang.String"/>
+	<parameter name="nomeFuncionario" class="java.lang.String"/>
+	<parameter name="dataEntrega" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="344" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="15" width="554" height="30" uuid="146d94bd-044a-49bf-be56-be58323cadaf"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="19" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Recibo de Entrega de Documento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="60" width="90" height="30" uuid="9851df4d-2c16-4da3-9e42-f86b3340b979"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CPF.:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="100" width="90" height="30" uuid="1bf79258-b75d-4a09-a428-3816c9c15639"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome completo:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="140" width="90" height="30" uuid="4259dad3-599e-450c-be7e-6dbdbc6f43f4"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Carteira Entregue:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="180" width="90" height="30" uuid="0694e4c9-9d90-43a7-942c-78778ae8f71b"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Entregue em:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="330" y="60" width="90" height="30" uuid="ab83dc70-0a17-4574-ac03-7996ac86190f"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Número RG:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-1" y="260" width="556" height="30" uuid="775c05af-7a89-4061-ac60-f1b6e1b66ff5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="13" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Assinatura]]></text>
+			</staticText>
+			<line>
+				<reportElement x="80" y="260" width="400" height="1" uuid="5ea95457-393e-46e2-a4ba-8df1c57d178c"/>
+			</line>
+			<textField>
+				<reportElement x="150" y="60" width="160" height="30" uuid="24e07fab-14d1-4712-a919-f1f516c38b79"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{numeroCPF}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="430" y="60" width="124" height="30" uuid="869f5fa3-3714-47bd-8c2a-1bf7c5672fb2"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{numeroRG}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="100" width="404" height="30" uuid="f84f5efb-ce87-49c5-9163-7bef940f63aa"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{nomeCidadao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="140" width="404" height="30" uuid="cfe50a51-5391-49ec-b5a6-ab99be6fbcf7"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{nomeFuncionario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="180" width="100" height="30" uuid="744f1c00-260d-469c-975f-73b5faa58a45"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{dataEntrega}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

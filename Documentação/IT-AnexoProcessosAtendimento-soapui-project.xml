@@ -1,0 +1,1028 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="IT-AnexoProcessosAtendimento" soapui-version="5.0.0" abortOnError="false" runType="SEQUENTIAL" resourceRoot="${projectDir}" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="AnexoProcessosAtendimentoSOAP" type="wsdl" bindingName="{http://www.seplag.se.gov.br/AnexoProcessosAtendimento}AnexoProcessosAtendimentoSOAP" soapVersion="1_2" anonymous="optional" definition="http://localhost:7001/V1/AnexoProcessosAtendimento?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:7001/V1/AnexoProcessosAtendimento?WSDL"><con:part><con:url>http://localhost:7001/V1/AnexoProcessosAtendimento?WSDL</con:url><con:content><![CDATA[<WL5G3N0:definitions name="AnexoProcessosAtendimento" targetNamespace="http://www.seplag.se.gov.br/AnexoProcessosAtendimento" xmlns:WL5G3N0="http://schemas.xmlsoap.org/wsdl/" xmlns:WL5G3N1="http://www.seplag.se.gov.br/AnexoProcessosAtendimento" xmlns:WL5G3N2="http://www.seplag.se.gov.br/commons/v1" xmlns:WL5G3N3="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <WL5G3N0:types>
+    <xsd:schema targetNamespace="http://www.seplag.se.gov.br/AnexoProcessosAtendimento" xmlns:apa="http://www.seplag.se.gov.br/AnexoProcessosAtendimento" xmlns:commons="http://www.seplag.se.gov.br/commons/v1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:include schemaLocation="http://localhost:7001/V1/AnexoProcessosAtendimento?SCHEMA%2FNegocio%2FAnexoProcessosAtendimento%2FV1%2Fschema%2FAnexoProcessosAtendimento"/>
+    </xsd:schema>
+    <xsd:schema xmlns:apa="http://www.seplag.se.gov.br/AnexoProcessosAtendimento" xmlns:commons="http://www.seplag.se.gov.br/commons/v1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="http://www.seplag.se.gov.br/commons/v1" schemaLocation="http://localhost:7001/V1/AnexoProcessosAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2Fcommons%2Fv1%2FErroInfo"/>
+      <xsd:import namespace="http://www.seplag.se.gov.br/commons/v1" schemaLocation="http://localhost:7001/V1/AnexoProcessosAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2Fcommons%2Fv1%2FCabecalhoSeplag"/>
+    </xsd:schema>
+  </WL5G3N0:types>
+  <WL5G3N0:message name="ParametroIncluirPorAtendimentoRequest">
+    <WL5G3N0:part element="WL5G3N1:ParametroIncluirPorAtendimento" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="ResultadoIncluirPorAtendimentoResponse">
+    <WL5G3N0:part element="WL5G3N1:ResultadoIncluirPorAtendimento" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="ParametroListarAnexosValidosRequest">
+    <WL5G3N0:part element="WL5G3N1:ParametroListarAnexosValidos" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="ResultadoListarAnexosValidosResponse">
+    <WL5G3N0:part element="WL5G3N1:ResultadoListarAnexosValidos" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="ParametroListarPorAtendimentoRequest">
+    <WL5G3N0:part element="WL5G3N1:ParametroListarPorAtendimento" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="ResultadoListarPorAtendimentoResponse">
+    <WL5G3N0:part element="WL5G3N1:ResultadoListarPorAtendimento" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="ErroInfoMessage">
+    <WL5G3N0:part element="WL5G3N2:erroInfo" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="CabecalhoSeplagMessage">
+    <WL5G3N0:part element="WL5G3N2:cabecalhoSeplag" name="Cabecalho"/>
+  </WL5G3N0:message>
+  <WL5G3N0:portType name="AnexoProcessosAtendimento">
+    <WL5G3N0:operation name="IncluirPorAtendimento">
+      <WL5G3N0:input message="WL5G3N1:ParametroIncluirPorAtendimentoRequest"/>
+      <WL5G3N0:output message="WL5G3N1:ResultadoIncluirPorAtendimentoResponse"/>
+      <WL5G3N0:fault message="WL5G3N1:ErroInfoMessage" name="erroInfo"/>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="ListarAnexosValidos">
+      <WL5G3N0:input message="WL5G3N1:ParametroListarAnexosValidosRequest"/>
+      <WL5G3N0:output message="WL5G3N1:ResultadoListarAnexosValidosResponse"/>
+      <WL5G3N0:fault message="WL5G3N1:ErroInfoMessage" name="erroInfo"/>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="ListarPorAtendimento">
+      <WL5G3N0:input message="WL5G3N1:ParametroListarPorAtendimentoRequest"/>
+      <WL5G3N0:output message="WL5G3N1:ResultadoListarPorAtendimentoResponse"/>
+      <WL5G3N0:fault message="WL5G3N1:ErroInfoMessage" name="erroInfo"/>
+    </WL5G3N0:operation>
+  </WL5G3N0:portType>
+  <WL5G3N0:binding name="AnexoProcessosAtendimentoSOAP" type="WL5G3N1:AnexoProcessosAtendimento">
+    <WL5G3N3:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <WL5G3N0:operation name="IncluirPorAtendimento">
+      <WL5G3N3:operation soapAction="http://www.seplag.se.gov.br/AnexoProcessosAtendimento/IncluirPorAtendimento"/>
+      <WL5G3N0:input>
+        <WL5G3N3:body use="literal"/>
+        <WL5G3N3:header message="WL5G3N1:CabecalhoSeplagMessage" part="Cabecalho" use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N3:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="ListarAnexosValidos">
+      <WL5G3N3:operation soapAction="http://www.seplag.se.gov.br/AnexoProcessosAtendimento/ListarAnexosValidos"/>
+      <WL5G3N0:input>
+        <WL5G3N3:body use="literal"/>
+        <WL5G3N3:header message="WL5G3N1:CabecalhoSeplagMessage" part="Cabecalho" use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N3:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="ListarPorAtendimento">
+      <WL5G3N3:operation soapAction="http://www.seplag.se.gov.br/AnexoProcessosAtendimento/ListarPorAtendimento"/>
+      <WL5G3N0:input>
+        <WL5G3N3:body use="literal"/>
+        <WL5G3N3:header message="WL5G3N1:CabecalhoSeplagMessage" part="Cabecalho" use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N3:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+  </WL5G3N0:binding>
+  <WL5G3N0:service name="AnexoProcessosAtendimento">
+    <WL5G3N0:port binding="WL5G3N1:AnexoProcessosAtendimentoSOAP" name="AnexoProcessosAtendimentoSOAP">
+      <WL5G3N3:address location="http://localhost:7001/V1/AnexoProcessosAtendimento"/>
+    </WL5G3N0:port>
+  </WL5G3N0:service>
+</WL5G3N0:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:7001/V1/AnexoProcessosAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2Fcommons%2Fv1%2FErroInfo</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://www.seplag.se.gov.br/commons/v1" xmlns:gr="http://www.seplag.se.gov.br/commons/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ErroInfo">
+    <xs:annotation>
+      <xs:documentation>Elemento padrao de definição das mensagens de erro.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigo">
+        <xs:annotation>
+          <xs:documentation>Codigo que identifica o erro.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="20"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="descricao">
+        <xs:annotation>
+          <xs:documentation>Descricao do erro ocorrido retornado.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="4000"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="dataTransacao">
+        <xs:simpleType>
+          <xs:restriction base="xs:dateTime"/>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="dadosAdicionais" type="xs:anyType">
+        <xs:annotation>
+          <xs:documentation>Dados adicionais que podem ser necessarios para
+						identificar um erro.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="erroInfo" type="gr:ErroInfo"/>
+  <xs:complexType name="ErrosInfo">
+    <xs:sequence>
+      <xs:element name="erroInfo" type="gr:ErroInfo" maxOccurs="unbounded" minOccurs="0"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:7001/V1/AnexoProcessosAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2Fcommons%2Fv1%2FCabecalhoSeplag</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://www.seplag.se.gov.br/commons/v1" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gr="http://www.seplag.se.gov.br/commons/v1">
+  <xs:complexType name="CabecalhoSeplag" final="restriction">
+    <xs:sequence>
+      <xs:element name="loginUsuario" minOccurs="1">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="canalAtendimento" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Descricao do canal de atendimento: portal, Ceac,etc.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="32"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="codigoSessao" nillable="true" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Codigo da sessao, codigo unico que identifica
+						uma sessao.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="256"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="nomeAplicacao" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="50"/>
+            <xs:enumeration value="Seides"/>
+            <xs:enumeration value="Detran"/>
+            <xs:enumeration value="Nat"/>
+            <xs:enumeration value="Sedurb"/>
+            <xs:enumeration value="Ssp"/>
+            <xs:enumeration value="Integracao"/>
+            <xs:enumeration value="Seguranca"/>
+            <xs:enumeration value="Infra"/>
+            <xs:enumeration value="Ses"/>
+            <xs:enumeration value="Seplag"/>
+            <xs:enumeration value="Banese"/>
+            <xs:enumeration value="ReceitaFederal"/>
+            <xs:enumeration value="Ceac"/>
+            <xs:enumeration value="IpeSaude"/>
+            <xs:enumeration value="Ctransp"/>
+            <xs:enumeration value="Case"/>
+            <xs:enumeration value="Portal"/>
+            <xs:enumeration value="Mobile"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="token" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="255"/>
+            <xs:minLength value="1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="enderecoIP" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="([01]?\d\d?|2[0-4]\d|25[0-5])\.([01]?\d\d?|2[0-4]\d|25[0-5])\.([01]?\d\d?|2[0-4]\d|25[0-5])\.([01]?\d\d?|2[0-4]\d|25[0-5])"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="codigoFuncionalidade" nillable="true" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Codigo que identifica uma funcionalidade do
+						sistema. Exemplos de funcionalidade para o
+						sistema: Ativacao e desativacao de
+						servicos, emitir carteira de identidade, emitir CNH, etc.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="10"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="dataTransacao" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:dateTime"/>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="nomeServico" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Nome do servico que foi invocado, exemplo:
+						consultaClienteCidadao, consultaFuncionario, etc.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="versao" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Define a versao do servico que esta sendo
+						invocado. O formato da versao deve sempre ser
+						99.99</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="\d?\d.\d\d?"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="cabecalhoSeplag" type="gr:CabecalhoSeplag"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:7001/V1/AnexoProcessosAtendimento?SCHEMA%2FNegocio%2FAnexoProcessosAtendimento%2FV1%2Fschema%2FAnexoProcessosAtendimento</con:url><con:content><![CDATA[<schema targetNamespace="http://www.seplag.se.gov.br/AnexoProcessosAtendimento" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.seplag.se.gov.br/AnexoProcessosAtendimento" xmlns:dna="http://www.seplag.se.gov.br/EBO/v1">
+  <import namespace="http://www.seplag.se.gov.br/EBO/v1" schemaLocation="http://localhost:7001/V1/AnexoProcessosAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FDocumentoNecessarioAtendimento"/>
+  <element name="ParametroListarAnexosValidos">
+    <complexType>
+      <sequence>
+        <element name="codigoCPF">
+          <simpleType>
+            <restriction base="integer">
+              <totalDigits value="11"/>
+            </restriction>
+          </simpleType>
+        </element>
+        <element name="numeroMaximoResultados" type="integer"/>
+        <element name="numeroPrimeiraLinha" type="integer"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="ResultadoListarAnexosValidos">
+    <complexType>
+      <sequence>
+        <element name="listaDocumentos" type="dna:ListaDocumentoNecessarioAtendimento"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="ParametroIncluirPorAtendimento">
+    <complexType>
+      <sequence>
+        <element name="nomeServico" type="string" minOccurs="1" maxOccurs="1"/>
+        <element name="codigoCPF">
+          <simpleType>
+            <restriction base="integer">
+              <totalDigits value="11"/>
+            </restriction>
+          </simpleType>
+        </element>
+        <element name="listaDocumentos" type="dna:ListaDocumentoNecessarioAtendimento"/>
+      </sequence>
+    </complexType>
+  </element>
+  <complexType name="ListaCodigoProtocolo">
+    <sequence>
+      <element name="codigoProtocolo" type="string" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+  <element name="ResultadoIncluirPorAtendimento">
+    <complexType>
+      <sequence>
+        <element name="listaCodigoProtocolo" type="tns:ListaCodigoProtocolo"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="ParametroListarPorAtendimento">
+    <complexType>
+      <sequence>
+        <element name="nomeServico" type="string" minOccurs="1" maxOccurs="1"/>
+        <element name="codigoCPF">
+          <simpleType>
+            <restriction base="integer">
+              <totalDigits value="11"/>
+            </restriction>
+          </simpleType>
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="ResultadoListarPorAtendimento">
+    <complexType>
+      <sequence>
+        <element name="listaDocumentos" type="dna:ListaDocumentoNecessarioAtendimento"/>
+      </sequence>
+    </complexType>
+  </element>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:7001/V1/AnexoProcessosAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FDocumentoNecessarioAtendimento</con:url><con:content><![CDATA[<schema targetNamespace="http://www.seplag.se.gov.br/EBO/v1" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:dna="http://www.seplag.se.gov.br/EBO/v1">
+  <element name="documentoNecessarioAtendimento" nillable="true" type="dna:DocumentoNecessarioAtendimento"/>
+  <element name="listaDocumentoNecessarioAtendimento" nillable="true" type="dna:ListaDocumentoNecessarioAtendimento"/>
+  <complexType name="DocumentoNecessarioAtendimento">
+    <sequence>
+      <element name="codigoDocumento" minOccurs="0" maxOccurs="1" nillable="true">
+        <annotation>
+          <documentation>Código do documento de atendimento</documentation>
+        </annotation>
+        <simpleType>
+          <restriction base="string">
+            <minLength value="0"/>
+            <maxLength value="38"/>
+          </restriction>
+        </simpleType>
+      </element>
+      <element name="nomeDocumento" minOccurs="0" maxOccurs="1" nillable="true">
+        <annotation>
+          <documentation>Nome e/ou descrição do documento necessário para o atendimento</documentation>
+        </annotation>
+        <simpleType>
+          <restriction base="string">
+            <minLength value="0"/>
+            <maxLength value="400"/>
+          </restriction>
+        </simpleType>
+      </element>
+      <element name="indicadorObrigatorio" type="boolean" nillable="true" minOccurs="0" maxOccurs="1">
+        <annotation>
+          <documentation>Flag que indica se o documento é ou não obrigatório</documentation>
+        </annotation>
+      </element>
+      <element name="objetoDocumento" minOccurs="0" nillable="true" maxOccurs="1" type="base64Binary">
+        <annotation>
+          <documentation>Objeto do documento.</documentation>
+        </annotation>
+      </element>
+      <element name="urlDocumento" minOccurs="0" nillable="true" maxOccurs="1" type="anyURI">
+        <annotation>
+          <documentation>URL completa ou parcial do documento.</documentation>
+        </annotation>
+      </element>
+      <element name="dataEmissao" minOccurs="0" nillable="true" maxOccurs="1" type="date">
+        <annotation>
+          <documentation>Data da emissão do documento.</documentation>
+        </annotation>
+      </element>
+      <element name="dataValidade" minOccurs="0" nillable="true" maxOccurs="1" type="date">
+        <annotation>
+          <documentation>Data da validade do documento.</documentation>
+        </annotation>
+      </element>
+      <element name="diasExpiracao" minOccurs="0" maxOccurs="1" nillable="true">
+        <annotation>
+          <documentation>Quantidade de dias em que um documento será válido. 
+						Este valor deverá ser somado a mesesExpiracao e anosExpiracao para processamento.</documentation>
+        </annotation>
+        <simpleType>
+          <restriction base="integer">
+            <totalDigits value="10"/>
+          </restriction>
+        </simpleType>
+      </element>
+      <element name="mesesExpiracao" minOccurs="0" nillable="true" maxOccurs="1">
+        <annotation>
+          <documentation>Quantidade de meses em que um documento será válido. 
+						Este valor deverá ser somado a diasExpiracao e anosExpiracao para processamento.</documentation>
+        </annotation>
+        <simpleType>
+          <restriction base="integer">
+            <totalDigits value="10"/>
+          </restriction>
+        </simpleType>
+      </element>
+      <element name="anosExpiracao" minOccurs="0" maxOccurs="1" nillable="true">
+        <annotation>
+          <documentation>Quantidade de anos em que um documento será válido. 
+						Este valor deverá ser somado a mesesExpiracao e anosExpiracao para processamento.</documentation>
+        </annotation>
+        <simpleType>
+          <restriction base="integer">
+            <totalDigits value="10"/>
+          </restriction>
+        </simpleType>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="ListaDocumentoNecessarioAtendimento">
+    <sequence>
+      <element ref="dna:documentoNecessarioAtendimento" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://POSEIDON.local:8088/mockAnexoProcessosAtendimentoSOAP</con:endpoint><con:endpoint>http://localhost:7001/V1/AnexoProcessosAtendimento</con:endpoint><con:endpoint>http://osb.itconsulting.com.br:8011/V1/AnexoProcessosAtendimento</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://www.seplag.se.gov.br/AnexoProcessosAtendimento/IncluirPorAtendimento" name="IncluirPorAtendimento" bindingOperationName="IncluirPorAtendimento" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1" timeout="0"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://osb.itconsulting.com.br:8011/V1/AnexoProcessosAtendimento</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.seplag.se.gov.br/commons/v1" xmlns:anex="http://www.seplag.se.gov.br/AnexoProcessosAtendimento" xmlns:v11="http://www.seplag.se.gov.br/EBO/v1">
+   <soap:Header>
+      <v1:cabecalhoSeplag>
+         <v1:loginUsuario>silvio.silva</v1:loginUsuario>
+         <v1:canalAtendimento>Ceac</v1:canalAtendimento>
+         <v1:nomeAplicacao>Ceac</v1:nomeAplicacao>
+         <v1:enderecoIP>192.168.0.153</v1:enderecoIP>
+      </v1:cabecalhoSeplag>
+   </soap:Header>
+   <soap:Body>
+      <anex:ParametroIncluirPorAtendimento>
+         <anex:nomeServico>Solicitar Passe livre idoso</anex:nomeServico>
+         <anex:codigoCPF>69140839168</anex:codigoCPF>
+         <anex:listaDocumentos>
+            <!--Zero or more repetitions:-->
+            <v11:documentoNecessarioAtendimento>
+               <!--Optional:-->
+               <v11:codigoDocumento>34</v11:codigoDocumento>
+               <!--Optional:-->
+               <v11:nomeDocumento>Foto 3x4</v11:nomeDocumento>
+               <!--Optional:-->
+               <v11:indicadorObrigatorio>1</v11:indicadorObrigatorio>
+               <!--Optional:-->
+               <v11:objetoDocumento>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</v11:objetoDocumento>
+               <!--Optional:-->
+               <!--<v11:urlDocumento></v11:urlDocumento>-->
+               <!--Optional:-->
+               <v11:dataEmissao>2014-06-14</v11:dataEmissao>
+               <!--Optional:-->
+               <v11:dataValidade>2020-06-14</v11:dataValidade>
+               <!--Optional:-->
+               <v11:diasExpiracao>0</v11:diasExpiracao>
+               <!--Optional:-->
+               <v11:mesesExpiracao>0</v11:mesesExpiracao>
+               <!--Optional:-->
+               <v11:anosExpiracao>5</v11:anosExpiracao>
+            </v11:documentoNecessarioAtendimento>
+         </anex:listaDocumentos>
+      </anex:ParametroIncluirPorAtendimento>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.seplag.se.gov.br/AnexoProcessosAtendimento/AnexoProcessosAtendimento/IncluirPorAtendimentoRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Request 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://POSEIDON.local:8088/mockAnexoProcessosAtendimentoSOAP</con:endpoint><con:request><![CDATA[<soap:Body xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
+   <anex:ResultadoIncluirPorAtendimento xmlns:anex="http://www.seplag.se.gov.br/AnexoProcessosAtendimento">
+      <anex:listaCodigoProtocolo>
+         <anex:codigoProtocolo>1406</anex:codigoProtocolo>
+      </anex:listaCodigoProtocolo>
+   </anex:ResultadoIncluirPorAtendimento>
+</soap:Body>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.seplag.se.gov.br/AnexoProcessosAtendimento/AnexoProcessosAtendimento/IncluirPorAtendimentoRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Request 3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://POSEIDON.local:8088/mockAnexoProcessosAtendimentoSOAP</con:endpoint><con:request><![CDATA[<dpn:resultadoListarPorTipoAtendimento xmlns:soap-env="http://www.w3.org/2003/05/soap-envelope" xmlns:dpn="http://www.seplag.se.gov.br/DocsProcsNecessariosAtendimento">
+   <dpn:nomeServico>Solicitar Passe livre idoso</dpn:nomeServico>
+   <dpn:listaDocumentos/>
+   <dpn:listaProcedimentos/>
+</dpn:resultadoListarPorTipoAtendimento>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.seplag.se.gov.br/AnexoProcessosAtendimento/AnexoProcessosAtendimento/IncluirPorAtendimentoRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Request 5" timeout="0"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:7001/V1/AnexoProcessosAtendimento</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.seplag.se.gov.br/commons/v1" xmlns:anex="http://www.seplag.se.gov.br/AnexoProcessosAtendimento" xmlns:v11="http://www.seplag.se.gov.br/EBO/v1">
+   <soap:Header>
+      <v1:cabecalhoSeplag>
+         <v1:loginUsuario>silvio.silva</v1:loginUsuario>
+         <v1:canalAtendimento>Ceac</v1:canalAtendimento>
+         <v1:nomeAplicacao>Ceac</v1:nomeAplicacao>
+         <v1:enderecoIP>192.168.0.153</v1:enderecoIP>
+      </v1:cabecalhoSeplag>
+   </soap:Header>
+   <soap:Body>
+      <anex:ParametroIncluirPorAtendimento>
+         <anex:nomeServico>Solicitar Passe livre idoso</anex:nomeServico>
+         <anex:codigoCPF>22270198102</anex:codigoCPF>
+         <anex:listaDocumentos>
+            <!--Zero or more repetitions:-->
+            <v11:documentoNecessarioAtendimento>
+               <!--Optional:-->
+               <v11:codigoDocumento>99</v11:codigoDocumento>
+               <!--Optional:-->
+               <v11:nomeDocumento>RG</v11:nomeDocumento>
+               <!--Optional:-->
+               <v11:indicadorObrigatorio>1</v11:indicadorObrigatorio>
+               <!--Optional:-->
+               <v11:objetoDocumento>PGh0bWw+PGhlYWQ+PG1ldGEgaHR0cC1lcXVpdj0iY29udGVudC10eXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7IGNoYXJzZXQ9VVRGLTgiPjx0aXRsZT5BdmlzbyBkZSByZWRpcmVjaW9uYW1lbnRvPC90aXRsZT48c3R5bGU+PCEtLQpib2R5LHRkLGRpdiwucCxhe2ZvbnQtZmFtaWx5OmFyaWFsLHNhbnMtc2VyaWZ9CmRpdix0ZHtjb2xvcjojMDAwfQouZntjb2xvcjojNmY2ZjZmfQphOmxpbmt7Y29sb3I6IzAwY30KYTp2aXNpdGVke2NvbG9yOiM1NTFhOGJ9CmE6YWN0aXZle2NvbG9yOnJlZH0KZGl2LmF7Ym9yZGVyLXRvcDoxcHggc29saWQgI2JiYjtib3JkZXItYm90dG9tOjFweCBzb2xpZCAjYmJiO2JhY2tncm91bmQ6I2YyZjJmMjttYXJnaW4tdG9wOjFlbTt3aWR0aDoxMDAlfQpkaXYuYntwYWRkaW5nOjAuNWVtIDA7bWFyZ2luLWxlZnQ6MTBweH0KZGl2LmN7bWFyZ2luLXRvcDozNXB4O21hcmdpbi1sZWZ0OjM1cHh9Ci0tPjwvc3R5bGU+CjxzY3JpcHQ+ZnVuY3Rpb24gZ29fYmFjaygpIHt3aW5kb3cuaGlzdG9yeS5nbygtMSk7cmV0dXJuIGZhbHNlO31mdW5jdGlvbiBjdHUoKSB7dmFyIGxpbmsgPSBkb2N1bWVudCAmJiBkb2N1bWVudC5yZWZlcnJlcjt2YXIgZXNjX2xpbmsgPSAiIjtpZiAobGluaykge3ZhciBlID0gKHdpbmRvdyAmJiB3aW5kb3cuZW5jb2RlVVJJQ29tcG9uZW50KSA/IGVuY29kZVVSSUNvbXBvbmVudCA6IGVzY2FwZTtlc2NfbGluayA9IGUobGluayk7fW5ldyBJbWFnZSgpLnNyYyA9Ii91cmw/c2E9VCZ1cmw9IiArIGVzY19saW5rICsgIiZvaT11bmF1dGhvcml6ZWRyZWRpcmVjdCZjdD1vcmlnaW5saW5rIjtyZXR1cm4gZmFsc2U7fTwvc2NyaXB0PjwvaGVhZD48Ym9keSB0b3BtYXJnaW49MyBiZ2NvbG9yPSNmZmZmZmYgbWFyZ2luaGVpZ2h0PTM+PGRpdiBjbGFzcz1hPjxkaXYgY2xhc3M9Yj48Zm9udCBzaXplPSsxPjxiPkF2aXNvIGRlIHJlZGlyZWNpb25hbWVudG88L2I+PC9mb250PjwvZGl2PjwvZGl2PjxkaXYgY2xhc3M9Yz4mbmJzcDtBIHDDoWdpbmEgbmEgcXVhbCB2b2PDqiBlc3RhdmEgZXN0w6EgdGVudGFuZG8gbGV2YXIgdm9jw6ogcGFyYSA8YSBocmVmPSJodHRwOi8vd3d3LnNpdGVhZG1pbmlzdHJhdmVsLmNvbS5ici9wb3J0YWwvaW5kZXgucGhwP2lkPTIxJnBhZ2U9dmVyX2VudHJldmlzdGFzJmlkX2VudD04MDgwIj5odHRwOi8vd3d3LnNpdGVhZG1pbmlzdHJhdmVsLmNvbS5ici9wb3J0YWwvaW5kZXgucGhwP2lkPTIxJnBhZ2U9dmVyX2VudHJldmlzdGFzJmlkX2VudD04MDgwPC9hPi48YnI+PGJyPiZuYnNwO1NlIHZvY8OqIG7Do28gcXVpc2VyIHZpc2l0YXIgZXNzYSBww6FnaW5hLCBwb2RlcsOhIDxhIGhyZWY9IiMiIG9uY2xpY2s9InJldHVybiBnb19iYWNrKCk7IiBvbm1vdXNlZG93bj0iY3R1KCk7Ij52b2x0YXIgw6AgcMOhZ2luYSBhbnRlcmlvcjwvYT4uPGJyPjxicj48YnI+PC9kaXY+PC9ib2R5PjwvaHRtbD4=</v11:objetoDocumento>
+               <!--Optional:-->
+               <v11:urlDocumento>http://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/OS_X-Logo.svg/200px-OS_X-Logo.svg.png</v11:urlDocumento>
+               <!--Optional:-->
+               <v11:dataEmissao>2014-07-20</v11:dataEmissao>
+               <!--Optional:-->
+               <v11:dataValidade>2020-06-20</v11:dataValidade>
+               <!--Optional:-->
+               <v11:diasExpiracao>0</v11:diasExpiracao>
+               <!--Optional:-->
+               <v11:mesesExpiracao>0</v11:mesesExpiracao>
+               <!--Optional:-->
+               <v11:anosExpiracao>10</v11:anosExpiracao>
+            </v11:documentoNecessarioAtendimento>
+         </anex:listaDocumentos>
+      </anex:ParametroIncluirPorAtendimento>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.seplag.se.gov.br/AnexoProcessosAtendimento/AnexoProcessosAtendimento/IncluirPorAtendimentoRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Request 6"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://osb.itconsulting.com.br:8011/V1/AnexoProcessosAtendimento</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.seplag.se.gov.br/commons/v1" xmlns:anex="http://www.seplag.se.gov.br/AnexoProcessosAtendimento" xmlns:v11="http://www.seplag.se.gov.br/EBO/v1"  xmlns="http://www.seplag.se.gov.br/commons/v1" xmlns:ns2="http://www.seplag.se.gov.br/EBO/v1" xmlns:ns3="http://www.seplag.se.gov.br/AnexoProcessosAtendimento">
+   <soap:Header>
+      <v1:cabecalhoSeplag>
+         <v1:loginUsuario>silvio.silva</v1:loginUsuario>
+         <v1:canalAtendimento>Ceac</v1:canalAtendimento>
+         <v1:nomeAplicacao>Ceac</v1:nomeAplicacao>
+         <v1:enderecoIP>192.168.0.153</v1:enderecoIP>
+      </v1:cabecalhoSeplag>
+   </soap:Header>
+   <soap:Body>
+<ns3:ParametroIncluirPorAtendimento>
+   <ns3:nomeServico>Solicitar Passe livre idoso</ns3:nomeServico>
+   <ns3:codigoCPF>27014429825</ns3:codigoCPF>
+   <ns3:listaDocumentos>
+      <ns2:documentoNecessarioAtendimento>
+         <ns2:codigoDocumento>34</ns2:codigoDocumento>
+         <ns2:nomeDocumento>Foto 3x4</ns2:nomeDocumento>
+         <ns2:indicadorObrigatorio>true</ns2:indicadorObrigatorio>
+         <ns2:objetoDocumento>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</ns2:objetoDocumento>
+         <ns2:urlDocumento xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+         <ns2:dataEmissao xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+         <ns2:dataValidade xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+         <ns2:diasExpiracao>0</ns2:diasExpiracao>
+         <ns2:mesesExpiracao>0</ns2:mesesExpiracao>
+         <ns2:anosExpiracao>5</ns2:anosExpiracao>
+      </ns2:documentoNecessarioAtendimento>
+   </ns3:listaDocumentos>
+</ns3:ParametroIncluirPorAtendimento>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.seplag.se.gov.br/AnexoProcessosAtendimento/AnexoProcessosAtendimento/IncluirPorAtendimentoRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Request 1 RG"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:7001/V1/AnexoProcessosAtendimento</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.seplag.se.gov.br/commons/v1" xmlns:anex="http://www.seplag.se.gov.br/AnexoProcessosAtendimento" xmlns:v11="http://www.seplag.se.gov.br/EBO/v1">
+   <soap:Header>
+      <v1:cabecalhoSeplag>
+         <v1:loginUsuario>silvio.silva</v1:loginUsuario>
+         <v1:canalAtendimento>Ceac</v1:canalAtendimento>
+         <v1:nomeAplicacao>Ceac</v1:nomeAplicacao>
+         <v1:enderecoIP>192.168.0.153</v1:enderecoIP>
+      </v1:cabecalhoSeplag>
+   </soap:Header>
+   <soap:Body>
+      <anex:ParametroIncluirPorAtendimento>
+         <anex:nomeServico>Solicitar Passe livre idoso</anex:nomeServico>
+         <anex:codigoCPF>26700228812</anex:codigoCPF>
+         <anex:listaDocumentos>
+            <!--Zero or more repetitions:-->
+            <v11:documentoNecessarioAtendimento>
+               <!--Optional:-->
+               <v11:codigoDocumento>99</v11:codigoDocumento>
+               <!--Optional:-->
+               <v11:nomeDocumento>RG</v11:nomeDocumento>
+               <!--Optional:-->
+               <v11:indicadorObrigatorio>1</v11:indicadorObrigatorio>
+               <!--Optional:-->
+               <v11:objetoDocumento>PGh0bWw+PGhlYWQ+PG1ldGEgaHR0cC1lcXVpdj0iY29udGVudC10eXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7IGNoYXJzZXQ9VVRGLTgiPjx0aXRsZT4gR29vZ2xlIEltYWdlIFJlc3VsdCBmb3IgaHR0cDovL3VwbG9hZC53aWtpbWVkaWEub3JnL3dpa2lwZWRpYS9jb21tb25zL2MvY2QvNDNfR2VvcmdlX0guVy5fQnVzaF8zeDQuanBnPC90aXRsZT48c2NyaXB0PihmdW5jdGlvbigpewp3aW5kb3cuZ29vZ2xlPXtrRUk6Il9TLWdVX1h6T1plV3FBYjdrNEtJQmciLGdldEVJOmZ1bmN0aW9uKGEpe2Zvcih2YXIgYzthJiYoIWEuZ2V0QXR0cmlidXRlfHwhKGM9YS5nZXRBdHRyaWJ1dGUoImVpZCIpKSk7KWE9YS5wYXJlbnROb2RlO3JldHVybiBjfHxnb29nbGUua0VJfSxodHRwczpmdW5jdGlvbigpe3JldHVybiJodHRwczoiPT13aW5kb3cubG9jYXRpb24ucHJvdG9jb2x9LGtFWFBJOiI0NzkxLDE3MjU5LDQwMDAxMTYsNDAwNzY2MSw0MDA3ODMwLDQwMDgxNDIsNDAwOTAzMyw0MDA5NjQxLDQwMTA4MDYsNDAxMDg1OCw0MDEwODk5LDQwMTEyMjgsNDAxMTI1OCw0MDExNjc5LDQwMTE5NjAsNDAxMjM3Myw0MDEyNTA0LDQwMTMzOTUsNDAxMzQxNCw0MDEzNTkxLDQwMTM3MjMsNDAxMzc1OCw0MDEzNzg3LDQwMTM4MjMsNDAxMzk2Nyw0MDEzOTc5LDQwMTQwMTYsNDAxNDA5Myw0MDE0NDMxLDQwMTQ1MTUsNDAxNDYzNiw0MDE0NjcxLDQwMTQ4MTAsNDAxNDk5MSw0MDE1MjM0LDQwMTUyMzYsNDAxNTI2MCw0MDE1MjY2LDQwMTUzMzksNDAxNTU1MCw0MDE1NTg3LDQwMTU2MzMsNDAxNTc3Miw0MDE1OTg5LDQwMTYxMjcsNDAxNjMwOSw0MDE2MzY3LDQwMTYzNzMsNDAxNjQ4Nyw0MDE2ODI0LDQwMTY4NTUsNDAxNjg4Miw0MDE2OTMzLDQwMTY5NzYsNDAxNzI3OCw0MDE3MjgwLDQwMTcyODQsNDAxNzI5OCw0MDE3NTQ0LDQwMTc1NTQsNDAxNzU5NSw0MDE3NjEyLDQwMTc2MzksNDAxNzY2MCw0MDE3NjgxLDQwMTc2OTQsNDAxNzcxMCw0MDE3NzQyLDQwMTc4MTgsNDAxNzgyMSw0MDE3ODU3LDQwMTc4ODAsNDAxNzkxMyw0MDE3OTgxLDQwMTc5ODIsNDAxODAwOSw0MDE4MDE5LDQwMTgwMzAsNDAxODA2OCw0MDE4MTI2LDQwMTgxNTQsNDAxODE1OSw0MDE4MTgxLDQwMTgyODMsNDAxODM2Myw0MDE4NDI0LDQwMTg0ODAsNDAxODUxOSw0MDE4NTQyLDQwMTg1NTQsNDAxODU2Niw0MDE4NTY5LDQwMTg2MTksNDAxODYyMSw0MDE4NjM4LDQwMTg4MzQsNDAxODkyMyw0MDE4OTMyLDQwMTkxNDIsODMwMDAxMiw4MzAwMDI3LDg1MDAyMjMsODUwMDI1Miw4NTAwMjcyLDg1MDAzMDYsODUwMDMzMSw4NTAwMzU3LDg1MDAzNjUsODUwMDM3OSw4NTAwMzk0LDg1MDA0MDAsODUwMDQyMSw4NTAwNDMzLDEwMjAwMDEyLDEwMjAwMDEzLDEwMjAwMDgzLDEwMjAwMTM0LDEwMjAwMTM2LDEwMjAwMTYwLDEwMjAwMTY0LDEwMjAwMTg0LDEwMjAwMjExLDEwMjAwMjIxLDEwMjAwMjQ2LDEwMjAwMjQ4LDEwMjAwMjYxLDEwMjAwMjcxLDEwMjAwMjkzLDEwMjAwMjk5LDEwMjAwMzE4LDEwMjAwMzMwLDEwMjAwMzMzLDEwMjAwMzM0LDEwMjAwMzM3LDEwMjAwMzQ1LDEwMjAwMzQ3LDEwMjAwMzUzLDEwMjAwMzU1LDEwMjAwMzY5IixrQ1NJOntlaToiX1MtZ1VfWHpPWmVXcUFiN2s0S0lCZyIsZToiNDc5MSwxNzI1OSw0MDAwMTE2LDQwMDc2NjEsNDAwNzgzMCw0MDA4MTQyLDQwMDkwMzMsNDAwOTY0MSw0MDEwODA2LDQwMTA4NTgsNDAxMDg5OSw0MDExMjI4LDQwMTEyNTgsNDAxMTY3OSw0MDExOTYwLDQwMTIzNzMsNDAxMjUwNCw0MDEzMzk1LDQwMTM0MTQsNDAxMzU5MSw0MDEzNzIzLDQwMTM3NTgsNDAxMzc4Nyw0MDEzODIzLDQwMTM5NjcsNDAxMzk3OSw0MDE0MDE2LDQwMTQwOTMsNDAxNDQzMSw0MDE0NTE1LDQwMTQ2MzYsNDAxNDY3MSw0MDE0ODEwLDQwMTQ5OTEsNDAxNTIzNCw0MDE1MjM2LDQwMTUyNjAsNDAxNTI2Niw0MDE1MzM5LDQwMTU1NTAsNDAxNTU4Nyw0MDE1NjMzLDQwMTU3NzIsNDAxNTk4OSw0MDE2MTI3LDQwMTYzMDksNDAxNjM2Nyw0MDE2MzczLDQwMTY0ODcsNDAxNjgyNCw0MDE2ODU1LDQwMTY4ODIsNDAxNjkzMyw0MDE2OTc2LDQwMTcyNzgsNDAxNzI4MCw0MDE3Mjg0LDQwMTcyOTgsNDAxNzU0NCw0MDE3NTU0LDQwMTc1OTUsNDAxNzYxMiw0MDE3NjM5LDQwMTc2NjAsNDAxNzY4MSw0MDE3Njk0LDQwMTc3MTAsNDAxNzc0Miw0MDE3ODE4LDQwMTc4MjEsNDAxNzg1Nyw0MDE3ODgwLDQwMTc5MTMsNDAxNzk4MSw0MDE3OTgyLDQwMTgwMDksNDAxODAxOSw0MDE4MDMwLDQwMTgwNjgsNDAxODEyNiw0MDE4MTU0LDQwMTgxNTksNDAxODE4MSw0MDE4MjgzLDQwMTgzNjMsNDAxODQyNCw0MDE4NDgwLDQwMTg1MTksNDAxODU0Miw0MDE4NTU0LDQwMTg1NjYsNDAxODU2OSw0MDE4NjE5LDQwMTg2MjEsNDAxODYzOCw0MDE4ODM0LDQwMTg5MjMsNDAxODkzMiw0MDE5MTQyLDgzMDAwMTIsODMwMDAyNyw4NTAwMjIzLDg1MDAyNTIsODUwMDI3Miw4NTAwMzA2LDg1MDAzMzEsODUwMDM1Nyw4NTAwMzY1LDg1MDAzNzksODUwMDM5NCw4NTAwNDAwLDg1MDA0MjEsODUwMDQzMywxMDIwMDAxMiwxMDIwMDAxMywxMDIwMDA4MywxMDIwMDEzNCwxMDIwMDEzNiwxMDIwMDE2MCwxMDIwMDE2NCwxMDIwMDE4NCwxMDIwMDIxMSwxMDIwMDIyMSwxMDIwMDI0NiwxMDIwMDI0OCwxMDIwMDI2MSwxMDIwMDI3MSwxMDIwMDI5MywxMDIwMDI5OSwxMDIwMDMxOCwxMDIwMDMzMCwxMDIwMDMzMywxMDIwMDMzNCwxMDIwMDMzNywxMDIwMDM0NSwxMDIwMDM0NywxMDIwMDM1MywxMDIwMDM1NSwxMDIwMDM2OSJ9LGF1dGh1c2VyOjAsbWw6ZnVuY3Rpb24oKXt9LGtITDoiZW4iLHRpbWU6ZnVuY3Rpb24oKXtyZXR1cm4obmV3IERhdGUpLmdldFRpbWUoKX0sCmxvZzpmdW5jdGlvbihhLGMsYixlLGQpe3ZhciBmPW5ldyBJbWFnZSxoPWdvb2dsZS5sYyxnPWdvb2dsZS5saSxrPSIiLGw9IiI7Zi5vbmVycm9yPWYub25sb2FkPWYub25hYm9ydD1mdW5jdGlvbigpe2RlbGV0ZSBoW2ddfTtoW2ddPWY7Ynx8LTEhPWMuc2VhcmNoKCImZWk9Iil8fChrPSImZWk9Iitnb29nbGUuZ2V0RUkoZSkpO2I9Ynx8Ii8iKyhkfHwiZ2VuXzIwNCIpKyI/YXR5cD1pJmN0PSIrYSsiJmNhZD0iK2MraytsKyImeng9Iitnb29nbGUudGltZSgpO2E9L15odHRwOi9pO2EudGVzdChiKSYmZ29vZ2xlLmh0dHBzKCk/KGdvb2dsZS5tbChFcnJvcigiR0xNTSIpLCExLHtzcmM6Yn0pLGRlbGV0ZSBoW2ddKTooZi5zcmM9Yixnb29nbGUubGk9ZysxKX0sbGM6W10sCmxpOjAseTp7fSx4OmZ1bmN0aW9uKGEsYyl7Z29vZ2xlLnlbYS5pZF09W2EsY107cmV0dXJuITF9LGxvYWQ6ZnVuY3Rpb24oYSxjLGIpe2dvb2dsZS54KHtpZDphK20rK30sZnVuY3Rpb24oKXtnb29nbGUubG9hZChhLGMsYil9KX19O3ZhciBtPTA7fSkoKTsKPC9zY3JpcHQ+PHNjcmlwdD4oZnVuY3Rpb24oKXsndXNlIHN0cmljdCc7dmFyIGc9dGhpcyxrPURhdGUubm93fHxmdW5jdGlvbigpe3JldHVybituZXcgRGF0ZX07dmFyIHI9ZnVuY3Rpb24oYyxkKXtyZXR1cm4gZnVuY3Rpb24oYSl7YXx8KGE9d2luZG93LmV2ZW50KTtyZXR1cm4gZC5jYWxsKGMsYSl9fSx1PSJ1bmRlZmluZWQiIT10eXBlb2YgbmF2aWdhdG9yJiYvTWFjaW50b3NoLy50ZXN0KG5hdmlnYXRvci51c2VyQWdlbnQpLHc9InVuZGVmaW5lZCIhPXR5cGVvZiBuYXZpZ2F0b3ImJiEvT3BlcmEvLnRlc3QobmF2aWdhdG9yLnVzZXJBZ2VudCkmJi9XZWJLaXQvLnRlc3QobmF2aWdhdG9yLnVzZXJBZ2VudCkseD17QToxMyxCVVRUT046MCxDSEVDS0JPWDozMixDT01CT0JPWDoxMyxMSU5LOjEzLExJU1RCT1g6MTMsTUVOVTowLE1FTlVCQVI6MCxNRU5VSVRFTTowLE1FTlVJVEVNQ0hFQ0tCT1g6MCxNRU5VSVRFTVJBRElPOjAsT1BUSU9OOjEzLFJBRElPOjMyLFJBRElPR1JPVVA6MzIsUkVTRVQ6MCxTVUJNSVQ6MCxUQUI6MCxUQUJMSVNUOjAsVFJFRToxMyxUUkVFSVRFTToxM30seT17Q0hFQ0tCT1g6MSxPUFRJT046MSxSQURJTzoxfTt2YXIgej1mdW5jdGlvbigpe3RoaXMubz10aGlzLmk9bnVsbH0sQj1mdW5jdGlvbihjLGQpe3ZhciBhPUE7YS5pPWM7YS5vPWQ7cmV0dXJuIGF9O3oucHJvdG90eXBlLms9ZnVuY3Rpb24oKXt2YXIgYz10aGlzLmk7dGhpcy5pJiZ0aGlzLmkhPXRoaXMubz90aGlzLmk9dGhpcy5pLl9fb3duZXJ8fHRoaXMuaS5wYXJlbnROb2RlOnRoaXMuaT1udWxsO3JldHVybiBjfTt2YXIgQz1mdW5jdGlvbigpe3RoaXMucD1bXTt0aGlzLmk9MDt0aGlzLm89bnVsbDt0aGlzLnM9ITF9O0MucHJvdG90eXBlLms9ZnVuY3Rpb24oKXtpZih0aGlzLnMpcmV0dXJuIEEuaygpO2lmKHRoaXMuaSE9dGhpcy5wLmxlbmd0aCl7dmFyIGM9dGhpcy5wW3RoaXMuaV07dGhpcy5pKys7YyE9dGhpcy5vJiZjJiZjLl9fb3duZXImJih0aGlzLnM9ITAsQihjLl9fb3duZXIsdGhpcy5vKSk7cmV0dXJuIGN9cmV0dXJuIG51bGx9O3ZhciBBPW5ldyB6LEU9bmV3IEM7dmFyIEc9ZnVuY3Rpb24oKXt0aGlzLnc9W107dGhpcy5pPVtdO3RoaXMubz1bXTt0aGlzLnM9e307dGhpcy5rPW51bGw7dGhpcy5wPVtdO0YodGhpcywiX2N1c3RvbSIpfSxIPSJ1bmRlZmluZWQiIT10eXBlb2YgbmF2aWdhdG9yJiYvaVBob25lfGlQYWR8aVBvZC8udGVzdChuYXZpZ2F0b3IudXNlckFnZW50KSxJPS9ccyo7XHMqLyxLPWZ1bmN0aW9uKGMsZCl7cmV0dXJuIGZ1bmN0aW9uKGEpe3ZhciBiPWQ7aWYoIl9jdXN0b20iPT1iKXtpZighYS5kZXRhaWx8fCFhLmRldGFpbC5fdHlwZSlyZXR1cm47Yj1hLmRldGFpbC5fdHlwZX1pZigiY2xpY2siPT1iJiYodSYmYS5tZXRhS2V5fHwhdSYmYS5jdHJsS2V5fHwyPT1hLndoaWNofHxudWxsPT1hLndoaWNoJiY0PT1hLmJ1dHRvbnx8YS5zaGlmdEtleSkpYj0iY2xpY2ttb2QiO2Vsc2V7dmFyIGY9YS53aGljaHx8YS5rZXlDb2RlfHxhLmtleTt3JiYzPT1mJiYoZj0xMyk7dmFyIGU9YS50YXJnZXR8fGEuc3JjRWxlbWVudCxtPShlLmdldEF0dHJpYnV0ZSgicm9sZSIpfHxlLnR5cGV8fGUudGFnTmFtZSkudG9VcHBlckNhc2UoKSxoPTEzPT1mfHwzMj09ZixsO2lmKGw9ImtleWRvd24iPT1hLnR5cGUpImdldEF0dHJpYnV0ZSJpbgplPyhsPShlLmdldEF0dHJpYnV0ZSgicm9sZSIpfHxlLnR5cGV8fGUudGFnTmFtZSkudG9VcHBlckNhc2UoKSxsPSJURVhUIiE9bCYmIlRFWFRBUkVBIiE9bCYmIlBBU1NXT1JEIiE9bCYmIlNFQVJDSCIhPWwmJigiQ09NQk9CT1giIT1sfHwiSU5QVVQiIT1lLnRhZ05hbWUudG9VcHBlckNhc2UoKSkmJiFlLmlzQ29udGVudEVkaXRhYmxlKTpsPSExO3ZhciBzPSJJTlBVVCI9PWUudGFnTmFtZS50b1VwcGVyQ2FzZSgpJiYhZS50eXBlLHA9MD09eFttXSVmLGY9IShtIGluIHgpJiYxMz09ZixlPSEhYS5vcmlnaW5hbFRhcmdldCYmYS5vcmlnaW5hbFRhcmdldCE9ZTtsJiYhKGEuY3RybEtleXx8YS5zaGlmdEtleXx8YS5hbHRLZXl8fGEubWV0YUtleSkmJmgmJigocHx8ZikmJiFzfHxlKSYmKGI9ImNsaWNra2V5Iil9dmFyIGU9YS5zcmNFbGVtZW50fHxhLnRhcmdldCxoPUooYixhLGUsIiIsbnVsbCksbjthLnBhdGg/KEUucD1hLnBhdGgsRS5pPTAsRS5vPXRoaXMsRS5zPSExLGw9RSk6bD0KQihlLHRoaXMpO2Zvcig7cz1sLmsoKTspe2Y9cztuPWI7cD1mLl9fanNhY3Rpb247aWYoIXAmJihwPXt9LGYuX19qc2FjdGlvbj1wLG09dm9pZCAwLG09bnVsbCwiZ2V0QXR0cmlidXRlImluIGYmJihtPWYuZ2V0QXR0cmlidXRlKCJqc2FjdGlvbiIpKSxtKSlmb3IodmFyIGY9bS5zcGxpdChJKSxtPTAsUD1mP2YubGVuZ3RoOjA7bTxQO20rKyl7dmFyIHE9ZlttXTtpZihxKXt2YXIgdj1xLmluZGV4T2YoIjoiKSxEPS0xIT12LFE9RD9xLnN1YnN0cigwLHYpLnJlcGxhY2UoL15ccysvLCIiKS5yZXBsYWNlKC9ccyskLywiIik6ImNsaWNrIixxPUQ/cS5zdWJzdHIodisxKS5yZXBsYWNlKC9eXHMrLywiIikucmVwbGFjZSgvXHMrJC8sIiIpOnE7cFtRXT1xfX0iY2xpY2trZXkiPT1uP249ImNsaWNrIjoiY2xpY2siIT1ufHxwLmNsaWNrfHwobj0iY2xpY2tvbmx5Iik7bj17djpuLGFjdGlvbjpwW25dfHwiIixDOiExfTtoPUoobi52LGEsZSxuLmFjdGlvbnx8IiIscyxoLnRpbWVTdGFtcCk7aWYobi5DfHxuLmFjdGlvbilicmVha31pZihuJiZuLmFjdGlvbil7aWYoYj0iY2xpY2trZXkiPT1iKWI9YS50YXJnZXR8fGEuc3JjRWxlbWVudCxiPShiLnR5cGV8fGIudGFnTmFtZSkudG9VcHBlckNhc2UoKSwoYj0zMj09KGEud2hpY2h8fGEua2V5Q29kZXx8YS5rZXkpJiYiQ0hFQ0tCT1giIT1iKXx8KGU9YS50YXJnZXR8fGEuc3JjRWxlbWVudCxiPShlLmdldEF0dHJpYnV0ZSgicm9sZSIpfHxlLnRhZ05hbWUpLnRvVXBwZXJDYXNlKCksZT1lLnR5cGUsYj0iQlVUVE9OIj09Ynx8ISFlJiYhKGUudG9VcHBlckNhc2UoKWluIHkpKTtiJiYoYS5wcmV2ZW50RGVmYXVsdD9hLnByZXZlbnREZWZhdWx0KCk6YS5yZXR1cm5WYWx1ZT0hMSl9ZWxzZSBoLmFjdGlvbj0iIixoLmFjdGlvbkVsZW1lbnQ9bnVsbDtiPWg7Yy5rJiYoaD1KKGIuZXZlbnRUeXBlLGIuZXZlbnQsYi50YXJnZXRFbGVtZW50LGIuYWN0aW9uLGIuYWN0aW9uRWxlbWVudCxiLnRpbWVTdGFtcCksImNsaWNrb25seSI9PWguZXZlbnRUeXBlJiYKKGguZXZlbnRUeXBlPSJjbGljayIpLGMuayhoLCEwKSk7aWYoYi5hY3Rpb25FbGVtZW50KWlmKCJBIj09Yi5hY3Rpb25FbGVtZW50LnRhZ05hbWUmJiJjbGljayI9PWIuZXZlbnRUeXBlJiYoYS5wcmV2ZW50RGVmYXVsdD9hLnByZXZlbnREZWZhdWx0KCk6YS5yZXR1cm5WYWx1ZT0hMSksYy5rKWMuayhiKTtlbHNle3ZhciB0O2lmKChoPWcuZG9jdW1lbnQpJiYhaC5jcmVhdGVFdmVudCYmaC5jcmVhdGVFdmVudE9iamVjdCl0cnl7dD1oLmNyZWF0ZUV2ZW50T2JqZWN0KGEpfWNhdGNoKFUpe3Q9YX1lbHNlIHQ9YTtiLmV2ZW50PXQ7Yy5wLnB1c2goYil9fX0sSj1mdW5jdGlvbihjLGQsYSxiLGYsZSl7cmV0dXJue2V2ZW50VHlwZTpjLGV2ZW50OmQsdGFyZ2V0RWxlbWVudDphLGFjdGlvbjpiLGFjdGlvbkVsZW1lbnQ6Zix0aW1lU3RhbXA6ZXx8aygpfX0sTD1mdW5jdGlvbihjLGQpe3JldHVybiBmdW5jdGlvbihhKXt2YXIgYj1jLGY9ZCxlPSExOyJtb3VzZWVudGVyIj09Yj9iPSJtb3VzZW92ZXIiOiJtb3VzZWxlYXZlIj09YiYmKGI9Im1vdXNlb3V0Iik7aWYoYS5hZGRFdmVudExpc3RlbmVyKXtpZigiZm9jdXMiPT1ifHwiYmx1ciI9PWJ8fCJlcnJvciI9PWJ8fCJsb2FkIj09YillPSEwO2EuYWRkRXZlbnRMaXN0ZW5lcihiLGYsZSl9ZWxzZSBhLmF0dGFjaEV2ZW50JiYoImZvY3VzIj09Yj9iPSJmb2N1c2luIjoiYmx1ciI9PWImJihiPSJmb2N1c291dCIpLGY9cihhLGYpLGEuYXR0YWNoRXZlbnQoIm9uIitiLGYpKTtyZXR1cm57djpiLEI6ZixEOmV9fX0sRj1mdW5jdGlvbihjLGQpe2lmKCFjLnMuaGFzT3duUHJvcGVydHkoZCkmJiJtb3VzZWVudGVyIiE9ZCYmIm1vdXNlbGVhdmUiIT1kKXt2YXIgYT1LKGMsZCksYj1MKGQsYSk7Yy5zW2RdPWE7Yy53LnB1c2goYik7Zm9yKGE9MDthPGMuaS5sZW5ndGg7KythKXt2YXIgZj1jLmlbYV07Zi5rLnB1c2goYi5jYWxsKG51bGwsZi5pKSl9ImNsaWNrIj09ZCYmRihjLCJrZXlkb3duIil9fTtHLnByb3RvdHlwZS5CPWZ1bmN0aW9uKGMpe3JldHVybiB0aGlzLnNbY119O3ZhciBUPWZ1bmN0aW9uKGMpe3ZhciBkPU0sYT1uZXcgTihjKTtpOntmb3IodmFyIGI9MDtiPGQuaS5sZW5ndGg7YisrKWlmKE8oZC5pW2JdLmksYykpe2M9ITA7YnJlYWsgaX1jPSExfWlmKGMpZC5vLnB1c2goYSk7ZWxzZXtSKGQsYSk7ZC5pLnB1c2goYSk7YT1kLm8uY29uY2F0KGQuaSk7Yz1bXTtmb3IodmFyIGI9W10sZj0wO2Y8ZC5pLmxlbmd0aDsrK2Ype3ZhciBlPWQuaVtmXTtpZihTKGUsYSkpe2MucHVzaChlKTtmb3IodmFyIG09MDttPGUuay5sZW5ndGg7KyttKXt2YXIgaD1lLmksbD1lLmtbbV07aC5yZW1vdmVFdmVudExpc3RlbmVyP2gucmVtb3ZlRXZlbnRMaXN0ZW5lcihsLnYsbC5CLGwuRCk6aC5kZXRhY2hFdmVudCYmaC5kZXRhY2hFdmVudCgib24iK2wudixsLkIpfWUuaz1bXX1lbHNlIGIucHVzaChlKX1mb3IoZj0wO2Y8ZC5vLmxlbmd0aDsrK2YpZT1kLm9bZl0sUyhlLGEpP2MucHVzaChlKTooYi5wdXNoKGUpLFIoZCxlKSk7ZC5pPWI7ZC5vPWN9fSxSPWZ1bmN0aW9uKGMsZCl7dmFyIGE9ZC5pO0gmJihhLnN0eWxlLmN1cnNvcj0icG9pbnRlciIpO2ZvcihhPTA7YTxjLncubGVuZ3RoOysrYSlkLmsucHVzaChjLndbYV0uY2FsbChudWxsLGQuaSkpfSxOPWZ1bmN0aW9uKGMpe3RoaXMuaT1jO3RoaXMuaz1bXX0sUz1mdW5jdGlvbihjLGQpe2Zvcih2YXIgYT0wO2E8ZC5sZW5ndGg7KythKWlmKGRbYV0uaSE9Yy5pJiZPKGRbYV0uaSxjLmkpKXJldHVybiEwO3JldHVybiExfSxPPWZ1bmN0aW9uKGMsZCl7Zm9yKDtjIT1kJiZkLnBhcmVudE5vZGU7KWQ9ZC5wYXJlbnROb2RlO3JldHVybiBjPT1kfTt2YXIgTT1uZXcgRztUKHdpbmRvdy5kb2N1bWVudC5kb2N1bWVudEVsZW1lbnQpO0YoTSwiY2xpY2siKTtGKE0sImZvY3VzIik7RihNLCJmb2N1c2luIik7RihNLCJibHVyIik7RihNLCJmb2N1c291dCIpO0YoTSwiZXJyb3IiKTtGKE0sImxvYWQiKTtGKE0sImNoYW5nZSIpO0YoTSwiaW5wdXQiKTtGKE0sImtleXVwIik7RihNLCJrZXlkb3duIik7RihNLCJrZXlwcmVzcyIpO0YoTSwibW91c2Vkb3duIik7RihNLCJtb3VzZW91dCIpO0YoTSwibW91c2VvdmVyIik7RihNLCJtb3VzZXVwIik7RihNLCJ0b3VjaHN0YXJ0Iik7RihNLCJzcGVlY2giKTt3aW5kb3cuZ29vZ2xlLmpzYWQ9ZnVuY3Rpb24oYyl7dmFyIGQ9TTtkLms9YztkLnAmJigwPGQucC5sZW5ndGgmJmMoZC5wKSxkLnA9bnVsbCl9O3dpbmRvdy5nb29nbGUuanNhYz1mdW5jdGlvbihjKXtUKGMpfTt9KS5jYWxsKHdpbmRvdyk7PC9zY3JpcHQ+PC9oZWFkPjxib2R5Pjxub3NjcmlwdD48bWV0YSBIVFRQLUVRVUlWPSJyZWZyZXNoIiBjb250ZW50PSIwO3VybD1odHRwOi8vd3d3Lmdvb2dsZS5jb20uYnIvaW1ncmVzP2ltZ3VybD1odHRwOi8vdXBsb2FkLndpa2ltZWRpYS5vcmcvd2lraXBlZGlhL2NvbW1vbnMvYy9jZC80M19HZW9yZ2VfSC5XLl9CdXNoXzN4NC5qcGcmaW1ncmVmdXJsPWh0dHA6Ly9jb21tb25zLndpa2ltZWRpYS5vcmcvd2lraS9GaWxlOjQzX0dlb3JnZV9ILlcuX0J1c2hfM3g0LmpwZyZoPTEwMDAmdz03NTAmdGJuaWQ9QlB6T205NnJ0WmFnV006Jnpvb209MSZkb2NpZD1kd0VhSkpMeF9yOEFhTSZobD1lbiZlaT1raS1nVTd5b09NT0lxZ2FBbG9Hb0RRJnRibT1pc2NoJnZlZD0wQ0JJUU15Z0tNQW80WkEmaWFjdD1yYyZ1YWN0PTMmcGFnZT01JnN0YXJ0PTk2Jm5kc3A9MjUmZ2J2PTEmc2VpPV9TLWdVX1h6T1plV3FBYjdrNEtJQmciPjxzdHlsZT48IS0tCmJvZHl7ZGlzcGxheTpub25lfQotLT48L3N0eWxlPgo8L25vc2NyaXB0PjxzdHlsZT5ib2R5e2ZvbnQtc2l6ZToxMDAlfWRpdi5he2JvcmRlci10b3A6MXB4IHNvbGlkICNiYmI7Ym9yZGVyLWJvdHRvbToxcHggc29saWQgI2JiYjtiYWNrZ3JvdW5kOiNmMmYyZjI7bWFyZ2luLXRvcDoxZW07d2lkdGg6MTAwJX1kaXYuYntwYWRkaW5nOi41ZW0gMDttYXJnaW4tbGVmdDoxMHB4fWRpdi5je21hcmdpbi10b3A6MzVweDttYXJnaW4tbGVmdDozNXB4fTwvc3R5bGU+PHNjcmlwdD5mdW5jdGlvbiBnb19iYWNrKCkge3dpbmRvdy5oaXN0b3J5LmdvKC0xKTtyZXR1cm4gZmFsc2U7fWZ1bmN0aW9uIGN0dSgpIHt2YXIgbGluaz1kb2N1bWVudCYmZG9jdW1lbnQucmVmZXJyZXI7dmFyIGVzY19saW5rID0iIjtpZiAobGluaykge3ZhciBlPSh3aW5kb3cmJndpbmRvdy5lbmNvZGVVUklDb21wb25lbnQpP2VuY29kZVVSSUNvbXBvbmVudDplc2NhcGU7ZXNjX2xpbms9ZShsaW5rKTt9bmV3IEltYWdlKCkuc3JjPSIvdXJsP3NhPVQmdXJsPSIrZXNjX2xpbmsrIiZvaT1zdGJfZmJrJmN0PW9yaWdpbmxpbmsiO3JldHVybiBmYWxzZTt9PC9zY3JpcHQ+PGRpdiBjbGFzcz1hPjxkaXYgY2xhc3M9Yj48Zm9udCBzaXplPSsxPjxiPlJlZGlyZWN0IE5vdGljZTwvYj48L2ZvbnQ+PC9kaXY+PC9kaXY+PGRpdiBjbGFzcz1jPiZuYnNwO1RoZSBwcmV2aW91cyBwYWdlIGlzIHNlbmRpbmcgeW91IHRvIDxhIGhyZWY9Ii91cmw/cT1odHRwOi8vY29tbW9ucy53aWtpbWVkaWEub3JnL3dpa2kvRmlsZTo0M19HZW9yZ2VfSC5XLl9CdXNoXzN4NC5qcGcmdXN0PTE0MDMwMDg3NzM5NTgxNTAmdXNnPUFGUWpDTkZ1YmJQbjF5TUxncmN5LWNpN0RLOGRBLWh0RXciPmh0dHA6Ly9jb21tb25zLndpa2ltZWRpYS5vcmcvd2lraS9GaWxlOjQzX0dlb3JnZV9ILlcuX0J1c2hfM3g0LmpwZzwvYT4uPGJyPjxicj4mbmJzcDtJZiB5b3UgZG8gbm90IHdhbnQgdG8gdmlzaXQgdGhhdCBwYWdlLCB5b3UgY2FuIDxhIGhyZWY9IiMiIG9uY2xpY2s9InJldHVybiBnb19iYWNrKCk7IiBvbm1vdXNlZG93bj0iY3R1KCk7Ij5yZXR1cm4gdG8gdGhlIHByZXZpb3VzIHBhZ2U8L2E+Ljxicj48YnI+PGJyPjwvZGl2PjxkaXYgaWQ9eGpzZD48L2Rpdj48ZGl2IGlkPXhqc2kgZGF0YS1qaWlzPSJicCI+PHNjcmlwdD5pZihnb29nbGUueSlnb29nbGUueS5maXJzdD1bXTsoZnVuY3Rpb24oKXtmdW5jdGlvbiBiKGEpe3dpbmRvdy5zZXRUaW1lb3V0KGZ1bmN0aW9uKCl7dmFyIGM9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgic2NyaXB0Iik7Yy5zcmM9YTtkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgieGpzZCIpLmFwcGVuZENoaWxkKGMpfSwwKX1nb29nbGUuZGxqcD1mdW5jdGlvbihhKXtnb29nbGUueGpzdT1hO2IoYSl9O2dvb2dsZS5kbGo9Yjt9KSgpOwppZighZ29vZ2xlLnhqcyl7d2luZG93Ll89d2luZG93Ll98fHt9O3dpbmRvdy5fLl9EdW1wRXhjZXB0aW9uPWZ1bmN0aW9uKGUpe3Rocm93IGV9O2lmKGdvb2dsZS50aW1lcnMmJmdvb2dsZS50aW1lcnMubG9hZC50KXtnb29nbGUudGltZXJzLmxvYWQudC54anNscz1uZXcgRGF0ZSgpLmdldFRpbWUoKTt9Z29vZ2xlLmRsanAoJy94anMvXy9qcy9rXHgzZHhqcy5pbC5lbl9VUy55eGNjM0ZaMVhjdy5PL21ceDNkY2Rvcyxqc2EscGNjLGNzaS9hbVx4M2RQQUkvcnRceDNkai9kXHgzZDEvc3ZceDNkMi90XHgzZHpjbXMvcnNceDNkQUl0UlNUTU5BTEE0UTl1U0Z6a2ZyRFBXemN2Sk9fbjROUScpO2dvb2dsZS54anM9MTt9Z29vZ2xlLnBtYz17ImNkb3MiOnsiZGltYSI6ImIifSwiZ2YiOnsicGlkIjoxOTZ9LCJqc2EiOnt9LCJwY2MiOnt9LCJjc2kiOnsiYWNzaSI6dHJ1ZX0sInd6WGhsZyI6e30sIi8xUzZpdyI6e319O2dvb2dsZS55LmZpcnN0LnB1c2goZnVuY3Rpb24oKXtnb29nbGUubG9hZEFsbChbJ2dmJ10pO2lmKGdvb2dsZS5tZWQpe2dvb2dsZS5tZWQoJ2luaXQnKTtnb29nbGUuaW5pdEhpc3RvcnkoKTtnb29nbGUubWVkKCdoaXN0b3J5Jyk7fX0pO2lmKGdvb2dsZS5qJiZnb29nbGUuai5lbiYmZ29vZ2xlLmoueGkpe3dpbmRvdy5zZXRUaW1lb3V0KGdvb2dsZS5qLnhpLDApO308L3NjcmlwdD48L2Rpdj48L2JvZHk+PHNjcmlwdD48L3NjcmlwdD48L2h0bWw+</v11:objetoDocumento>
+               <!--Optional:-->
+               <v11:urlDocumento>http://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/OS_X-Logo.svg/200px-OS_X-Logo.svg.png</v11:urlDocumento>
+               <!--Optional:-->
+               <v11:dataEmissao>2014-06-14</v11:dataEmissao>
+               <!--Optional:-->
+               <v11:dataValidade>2020-06-14</v11:dataValidade>
+               <!--Optional:-->
+               <v11:diasExpiracao>0</v11:diasExpiracao>
+               <!--Optional:-->
+               <v11:mesesExpiracao>0</v11:mesesExpiracao>
+               <!--Optional:-->
+               <v11:anosExpiracao>5</v11:anosExpiracao>
+            </v11:documentoNecessarioAtendimento>
+         </anex:listaDocumentos>
+      </anex:ParametroIncluirPorAtendimento>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.seplag.se.gov.br/AnexoProcessosAtendimento/AnexoProcessosAtendimento/IncluirPorAtendimentoRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Request 1 3x4" timeout="0"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://osb.itconsulting.com.br:8011/V1/AnexoProcessosAtendimento</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.seplag.se.gov.br/commons/v1" xmlns:anex="http://www.seplag.se.gov.br/AnexoProcessosAtendimento" xmlns:v11="http://www.seplag.se.gov.br/EBO/v1">
+   <soap:Header>
+      <v1:cabecalhoSeplag>
+         <v1:loginUsuario>marcio.dantas</v1:loginUsuario>
+         <v1:canalAtendimento>Ceac</v1:canalAtendimento>
+         <v1:nomeAplicacao>Ceac</v1:nomeAplicacao>
+         <v1:enderecoIP>192.168.0.153</v1:enderecoIP>
+      </v1:cabecalhoSeplag>
+   </soap:Header>
+   <soap:Body>
+      <anex:ParametroIncluirPorAtendimento>
+         <anex:nomeServico>Solicitar Passe livre idoso</anex:nomeServico>
+         <anex:codigoCPF>27014429825</anex:codigoCPF>
+         <anex:listaDocumentos>
+            <!--Zero or more repetitions:-->
+            <v11:documentoNecessarioAtendimento>
+               <!--Optional:-->
+               <v11:codigoDocumento>99</v11:codigoDocumento>
+               <!--Optional:-->
+               <v11:nomeDocumento>Foto 3x4</v11:nomeDocumento>
+               <!--Optional:-->
+               <v11:indicadorObrigatorio>1</v11:indicadorObrigatorio>
+               <!--Optional:-->
+               <v11:objetoDocumento>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</v11:objetoDocumento>
+               <!--Optional:-->
+               <v11:dataEmissao>2014-06-20</v11:dataEmissao>
+               <!--Optional:-->
+               <v11:dataValidade>2020-06-20</v11:dataValidade>
+               <!--Optional:-->
+               <v11:diasExpiracao>0</v11:diasExpiracao>
+               <!--Optional:-->
+               <v11:mesesExpiracao>0</v11:mesesExpiracao>
+               <!--Optional:-->
+               <v11:anosExpiracao>5</v11:anosExpiracao>
+            </v11:documentoNecessarioAtendimento>
+         </anex:listaDocumentos>
+      </anex:ParametroIncluirPorAtendimento>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.seplag.se.gov.br/AnexoProcessosAtendimento/AnexoProcessosAtendimento/IncluirPorAtendimentoRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Request 1 3x4 e RG"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:7001/V1/AnexoProcessosAtendimento</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.seplag.se.gov.br/commons/v1" xmlns:anex="http://www.seplag.se.gov.br/AnexoProcessosAtendimento" xmlns:v11="http://www.seplag.se.gov.br/EBO/v1">
+   <soap:Header>
+      <v1:cabecalhoSeplag>
+         <v1:loginUsuario>silvio.silva</v1:loginUsuario>
+         <v1:canalAtendimento>Ceac</v1:canalAtendimento>
+         <v1:nomeAplicacao>Ceac</v1:nomeAplicacao>
+         <v1:enderecoIP>192.168.0.153</v1:enderecoIP>
+      </v1:cabecalhoSeplag>
+   </soap:Header>
+   <soap:Body>
+      <anex:ParametroIncluirPorAtendimento>
+         <anex:nomeServico>Solicitar Passe livre idoso</anex:nomeServico>
+         <anex:codigoCPF>26700228816</anex:codigoCPF>
+         <anex:listaDocumentos>
+            <!--Zero or more repetitions:-->
+            <v11:documentoNecessarioAtendimento>
+               <!--Optional:-->
+               <v11:codigoDocumento>34</v11:codigoDocumento>
+               <!--Optional:-->
+               <v11:nomeDocumento>Foto 3x4</v11:nomeDocumento>
+               <!--Optional:-->
+               <v11:indicadorObrigatorio>1</v11:indicadorObrigatorio>
+               <!--Optional:-->
+               <v11:objetoDocumento></v11:objetoDocumento>
+               <!--Optional:-->
+               <v11:dataEmissao>2014-06-14</v11:dataEmissao>
+               <!--Optional:-->
+               <v11:dataValidade>2020-06-14</v11:dataValidade>
+               <!--Optional:-->
+               <v11:diasExpiracao>0</v11:diasExpiracao>
+               <!--Optional:-->
+               <v11:mesesExpiracao>0</v11:mesesExpiracao>
+               <!--Optional:-->
+               <v11:anosExpiracao>5</v11:anosExpiracao>
+            </v11:documentoNecessarioAtendimento>
+            <v11:documentoNecessarioAtendimento>
+               <!--Optional:-->
+               <v11:codigoDocumento>99</v11:codigoDocumento>
+               <!--Optional:-->
+               <v11:nomeDocumento>RG</v11:nomeDocumento>
+               <!--Optional:-->
+               <v11:indicadorObrigatorio>1</v11:indicadorObrigatorio>
+               <!--Optional:-->
+               <v11:objetoDocumento></v11:objetoDocumento>
+               <!--Optional:-->
+               <v11:dataEmissao>2014-06-14</v11:dataEmissao>
+               <!--Optional:-->
+               <v11:dataValidade>2020-06-14</v11:dataValidade>
+               <!--Optional:-->
+               <v11:diasExpiracao>0</v11:diasExpiracao>
+               <!--Optional:-->
+               <v11:mesesExpiracao>0</v11:mesesExpiracao>
+               <!--Optional:-->
+               <v11:anosExpiracao>10</v11:anosExpiracao>
+            </v11:documentoNecessarioAtendimento>
+         </anex:listaDocumentos>
+      </anex:ParametroIncluirPorAtendimento>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.seplag.se.gov.br/AnexoProcessosAtendimento/AnexoProcessosAtendimento/IncluirPorAtendimentoRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Request 1 3x4 EVANILTON"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://osb.itconsulting.com.br:8011/V1/AnexoProcessosAtendimento</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.seplag.se.gov.br/commons/v1" xmlns:anex="http://www.seplag.se.gov.br/AnexoProcessosAtendimento" xmlns:v11="http://www.seplag.se.gov.br/EBO/v1">
+   <soap:Header>
+      <v1:cabecalhoSeplag>
+         <v1:loginUsuario>marcio.dantas</v1:loginUsuario>
+         <v1:canalAtendimento>Ceac</v1:canalAtendimento>
+         <v1:nomeAplicacao>Ceac</v1:nomeAplicacao>
+         <v1:enderecoIP>192.168.0.153</v1:enderecoIP>
+      </v1:cabecalhoSeplag>
+   </soap:Header>
+   <soap:Body>
+      <anex:ParametroIncluirPorAtendimento>
+         <anex:nomeServico>Solicitar Passe livre idoso</anex:nomeServico>
+         <anex:codigoCPF>93049080515</anex:codigoCPF>
+         <anex:listaDocumentos>
+            <!--Zero or more repetitions:-->
+            <v11:documentoNecessarioAtendimento>
+               <!--Optional:-->
+               <v11:codigoDocumento>34</v11:codigoDocumento>
+               <!--Optional:-->
+               <v11:nomeDocumento>Foto 3x4</v11:nomeDocumento>
+               <!--Optional:-->
+               <v11:indicadorObrigatorio>1</v11:indicadorObrigatorio>
+               <!--Optional:-->
+               <v11:objetoDocumento>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</v11:objetoDocumento>
+               <!--Optional:-->
+               <v11:dataEmissao>2014-05-22</v11:dataEmissao>
+               <!--Optional:-->
+               <v11:dataValidade>2018-06-22</v11:dataValidade>
+               <!--Optional:-->
+               <v11:diasExpiracao>0</v11:diasExpiracao>
+               <!--Optional:-->
+               <v11:mesesExpiracao>0</v11:mesesExpiracao>
+               <!--Optional:-->
+               <v11:anosExpiracao>5</v11:anosExpiracao>
+            </v11:documentoNecessarioAtendimento>
+         </anex:listaDocumentos>
+      </anex:ParametroIncluirPorAtendimento>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.seplag.se.gov.br/AnexoProcessosAtendimento/AnexoProcessosAtendimento/IncluirPorAtendimentoRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://www.seplag.se.gov.br/AnexoProcessosAtendimento/ListarAnexosValidos" name="ListarAnexosValidos" bindingOperationName="ListarAnexosValidos" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://osb.itconsulting.com.br:8011/V1/AnexoProcessosAtendimento</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.seplag.se.gov.br/commons/v1" xmlns:anex="http://www.seplag.se.gov.br/AnexoProcessosAtendimento">
+   <soap:Header>
+      <v1:cabecalhoSeplag>
+         <v1:loginUsuario>marcio.dantas</v1:loginUsuario>
+         <v1:canalAtendimento>Ceac</v1:canalAtendimento>
+         <v1:nomeAplicacao>Ceac</v1:nomeAplicacao>
+         <v1:enderecoIP>192.168.0.153</v1:enderecoIP>
+      </v1:cabecalhoSeplag>
+   </soap:Header>
+   <soap:Body>
+      <anex:ParametroListarAnexosValidos>
+         <!--anonymous type-->
+         <anex:codigoCPF>27014429825</anex:codigoCPF>
+         <!--type: integer-->
+         <anex:numeroMaximoResultados>10</anex:numeroMaximoResultados>
+         <!--type: integer-->
+         <anex:numeroPrimeiraLinha>1</anex:numeroPrimeiraLinha>
+      </anex:ParametroListarAnexosValidos>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.seplag.se.gov.br/AnexoProcessosAtendimento/AnexoProcessosAtendimento/ListarAnexosValidosRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Request 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://POSEIDON.local:8088/mockAnexoProcessosAtendimentoSOAP</con:endpoint><con:request><![CDATA[<soap:Body xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
+   <ns2:GenericResponse xmlns:ns2="http://www.oracle.com/UCM">
+      <ns2:Service IdcService="GET_SEARCH_RESULTS">
+         <ns2:Document>
+            <ns2:Field name="isDocProfileDone">1</ns2:Field>
+            <ns2:Field name="Text1"><![CDATA[<span class=searchLabel><$dDocTitle$>&nbsp;&nbsp;</span><span class=xsmall><$if isRtl$>&#8207;<$endif$>[&nbsp;<$dDocName$>&nbsp;<$if isRtl$>&#8207;<$endif$>]</span>]]]]>><![CDATA[</ns2:Field>
+            <ns2:Field name="IdcService">GET_SEARCH_RESULTS</ns2:Field>
+            <ns2:Field name="Text2"><![CDATA[<span class=xsmall><span class=infoLabel><$lc("wwContentAuthorLabel")$></span><$dDocAuthor$> 
+<span class=infoLabel><$lc("wwLabelRevision")$></span> <$dRevLabel$></span><br>
+<span class=xsmall><span class=infoLabel><$lc("wwLabelReleaseDate")$></span> <$dInDate$>&nbsp;&nbsp;
+<$if SCORE$><span class=infoLabel><$lc("wwScore")$>:</span> <$SCORE$><$endif$></span><br>
+<$if xComments$>
+<span class=xxsmall><font color=<$highlightFieldColor$>><$xComments$></font></span>
+<$endif$>
+<table valign=bottom align=<$lineEndAlignment$>><tr><td><span class=xxsmall>
+<$dFormat$> <$(VaultFileSize+1023)/1024$>K
+</td></tr></table>]]]]>><![CDATA[</ns2:Field>
+            <ns2:Field name="resultCount">10</ns2:Field>
+            <ns2:Field name="SearchEngineIsDefault"/>
+            <ns2:Field name="validateSearchQuery">false</ns2:Field>
+            <ns2:Field name="StartRow">1</ns2:Field>
+            <ns2:Field name="dpTriggerField">xIdcProfile</ns2:Field>
+            <ns2:Field name="EnterpriseSearchMaxRows">4</ns2:Field>
+            <ns2:Field name="sortField">dDocName</ns2:Field>
+            <ns2:Field name="idcToken"/>
+            <ns2:Field name="FullRequest">&amp;QueryText=xcodigoCpf+%3csubstring%3e+%6069140839168%60+%3cAND%3e+dOutDate++%3e+%6025%2f05%2f2014%60</ns2:Field>
+            <ns2:Field name="TotalRows">2</ns2:Field>
+            <ns2:Field name="localizedForResponse">1</ns2:Field>
+            <ns2:Field name="PageNumber">1</ns2:Field>
+            <ns2:Field name="UnparsedQueryText">xcodigoCpf &lt;substring> `69140839168` &lt;AND> dOutDate  > `25/05/2014`</ns2:Field>
+            <ns2:Field name="useOnlyLocalForDpTrigger">1</ns2:Field>
+            <ns2:Field name="queryDefinitionLabel">DATABASE.METADATA.ORACLE</ns2:Field>
+            <ns2:Field name="sortOrder">ASC</ns2:Field>
+            <ns2:Field name="OriginalUnencodedQueryText">xcodigoCpf &lt;substring> `69140839168` &lt;AND> dOutDate  > `25/05/2014`</ns2:Field>
+            <ns2:Field name="NumPages">1</ns2:Field>
+            <ns2:Field name="dUser">osbserver</ns2:Field>
+            <ns2:Field name="dpAction">Search</ns2:Field>
+            <ns2:Field name="isDocProfileUsed">true</ns2:Field>
+            <ns2:Field name="ComputedSearchEngineName">DATABASE.METADATA</ns2:Field>
+            <ns2:Field name="OriginalQueryText">xcodigoCpf+%3csubstring%3e+%6069140839168%60+%3cAND%3e+dOutDate++%3e+%6025%2f05%2f2014%60</ns2:Field>
+            <ns2:Field name="refreshMonikers"/>
+            <ns2:Field name="refreshSubMonikers"/>
+            <ns2:Field name="EndRow">2</ns2:Field>
+            <ns2:Field name="startRow">1</ns2:Field>
+            <ns2:Field name="dpEvent">OnRequest</ns2:Field>
+            <ns2:Field name="changedMonikers"/>
+            <ns2:Field name="IsOracle">1</ns2:Field>
+            <ns2:Field name="TotalDocsProcessed">2</ns2:Field>
+            <ns2:Field name="QueryText">xcodigoCpf+%3csubstring%3e+%6069140839168%60+%3cAND%3e+dOutDate++%3e+%6025%2f05%2f2014%60</ns2:Field>
+            <ns2:Field name="escapeReservedStringsInSearch">false</ns2:Field>
+            <ns2:Field name="SearchProviders">dcontent0184621combr16200</ns2:Field>
+            <ns2:Field name="HasRowAndDocCount">true</ns2:Field>
+            <ns2:ResultSet name="NavigationPages">
+               <ns2:Row>
+                  <ns2:Field name="HeaderPageNumber">1</ns2:Field>
+                  <ns2:Field name="PageReference">1</ns2:Field>
+                  <ns2:Field name="PageNumber">1</ns2:Field>
+                  <ns2:Field name="StartRow">1</ns2:Field>
+                  <ns2:Field name="EndRow">2</ns2:Field>
+               </ns2:Row>
+            </ns2:ResultSet>
+            <ns2:ResultSet name="SearchResults">
+               <ns2:Row>
+                  <ns2:Field name="dID">1603</ns2:Field>
+                  <ns2:Field name="dDocTitle">RG</ns2:Field>
+                  <ns2:Field name="dDocType">Document</ns2:Field>
+                  <ns2:Field name="dRevisionID">1</ns2:Field>
+                  <ns2:Field name="dSecurityGroup">PJGovDir_DocumentosProcessos</ns2:Field>
+                  <ns2:Field name="dDocAuthor">osbserver</ns2:Field>
+                  <ns2:Field name="dDocAccount"/>
+                  <ns2:Field name="dRevLabel">1</ns2:Field>
+                  <ns2:Field name="dFormat">Application/unknown</ns2:Field>
+                  <ns2:Field name="dOriginalName">9969140839168</ns2:Field>
+                  <ns2:Field name="dExtension"/>
+                  <ns2:Field name="dWebExtension"/>
+                  <ns2:Field name="dInDate">14/06/14 00:00</ns2:Field>
+                  <ns2:Field name="dOutDate">14/06/24 00:00</ns2:Field>
+                  <ns2:Field name="dCreateDate">16/06/14 18:28</ns2:Field>
+                  <ns2:Field name="dPublishType"/>
+                  <ns2:Field name="dRendition1"/>
+                  <ns2:Field name="dRendition2"/>
+                  <ns2:Field name="VaultFileSize">54358</ns2:Field>
+                  <ns2:Field name="xComments"/>
+                  <ns2:Field name="xExternalDataSet"/>
+                  <ns2:Field name="xIdcProfile"/>
+                  <ns2:Field name="xPartitionId"/>
+                  <ns2:Field name="xWebFlag"/>
+                  <ns2:Field name="xStorageRule">DispByContentId</ns2:Field>
+                  <ns2:Field name="xLibraryGUID"/>
+                  <ns2:Field name="xcodigoCpf">69140839168</ns2:Field>
+                  <ns2:Field name="xcodigoDocumento">99</ns2:Field>
+                  <ns2:Field name="dRevClassID">1603</ns2:Field>
+                  <ns2:Field name="dDocName">9969140839168</ns2:Field>
+                  <ns2:Field name="dIndexedID">1603</ns2:Field>
+                  <ns2:Field name="dDocCreatedDate">16/06/14 18:28</ns2:Field>
+                  <ns2:Field name="dDocCreator">osbserver</ns2:Field>
+                  <ns2:Field name="dDocLastModifiedDate">16/06/14 18:28</ns2:Field>
+                  <ns2:Field name="dDocLastModifier">osbserver</ns2:Field>
+                  <ns2:Field name="dDocOwner">osbserver</ns2:Field>
+                  <ns2:Field name="dDocFunction"/>
+                  <ns2:Field name="dDocClass"/>
+                  <ns2:Field name="URL">/cs/groups/pjgovdir_documentosprocessos/documents/document/mtqw/odm5/~edisp/9969140839168</ns2:Field>
+               </ns2:Row>
+               <ns2:Row>
+                  <ns2:Field name="dID">1610</ns2:Field>
+                  <ns2:Field name="dDocTitle">Foto 3x4</ns2:Field>
+                  <ns2:Field name="dDocType">Document</ns2:Field>
+                  <ns2:Field name="dRevisionID">1</ns2:Field>
+                  <ns2:Field name="dSecurityGroup">PJGovDir_DocumentosProcessos</ns2:Field>
+                  <ns2:Field name="dDocAuthor">osbserver</ns2:Field>
+                  <ns2:Field name="dDocAccount"/>
+                  <ns2:Field name="dRevLabel">1</ns2:Field>
+                  <ns2:Field name="dFormat">Application/unknown</ns2:Field>
+                  <ns2:Field name="dOriginalName">3469140839168</ns2:Field>
+                  <ns2:Field name="dExtension"/>
+                  <ns2:Field name="dWebExtension"/>
+                  <ns2:Field name="dInDate">14/06/14 00:00</ns2:Field>
+                  <ns2:Field name="dOutDate">14/06/19 00:00</ns2:Field>
+                  <ns2:Field name="dCreateDate">17/06/14 09:24</ns2:Field>
+                  <ns2:Field name="dPublishType"/>
+                  <ns2:Field name="dRendition1"/>
+                  <ns2:Field name="dRendition2"/>
+                  <ns2:Field name="VaultFileSize">6653</ns2:Field>
+                  <ns2:Field name="xComments"/>
+                  <ns2:Field name="xExternalDataSet"/>
+                  <ns2:Field name="xIdcProfile"/>
+                  <ns2:Field name="xPartitionId"/>
+                  <ns2:Field name="xWebFlag"/>
+                  <ns2:Field name="xStorageRule">DispByContentId</ns2:Field>
+                  <ns2:Field name="xLibraryGUID"/>
+                  <ns2:Field name="xcodigoCpf">69140839168</ns2:Field>
+                  <ns2:Field name="xcodigoDocumento">34</ns2:Field>
+                  <ns2:Field name="dRevClassID">1610</ns2:Field>
+                  <ns2:Field name="dDocName">3469140839168</ns2:Field>
+                  <ns2:Field name="dIndexedID">1610</ns2:Field>
+                  <ns2:Field name="dDocCreatedDate">17/06/14 09:24</ns2:Field>
+                  <ns2:Field name="dDocCreator">osbserver</ns2:Field>
+                  <ns2:Field name="dDocLastModifiedDate">17/06/14 09:24</ns2:Field>
+                  <ns2:Field name="dDocLastModifier">osbserver</ns2:Field>
+                  <ns2:Field name="dDocOwner">osbserver</ns2:Field>
+                  <ns2:Field name="dDocFunction"/>
+                  <ns2:Field name="dDocClass"/>
+                  <ns2:Field name="URL">/cs/groups/pjgovdir_documentosprocessos/documents/document/mtqw/odm5/~edisp/3469140839168</ns2:Field>
+               </ns2:Row>
+            </ns2:ResultSet>
+            <ns2:ResultSet name="AssociatedTopFields"/>
+            <ns2:ResultSet name="EnterpriseSearchResults">
+               <ns2:Row>
+                  <ns2:Field name="ProviderName">dcontent0184621combr16200</ns2:Field>
+                  <ns2:Field name="ProviderDescription">!csProviderLocalContentServerLabel</ns2:Field>
+                  <ns2:Field name="IDC_Name">dcontent0184621combr16200</ns2:Field>
+                  <ns2:Field name="InstanceMenuLabel">dcontent0184621combr16200</ns2:Field>
+                  <ns2:Field name="InstanceDescription">Instance dcontent0184621combr16200</ns2:Field>
+                  <ns2:Field name="IntradocServerHostName">dcontent01.itconsulting.com.br:16200</ns2:Field>
+                  <ns2:Field name="HttpRelativeWebRoot">/cs/</ns2:Field>
+                  <ns2:Field name="IsImplicitlySearched"/>
+                  <ns2:Field name="UserAccounts"/>
+                  <ns2:Field name="IsLocalCollection">true</ns2:Field>
+                  <ns2:Field name="Selected"/>
+                  <ns2:Field name="StatusCode">0</ns2:Field>
+                  <ns2:Field name="StatusMessage">Sucesso</ns2:Field>
+                  <ns2:Field name="ResultSetName">dcontent0184621combr16200</ns2:Field>
+                  <ns2:Field name="SearchCgiWebUrl">/cs/idcplg/cs/pxs</ns2:Field>
+                  <ns2:Field name="TotalRows">2</ns2:Field>
+                  <ns2:Field name="TotalDocsProcessed"/>
+                  <ns2:Field name="HasMoreRows"/>
+               </ns2:Row>
+            </ns2:ResultSet>
+            <ns2:ResultSet name="RestrictedLists"/>
+         </ns2:Document>
+      </ns2:Service>
+   </ns2:GenericResponse>
+</soap:Body>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.seplag.se.gov.br/AnexoProcessosAtendimento/AnexoProcessosAtendimento/ListarAnexosValidosRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://www.seplag.se.gov.br/AnexoProcessosAtendimento/ListarPorAtendimento" name="ListarPorAtendimento" bindingOperationName="ListarPorAtendimento" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1" timeout="0"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://osb.itconsulting.com.br:8011/V1/AnexoProcessosAtendimento</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.seplag.se.gov.br/commons/v1" xmlns:anex="http://www.seplag.se.gov.br/AnexoProcessosAtendimento">
+   <soap:Header>
+       <v1:cabecalhoSeplag>
+            <v1:loginUsuario>marcio.dantas</v1:loginUsuario>
+            <v1:canalAtendimento>Ceac</v1:canalAtendimento>
+            <v1:nomeAplicacao>Ceac</v1:nomeAplicacao>
+            <v1:enderecoIP>192.168.0.153</v1:enderecoIP>
+	 </v1:cabecalhoSeplag>
+   </soap:Header>
+   <soap:Body>
+      <anex:ParametroListarPorAtendimento>
+         <anex:nomeServico>Solicitar Passe livre idoso</anex:nomeServico>
+         <!--<anex:codigoCPF>26700228812</anex:codigoCPF>-->
+         <anex:codigoCPF>31814938990</anex:codigoCPF>
+      </anex:ParametroListarPorAtendimento>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.seplag.se.gov.br/AnexoProcessosAtendimento/AnexoProcessosAtendimento/ListarPorAtendimentoRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Request 1 EVANILTON"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://osb.itconsulting.com.br:8011/V1/AnexoProcessosAtendimento</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.seplag.se.gov.br/commons/v1" xmlns:anex="http://www.seplag.se.gov.br/AnexoProcessosAtendimento">
+   <soap:Header>
+       <v1:cabecalhoSeplag>
+            <v1:loginUsuario>marcio.dantas</v1:loginUsuario>
+            <v1:canalAtendimento>Ceac</v1:canalAtendimento>
+            <v1:nomeAplicacao>Ceac</v1:nomeAplicacao>
+            <v1:enderecoIP>192.168.0.153</v1:enderecoIP>
+	 </v1:cabecalhoSeplag>
+   </soap:Header>
+   <soap:Body>
+      <anex:ParametroListarPorAtendimento>
+         <anex:nomeServico>Solicitar Passe livre idoso</anex:nomeServico>
+         <!--<anex:codigoCPF>26700228812</anex:codigoCPF>-->
+         <anex:codigoCPF>93049080515</anex:codigoCPF>
+      </anex:ParametroListarPorAtendimento>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.seplag.se.gov.br/AnexoProcessosAtendimento/AnexoProcessosAtendimento/ListarPorAtendimentoRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:mockService port="8088" path="/mockAnexoProcessosAtendimentoSOAP" host="POSEIDON.local" name="AnexoProcessosAtendimentoSOAP MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="IncluirPorAtendimento" interface="AnexoProcessosAtendimentoSOAP" operation="IncluirPorAtendimento"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:anex="http://www.seplag.se.gov.br/AnexoProcessosAtendimento">
+   <soap:Header/>
+   <soap:Body>
+      <anex:ResultadoIncluirPorAtendimento>
+         <anex:listaCodigoProtocolo>
+            <!--Zero or more repetitions:-->
+            <!--type: string-->
+            <anex:codigoProtocolo>?</anex:codigoProtocolo>
+         </anex:listaCodigoProtocolo>
+      </anex:ResultadoIncluirPorAtendimento>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.seplag.se.gov.br/AnexoProcessosAtendimento/AnexoProcessosAtendimento/IncluirPorAtendimentoResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="ListarAnexosValidos" interface="AnexoProcessosAtendimentoSOAP" operation="ListarAnexosValidos"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:anex="http://www.seplag.se.gov.br/AnexoProcessosAtendimento" xmlns:v1="http://www.seplag.se.gov.br/EBO/v1">
+   <soap:Header/>
+   <soap:Body>
+      <anex:ResultadoListarAnexosValidos>
+         <anex:listaDocumentos>
+            <!--Zero or more repetitions:-->
+            <v1:documentoNecessarioAtendimento>
+               <!--Optional:-->
+               <!--anonymous type-->
+               <v1:codigoDocumento>?</v1:codigoDocumento>
+               <!--Optional:-->
+               <!--anonymous type-->
+               <v1:nomeDocumento>?</v1:nomeDocumento>
+               <!--Optional:-->
+               <!--type: boolean-->
+               <v1:indicadorObrigatorio>?</v1:indicadorObrigatorio>
+               <!--Optional:-->
+               <!--type: base64Binary-->
+               <v1:objetoDocumento>cid:1122926255669</v1:objetoDocumento>
+               <!--Optional:-->
+               <!--type: anyURI-->
+               <v1:urlDocumento>?</v1:urlDocumento>
+               <!--Optional:-->
+               <!--type: date-->
+               <v1:dataEmissao>?</v1:dataEmissao>
+               <!--Optional:-->
+               <!--type: date-->
+               <v1:dataValidade>?</v1:dataValidade>
+               <!--Optional:-->
+               <!--anonymous type-->
+               <v1:diasExpiracao>?</v1:diasExpiracao>
+               <!--Optional:-->
+               <!--anonymous type-->
+               <v1:mesesExpiracao>?</v1:mesesExpiracao>
+               <!--Optional:-->
+               <!--anonymous type-->
+               <v1:anosExpiracao>?</v1:anosExpiracao>
+            </v1:documentoNecessarioAtendimento>
+            
+         </anex:listaDocumentos>
+      </anex:ResultadoListarAnexosValidos>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.seplag.se.gov.br/AnexoProcessosAtendimento/AnexoProcessosAtendimento/ListarAnexosValidosResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="ListarPorAtendimento" interface="AnexoProcessosAtendimentoSOAP" operation="ListarPorAtendimento"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:anex="http://www.seplag.se.gov.br/AnexoProcessosAtendimento" xmlns:v1="http://www.seplag.se.gov.br/EBO/v1">
+   <soap:Header/>
+   <soap:Body>
+      <anex:ResultadoListarPorAtendimento>
+         <anex:listaDocumentos>
+            <!--Zero or more repetitions:-->
+            <v1:documentoNecessarioAtendimento>
+               <!--Optional:-->
+               <!--anonymous type-->
+               <v1:codigoDocumento>?</v1:codigoDocumento>
+               <!--Optional:-->
+               <!--anonymous type-->
+               <v1:nomeDocumento>?</v1:nomeDocumento>
+               <!--Optional:-->
+               <!--type: boolean-->
+               <v1:indicadorObrigatorio>?</v1:indicadorObrigatorio>
+               <!--Optional:-->
+               <!--type: base64Binary-->
+               <v1:objetoDocumento>cid:805281412446</v1:objetoDocumento>
+               <!--Optional:-->
+               <!--type: anyURI-->
+               <v1:urlDocumento>?</v1:urlDocumento>
+               <!--Optional:-->
+               <!--type: date-->
+               <v1:dataEmissao>?</v1:dataEmissao>
+               <!--Optional:-->
+               <!--type: date-->
+               <v1:dataValidade>?</v1:dataValidade>
+               <!--Optional:-->
+               <!--anonymous type-->
+               <v1:diasExpiracao>?</v1:diasExpiracao>
+               <!--Optional:-->
+               <!--anonymous type-->
+               <v1:mesesExpiracao>?</v1:mesesExpiracao>
+               <!--Optional:-->
+               <!--anonymous type-->
+               <v1:anosExpiracao>?</v1:anosExpiracao>
+            </v1:documentoNecessarioAtendimento>
+         </anex:listaDocumentos>
+      </anex:ResultadoListarPorAtendimento>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.seplag.se.gov.br/AnexoProcessosAtendimento/AnexoProcessosAtendimento/ListarPorAtendimentoResponse"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>

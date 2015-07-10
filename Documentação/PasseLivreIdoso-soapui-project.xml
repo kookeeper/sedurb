@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="SEDURB" soapui-version="5.0.0" abortOnError="false" runType="SEQUENTIAL" resourceRoot="" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="ProcessoTriagemBinding" type="wsdl" bindingName="{http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem}ProcessoTriagemBinding" soapVersion="1_1" anonymous="optional" definition="http://192.168.30.89:7001/soa-infra/services/default/PasseLivre/ProcessoTriagem.service?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://192.168.30.89:7001/soa-infra/services/default/PasseLivre/ProcessoTriagem.service?WSDL"><con:part><con:url>http://192.168.30.89:7001/soa-infra/services/default/PasseLivre/ProcessoTriagem.service?WSDL</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:documentation>
+    <abstractWSDL>http://192.168.30.89:7001/soa-infra/services/default/PasseLivre!1.0/ProcessoTriagem.wsdl</abstractWSDL>
+  </wsdl:documentation>
+  <plnk:partnerLinkType name="ProcessoTriagemPortTypePartnerLinkType">
+    <plnk:role name="ProcessoTriagemPortTypeProvider">
+      <plnk:portType name="tns:ProcessoTriagemPortType"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem">
+      <xsd:element name="iniciarAtendimento">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="cpfCidadao" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="iniciarAtendimento">
+    <wsdl:part name="parameters" element="tns:iniciarAtendimento"/>
+  </wsdl:message>
+  <wsdl:portType name="ProcessoTriagemPortType">
+    <wsdl:operation name="iniciarAtendimento">
+      <wsdl:input message="tns:iniciarAtendimento"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ProcessoTriagemBinding" type="tns:ProcessoTriagemPortType">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="iniciarAtendimento">
+      <wsdlsoap:operation style="document" soapAction="iniciarAtendimento"/>
+      <wsdl:input>
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ProcessoTriagem.service">
+    <wsdl:port name="ProcessoTriagemPort" binding="tns:ProcessoTriagemBinding">
+      <wsdlsoap:address location="http://192.168.30.89:7001/soa-infra/services/default/PasseLivre/ProcessoTriagem.service"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://192.168.30.89:7001/soa-infra/services/default/PasseLivre/ProcessoTriagem.service</con:endpoint><con:endpoint>http://localhost:7001/soa-infra/services/default/PasseLivre/ProcessoTriagem.service</con:endpoint></con:endpoints><con:operation isOneWay="false" action="iniciarAtendimento" name="iniciarAtendimento" bindingOperationName="iniciarAtendimento" type="One-Way" inputName="" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.30.89:7001/soa-infra/services/default/PasseLivre/ProcessoTriagem.service</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:proc="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <proc:iniciarAtendimento>
+         <cpfCidadao>27014429825</cpfCidadao>
+      </proc:iniciarAtendimento>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="iniciarAtendimento"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" wsaVersion="200508" name="ProcessoPasseLivreIdosoBinding" type="wsdl" bindingName="{http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreIdoso}ProcessoPasseLivreIdosoBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:7001/soa-infra/services/default/PasseLivre/ProcessoPasseLivreIdoso.service?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:7001/soa-infra/services/default/PasseLivre/ProcessoPasseLivreIdoso.service?WSDL"><con:part><con:url>http://localhost:7001/soa-infra/services/default/PasseLivre/ProcessoPasseLivreIdoso.service?WSDL</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreIdoso" xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns6="http://br.gov.sedurb" xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreIdoso" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:documentation>
+    <abstractWSDL>http://localhost:7001/soa-infra/services/default/PasseLivre!1.0/ProcessoPasseLivreIdoso.wsdl</abstractWSDL>
+  </wsdl:documentation>
+  <plnk:partnerLinkType name="ProcessoPasseLivreIdosoPortTypePartnerLinkType">
+    <plnk:role name="ProcessoPasseLivreIdosoPortTypeProvider">
+      <plnk:portType name="tns:ProcessoPasseLivreIdosoPortType"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+  <wsp:Policy wsu:Id="wsaddr_policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+    <wsaw:UsingAddressing xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"/>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreIdoso">
+      <xsd:import namespace="http://br.gov.sedurb" schemaLocation="http://localhost:7001/soa-infra/services/default/PasseLivre/ProcessoPasseLivreIdoso.service?XSD=xsd/payload.xsd"/>
+      <xsd:element name="carteriaImpressa">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="dataImpressao" type="xsd:dateTime"/>
+            <xsd:element name="codigoProtocolo" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="impressaoCarteiraSolicitada">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="dataSolicitacao" type="xsd:dateTime"/>
+            <xsd:element name="codigoProtocolo" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="start">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="payloadInput" type="tns6:payloadPasseLivreIdoso"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="endResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="codigoProtocolo" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="impressaoCarteiraSolicitada">
+    <wsdl:part name="parameters" element="tns:impressaoCarteiraSolicitada"/>
+  </wsdl:message>
+  <wsdl:message name="carteriaImpressa">
+    <wsdl:part name="parameters" element="tns:carteriaImpressa"/>
+  </wsdl:message>
+  <wsdl:message name="start">
+    <wsdl:part name="parameters" element="tns:start"/>
+  </wsdl:message>
+  <wsdl:message name="endResponse">
+    <wsdl:part name="parameters" element="tns:endResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="ProcessoPasseLivreIdosoPortType">
+    <wsdl:operation name="impressaoCarteiraSolicitada">
+      <wsdl:input message="tns:impressaoCarteiraSolicitada"/>
+    </wsdl:operation>
+    <wsdl:operation name="carteriaImpressa">
+      <wsdl:input message="tns:carteriaImpressa"/>
+    </wsdl:operation>
+    <wsdl:operation name="start">
+      <wsdl:input message="tns:start"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ProcessoPasseLivreIdosoPortTypeCallBack">
+    <wsdl:operation name="end">
+      <wsdl:input message="tns:endResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ProcessoPasseLivreIdosoPortTypeCallBackBinding" type="tns:ProcessoPasseLivreIdosoPortTypeCallBack">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="end">
+      <wsdlsoap:operation style="document" soapAction="end"/>
+      <wsdl:input>
+        <wsdlsoap:body use="literal" namespace="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreIdoso"/>
+      </wsdl:input>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ProcessoPasseLivreIdosoBinding" type="tns:ProcessoPasseLivreIdosoPortType">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsp:PolicyReference URI="#wsaddr_policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+    <wsdl:operation name="impressaoCarteiraSolicitada">
+      <wsdlsoap:operation style="document" soapAction="impressaoCarteiraSolicitada"/>
+      <wsdl:input>
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="carteriaImpressa">
+      <wsdlsoap:operation style="document" soapAction="carteriaImpressa"/>
+      <wsdl:input>
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="start">
+      <wsdlsoap:operation style="document" soapAction="start"/>
+      <wsdl:input>
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ProcessoPasseLivreIdoso.service">
+    <wsdl:port name="ProcessoPasseLivreIdosoPort" binding="tns:ProcessoPasseLivreIdosoBinding">
+      <wsdlsoap:address location="http://localhost:7001/soa-infra/services/default/PasseLivre/ProcessoPasseLivreIdoso.service"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:7001/soa-infra/services/default/PasseLivre/ProcessoPasseLivreIdoso.service?XSD=xsd/payload.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://br.gov.sedurb" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://br.gov.sedurb">
+  <xsd:complexType name="payloadPasseLivreIdoso">
+    <xsd:sequence>
+      <xsd:element name="cpfCidadao" type="xsd:string"/>
+      <xsd:element name="dataAgendamentoAtendimento" type="xsd:dateTime"/>
+      <xsd:element name="nomeServico" type="xsd:string"/>
+      <xsd:element name="nomeUnidadeAtendimento" type="xsd:string"/>
+      <xsd:element name="codigoProtocolo" type="xsd:string"/>
+      <xsd:element name="codigoProtocoloPai" type="xsd:string"/>
+      <xsd:element name="dataSolicitacaoImpressaoCarteira" type="xsd:dateTime" minOccurs="0"/>
+      <xsd:element name="dataImpressaoCarteira" type="xsd:dateTime" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="payloadProcessoTriagem">
+    <xsd:sequence>
+      <xsd:element name="cpfCidadao" type="xsd:string" minOccurs="1"/>
+      <xsd:element name="codigoProtocoloPai" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="senhaAtendimento" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="inicioAtendimento" type="xsd:dateTime" minOccurs="1"/>
+      <xsd:element name="terminoAtendimento" type="xsd:dateTime" minOccurs="1"/>
+      <xsd:element name="listaProtocolo" type="listaProtocolo"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="listaProtocolo">
+    <xsd:sequence>
+      <xsd:element name="protocolo" type="protocolo" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="protocolo">
+    <xsd:sequence>
+      <xsd:element name="codigoProtocolo" type="xsd:string"/>
+      <xsd:element name="nomeServico" type="xsd:string"/>
+      <xsd:element name="unidadeAtendimento" type="xsd:string"/>
+      <xsd:element name="dataAgendamento" type="xsd:dateTime"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:7001/soa-infra/services/default/PasseLivre/ProcessoPasseLivreIdoso.service</con:endpoint></con:endpoints><con:operation isOneWay="false" action="carteriaImpressa" name="carteriaImpressa" bindingOperationName="carteriaImpressa" type="One-Way" inputName="" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1" useWsAddressing="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:7001/soa-infra/services/default/PasseLivre/ProcessoPasseLivreIdoso.service</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:proc="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreIdoso">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <proc:carteriaImpressa>
+         <dataImpressao>2010-01-02</dataImpressao>
+         <codigoProtocolo>p1</codigoProtocolo>
+      </proc:carteriaImpressa>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="carteriaImpressa"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="start" name="start" bindingOperationName="start" type="One-Way" inputName="" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:7001/soa-infra/services/default/PasseLivre/ProcessoPasseLivreIdoso.service</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:proc="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreIdoso" xmlns:br="http://br.gov.sedurb">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <proc:start>
+         <payloadInput>
+            <br:cpfCidadao>?</br:cpfCidadao>
+            <br:dataAgendamentoAtendimento>?</br:dataAgendamentoAtendimento>
+            <br:nomeServico>?</br:nomeServico>
+            <br:nomeUnidadeAtendimento>?</br:nomeUnidadeAtendimento>
+            <br:codigoProtocolo>?</br:codigoProtocolo>
+            <br:codigoProtocoloPai>?</br:codigoProtocoloPai>
+            <!--Optional:-->
+            <br:dataSolicitacaoImpressaoCarteira>?</br:dataSolicitacaoImpressaoCarteira>
+            <!--Optional:-->
+            <br:dataImpressaoCarteira>?</br:dataImpressaoCarteira>
+         </payloadInput>
+      </proc:start>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="start"/></con:call></con:operation><con:operation isOneWay="false" action="impressaoCarteiraSolicitada" name="impressaoCarteiraSolicitada" bindingOperationName="impressaoCarteiraSolicitada" type="One-Way" inputName="" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1" useWsAddressing="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:7001/soa-infra/services/default/PasseLivre/ProcessoPasseLivreIdoso.service</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:proc="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreIdoso">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <proc:impressaoCarteiraSolicitada>
+         <dataSolicitacao>2010-01-01</dataSolicitacao>
+         <codigoProtocolo>p1</codigoProtocolo>
+      </proc:impressaoCarteiraSolicitada>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="impressaoCarteiraSolicitada"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="ProcessoPasseLivreIdosoPortTypeCallBackBinding" type="wsdl" bindingName="{http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreIdoso}ProcessoPasseLivreIdosoPortTypeCallBackBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:7001/soa-infra/services/default/PasseLivre/ProcessoPasseLivreIdoso.service?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:7001/soa-infra/services/default/PasseLivre/ProcessoPasseLivreIdoso.service?WSDL"><con:part><con:url>http://localhost:7001/soa-infra/services/default/PasseLivre/ProcessoPasseLivreIdoso.service?WSDL</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreIdoso" xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns6="http://br.gov.sedurb" xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreIdoso" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:documentation>
+    <abstractWSDL>http://localhost:7001/soa-infra/services/default/PasseLivre!1.0/ProcessoPasseLivreIdoso.wsdl</abstractWSDL>
+  </wsdl:documentation>
+  <plnk:partnerLinkType name="ProcessoPasseLivreIdosoPortTypePartnerLinkType">
+    <plnk:role name="ProcessoPasseLivreIdosoPortTypeProvider">
+      <plnk:portType name="tns:ProcessoPasseLivreIdosoPortType"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+  <wsp:Policy wsu:Id="wsaddr_policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+    <wsaw:UsingAddressing xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"/>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreIdoso">
+      <xsd:import namespace="http://br.gov.sedurb" schemaLocation="http://localhost:7001/soa-infra/services/default/PasseLivre/ProcessoPasseLivreIdoso.service?XSD=xsd/payload.xsd"/>
+      <xsd:element name="carteriaImpressa">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="dataImpressao" type="xsd:dateTime"/>
+            <xsd:element name="codigoProtocolo" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="solicitarImpressaoCarteira">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="dataSolicitacao" type="xsd:dateTime"/>
+            <xsd:element name="codigoProtocolo" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="start">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="payloadInput" type="tns6:payloadPasseLivreIdoso"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="endResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="codigoProtocolo" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="solicitarImpressaoCarteira">
+    <wsdl:part name="parameters" element="tns:solicitarImpressaoCarteira"/>
+  </wsdl:message>
+  <wsdl:message name="carteriaImpressa">
+    <wsdl:part name="parameters" element="tns:carteriaImpressa"/>
+  </wsdl:message>
+  <wsdl:message name="start">
+    <wsdl:part name="parameters" element="tns:start"/>
+  </wsdl:message>
+  <wsdl:message name="endResponse">
+    <wsdl:part name="parameters" element="tns:endResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="ProcessoPasseLivreIdosoPortType">
+    <wsdl:operation name="solicitarImpressaoCarteira">
+      <wsdl:input message="tns:solicitarImpressaoCarteira"/>
+    </wsdl:operation>
+    <wsdl:operation name="carteriaImpressa">
+      <wsdl:input message="tns:carteriaImpressa"/>
+    </wsdl:operation>
+    <wsdl:operation name="start">
+      <wsdl:input message="tns:start"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ProcessoPasseLivreIdosoPortTypeCallBack">
+    <wsdl:operation name="end">
+      <wsdl:input message="tns:endResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ProcessoPasseLivreIdosoPortTypeCallBackBinding" type="tns:ProcessoPasseLivreIdosoPortTypeCallBack">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="end">
+      <wsdlsoap:operation style="document" soapAction="end"/>
+      <wsdl:input>
+        <wsdlsoap:body use="literal" namespace="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreIdoso"/>
+      </wsdl:input>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ProcessoPasseLivreIdosoBinding" type="tns:ProcessoPasseLivreIdosoPortType">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsp:PolicyReference URI="#wsaddr_policy" wsdl:required="false" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+    <wsdl:operation name="solicitarImpressaoCarteira">
+      <wsdlsoap:operation style="document" soapAction="solicitarImpressaoCarteira"/>
+      <wsdl:input>
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="carteriaImpressa">
+      <wsdlsoap:operation style="document" soapAction="carteriaImpressa"/>
+      <wsdl:input>
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="start">
+      <wsdlsoap:operation style="document" soapAction="start"/>
+      <wsdl:input>
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ProcessoPasseLivreIdoso.service">
+    <wsdl:port name="ProcessoPasseLivreIdosoPort" binding="tns:ProcessoPasseLivreIdosoBinding">
+      <wsdlsoap:address location="http://localhost:7001/soa-infra/services/default/PasseLivre/ProcessoPasseLivreIdoso.service"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:7001/soa-infra/services/default/PasseLivre/ProcessoPasseLivreIdoso.service?XSD=xsd/payload.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://br.gov.sedurb" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://br.gov.sedurb">
+  <xsd:complexType name="payloadPasseLivreIdoso">
+    <xsd:sequence>
+      <xsd:element name="cpfCidadao" type="xsd:string"/>
+      <xsd:element name="dataAgendamentoAtendimento" type="xsd:dateTime"/>
+      <xsd:element name="nomeServico" type="xsd:string"/>
+      <xsd:element name="nomeUnidadeAtendimento" type="xsd:string"/>
+      <xsd:element name="codigoProtocolo" type="xsd:string"/>
+      <xsd:element name="codigoProtocoloPai" type="xsd:string"/>
+      <xsd:element name="dataSolicitacaoImpressaoCarteira" type="xsd:dateTime" minOccurs="0"/>
+      <xsd:element name="dataImpressaoCarteira" type="xsd:dateTime" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="payloadProcessoTriagem">
+    <xsd:sequence>
+      <xsd:element name="cpfCidadao" type="xsd:string" minOccurs="1"/>
+      <xsd:element name="codigoProtocoloPai" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="senhaAtendimento" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="inicioAtendimento" type="xsd:dateTime" minOccurs="1"/>
+      <xsd:element name="terminoAtendimento" type="xsd:dateTime" minOccurs="1"/>
+      <xsd:element name="listaProtocolo" type="listaProtocolo"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="listaProtocolo">
+    <xsd:sequence>
+      <xsd:element name="protocolo" type="protocolo" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="protocolo">
+    <xsd:sequence>
+      <xsd:element name="codigoProtocolo" type="xsd:string"/>
+      <xsd:element name="nomeServico" type="xsd:string"/>
+      <xsd:element name="unidadeAtendimento" type="xsd:string"/>
+      <xsd:element name="dataAgendamento" type="xsd:dateTime"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints/><con:operation isOneWay="false" action="end" name="end" bindingOperationName="end" type="One-Way" inputName="" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:proc="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreIdoso">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <proc:endResponse>
+         <codigoProtocolo>?</codigoProtocolo>
+      </proc:endResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="end"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>

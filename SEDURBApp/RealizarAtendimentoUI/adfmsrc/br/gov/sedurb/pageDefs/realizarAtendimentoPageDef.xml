@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93" id="realizarAtendimentoPageDef"
+                Package="br.gov.sedurb.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variable Type="java.sql.Date"
+                Name="solicitarEmissaoCarteira_dataSolicitacaoEmissaoCarteira"
+                IsQueriable="false"/>
+      <variable Type="java.lang.String"
+                Name="solicitarEmissaoCarteira_codigoProtocolo"
+                IsQueriable="false"/>
+    </variableIterator>
+  </executables>
+  <bindings>
+    <methodAction id="solicitarEmissaoCarteira" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="solicitarEmissaoCarteira"
+                  IsViewObjectMethod="false"
+                  DataControl="PasseLivreIdoso"
+                  InstanceName="PasseLivreIdoso">
+      <NamedData NDName="dataSolicitacaoEmissaoCarteira"
+                 NDValue="${bindings.solicitarEmissaoCarteira_dataSolicitacaoEmissaoCarteira}"
+                 NDType="java.sql.Date"/>
+      <NamedData NDName="codigoProtocolo"
+                 NDValue="${bindings.solicitarEmissaoCarteira_codigoProtocolo}"
+                 NDType="java.lang.String"/>
+    </methodAction>
+    <attributeValues IterBinding="variables"
+                     id="dataSolicitacaoEmissaoCarteira">
+      <AttrNames>
+        <Item Value="solicitarEmissaoCarteira_dataSolicitacaoEmissaoCarteira"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="codigoProtocolo">
+      <AttrNames>
+        <Item Value="solicitarEmissaoCarteira_codigoProtocolo"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

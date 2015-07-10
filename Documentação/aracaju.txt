@@ -1,0 +1,27 @@
+atendimento ao cidadao - poupa tempo
+- emissao de passe livre - idoso / deficiente
+1 qualificar atendimento (triagem)
+1.1 consulta via cpf
+1.2 cadastro do cidadao
+1.3 pesquisar horarios disponiveis para realizar agendamento de servico 
+- (emissao de documentos)
+- unidades de atendimento
+- intervalo
+1.3.1 realizar agendamento
+1.3.2 buscar agendamentos existentes
+1.3.3 listar os documentos necessarios para o servico
+1.3.4 listar os documentos faltantes
+1.3.5 upload dos documentos necessarios
+1.4 emissao de senha/protocolo de atendimento (um por atendimento)
+1.4.1 emissao de protocolo por servico agendado
+
+2 realizar atendimento
+pesquisar por cpf/protocolo
+atualizar cadastro do cidadao
+2.1 lista de documentos pendentes para assinatura
+2.2 solicitar a emissao do passe livre
+2.3 emitir carteira
+
+3 confirmacao de orgao externo
+
+4 impressao da carteira

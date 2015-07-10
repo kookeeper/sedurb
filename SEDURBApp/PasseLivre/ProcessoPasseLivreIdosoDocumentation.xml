@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?oracleBPM version="11.1.1.7.0.0.97" fileRevision="20120217"?>
+<processDocumentation xmlns="http://xmlns.oracle.com/bpm/taskMetadataService/processDocumentation">
+    <component name="ProcessoPasseLivreIdoso">
+        <topicDocumentations>
+            <topicDocumentation name="ProcessoPasseLivreIdoso">
+                <descriptions>
+                    <description locale="en">ProcessoPasseLivreIdoso</description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="ACT10584206680782">
+                <labels>
+                    <label locale="en">SolicitarImpressaoCarteira</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="ACT10584207438148">
+                <labels>
+                    <label locale="en">ImprimirCarteira</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="EVT10584049115895">
+                <labels>
+                    <label locale="en">start</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="EVT10584049115996">
+                <labels>
+                    <label locale="en">End</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf17"/>
+            <topicDocumentation name="sf37"/>
+            <topicDocumentation name="sf38"/>
+        </topicDocumentations>
+    </component>
+</processDocumentation>

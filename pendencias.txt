@@ -1,0 +1,6 @@
+1- Arrumar a grade de horarios conforme mockup
+2- Não ter espaços vazios na tela
+3- Colocar o titulo nas paginas e na parte superior da tela, deixando um espaço em branco logo abaixo
+4- remover o id do agendamento da tabela de agendamentos da pagina de realizar atendimento
+5- Deixar espaco em branco acima dos ultimos botoes na tela de qualificacao.
+

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--########################################################################################-->
+<!--####                                                                                ####-->
+<!--####          THIS IS AN AUTO GENERATED FILE. PLEASE DO NOT MANUALLY MODIFY         ####-->
+<!--#### CHANGES TO THIS FILE MAY PRODUCE UNEXPECTED BEHAVIOR AND WOULD BE OVERWRITTEN  ####-->
+<!--####                                                                                ####-->
+<!--########################################################################################-->
+<wsdl:definitions targetNamespace="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivre" xmlns:tns2="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"  xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"  xmlns:tns5="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreDeficiente"  xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivre"  xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/"  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"  xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop"  xmlns:tns4="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreIdoso"  xmlns:tns3="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" >
+    <vprop:property name="cp_codigoProtocolo" type="xsd:string"/>
+    <vprop:property name="cp_cpfCidadao" type="xsd:string"/>
+    <vprop:propertyAlias propertyName="tns:cp_senhaAtendimento" part="parameters" messageType="tns2:carteriaImpressa">
+        <vprop:query xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns3="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" xmlns:ns="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" xmlns:tns4="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreIdoso" xmlns:tns5="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreDeficiente" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivre" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns2="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/">
+            /ns:carteriaImpressa/senhaAtendimento
+        </vprop:query>
+    </vprop:propertyAlias>
+    <vprop:propertyAlias propertyName="tns:cp_cpfCidadao" part="parameters" messageType="tns3:finalizarAtendimento">
+        <vprop:query xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns3="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" xmlns:ns="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" xmlns:tns4="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreIdoso" xmlns:tns5="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreDeficiente" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivre" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns2="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/">
+            /ns:finalizarAtendimento/cpfCidadao
+        </vprop:query>
+    </vprop:propertyAlias>
+    <vprop:propertyAlias propertyName="tns:cp_codigoProtocolo" part="parameters" messageType="tns4:carteriaImpressa">
+        <vprop:query xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns3="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreIdoso" xmlns:ns="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreIdoso" xmlns:tns4="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" xmlns:tns5="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreDeficiente" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivre" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns2="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/">
+            /ns:carteriaImpressa/codigoProtocolo
+        </vprop:query>
+    </vprop:propertyAlias>
+    <vprop:propertyAlias propertyName="tns:cp_senhaAtendimento" part="parameters" messageType="tns2:cadastrarAtendimento">
+        <vprop:query xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns3="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" xmlns:ns="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" xmlns:tns4="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreIdoso" xmlns:tns5="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreDeficiente" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivre" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns2="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://br.gov.sedurb">
+            /ns:cadastrarAtendimento/payload/ns1:senhaAtendimento
+        </vprop:query>
+    </vprop:propertyAlias>
+    <vprop:propertyAlias propertyName="tns:cp_codigoProtocolo" part="parameters" messageType="tns3:receiveTask">
+        <vprop:query xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns3="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreIdoso" xmlns:ns="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" xmlns:tns4="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" xmlns:tns5="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreDeficiente" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivre" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns2="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/">
+            /ns:receiveTask/codigoProtocolo
+        </vprop:query>
+    </vprop:propertyAlias>
+    <vprop:propertyAlias propertyName="tns:cp_senhaAtendimento" part="parameters" messageType="tns2:CriarAgendaPasseLivreIdoso">
+        <vprop:query xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns3="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" xmlns:ns="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" xmlns:tns4="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreIdoso" xmlns:tns5="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreDeficiente" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivre" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns2="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/">
+            /ns:CriarAgendaPasseLivreIdoso/senhaAtendimento
+        </vprop:query>
+    </vprop:propertyAlias>
+    <vprop:propertyAlias propertyName="tns:cp_codigoProtocolo" part="parameters" messageType="tns4:start">
+        <vprop:query xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns3="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreIdoso" xmlns:ns="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreIdoso" xmlns:tns4="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" xmlns:tns5="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreDeficiente" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivre" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns2="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://br.gov.sedurb">
+            /ns:start/payloadInput/ns1:codigoProtocolo
+        </vprop:query>
+    </vprop:propertyAlias>
+    <vprop:propertyAlias propertyName="tns:cp_protocoloAtendimento" part="parameters" messageType="tns2:realizarAtendimento">
+        <vprop:query xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns3="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" xmlns:ns="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" xmlns:tns4="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreIdoso" xmlns:tns5="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreDeficiente" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivre" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns2="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://br.gov.sedurb">
+            /ns:realizarAtendimento/payload/ns1:codigoProtocolo
+        </vprop:query>
+    </vprop:propertyAlias>
+    <vprop:propertyAlias propertyName="tns:cp_senhaAtendimento" part="parameters" messageType="tns2:realizarAtendimento">
+        <vprop:query xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns3="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" xmlns:ns="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" xmlns:tns4="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreIdoso" xmlns:tns5="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreDeficiente" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivre" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns2="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://br.gov.sedurb">
+            /ns:realizarAtendimento/payload/ns1:protocoloAtendimento
+        </vprop:query>
+    </vprop:propertyAlias>
+    <vprop:propertyAlias propertyName="tns:cp_protocoloAtendimento" part="parameters" messageType="tns2:cadastrarAtendimentoServico">
+        <vprop:query xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns3="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" xmlns:ns="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" xmlns:tns4="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreIdoso" xmlns:tns5="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreDeficiente" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivre" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns2="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://br.gov.sedurb">
+            /ns:cadastrarAtendimentoServico/payload/ns1:codigoProtocolo
+        </vprop:query>
+    </vprop:propertyAlias>
+    <vprop:propertyAlias propertyName="tns:cp_codigoProtocolo" part="parameters" messageType="tns3:solicitarImpressaoCarteira">
+        <vprop:query xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns3="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" xmlns:ns="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" xmlns:tns4="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreIdoso" xmlns:tns5="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreDeficiente" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivre" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns2="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/">
+            /ns:solicitarImpressaoCarteira/codigoProtocolo
+        </vprop:query>
+    </vprop:propertyAlias>
+    <vprop:propertyAlias propertyName="tns:cp_codigoProtocolo" part="parameters" messageType="tns4:solicitarImpressaoCarteira">
+        <vprop:query xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns3="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" xmlns:ns="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreIdoso" xmlns:tns4="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreIdoso" xmlns:tns5="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreDeficiente" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivre" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns2="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/">
+            /ns:solicitarImpressaoCarteira/codigoProtocolo
+        </vprop:query>
+    </vprop:propertyAlias>
+    <vprop:propertyAlias propertyName="tns:senhaAtendimento" part="parameters" messageType="tns2:carteriaImpressa">
+        <vprop:query xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns3="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" xmlns:ns="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" xmlns:tns4="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreIdoso" xmlns:tns5="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreDeficiente" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivre" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns2="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/">
+            /ns:carteriaImpressa/senhaAtendimento
+        </vprop:query>
+    </vprop:propertyAlias>
+    <vprop:propertyAlias propertyName="tns:cp_cpfCidadao" part="parameters" messageType="tns3:protocoloGerado">
+        <vprop:query xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns3="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" xmlns:ns="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" xmlns:tns4="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreIdoso" xmlns:tns5="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreDeficiente" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivre" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns2="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/">
+            /ns:protocoloGerado/cpfCidadao
+        </vprop:query>
+    </vprop:propertyAlias>
+    <vprop:propertyAlias propertyName="tns:cp_codigoProtocolo" part="parameters" messageType="tns3:start">
+        <vprop:query xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns3="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreIdoso" xmlns:ns="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" xmlns:tns4="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" xmlns:tns5="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreDeficiente" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivre" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns2="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://br.gov.sedurb">
+            /ns:start/payloadInput/ns1:codigoProtocolo
+        </vprop:query>
+    </vprop:propertyAlias>
+    <vprop:propertyAlias propertyName="tns:cp_codigoProtocolo" part="parameters" messageType="tns4:endResponse">
+        <vprop:query xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns3="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreIdoso" xmlns:ns="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreIdoso" xmlns:tns4="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" xmlns:tns5="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreDeficiente" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivre" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns2="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/">
+            /ns:endResponse/codigoProtocolo
+        </vprop:query>
+    </vprop:propertyAlias>
+    <vprop:propertyAlias propertyName="tns:cp_protocoloAtendimento" part="parameters" messageType="tns2:solicitarEmissaoCarteira">
+        <vprop:query xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns3="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" xmlns:ns="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" xmlns:tns4="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreIdoso" xmlns:tns5="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreDeficiente" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivre" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns2="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/">
+            /ns:solicitarEmissaoCarteira/protocoloAtendimento
+        </vprop:query>
+    </vprop:propertyAlias>
+    <vprop:propertyAlias propertyName="tns:cp_cpfCidadao" part="parameters" messageType="tns3:iniciarAtendimento">
+        <vprop:query xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns3="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" xmlns:ns="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" xmlns:tns4="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreIdoso" xmlns:tns5="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreDeficiente" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivre" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns2="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/">
+            /ns:iniciarAtendimento/cpfCidadao
+        </vprop:query>
+    </vprop:propertyAlias>
+    <vprop:propertyAlias propertyName="tns:cp_codigoProtocolo" part="parameters" messageType="tns2:solicitarEmissaoCarteira">
+        <vprop:query xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns3="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" xmlns:ns="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" xmlns:tns4="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreIdoso" xmlns:tns5="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreDeficiente" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivre" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns2="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/">
+            /ns:solicitarEmissaoCarteira/protocoloAtendimento
+        </vprop:query>
+    </vprop:propertyAlias>
+    <vprop:propertyAlias propertyName="tns:cp_codigoProtocolo" part="parameters" messageType="tns5:start">
+        <vprop:query xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns3="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreIdoso" xmlns:ns="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreDeficiente" xmlns:tns4="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" xmlns:tns5="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreDeficiente" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivre" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns2="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://br.gov.sedurb">
+            /ns:start/payloadInput/ns1:codigoProtocolo
+        </vprop:query>
+    </vprop:propertyAlias>
+    <vprop:propertyAlias propertyName="tns:cp_codigoProtocolo" part="parameters" messageType="tns3:carteriaImpressa">
+        <vprop:query xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns3="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" xmlns:ns="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" xmlns:tns4="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreIdoso" xmlns:tns5="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreDeficiente" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivre" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns2="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/">
+            /ns:carteriaImpressa/codigoProtocolo
+        </vprop:query>
+    </vprop:propertyAlias>
+    <vprop:propertyAlias propertyName="tns:cp_codigoProtocolo" part="parameters" messageType="tns2:cadastrarAtendimentoServico">
+        <vprop:query xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns3="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" xmlns:ns="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" xmlns:tns4="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreIdoso" xmlns:tns5="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreDeficiente" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivre" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns2="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://br.gov.sedurb">
+            /ns:cadastrarAtendimentoServico/payload/ns1:codigoProtocolo
+        </vprop:query>
+    </vprop:propertyAlias>
+    <vprop:propertyAlias propertyName="tns:cp_senhaAtendimento" part="parameters" messageType="tns2:cadastrarAtendimentoServico">
+        <vprop:query xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns3="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" xmlns:ns="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" xmlns:tns4="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreIdoso" xmlns:tns5="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreDeficiente" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivre" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns2="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://br.gov.sedurb">
+            /ns:cadastrarAtendimentoServico/payload/ns1:senhaAtendimento
+        </vprop:query>
+    </vprop:propertyAlias>
+    <vprop:propertyAlias propertyName="tns:cp_cpfCidadao" part="parameters" messageType="tns3:gerarProtocolo">
+        <vprop:query xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns3="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" xmlns:ns="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" xmlns:tns4="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreIdoso" xmlns:tns5="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreDeficiente" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivre" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns2="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/">
+            /ns:gerarProtocolo/cpfCidadao
+        </vprop:query>
+    </vprop:propertyAlias>
+    <vprop:propertyAlias propertyName="tns:cp_senhaAtendimento" part="parameters" messageType="tns2:CadastrarAtendimento">
+        <vprop:query xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns3="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" xmlns:ns="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" xmlns:tns4="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreIdoso" xmlns:tns5="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreDeficiente" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivre" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns2="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/">
+            /ns:CadastrarAtendimento/senhaAtendimento
+        </vprop:query>
+    </vprop:propertyAlias>
+    <vprop:propertyAlias propertyName="tns:cp_codigoProtocolo" part="parameters" messageType="tns4:impressaoCarteiraSolicitada">
+        <vprop:query xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns3="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreIdoso" xmlns:ns="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreIdoso" xmlns:tns4="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" xmlns:tns5="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreDeficiente" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivre" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns2="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/">
+            /ns:impressaoCarteiraSolicitada/codigoProtocolo
+        </vprop:query>
+    </vprop:propertyAlias>
+    <vprop:propertyAlias propertyName="tns:cp_codigoProtocolo" part="parameters" messageType="tns2:carteriaImpressa">
+        <vprop:query xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns3="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" xmlns:ns="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" xmlns:tns4="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreIdoso" xmlns:tns5="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreDeficiente" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivre" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns2="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/">
+            /ns:carteriaImpressa/protocoloAtendimento
+        </vprop:query>
+    </vprop:propertyAlias>
+    <vprop:propertyAlias propertyName="tns:cp_protocoloAtendimento" part="parameters" messageType="tns2:carteriaImpressa">
+        <vprop:query xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns3="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" xmlns:ns="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" xmlns:tns4="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreIdoso" xmlns:tns5="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreDeficiente" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivre" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns2="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/">
+            /ns:carteriaImpressa/protocoloAtendimento
+        </vprop:query>
+    </vprop:propertyAlias>
+    <vprop:propertyAlias propertyName="tns:cp_senhaAtendimento" part="parameters" messageType="tns2:start">
+        <vprop:query xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns3="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem" xmlns:ns="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" xmlns:tns4="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreIdoso" xmlns:tns5="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoPasseLivreDeficiente" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivre" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns2="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/">
+            /ns:start/senhaAtendimento
+        </vprop:query>
+    </vprop:propertyAlias>
+</wsdl:definitions>

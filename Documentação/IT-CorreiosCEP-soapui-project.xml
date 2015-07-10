@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="IT-CorreiosCEP" soapui-version="5.0.0" abortOnError="false" runType="SEQUENTIAL" resourceRoot="" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="CorreiosCEPSOAP_Binding" type="wsdl" bindingName="{http://www.seplag.se.gov.br/CorreiosCEP}CorreiosCEPSOAP_Binding" soapVersion="1_2" anonymous="optional" definition="http://osb.itconsulting.com.br:8011/V1/CorreiosCEP?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://osb.itconsulting.com.br:8011/V1/CorreiosCEP?wsdl"><con:part><con:url>http://osb.itconsulting.com.br:8011/V1/CorreiosCEP?wsdl</con:url><con:content><![CDATA[<WL5G3N0:definitions name="CorreiosCEP" targetNamespace="http://www.seplag.se.gov.br/CorreiosCEP" xmlns:WL5G3N0="http://schemas.xmlsoap.org/wsdl/" xmlns:WL5G3N1="http://www.seplag.se.gov.br/CorreiosCEP" xmlns:WL5G3N2="http://www.seplag.se.gov.br/commons/v1" xmlns:WL5G3N3="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <WL5G3N0:types>
+    <xsd:schema targetNamespace="http://www.seplag.se.gov.br/CorreiosCEP" xmlns:commons="http://www.seplag.se.gov.br/commons/v1" xmlns:ebs="http://www.seplag.se.gov.br/CorreiosCEP" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:include schemaLocation="http://osb.itconsulting.com.br:8011/V1/CorreiosCEP?SCHEMA%2FNegocio%2FCorreiosCEP%2FV1%2Fschema%2FCorreiosCEP"/>
+    </xsd:schema>
+    <xsd:schema xmlns:commons="http://www.seplag.se.gov.br/commons/v1" xmlns:ebs="http://www.seplag.se.gov.br/CorreiosCEP" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="http://www.seplag.se.gov.br/commons/v1" schemaLocation="http://osb.itconsulting.com.br:8011/V1/CorreiosCEP?SCHEMA%2FModeloCanonico%2Fseplag%2Fcommons%2Fv1%2FErroInfo"/>
+      <xsd:import namespace="http://www.seplag.se.gov.br/commons/v1" schemaLocation="http://osb.itconsulting.com.br:8011/V1/CorreiosCEP?SCHEMA%2FModeloCanonico%2Fseplag%2Fcommons%2Fv1%2FCabecalhoSeplag"/>
+    </xsd:schema>
+  </WL5G3N0:types>
+  <WL5G3N0:message name="ParametroConsultarEnderecoPorCEPMessage">
+    <WL5G3N0:part element="WL5G3N1:ParametroConsultarEnderecoPorCEP" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="ResultadoConsultarEnderecoPorCEPMessage">
+    <WL5G3N0:part element="WL5G3N1:ResultadoConsultarEnderecoPorCEP" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="ErroInfoMessage">
+    <WL5G3N0:part element="WL5G3N2:erroInfo" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="CabecalhoSeplagMessage">
+    <WL5G3N0:part element="WL5G3N2:cabecalhoSeplag" name="Cabecalho"/>
+  </WL5G3N0:message>
+  <WL5G3N0:portType name="CorreiosCEP_PortType">
+    <WL5G3N0:operation name="ConsultarEnderecoPorCEP">
+      <WL5G3N0:input message="WL5G3N1:ParametroConsultarEnderecoPorCEPMessage"/>
+      <WL5G3N0:output message="WL5G3N1:ResultadoConsultarEnderecoPorCEPMessage"/>
+      <WL5G3N0:fault message="WL5G3N1:ErroInfoMessage" name="TechnicalFault"/>
+      <WL5G3N0:fault message="WL5G3N1:ErroInfoMessage" name="ParametroInvalidoFault"/>
+      <WL5G3N0:fault message="WL5G3N1:ErroInfoMessage" name="CepNaoEncontradoFault"/>
+    </WL5G3N0:operation>
+  </WL5G3N0:portType>
+  <WL5G3N0:binding name="CorreiosCEPSOAP_Binding" type="WL5G3N1:CorreiosCEP_PortType">
+    <WL5G3N3:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <WL5G3N0:operation name="ConsultarEnderecoPorCEP">
+      <WL5G3N3:operation soapAction="http://www.seplag.se.gov.br/CorreiosCEP/ConsultarEnderecoPorCEP"/>
+      <WL5G3N0:input>
+        <WL5G3N3:body use="literal"/>
+        <WL5G3N3:header message="WL5G3N1:CabecalhoSeplagMessage" part="Cabecalho" use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N3:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+  </WL5G3N0:binding>
+  <WL5G3N0:service name="CorreiosCEP">
+    <WL5G3N0:port binding="WL5G3N1:CorreiosCEPSOAP_Binding" name="CorreiosCEPSOAP_Port">
+      <WL5G3N3:address location="http://osb02.itconsulting.com.br:8011/V1/CorreiosCEP"/>
+    </WL5G3N0:port>
+  </WL5G3N0:service>
+</WL5G3N0:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://osb.itconsulting.com.br:8011/V1/CorreiosCEP?SCHEMA%2FModeloCanonico%2Fseplag%2Fcommons%2Fv1%2FErroInfo</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://www.seplag.se.gov.br/commons/v1" xmlns:gr="http://www.seplag.se.gov.br/commons/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ErroInfo">
+    <xs:annotation>
+      <xs:documentation>Elemento padrao de definicao das mensagens de erro.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigo">
+        <xs:annotation>
+          <xs:documentation>Codigo que identifica o erro.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="20"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="descricao">
+        <xs:annotation>
+          <xs:documentation>Descricao do erro ocorrido retornado.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="4000"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="dataTransacao">
+        <xs:simpleType>
+          <xs:restriction base="xs:dateTime"/>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="dadosAdicionais" type="xs:anyType">
+        <xs:annotation>
+          <xs:documentation>Dados adicionais que podem ser necessarios para
+						identificar um erro.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="erroInfo" type="gr:ErroInfo"/>
+  <xs:complexType name="ErrosInfo">
+    <xs:sequence>
+      <xs:element name="erroInfo" type="gr:ErroInfo" maxOccurs="unbounded" minOccurs="0"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://osb.itconsulting.com.br:8011/V1/CorreiosCEP?SCHEMA%2FModeloCanonico%2Fseplag%2Fcommons%2Fv1%2FCabecalhoSeplag</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://www.seplag.se.gov.br/commons/v1" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gr="http://www.seplag.se.gov.br/commons/v1">
+  <xs:complexType name="CabecalhoSeplag" final="restriction">
+    <xs:sequence>
+      <xs:element name="loginUsuario" minOccurs="1">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="canalAtendimento" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Descricao do canal de atendimento: portal, Ceac,etc.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="32"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="codigoSessao" nillable="true" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Codigo da sessao, codigo unico que identifica
+						uma sessao.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="256"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="nomeAplicacao" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="50"/>
+            <xs:enumeration value="Seides"/>
+            <xs:enumeration value="Detran"/>
+            <xs:enumeration value="Nat"/>
+            <xs:enumeration value="Sedurb"/>
+            <xs:enumeration value="Ssp"/>
+            <xs:enumeration value="Integracao"/>
+            <xs:enumeration value="Seguranca"/>
+            <xs:enumeration value="Infra"/>
+            <xs:enumeration value="Ses"/>
+            <xs:enumeration value="Seplag"/>
+            <xs:enumeration value="Banese"/>
+            <xs:enumeration value="ReceitaFederal"/>
+            <xs:enumeration value="Ceac"/>
+            <xs:enumeration value="IpeSaude"/>
+            <xs:enumeration value="Ctransp"/>
+            <xs:enumeration value="Case"/>
+            <xs:enumeration value="Portal"/>
+            <xs:enumeration value="Mobile"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="token" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="255"/>
+            <xs:minLength value="1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="enderecoIP" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="([01]?\d\d?|2[0-4]\d|25[0-5])\.([01]?\d\d?|2[0-4]\d|25[0-5])\.([01]?\d\d?|2[0-4]\d|25[0-5])\.([01]?\d\d?|2[0-4]\d|25[0-5])"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="codigoFuncionalidade" nillable="true" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Codigo que identifica uma funcionalidade do
+						sistema. Exemplos de funcionalidade para o
+						sistema: Ativacao e desativacao de
+						servicos, emitir carteira de identidade, emitir CNH, etc.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="10"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="dataTransacao" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:dateTime"/>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="nomeServico" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Nome do servico que foi invocado, exemplo:
+						consultaClienteCidadao, consultaFuncionario, etc.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="versao" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Define a versao do servico que esta sendo
+						invocado. O formato da versao deve sempre ser
+						99.99</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="\d?\d.\d\d?"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="cabecalhoSeplag" type="gr:CabecalhoSeplag"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://osb.itconsulting.com.br:8011/V1/CorreiosCEP?SCHEMA%2FNegocio%2FCorreiosCEP%2FV1%2Fschema%2FCorreiosCEP</con:url><con:content><![CDATA[<schema targetNamespace="http://www.seplag.se.gov.br/CorreiosCEP" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.seplag.se.gov.br/CorreiosCEP" xmlns:seplag="http://www.seplag.se.gov.br/EBO/v1" xmlns:commons="http://www.seplag.se.gov.br/commons/v1">
+  <import namespace="http://www.seplag.se.gov.br/EBO/v1" schemaLocation="http://osb.itconsulting.com.br:8011/V1/CorreiosCEP?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FCep"/>
+  <import namespace="http://www.seplag.se.gov.br/EBO/v1" schemaLocation="http://osb.itconsulting.com.br:8011/V1/CorreiosCEP?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FEndereco"/>
+  <import namespace="http://www.seplag.se.gov.br/EBO/v1" schemaLocation="http://osb.itconsulting.com.br:8011/V1/CorreiosCEP?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FTipoCEP"/>
+  <import namespace="http://www.seplag.se.gov.br/EBO/v1" schemaLocation="http://osb.itconsulting.com.br:8011/V1/CorreiosCEP?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FCampoEndereco"/>
+  <element name="ParametroConsultarEnderecoPorCEP">
+    <complexType>
+      <sequence>
+        <element name="cep" type="seplag:Cep" minOccurs="1" maxOccurs="1" nillable="false"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="ResultadoConsultarEnderecoPorCEP">
+    <complexType>
+      <sequence>
+        <element name="endereco" type="seplag:Endereco" minOccurs="1" maxOccurs="1" nillable="false"/>
+        <element name="tipoEndereco" minOccurs="1" maxOccurs="1" type="seplag:TipoCEP" nillable="false"/>
+        <element name="camposSomenteLeitura" minOccurs="1" maxOccurs="1" type="seplag:ListaCampoEndereco" nillable="false"/>
+        <element name="camposObrigatorios" minOccurs="1" maxOccurs="1" type="seplag:ListaCampoEndereco" nillable="false"/>
+      </sequence>
+    </complexType>
+  </element>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://osb.itconsulting.com.br:8011/V1/CorreiosCEP?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FCep</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.seplag.se.gov.br/EBO/v1" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:seplag="http://www.seplag.se.gov.br/EBO/v1">
+  <xsd:simpleType name="Cep">
+    <xsd:restriction base="xsd:string">
+      <xsd:length value="8"/>
+      <xsd:pattern value="([0-9])*"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="ListaCep">
+    <xsd:sequence>
+      <xsd:element name="cep" type="seplag:Cep" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="listaCep" nillable="true" type="seplag:ListaCep"/>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://osb.itconsulting.com.br:8011/V1/CorreiosCEP?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FEndereco</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.seplag.se.gov.br/EBO/v1" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:seplag="http://www.seplag.se.gov.br/EBO/v1">
+  <xsd:include schemaLocation="http://osb.itconsulting.com.br:8011/V1/CorreiosCEP?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FCep"/>
+  <xsd:include schemaLocation="http://osb.itconsulting.com.br:8011/V1/CorreiosCEP?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FUnidadeFederativa"/>
+  <xsd:element name="listaEndereco" nillable="true" type="seplag:ListaEndereco"/>
+  <xsd:complexType name="ListaEndereco">
+    <xsd:sequence>
+      <xsd:element name="endereco" type="seplag:Endereco" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Endereco">
+    <xsd:sequence>
+      <xsd:element name="tipoLogradouro" minOccurs="0" nillable="true" maxOccurs="1">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="nomeLogradouro" minOccurs="0" nillable="true" maxOccurs="1">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="200"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="numeroLogradouro" minOccurs="0" nillable="true" maxOccurs="1">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="30"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="complemento" minOccurs="0" maxOccurs="1" nillable="true">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="bairro" minOccurs="0" maxOccurs="1" nillable="true">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="cep" minOccurs="0" maxOccurs="1" nillable="true" type="seplag:Cep"/>
+      <xsd:element name="municipio" minOccurs="0" maxOccurs="1" nillable="true">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="unidadeFederativa" minOccurs="0" maxOccurs="1" nillable="true">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="pais" minOccurs="0" maxOccurs="1" nillable="true">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://osb.itconsulting.com.br:8011/V1/CorreiosCEP?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FUnidadeFederativa</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.seplag.se.gov.br/EBO/v1" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.0" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:seplag="http://www.seplag.se.gov.br/EBO/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="listaUnidadeFederativa" nillable="true" type="seplag:ListaUnidadeFederativa"/>
+  <xsd:complexType name="ListaUnidadeFederativa">
+    <xsd:sequence>
+      <xsd:element name="unidadeFederativa" type="seplag:UnidadeFederativa" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="UnidadeFederativa">
+    <xsd:annotation>
+      <xsd:documentation>Corresponde as possiveis siglas das unidades federativas do pais
+
+				Acre - AC
+				Alagoas - AL
+				Amapa - AP
+				Amazonas - AM
+				Bahia - BA
+				Ceara - CE
+				Distrito Federal  - DF
+				Espirito Santo - ES
+				Goias - GO
+				Maranhao - MA 
+				Mato Grosso - MT 
+				Mato Grosso do Sul - MS 
+				Minas Gerais - MG 
+				Para - PA 
+				Paraiba - PB 
+				Parana - PR 
+				Pernambuco - PE 
+				Piaui - PI 
+				Rio de Janeiro  - RJ
+				Rio Grande do Norte  - RN 
+				Rio Grande do Sul - RS 
+				Rondônia - RO 
+				Roraima - RR 
+				Santa Catarina - SC 
+				Sao Paulo - SP 
+				Sergipe - SE 
+				Tocantins - TO
+
+				Exemplo de Sigla de Unidade Federativa: SE</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="AC"/>
+      <xsd:enumeration value="AL"/>
+      <xsd:enumeration value="AP"/>
+      <xsd:enumeration value="AM"/>
+      <xsd:enumeration value="BA"/>
+      <xsd:enumeration value="CE"/>
+      <xsd:enumeration value="DF"/>
+      <xsd:enumeration value="ES"/>
+      <xsd:enumeration value="GO"/>
+      <xsd:enumeration value="MA"/>
+      <xsd:enumeration value="MT"/>
+      <xsd:enumeration value="MS"/>
+      <xsd:enumeration value="MG"/>
+      <xsd:enumeration value="PA"/>
+      <xsd:enumeration value="PB"/>
+      <xsd:enumeration value="PR"/>
+      <xsd:enumeration value="PE"/>
+      <xsd:enumeration value="PI"/>
+      <xsd:enumeration value="RJ"/>
+      <xsd:enumeration value="RN"/>
+      <xsd:enumeration value="RS"/>
+      <xsd:enumeration value="RO"/>
+      <xsd:enumeration value="RR"/>
+      <xsd:enumeration value="SC"/>
+      <xsd:enumeration value="SP"/>
+      <xsd:enumeration value="SE"/>
+      <xsd:enumeration value="TO"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://osb.itconsulting.com.br:8011/V1/CorreiosCEP?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FTipoCEP</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.seplag.se.gov.br/EBO/v1" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.0" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:seplag="http://www.seplag.se.gov.br/EBO/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="listaTipoCEP" nillable="true" type="seplag:ListaTipoCEP"/>
+  <xsd:complexType name="ListaTipoCEP">
+    <xsd:sequence>
+      <xsd:element name="TipoCEP" type="seplag:TipoCEP" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="TipoCEP">
+    <xsd:annotation>
+      <xsd:documentation>Corresponde os possíveis tipos de endereços da base dos correios
+
+				LOGRADOUR0 - Cep de um logradouro
+				UNIDADE_OPERACIONAL - Cep de uma unidade dos correios
+				GRANDE_USUARIO - Cep de um usuário que possui grande volume de correspondências
+				CPC - Caixa Postal Comunitária
+				LOCALIDADE - Cep de uma localidade (municipio; distrito; povoado ou )
+
+				Exemplo de Tipo de endereco: UNIDADE_OPERACIONAL</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="LOGRADOURO"/>
+      <xsd:enumeration value="UNIDADE_OPERACIONAL"/>
+      <xsd:enumeration value="GRANDE_USUARIO"/>
+      <xsd:enumeration value="CPC"/>
+      <xsd:enumeration value="LOCALIDADE"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://osb.itconsulting.com.br:8011/V1/CorreiosCEP?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FCampoEndereco</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.seplag.se.gov.br/EBO/v1" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.0" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:seplag="http://www.seplag.se.gov.br/EBO/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="listaCampoEndereco" nillable="true" type="seplag:ListaCampoEndereco"/>
+  <xsd:complexType name="ListaCampoEndereco">
+    <xsd:sequence>
+      <xsd:element name="campoEndereco" type="seplag:CampoEndereco" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="CampoEndereco">
+    <xsd:annotation>
+      <xsd:documentation>Corresponde os possíveis campos de um endereço
+
+				CEP
+				TIPO_LOGRADOURO - Tipo do logradouro (rua, av, etc).
+				LOGRADOURO
+				NUMERO - Numero do logradouro
+				COMPLEMENTO
+				LOCALIDADE - localidade (municipio; distrito; povoado ou )
+				BAIRRO - Bairro
+				UF - Estado
+				PAIS - País
+
+				Exemplo de Tipo de endereco: COMPLEMENTO</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="CEP"/>
+      <xsd:enumeration value="TIPO_LOGRADOURO"/>
+      <xsd:enumeration value="LOGRADOURO"/>
+      <xsd:enumeration value="NUMERO"/>
+      <xsd:enumeration value="COMPLEMENTO"/>
+      <xsd:enumeration value="LOCALIDADE"/>
+      <xsd:enumeration value="BAIRRO"/>
+      <xsd:enumeration value="UF"/>
+      <xsd:enumeration value="PAIS"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://osb02.itconsulting.com.br:8011/V1/CorreiosCEP</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://www.seplag.se.gov.br/CorreiosCEP/ConsultarEnderecoPorCEP" name="ConsultarEnderecoPorCEP" bindingOperationName="ConsultarEnderecoPorCEP" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://osb02.itconsulting.com.br:8011/V1/CorreiosCEP</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.seplag.se.gov.br/commons/v1" xmlns:cor="http://www.seplag.se.gov.br/CorreiosCEP">
+   <soap:Header>
+      <v1:cabecalhoSeplag>
+         <v1:loginUsuario>marcio.dantas</v1:loginUsuario>
+            <v1:canalAtendimento>Ceac</v1:canalAtendimento>
+            <v1:nomeAplicacao>Ceac</v1:nomeAplicacao>
+      </v1:cabecalhoSeplag>
+   </soap:Header>
+   <soap:Body>
+      <cor:ParametroConsultarEnderecoPorCEP>
+         <cor:cep>05632105</cor:cep>
+      </cor:ParametroConsultarEnderecoPorCEP>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.seplag.se.gov.br/CorreiosCEP/CorreiosCEP_PortType/ConsultarEnderecoPorCEPRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<DataControlConfigs xmlns="http://xmlns.oracle.com/adfm/configuration"
+                    version="11.1.1.64.93" id="DataControls"
+                    Package="br.gov.sedurb">
+  <AdapterDataControl id="RealizarAtendimento_PasseLivreIdoso"
+                      FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adfinternal.model.adapter.webservice.WSDefinition"
+                      SupportsTransactions="false"
+                      SupportsSortCollection="false" SupportsResetState="false"
+                      SupportsRangesize="false" SupportsFindMode="false"
+                      SupportsUpdates="true"
+                      Definition="br.gov.sedurb.RealizarAtendimento_PasseLivreIdoso"
+                      BeanClass="br.gov.sedurb.RealizarAtendimento_PasseLivreIdoso"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <definition xmlns="http://xmlns.oracle.com/adfm/adapter/webservice"
+                  name="RealizarAtendimento_PasseLivreIdoso" version="1.0"
+                  provider="oracle.adfinternal.model.adapter.webservice.provider.soap.SOAPProvider"
+                  wsdl="http://localhost:7001/soa-infra/services/default/PasseLivre/PasseLivreIdoso.service?WSDL">
+        <service name="PasseLivreIdoso.service"
+                 namespace="http://xmlns.oracle.com/bpmn/bpmnProcess/PasseLivreIdoso"
+                 connection="RealizarAtendimento_PasseLivreIdoso">
+          <port name="PasseLivreIdosoPort">
+            <operation name="carteriaImpressa"/>
+            <operation name="cadastrarAtendimentoServico"/>
+            <operation name="solicitarEmissaoCarteira"/>
+          </port>
+        </service>
+      </definition>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="RealizarAtendimento_ProcessoTriagem"
+                      FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adfinternal.model.adapter.webservice.WSDefinition"
+                      SupportsTransactions="false"
+                      SupportsSortCollection="false" SupportsResetState="false"
+                      SupportsRangesize="false" SupportsFindMode="false"
+                      SupportsUpdates="true"
+                      Definition="br.gov.sedurb.RealizarAtendimento_ProcessoTriagem"
+                      BeanClass="br.gov.sedurb.RealizarAtendimento_ProcessoTriagem"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <definition xmlns="http://xmlns.oracle.com/adfm/adapter/webservice"
+                  name="RealizarAtendimento_ProcessoTriagem" version="1.0"
+                  provider="oracle.adfinternal.model.adapter.webservice.provider.soap.SOAPProvider"
+                  wsdl="http://localhost:7001/soa-infra/services/default/PasseLivre/ProcessoTriagem.service?WSDL">
+        <service name="ProcessoTriagem.service"
+                 namespace="http://xmlns.oracle.com/bpmn/bpmnProcess/ProcessoTriagem"
+                 connection="RealizarAtendimento_ProcessoTriagem">
+          <port name="ProcessoTriagemPort">
+            <operation name="iniciarAtendimento"/>
+            <operation name="gerarProtocolo"/>
+            <operation name="finalizarAtendimento"/>
+          </port>
+        </service>
+      </definition>
+    </Source>
+  </AdapterDataControl>
+</DataControlConfigs>

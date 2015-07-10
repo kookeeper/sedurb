@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <exception-handler id="__9">errorHandler</exception-handler>
+  <view id="qualificarAtendimento">
+    <page>/qualificarAtendimento.jspx</page>
+  </view>
+  <method-call id="errorHandler">
+    <method>#{pageFlowScope.managedBean.errorHandler}</method>
+    <outcome id="__10">
+      <fixed-outcome>*</fixed-outcome>
+    </outcome>
+  </method-call>
+  <control-flow-rule id="__11">
+    <from-activity-id id="__12">errorHandler</from-activity-id>
+    <control-flow-case id="__15">
+      <from-outcome id="__14">*</from-outcome>
+      <to-activity-id id="__13">qualificarAtendimento</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <managed-bean id="__1">
+    <managed-bean-name id="__2">backing_qualificarAtendimento</managed-bean-name>
+    <managed-bean-class id="__3">br.gov.sedurb.backing.QualificarAtendimento</managed-bean-class>
+    <managed-bean-scope id="__4">backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1qualificarAtendimento.jspx-->
+  </managed-bean>
+  <managed-bean id="__5">
+    <managed-bean-name id="__8">managedBean</managed-bean-name>
+    <managed-bean-class id="__6">br.gov.sedurb.bean.ManagedBean</managed-bean-class>
+    <managed-bean-scope id="__7">pageFlow</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

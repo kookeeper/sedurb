@@ -1,0 +1,43 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View3">
+      <property
+         name="activityId">realizarAtendimento</property>
+      <property
+         name="page">/realizarAtendimento.jspx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>realizarAtendimento&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">93.59766</property>
+      <property
+         name="x">234.0</property>
+   </View>
+   <MethodCall
+      id="MethodCall3">
+      <property
+         name="activityId">errorHandler</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>errorHandler&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">true</property>
+      <property
+         name="y">88.29883</property>
+      <property
+         name="x">521.0</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="MethodCall3"
+      to="View3">
+      <property
+         name="fromOutcome">*</property>
+      <property
+         name="sdm:polyPoints">L50,480.0,87.94824,275.0,93.24707,R50</property>
+   </ControlFlowCase>
+</SDM>

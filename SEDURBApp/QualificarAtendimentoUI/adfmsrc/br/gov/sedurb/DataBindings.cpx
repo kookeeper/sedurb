@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application"
+             version="11.1.1.64.93" id="DataBindings" SeparateXMLFiles="false"
+             Package="br.gov.sedurb" ClientType="Generic">
+  <pageMap>
+    <page path="/qualificarAtendimento.jspx"
+          usageId="br_gov_sedurb_qualificarAtendimentoPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="br_gov_sedurb_qualificarAtendimentoPageDef"
+          path="br.gov.sedurb.pageDefs.qualificarAtendimentoPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="ProcessoTriagem"
+        path="br.gov.sedurb.QualificarAtendimento_ProcessoTriagem"/>
+  </dataControlUsages>
+</Application>

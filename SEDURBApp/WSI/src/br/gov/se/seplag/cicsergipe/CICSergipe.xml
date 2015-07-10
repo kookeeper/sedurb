@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle-webservice-clients xmlns:ns2="http://java.sun.com/xml/ns/javaee">
+   <webservice-client>
+      <service-qname namespaceURI="http://www.seplag.se.gov.br/CICSergipe"
+                     localpart="CICSergipe"/>
+      <port-info>
+         <wsdl-port namespaceURI="http://www.seplag.se.gov.br/CICSergipe"
+                    localpart="CICSergipeSOAP_Port"/>
+         <runtime/>
+         <operations>
+            <operation name="obterCidadao"/>
+            <operation name="registrarCidadao"/>
+            <operation name="validarInformacaoCidadao"/>
+         </operations>
+      </port-info>
+   </webservice-client>
+</oracle-webservice-clients>

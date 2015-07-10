@@ -1,0 +1,120 @@
+<xs:schema targetNamespace="http://www.seplag.se.gov.br/commons/v1" elementFormDefault="qualified"
+     xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gr="http://www.seplag.se.gov.br/commons/v1">
+    <xs:complexType name="CabecalhoSeplag" final="restriction">
+        <xs:sequence>
+            <xs:element name="loginUsuario" minOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="1"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="canalAtendimento" minOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Descricao do canal de atendimento: portal, Ceac,etc.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="32"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="codigoSessao" nillable="true" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Codigo da sessao, codigo unico que identifica
+						uma sessao.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="256"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="nomeAplicacao" minOccurs="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="50"/>
+                        <xs:enumeration value="Seides"/>
+                        <xs:enumeration value="Detran"/>
+                        <xs:enumeration value="Nat"/>
+                        <xs:enumeration value="Sedurb"/>
+                        <xs:enumeration value="Ssp"/>
+                        <xs:enumeration value="Integracao"/>
+                        <xs:enumeration value="Seguranca"/>
+                        <xs:enumeration value="Infra"/>
+                        <xs:enumeration value="Ses"/>
+                        <xs:enumeration value="Seplag"/>
+                        <xs:enumeration value="Banese"/>
+                        <xs:enumeration value="ReceitaFederal"/>
+                        <xs:enumeration value="Ceac"/>
+                        <xs:enumeration value="IpeSaude"/>
+                        <xs:enumeration value="Ctransp"/>
+                        <xs:enumeration value="Case"/>
+                        <xs:enumeration value="Portal"/>
+                        <xs:enumeration value="Mobile"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="token" minOccurs="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="255"/>
+                        <xs:minLength value="1"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="enderecoIP" minOccurs="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="([01]?\d\d?|2[0-4]\d|25[0-5])\.([01]?\d\d?|2[0-4]\d|25[0-5])\.([01]?\d\d?|2[0-4]\d|25[0-5])\.([01]?\d\d?|2[0-4]\d|25[0-5])"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="codigoFuncionalidade" nillable="true" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Codigo que identifica uma funcionalidade do
+						sistema. Exemplos de funcionalidade para o
+						sistema: Ativacao e desativacao de
+						servicos, emitir carteira de identidade, emitir CNH, etc.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="10"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="dataTransacao" minOccurs="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:dateTime"/>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="nomeServico" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Nome do servico que foi invocado, exemplo:
+						consultaClienteCidadao, consultaFuncionario, etc.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="1"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="versao" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Define a versao do servico que esta sendo
+						invocado. O formato da versao deve sempre ser
+						99.99</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="\d?\d.\d\d?"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="cabecalhoSeplag" type="gr:CabecalhoSeplag"/>
+</xs:schema>

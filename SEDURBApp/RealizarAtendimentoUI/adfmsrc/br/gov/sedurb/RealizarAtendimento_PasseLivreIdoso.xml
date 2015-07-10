@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.64.93"
+          id="RealizarAtendimento_PasseLivreIdoso" Package="br.gov.sedurb"
+          BeanClass="br.gov.sedurb.RealizarAtendimento_PasseLivreIdoso"
+          isJavaBased="false">
+  <AccessorAttribute id="cadastrarAtendimentoServico_parameters"
+                     IsCollection="false"
+                     BeanClass="RealizarAtendimento_PasseLivreIdoso.Types.cadastrarAtendimentoServico"/>
+  <MethodAccessor id="carteriaImpressa">
+    <ParameterInfo id="dataImpressao" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="protocoloAtendimento" Type="java.lang.String"
+                   isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor id="cadastrarAtendimentoServico">
+    <ParameterInfo id="payload" Type="java.lang.Object" isStructured="false">
+      <Properties>
+        <Property Name="__SET_INITIAL_VALUE" Value="true"/>
+      </Properties>
+    </ParameterInfo>
+  </MethodAccessor>
+  <MethodAccessor id="solicitarEmissaoCarteira">
+    <ParameterInfo id="dataSolicitacaoEmissaoCarteira" Type="java.sql.Date"
+                   isStructured="false"/>
+    <ParameterInfo id="codigoProtocolo" Type="java.lang.String"
+                   isStructured="false"/>
+  </MethodAccessor>
+</JavaBean>

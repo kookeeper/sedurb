@@ -1,0 +1,151 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<jdevws:WebServiceProxy xmlns:jdevws="http://xmlns.oracle.com/jdeveloper/10130/webserviceproxy">
+   <list n="CHILD_NODES">
+      <url path="CorreiosCEP.xml"/>
+      <url path="../commons/v1/ObjectFactory.java"/>
+      <url path="../commons/v1/ErroInfo.java"/>
+      <url path="../ebo/v1/ObjectFactory.java"/>
+      <url path="ErroInfoMessage.java"/>
+      <url path="../ebo/v1/UnidadeFederativa.java"/>
+      <url path="package-info.java"/>
+      <url path="ResultadoConsultarEnderecoPorCEP.java"/>
+      <url path="../ebo/v1/ListaUnidadeFederativa.java"/>
+      <url path="../ebo/v1/ListaTipoCEP.java"/>
+      <url path="../ebo/v1/package-info.java"/>
+      <url path="../commons/v1/ErrosInfo.java"/>
+      <url path="../ebo/v1/ListaCampoEndereco.java"/>
+      <url path="../ebo/v1/Endereco.java"/>
+      <url path="CorreiosCEP.java"/>
+      <url path="../ebo/v1/ListaCep.java"/>
+      <url path="CorreiosCEP_PortType.java"/>
+      <url path="ObjectFactory.java"/>
+      <url path="../ebo/v1/ListaEndereco.java"/>
+      <url path="ParametroConsultarEnderecoPorCEP.java"/>
+      <url path="../ebo/v1/CampoEndereco.java"/>
+      <url path="CorreiosCEPSOAP_PortClient.java"/>
+      <url path="../commons/v1/CabecalhoSeplag.java"/>
+      <url path="../ebo/v1/TipoCEP.java"/>
+      <url path="../commons/v1/package-info.java"/>
+   </list>
+   <hash n="DATA_MODEL">
+      <value n="ATTACHMENT_ENCODING" v="MTOM"/>
+      <list n="BINDING_FILES">
+         <url path="../../../../../../jaxb.xml"/>
+      </list>
+      <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.WebServiceProxy"/>
+      <url n="ORACLE_WEBSERVICES_XML" path="CorreiosCEP.xml"/>
+      <hash n="PROPERTY_GROUPS">
+         <hash n="HANDLER_CHAIN_GROUP">
+            <value n="HCG_FILE_PATH" v="CorreiosCEPProxy-HandlerChain.xml"/>
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.HandlerChainGroup"/>
+         </hash>
+         <hash n="WSDL_TO_JAVA_PROPERTIES">
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.WSDLToJavaProperties"/>
+            <value n="WSDL2JAVA_UNWRAP_PARAMETERS" v="false"/>
+         </hash>
+      </hash>
+      <value n="PROXY_ASYNC_METHODS" v="FOR_ENABLED"/>
+      <list n="PROXY_CLIENTS">
+         <url path="CorreiosCEPSOAP_PortClient.java"/>
+      </list>
+      <value n="PROXY_MAPPING_URL"/>
+      <hash n="PROXY_PORTS">
+         <hash n="CorreiosCEPSOAP_Port">
+            <value n="ACCESSES_DOC_WRAPPPED" v="false"/>
+            <value n="ACCESSES_RPC_ENCODED" v="false"/>
+            <value n="CLASS_NAME" v="br.gov.se.seplag.correioscep.CorreiosCEP_PortType"/>
+            <list n="HANDLERS"/>
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyPort"/>
+            <value n="NAME" v="CorreiosCEPSOAP_Port"/>
+            <hash n="OPERATIONS">
+               <hash n="consultarEnderecoPorCEP">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+            </hash>
+            <hash n="PROPERTY_GROUPS">
+               <hash n="WS_CLIENT_POLICY">
+                  <value n="addressing"/>
+                  <list n="management"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.policy.PolicyClientModel"/>
+                  <value n="mtom"/>
+                  <hash n="POLICY_OVERRIDE_PROPERTIES"/>
+                  <list n="security"/>
+                  <value n="wsrm"/>
+               </hash>
+            </hash>
+            <url n="PROXY_ORIGINAL_PORT_ENDPOINT" protocol="http" host="osb02.itconsulting.com.br" port="8011" path="/V1/CorreiosCEP"/>
+         </hash>
+      </hash>
+      <value n="PROXY_SERVICE_NAME" v="CorreiosCEP"/>
+      <value n="PROXY_SERVICE_NAMESPACE" v="http://www.seplag.se.gov.br/CorreiosCEP"/>
+      <url n="PROXY_TARGET_PROJECT" path="../../../../../../Model.jpr"/>
+      <url n="PROXY_WSDL_URL" protocol="http" host="osb02.itconsulting.com.br" port="8011" path="/V1/CorreiosCEP" query="WSDL"/>
+      <hash n="REFERENCED_WEBSERVICE">
+         <list n="BD_">
+            <hash>
+               <value n="BD_DEFAULT_DOCUMENT_WRAPPED" v="false"/>
+               <value n="BD_SOAP_VERSION" v="1.2"/>
+               <value n="BOUND_PORT_TYPE" v="{http://www.seplag.se.gov.br/CorreiosCEP}CorreiosCEP_PortType"/>
+               <value n="DEFAULT_NAME" v="false"/>
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPBinding"/>
+               <value n="NAME" v="{http://www.seplag.se.gov.br/CorreiosCEP}CorreiosCEPSOAP_Binding"/>
+               <list n="OP_BINDINGS">
+                  <hash>
+                     <value n="BOUND_OPERATION" v="br.gov.se.seplag.correioscep.ResultadoConsultarEnderecoPorCEP.consultarEnderecoPorCEP.br.gov.se.seplag.correioscep.ParametroConsultarEnderecoPorCEP.br.gov.se.seplag.commons.v1.CabecalhoSeplag"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+               </list>
+               <hash n="PROPERTY_GROUPS"/>
+            </hash>
+         </list>
+         <list n="BINDING_FILES">
+            <url path="../../../../../../jaxb.xml"/>
+         </list>
+         <value n="GUID" v="a1427ca9-0147-1000-8002-c0a81e594d84"/>
+         <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.WebServiceProxy$ProxyJavaWebService"/>
+         <list n="PO_">
+            <hash>
+               <value n="DEFAULT_NAME" v="false"/>
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPPort"/>
+               <value n="NAME" v="CorreiosCEPSOAP_Port"/>
+               <value n="PORT_BINDING_NAME" v="{http://www.seplag.se.gov.br/CorreiosCEP}CorreiosCEPSOAP_Binding"/>
+               <list n="PORT_OPS">
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="br.gov.se.seplag.correioscep.ResultadoConsultarEnderecoPorCEP.consultarEnderecoPorCEP.br.gov.se.seplag.correioscep.ParametroConsultarEnderecoPorCEP.br.gov.se.seplag.commons.v1.CabecalhoSeplag"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+               </list>
+               <hash n="PROPERTY_GROUPS"/>
+               <url n="URL" protocol="http" host="osb02.itconsulting.com.br" port="8011" path="/V1/CorreiosCEP"/>
+            </hash>
+         </list>
+         <hash n="PROPERTY_GROUPS">
+            <hash n="WSDL_TO_JAVA_PROPERTIES">
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.WSDLToJavaProperties"/>
+               <value n="WSDL2JAVA_UNWRAP_PARAMETERS" v="false"/>
+            </hash>
+         </hash>
+         <list n="PT_">
+            <hash>
+               <value n="AUTO_SERVICE_INTERFACE"/>
+               <value n="DEFAULT_NAME" v="false"/>
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaPortType"/>
+               <value n="NAME" v="{http://www.seplag.se.gov.br/CorreiosCEP}CorreiosCEP_PortType"/>
+               <hash n="PROPERTY_GROUPS"/>
+               <value n="PT_CLASS" v="br.gov.se.seplag.correioscep.CorreiosCEP_PortTypeImpl"/>
+               <value n="PT_SERVICE_INTERFACE" v="br.gov.se.seplag.correioscep.CorreiosCEP_PortType"/>
+            </hash>
+         </list>
+         <url n="TARGET_PROJECT" path="../../../../../../Model.jpr"/>
+         <value n="WS_ORIG_GEN_DIRECTION" v="TOP_DOWN"/>
+         <value n="WS_TARGET_NAMESPACE" v="http://www.seplag.se.gov.br/CorreiosCEP"/>
+         <value n="WS_URI" v="CorreiosCEP"/>
+         <url n="WS_WSDL_FILE" protocol="http" host="osb02.itconsulting.com.br" port="8011" path="/V1/CorreiosCEP" query="WSDL"/>
+      </hash>
+      <value n="SERVICE_ASYNC" v="false"/>
+      <value n="WSDL_IS_LOCAL_COPY" v="false"/>
+   </hash>
+</jdevws:WebServiceProxy>

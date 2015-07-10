@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?oracleBPM version="11.1.1.7.0.0.97" fileRevision="20120217"?>
+<processDocumentation xmlns="http://xmlns.oracle.com/bpm/taskMetadataService/processDocumentation">
+    <component name="ProcessoTriagem">
+        <topicDocumentations>
+            <topicDocumentation name="ProcessoTriagem">
+                <descriptions>
+                    <description locale="en">ProcessoTriagem</description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="ACT10462187404052">
+                <labels>
+                    <label locale="en">FinalizarAtendimento</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="ACT10496165201732">
+                <labels>
+                    <label locale="en">Gerar Protocolo</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="ACT10584604639716">
+                <labels>
+                    <label locale="en">Realização dos atendimentos</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="ACT10584655469137">
+                <labels>
+                    <label locale="en">Chamar Serviço Passe Livre Idoso</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="ACT10584699579065">
+                <labels>
+                    <label locale="en">Serviço Passe Livre Finalizado</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="ACT10584834389697">
+                <labels>
+                    <label locale="en">Chamar Serviço Passe Livre Deficiente</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="EVT10584604831665">
+                <labels>
+                    <label locale="en">Start</label>
+                </labels>
+            </topicDocumentation>
+            <topicDocumentation name="EVT10584604831642">
+                <labels>
+                    <label locale="en">End</label>
+                </labels>
+            </topicDocumentation>
+            <topicDocumentation name="GTW10584804889354">
+                <labels>
+                    <label locale="en">Denifir Serviço</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="GTW10584805735874">
+                <labels>
+                    <label locale="en">Serviço Realizado</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="ACT10594075059221">
+                <labels>
+                    <label locale="en">Retorno Serviço Passe Livre Deficiente</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf31"/>
+            <topicDocumentation name="sf33"/>
+            <topicDocumentation name="sf34"/>
+            <topicDocumentation name="sf35">
+                <labels>
+                    <label locale="en"></label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf36"/>
+            <topicDocumentation name="sf38">
+                <labels>
+                    <label locale="en"></label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf41"/>
+            <topicDocumentation name="sf43"/>
+            <topicDocumentation name="sf23"/>
+            <topicDocumentation name="EVT10462137541340">
+                <labels>
+                    <label locale="en">IniciarAtendimento</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="EVT10462137541385">
+                <labels>
+                    <label locale="en">AtendimentoFinalizado</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf15"/>
+            <topicDocumentation name="sf17"/>
+            <topicDocumentation name="sf10"/>
+            <topicDocumentation name="sf32"/>
+        </topicDocumentations>
+    </component>
+</processDocumentation>

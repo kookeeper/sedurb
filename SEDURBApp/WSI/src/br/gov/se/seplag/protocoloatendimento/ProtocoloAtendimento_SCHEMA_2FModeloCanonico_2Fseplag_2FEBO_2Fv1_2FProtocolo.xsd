@@ -1,0 +1,36 @@
+<xsd:schema targetNamespace="http://www.seplag.se.gov.br/EBO/v1" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+     xmlns:seplag="http://www.seplag.se.gov.br/EBO/v1">
+    <xsd:include schemaLocation="ProtocoloAtendimento_SCHEMA_2FModeloCanonico_2Fseplag_2FEBO_2Fv1_2FCpf.xsd"/>
+    <xsd:include schemaLocation="ProtocoloAtendimento_SCHEMA_2FModeloCanonico_2Fseplag_2FEBO_2Fv1_2FStatusProtocolo.xsd"/>
+    <xsd:element name="listaProtocolo" nillable="true" type="seplag:ListaProtocolo"/>
+    <xsd:complexType name="ListaProtocolo">
+        <xsd:sequence>
+            <xsd:element name="protocolo" type="seplag:Protocolo" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="Protocolo">
+        <xsd:sequence>
+            <xsd:element name="codigoProtocolo" minOccurs="0" nillable="true" maxOccurs="1">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="22"/>
+                        <xsd:pattern value="([0-9])*"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="codigoProtocoloPai" minOccurs="0" maxOccurs="1" nillable="true">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="22"/>
+                        <xsd:pattern value="([0-9])*"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="documentoCPF" minOccurs="0" nillable="true" type="seplag:DocumentoCPF"/>
+            <xsd:element name="numeroSequencia" minOccurs="0" nillable="true" type="xsd:integer"/>
+            <xsd:element name="idAgendamentoAgendaFacil" minOccurs="0" nillable="true" maxOccurs="1" type="xsd:integer"/>
+            <xsd:element name="listaStatusProtocolo" minOccurs="0" nillable="true" type="seplag:ListaStatusProtocolo"/>
+            <xsd:element name="listaSubProtocolos" minOccurs="0" nillable="true" type="seplag:ListaProtocolo"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

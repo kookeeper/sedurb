@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 5.6.1.final using JasperReports Library version 5.6.1  -->
+<!-- 2014-10-15T16:46:27 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="carteira" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d041b19e-1a6a-42e3-ab4e-865104524ea2">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="foto" class="java.lang.Object" isForPrompting="false"/>
+	<parameter name="fundo" class="java.lang.Object" isForPrompting="false"/>
+	<parameter name="numeroCarteira" class="java.lang.String" isForPrompting="false">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<parameter name="numeroRG" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="nomeCidadao" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="dataNascimento" class="java.lang.String" isForPrompting="false">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<parameter name="dataEmissao" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="dataValidade" class="java.lang.String" isForPrompting="false">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="Field_1" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="656" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="344" height="432" uuid="7a831d89-2fc8-46cf-8244-68edadf370aa">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{fundo}]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="17" y="21" width="52" height="70" uuid="ce9747ac-2f53-4895-b2b7-0afe686d59f5">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{foto}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="70" y="90" width="130" height="20" uuid="0aeb445b-8208-4740-9f0f-f8a49e4f4e3c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{numeroCarteira}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="90" width="110" height="20" uuid="d57e452b-af5c-40ca-9318-b40604d58f81"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{numeroRG}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="60" y="118" width="250" height="20" uuid="4bce5f77-9829-41ee-a1d8-d11fcf234b30"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nomeCidadao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="140" width="60" height="20" uuid="de0b021e-e52b-48f1-9344-555a599dbae7"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{dataNascimento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="140" width="60" height="20" uuid="93915a32-d3d4-402c-865e-66ba21085d0d"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{dataEmissao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="160" width="60" height="20" uuid="067ea4e6-2aeb-4c29-ad0d-b07005233699"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{dataValidade}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

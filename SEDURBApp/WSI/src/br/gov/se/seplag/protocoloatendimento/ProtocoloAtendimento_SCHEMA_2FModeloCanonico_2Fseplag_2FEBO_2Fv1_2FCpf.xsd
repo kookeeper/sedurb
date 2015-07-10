@@ -1,0 +1,15 @@
+<xsd:schema targetNamespace="http://www.seplag.se.gov.br/EBO/v1" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+     xmlns:seplag="http://www.seplag.se.gov.br/EBO/v1">
+    <xsd:element name="listaCpf" nillable="true" type="seplag:ListaCpf"/>
+    <xsd:complexType name="ListaCpf">
+        <xsd:sequence>
+            <xsd:element name="documentoCPF" type="seplag:DocumentoCPF" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:simpleType name="DocumentoCPF">
+        <xsd:restriction base="xsd:string">
+            <xsd:length value="11"/>
+            <xsd:pattern value="([0-9])*"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

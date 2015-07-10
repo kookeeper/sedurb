@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.64.93"
+          id="payload"
+          Package="RealizarAtendimento_PasseLivreIdoso.Types.realizarAtendimento"
+          BeanClass="RealizarAtendimento_PasseLivreIdoso.Types.realizarAtendimento.payload"
+          isJavaBased="false">
+  <Attribute Name="cpfCidadao" IsNotNull="true" Type="java.lang.String"/>
+  <Attribute Name="dataAgendamentoAtendimento" IsNotNull="true"
+             Type="java.sql.Date"/>
+  <Attribute Name="nomeServico" IsNotNull="true" Type="java.lang.String"/>
+  <Attribute Name="nomeUnidadeAtendimento" IsNotNull="true"
+             Type="java.lang.String"/>
+  <Attribute Name="codigoProtocolo" IsNotNull="true" Type="java.lang.String"/>
+  <Attribute Name="codigoProtocoloPai" IsNotNull="true"
+             Type="java.lang.String"/>
+  <Attribute Name="dataSolicitacaoImpressaoCarteira" IsNotNull="true"
+             Type="java.sql.Date"/>
+  <Attribute Name="dataImpressaoCarteira" IsNotNull="true"
+             Type="java.sql.Date"/>
+</JavaBean>

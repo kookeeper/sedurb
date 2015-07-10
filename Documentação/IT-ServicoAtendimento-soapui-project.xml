@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="IT-ServicoAtendimento" soapui-version="5.0.0" abortOnError="false" runType="SEQUENTIAL" resourceRoot="${projectDir}" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="ServicoAtendimentoSOAP" type="wsdl" bindingName="{http://www.seplag.se.gov.br/ServicoAtendimento}ServicoAtendimentoSOAP" soapVersion="1_2" anonymous="optional" definition="http://localhost:7001/V1/ServicoAtendimento?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:7001/V1/ServicoAtendimento?WSDL"><con:part><con:url>http://localhost:7001/V1/ServicoAtendimento?WSDL</con:url><con:content><![CDATA[<WL5G3N0:definitions name="ServicoAtendimento" targetNamespace="http://www.seplag.se.gov.br/ServicoAtendimento" xmlns:WL5G3N0="http://schemas.xmlsoap.org/wsdl/" xmlns:WL5G3N1="http://www.seplag.se.gov.br/ServicoAtendimento" xmlns:WL5G3N2="http://www.seplag.se.gov.br/commons/v1" xmlns:WL5G3N3="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <WL5G3N0:types>
+    <xsd:schema targetNamespace="http://www.seplag.se.gov.br/ServicoAtendimento" xmlns:cab="http://www.seplag.se.gov.br/commons/v1" xmlns:erro="http://www.seplag.se.gov.br/commons/v1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://www.seplag.se.gov.br/ServicoAtendimento" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:include schemaLocation="http://localhost:7001/V1/ServicoAtendimento?SCHEMA%2FNegocio%2FServicoAtendimento%2FV1%2Fschema%2FServicoAtendimento"/>
+    </xsd:schema>
+    <xsd:schema xmlns:cab="http://www.seplag.se.gov.br/commons/v1" xmlns:erro="http://www.seplag.se.gov.br/commons/v1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://www.seplag.se.gov.br/ServicoAtendimento" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="http://www.seplag.se.gov.br/commons/v1" schemaLocation="http://localhost:7001/V1/ServicoAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2Fcommons%2Fv1%2FErroInfo"/>
+      <xsd:import namespace="http://www.seplag.se.gov.br/commons/v1" schemaLocation="http://localhost:7001/V1/ServicoAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2Fcommons%2Fv1%2FCabecalhoSeplag"/>
+    </xsd:schema>
+  </WL5G3N0:types>
+  <WL5G3N0:message name="ParametroListarServicosAtendimentoRequest">
+    <WL5G3N0:part element="WL5G3N1:ParametroListarServicosAtendimento" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="ResultadoListarServicosAtendimentoResponse">
+    <WL5G3N0:part element="WL5G3N1:ResultadoListarServicosAtendimento" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="ErroInfoMessage">
+    <WL5G3N0:part element="WL5G3N2:erroInfo" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="CabecalhoSeplagMessage">
+    <WL5G3N0:part element="WL5G3N2:cabecalhoSeplag" name="cabecalho"/>
+  </WL5G3N0:message>
+  <WL5G3N0:portType name="ServicoAtendimento">
+    <WL5G3N0:operation name="ListarServicoAtendimento">
+      <WL5G3N0:input message="WL5G3N1:ParametroListarServicosAtendimentoRequest"/>
+      <WL5G3N0:output message="WL5G3N1:ResultadoListarServicosAtendimentoResponse"/>
+      <WL5G3N0:fault message="WL5G3N1:ErroInfoMessage" name="erroInfo"/>
+    </WL5G3N0:operation>
+  </WL5G3N0:portType>
+  <WL5G3N0:binding name="ServicoAtendimentoSOAP" type="WL5G3N1:ServicoAtendimento">
+    <WL5G3N3:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <WL5G3N0:operation name="ListarServicoAtendimento">
+      <WL5G3N3:operation soapAction="http://www.seplag.se.gov.br/ServicoAtendimento/ListarServicoAtendimento"/>
+      <WL5G3N0:input>
+        <WL5G3N3:body use="literal"/>
+        <WL5G3N3:header message="WL5G3N1:CabecalhoSeplagMessage" part="cabecalho" use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N3:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+  </WL5G3N0:binding>
+  <WL5G3N0:service name="ServicoAtendimento">
+    <WL5G3N0:port binding="WL5G3N1:ServicoAtendimentoSOAP" name="ServicoAtendimentoSOAP">
+      <WL5G3N3:address location="http://localhost:7001/V1/ServicoAtendimento"/>
+    </WL5G3N0:port>
+  </WL5G3N0:service>
+</WL5G3N0:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:7001/V1/ServicoAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2Fcommons%2Fv1%2FErroInfo</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://www.seplag.se.gov.br/commons/v1" xmlns:gr="http://www.seplag.se.gov.br/commons/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ErroInfo">
+    <xs:annotation>
+      <xs:documentation>Elemento padrao de definição das mensagens de erro.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigo">
+        <xs:annotation>
+          <xs:documentation>Codigo que identifica o erro.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="20"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="descricao">
+        <xs:annotation>
+          <xs:documentation>Descricao do erro ocorrido retornado.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="4000"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="dataTransacao">
+        <xs:simpleType>
+          <xs:restriction base="xs:dateTime"/>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="dadosAdicionais" type="xs:anyType">
+        <xs:annotation>
+          <xs:documentation>Dados adicionais que podem ser necessarios para
+						identificar um erro.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="erroInfo" type="gr:ErroInfo"/>
+  <xs:complexType name="ErrosInfo">
+    <xs:sequence>
+      <xs:element name="erroInfo" type="gr:ErroInfo" maxOccurs="unbounded" minOccurs="0"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:7001/V1/ServicoAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2Fcommons%2Fv1%2FCabecalhoSeplag</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://www.seplag.se.gov.br/commons/v1" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gr="http://www.seplag.se.gov.br/commons/v1">
+  <xs:complexType name="CabecalhoSeplag" final="restriction">
+    <xs:sequence>
+      <xs:element name="loginUsuario" minOccurs="1">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="canalAtendimento" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Descricao do canal de atendimento: portal, Ceac,etc.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="32"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="codigoSessao" nillable="true" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Codigo da sessao, codigo unico que identifica
+						uma sessao.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="256"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="nomeAplicacao" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="50"/>
+            <xs:enumeration value="Seides"/>
+            <xs:enumeration value="Detran"/>
+            <xs:enumeration value="Nat"/>
+            <xs:enumeration value="Sedurb"/>
+            <xs:enumeration value="Ssp"/>
+            <xs:enumeration value="Integracao"/>
+            <xs:enumeration value="Seguranca"/>
+            <xs:enumeration value="Infra"/>
+            <xs:enumeration value="Ses"/>
+            <xs:enumeration value="Seplag"/>
+            <xs:enumeration value="Banese"/>
+            <xs:enumeration value="ReceitaFederal"/>
+            <xs:enumeration value="Ceac"/>
+            <xs:enumeration value="IpeSaude"/>
+            <xs:enumeration value="Ctransp"/>
+            <xs:enumeration value="Case"/>
+            <xs:enumeration value="Portal"/>
+            <xs:enumeration value="Mobile"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="token" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="255"/>
+            <xs:minLength value="1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="enderecoIP" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="([01]?\d\d?|2[0-4]\d|25[0-5])\.([01]?\d\d?|2[0-4]\d|25[0-5])\.([01]?\d\d?|2[0-4]\d|25[0-5])\.([01]?\d\d?|2[0-4]\d|25[0-5])"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="codigoFuncionalidade" nillable="true" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Codigo que identifica uma funcionalidade do
+						sistema. Exemplos de funcionalidade para o
+						sistema: Ativacao e desativacao de
+						servicos, emitir carteira de identidade, emitir CNH, etc.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="10"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="dataTransacao" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:dateTime"/>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="nomeServico" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Nome do servico que foi invocado, exemplo:
+						consultaClienteCidadao, consultaFuncionario, etc.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="versao" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Define a versao do servico que esta sendo
+						invocado. O formato da versao deve sempre ser
+						99.99</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="\d?\d.\d\d?"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="cabecalhoSeplag" type="gr:CabecalhoSeplag"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:7001/V1/ServicoAtendimento?SCHEMA%2FNegocio%2FServicoAtendimento%2FV1%2Fschema%2FServicoAtendimento</con:url><con:content><![CDATA[<schema targetNamespace="http://www.seplag.se.gov.br/ServicoAtendimento" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.seplag.se.gov.br/ServicoAtendimento" xmlns:ebo="http://www.seplag.se.gov.br/EBO/v1" xmlns:com="http://www.seplag.se.gov.br/commons/v1">
+  <import schemaLocation="http://localhost:7001/V1/ServicoAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2Fcommons%2Fv1%2FPaginacaoRequest" namespace="http://www.seplag.se.gov.br/commons/v1"/>
+  <import schemaLocation="http://localhost:7001/V1/ServicoAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2Fcommons%2Fv1%2FPaginacaoResponse" namespace="http://www.seplag.se.gov.br/commons/v1"/>
+  <import schemaLocation="http://localhost:7001/V1/ServicoAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FServicoAtendimento" namespace="http://www.seplag.se.gov.br/EBO/v1"/>
+  <import schemaLocation="http://localhost:7001/V1/ServicoAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FUnidadeAtendimento" namespace="http://www.seplag.se.gov.br/EBO/v1"/>
+  <element name="ParametroListarServicosAtendimento">
+    <complexType>
+      <sequence>
+        <element name="unidade" type="ebo:UnidadeAtendimento" minOccurs="0"/>
+        <element name="paginacao" type="com:PaginacaoRequest" minOccurs="1"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="ResultadoListarServicosAtendimento">
+    <complexType>
+      <sequence>
+        <element name="listaServicos" type="ebo:ListaServico"/>
+        <element name="paginacao" type="com:PaginacaoResponse"/>
+      </sequence>
+    </complexType>
+  </element>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:7001/V1/ServicoAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2Fcommons%2Fv1%2FPaginacaoRequest</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.seplag.se.gov.br/commons/v1" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:seplag="http://www.seplag.se.gov.br/commons/v1">
+  <xsd:complexType name="PaginacaoRequest">
+    <xsd:sequence>
+      <xsd:element name="qtdeRegistrosPorPagina" minOccurs="0" maxOccurs="1" type="xsd:integer"></xsd:element>
+      <xsd:element name="pagina" minOccurs="0" maxOccurs="1" type="xsd:integer"></xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="paginacaoRequest" type="seplag:PaginacaoRequest"/>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:7001/V1/ServicoAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2Fcommons%2Fv1%2FPaginacaoResponse</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.seplag.se.gov.br/commons/v1" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:seplag="http://www.seplag.se.gov.br/commons/v1">
+  <xsd:complexType name="PaginacaoResponse">
+    <xsd:sequence>
+      <xsd:element name="qtdTotalItens" minOccurs="0" maxOccurs="1" type="xsd:integer"></xsd:element>
+      <xsd:element name="pagina" minOccurs="0" maxOccurs="1" type="xsd:integer"></xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="paginacaoResponse" type="seplag:PaginacaoResponse"/>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:7001/V1/ServicoAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FServicoAtendimento</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.seplag.se.gov.br/EBO/v1" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:seplag="http://www.seplag.se.gov.br/EBO/v1">
+  <xsd:include schemaLocation="http://localhost:7001/V1/ServicoAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FOrgao"/>
+  <xsd:complexType name="Servico">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="nome">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="100"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="orgao" type="seplag:Orgao"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="processoAtendimento" type="xsd:boolean"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ListaServico">
+    <xsd:sequence>
+      <xsd:element name="Servico" type="seplag:Servico" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="listaServico" nillable="true" type="seplag:ListaServico"/>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:7001/V1/ServicoAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FOrgao</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.seplag.se.gov.br/EBO/v1" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:seplag="http://www.seplag.se.gov.br/EBO/v1">
+  <xsd:complexType name="Orgao">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="sigla">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="100"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="nome">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="100"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="codigoGoverno">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="7"/>
+            <xsd:minLength value="7"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ListaOrgao">
+    <xsd:sequence>
+      <xsd:element name="Orgao" type="seplag:Orgao" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="listaOrgao" nillable="true" type="seplag:ListaOrgao"/>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:7001/V1/ServicoAtendimento?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FUnidadeAtendimento</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.seplag.se.gov.br/EBO/v1" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:seplag="http://www.seplag.se.gov.br/EBO/v1">
+  <xsd:complexType name="UnidadeAtendimento">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="nome">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="100"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ListaUnidadeAtendimento">
+    <xsd:sequence>
+      <xsd:element name="unidadeAtendimento" type="seplag:UnidadeAtendimento" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="listaUnidadeAtendimento" nillable="true" type="seplag:ListaUnidadeAtendimento"/>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://10.211.55.3:7001/V1/ServicoAtendimento</con:endpoint><con:endpoint>http://POSEIDON.local:8088/mockServicoAtendimentoSOAP</con:endpoint><con:endpoint>http://osb.itconsulting.com.br:8011/V1/ServicoAtendimento</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://www.seplag.se.gov.br/ServicoAtendimento/ListarServicoAtendimento" name="ListarServicoAtendimento" bindingOperationName="ListarServicoAtendimento" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://osb.itconsulting.com.br:8011/V1/ServicoAtendimento?wsdl</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.seplag.se.gov.br/commons/v1" xmlns:ser="http://www.seplag.se.gov.br/ServicoAtendimento" xmlns:v11="http://www.seplag.se.gov.br/EBO/v1">
+   <soap:Header>
+      <v1:cabecalhoSeplag>
+         <v1:loginUsuario>silvio.silva</v1:loginUsuario>
+         <v1:canalAtendimento>Ceac</v1:canalAtendimento>
+         <v1:nomeAplicacao>Ceac</v1:nomeAplicacao>
+         <v1:enderecoIP>192.168.0.153</v1:enderecoIP>
+      </v1:cabecalhoSeplag>
+   </soap:Header>
+   <soap:Body>
+      <ser:ParametroListarServicosAtendimento>
+         <ser:paginacao>
+            <!--Optional:-->
+            <!--type: integer-->
+            <v1:qtdeRegistrosPorPagina>100</v1:qtdeRegistrosPorPagina>
+            <!--Optional:-->
+            <!--type: integer-->
+            <v1:pagina>1</v1:pagina>
+         </ser:paginacao>
+      </ser:ParametroListarServicosAtendimento>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.seplag.se.gov.br/ServicoAtendimento/ServicoAtendimento/ListarServicoAtendimentoRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Request 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://osb.itconsulting.com.br:8011/V1/ServicoAtendimento</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.seplag.se.gov.br/commons/v1" xmlns:ser="http://www.seplag.se.gov.br/ServicoAtendimento" xmlns:v11="http://www.seplag.se.gov.br/EBO/v1">
+   <soap:Header>
+      <v1:cabecalhoSeplag>
+         <v1:loginUsuario>marcio.dantas</v1:loginUsuario>
+         <v1:canalAtendimento>Ceac</v1:canalAtendimento>
+         <v1:nomeAplicacao>Ceac</v1:nomeAplicacao>
+         <v1:enderecoIP>192.168.10.124</v1:enderecoIP>
+      </v1:cabecalhoSeplag>
+   </soap:Header>
+   <soap:Body>
+      <ser:ParametroListarServicosAtendimento>
+         <!--Optional:-->
+         <ser:unidade>
+         </ser:unidade>
+         <ser:paginacao>
+         <!--Optional:-->
+            <v1:qtdeRegistrosPorPagina>200</v1:qtdeRegistrosPorPagina>
+            <!--Optional:-->
+            <v1:pagina>1</v1:pagina>
+         </ser:paginacao>
+      </ser:ParametroListarServicosAtendimento>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.seplag.se.gov.br/ServicoAtendimento/ServicoAtendimento/ListarServicoAtendimentoRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:mockService port="8088" path="/mockServicoAtendimentoSOAP" host="POSEIDON.local" name="ServicoAtendimentoSOAP MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="ListarServicoAtendimento" interface="ServicoAtendimentoSOAP" operation="ListarServicoAtendimento"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:ser="http://www.seplag.se.gov.br/ServicoAtendimento" xmlns:v1="http://www.seplag.se.gov.br/EBO/v1" xmlns:v11="http://www.seplag.se.gov.br/commons/v1">
+   <soap:Header/>
+   <soap:Body>
+      <ser:ResultadoListarServicosAtendimento>
+         <ser:listaServicos>
+            <!--Zero or more repetitions:-->
+            <v1:Servico>
+               <!--Optional:-->
+               <!--anonymous type-->
+               <v1:nome>?</v1:nome>
+               <!--Optional:-->
+               <v1:orgao>
+                  <!--Optional:-->
+                  <!--anonymous type-->
+                  <v1:sigla>?</v1:sigla>
+                  <!--Optional:-->
+                  <!--anonymous type-->
+                  <v1:nome>?</v1:nome>
+                  <!--Optional:-->
+                  <!--anonymous type-->
+                  <v1:codigoGoverno>?</v1:codigoGoverno>
+               </v1:orgao>
+               <!--Optional:-->
+               <!--type: boolean-->
+               <v1:processoAtendimento>?</v1:processoAtendimento>
+            </v1:Servico>
+         </ser:listaServicos>
+         <ser:paginacao>
+            <!--Optional:-->
+            <!--type: integer-->
+            <v11:qtdTotalItens>?</v11:qtdTotalItens>
+            <!--Optional:-->
+            <!--type: integer-->
+            <v11:pagina>?</v11:pagina>
+         </ser:paginacao>
+      </ser:ResultadoListarServicosAtendimento>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.seplag.se.gov.br/ServicoAtendimento/ServicoAtendimento/ListarServicoAtendimentoResponse"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>

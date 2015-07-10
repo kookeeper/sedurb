@@ -1,0 +1,880 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="IT-PasseLivre" soapui-version="5.0.0" abortOnError="false" runType="SEQUENTIAL" resourceRoot="${projectDir}" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="PasseLivreSOAP" type="wsdl" bindingName="{http://www.seplag.se.gov.br/PasseLivre}PasseLivreSOAP" soapVersion="1_2" anonymous="optional" definition="http://localhost:7001/V1/PasseLivre?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:7001/V1/PasseLivre?WSDL"><con:part><con:url>http://localhost:7001/V1/PasseLivre?WSDL</con:url><con:content><![CDATA[<WL5G3N0:definitions name="ConsultarPasseLivre" targetNamespace="http://www.seplag.se.gov.br/PasseLivre" xmlns:WL5G3N0="http://schemas.xmlsoap.org/wsdl/" xmlns:WL5G3N1="http://www.seplag.se.gov.br/PasseLivre" xmlns:WL5G3N2="http://www.seplag.se.gov.br/commons/v1" xmlns:WL5G3N3="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <WL5G3N0:types>
+    <xsd:schema targetNamespace="http://www.seplag.se.gov.br/PasseLivre" xmlns:commons="http://www.seplag.se.gov.br/commons/v1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://www.seplag.se.gov.br/PasseLivre" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:include schemaLocation="http://localhost:7001/V1/PasseLivre?SCHEMA%2FNegocio%2FPasseLivre%2FV1%2Fschema%2FPasseLivre"/>
+    </xsd:schema>
+    <xsd:schema xmlns:commons="http://www.seplag.se.gov.br/commons/v1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://www.seplag.se.gov.br/PasseLivre" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="http://www.seplag.se.gov.br/commons/v1" schemaLocation="http://localhost:7001/V1/PasseLivre?SCHEMA%2FModeloCanonico%2Fseplag%2Fcommons%2Fv1%2FErroInfo"/>
+      <xsd:import namespace="http://www.seplag.se.gov.br/commons/v1" schemaLocation="http://localhost:7001/V1/PasseLivre?SCHEMA%2FModeloCanonico%2Fseplag%2Fcommons%2Fv1%2FCabecalhoSeplag"/>
+    </xsd:schema>
+  </WL5G3N0:types>
+  <WL5G3N0:message name="ParametroCancelarPasseLivreRequest">
+    <WL5G3N0:part element="WL5G3N1:ParametroCancelarPasseLivre" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="ResultadoCancelarPasseLivreResponse">
+    <WL5G3N0:part element="WL5G3N1:ResultadoCancelarPasseLivre" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="ParametroCadastrarPasseLivreRequest">
+    <WL5G3N0:part element="WL5G3N1:ParametroCadastrarPasseLivre" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="ResultadoCadastrarPasseLivreResponse">
+    <WL5G3N0:part element="WL5G3N1:ResultadoCadastrarPasseLivre" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="ParametroConsultarPasseLivreRequest">
+    <WL5G3N0:part element="WL5G3N1:ParametroConsultarPasseLivre" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="ResultadoConsultarPasseLivreResponse">
+    <WL5G3N0:part element="WL5G3N1:ResultadoConsultarPasseLivre" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="ErroInfoMessage">
+    <WL5G3N0:part element="WL5G3N2:erroInfo" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="CabecalhoSeplagMessage">
+    <WL5G3N0:part element="WL5G3N2:cabecalhoSeplag" name="Cabecalho"/>
+  </WL5G3N0:message>
+  <WL5G3N0:portType name="PasseLivre">
+    <WL5G3N0:operation name="CancelarPasseLivre">
+      <WL5G3N0:input message="WL5G3N1:ParametroCancelarPasseLivreRequest"/>
+      <WL5G3N0:output message="WL5G3N1:ResultadoCancelarPasseLivreResponse"/>
+      <WL5G3N0:fault message="WL5G3N1:ErroInfoMessage" name="erroInfo"/>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="CadastrarPasseLivre">
+      <WL5G3N0:input message="WL5G3N1:ParametroCadastrarPasseLivreRequest"/>
+      <WL5G3N0:output message="WL5G3N1:ResultadoCadastrarPasseLivreResponse"/>
+      <WL5G3N0:fault message="WL5G3N1:ErroInfoMessage" name="erroInfo"/>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="ConsultarPasseLivre">
+      <WL5G3N0:input message="WL5G3N1:ParametroConsultarPasseLivreRequest"/>
+      <WL5G3N0:output message="WL5G3N1:ResultadoConsultarPasseLivreResponse"/>
+      <WL5G3N0:fault message="WL5G3N1:ErroInfoMessage" name="erroInfo"/>
+    </WL5G3N0:operation>
+  </WL5G3N0:portType>
+  <WL5G3N0:binding name="PasseLivreSOAP" type="WL5G3N1:PasseLivre">
+    <WL5G3N3:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <WL5G3N0:operation name="CancelarPasseLivre">
+      <WL5G3N3:operation soapAction="http://www.seplag.se.gov.br/PasseLivre/CancelarPasseLivre"/>
+      <WL5G3N0:input>
+        <WL5G3N3:body use="literal"/>
+        <WL5G3N3:header message="WL5G3N1:CabecalhoSeplagMessage" part="Cabecalho" use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N3:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="CadastrarPasseLivre">
+      <WL5G3N3:operation soapAction="http://www.seplag.se.gov.br/PasseLivre/CadastrarPasseLivre"/>
+      <WL5G3N0:input>
+        <WL5G3N3:body use="literal"/>
+        <WL5G3N3:header message="WL5G3N1:CabecalhoSeplagMessage" part="Cabecalho" use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N3:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="ConsultarPasseLivre">
+      <WL5G3N3:operation soapAction="http://www.seplag.se.gov.br/PasseLivre/ConsultarPasseLivre"/>
+      <WL5G3N0:input>
+        <WL5G3N3:body use="literal"/>
+        <WL5G3N3:header message="WL5G3N1:CabecalhoSeplagMessage" part="Cabecalho" use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N3:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+  </WL5G3N0:binding>
+  <WL5G3N0:service name="PasseLivre">
+    <WL5G3N0:port binding="WL5G3N1:PasseLivreSOAP" name="PasseLivreSOAP">
+      <WL5G3N3:address location="http://localhost:7011/V1/PasseLivre"/>
+    </WL5G3N0:port>
+  </WL5G3N0:service>
+</WL5G3N0:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:7001/V1/PasseLivre?SCHEMA%2FModeloCanonico%2Fseplag%2Fcommons%2Fv1%2FErroInfo</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://www.seplag.se.gov.br/commons/v1" xmlns:gr="http://www.seplag.se.gov.br/commons/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ErroInfo">
+    <xs:annotation>
+      <xs:documentation>Elemento padrao de definição das mensagens de erro.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigo">
+        <xs:annotation>
+          <xs:documentation>Codigo que identifica o erro.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="20"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="descricao">
+        <xs:annotation>
+          <xs:documentation>Descricao do erro ocorrido retornado.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="4000"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="dataTransacao">
+        <xs:simpleType>
+          <xs:restriction base="xs:dateTime"/>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="dadosAdicionais" type="xs:anyType">
+        <xs:annotation>
+          <xs:documentation>Dados adicionais que podem ser necessarios para
+						identificar um erro.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="erroInfo" type="gr:ErroInfo"/>
+  <xs:complexType name="ErrosInfo">
+    <xs:sequence>
+      <xs:element name="erroInfo" type="gr:ErroInfo" maxOccurs="unbounded" minOccurs="0"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:7001/V1/PasseLivre?SCHEMA%2FModeloCanonico%2Fseplag%2Fcommons%2Fv1%2FCabecalhoSeplag</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://www.seplag.se.gov.br/commons/v1" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gr="http://www.seplag.se.gov.br/commons/v1">
+  <xs:complexType name="CabecalhoSeplag" final="restriction">
+    <xs:sequence>
+      <xs:element name="loginUsuario" minOccurs="1">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="canalAtendimento" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Descricao do canal de atendimento: portal, Ceac,etc.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="32"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="codigoSessao" nillable="true" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Codigo da sessao, codigo unico que identifica
+						uma sessao.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="256"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="nomeAplicacao" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="50"/>
+            <xs:enumeration value="Seides"/>
+            <xs:enumeration value="Detran"/>
+            <xs:enumeration value="Nat"/>
+            <xs:enumeration value="Sedurb"/>
+            <xs:enumeration value="Ssp"/>
+            <xs:enumeration value="Integracao"/>
+            <xs:enumeration value="Seguranca"/>
+            <xs:enumeration value="Infra"/>
+            <xs:enumeration value="Ses"/>
+            <xs:enumeration value="Seplag"/>
+            <xs:enumeration value="Banese"/>
+            <xs:enumeration value="ReceitaFederal"/>
+            <xs:enumeration value="Ceac"/>
+            <xs:enumeration value="IpeSaude"/>
+            <xs:enumeration value="Ctransp"/>
+            <xs:enumeration value="Case"/>
+            <xs:enumeration value="Portal"/>
+            <xs:enumeration value="Mobile"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="token" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="255"/>
+            <xs:minLength value="1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="enderecoIP" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="([01]?\d\d?|2[0-4]\d|25[0-5])\.([01]?\d\d?|2[0-4]\d|25[0-5])\.([01]?\d\d?|2[0-4]\d|25[0-5])\.([01]?\d\d?|2[0-4]\d|25[0-5])"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="codigoFuncionalidade" nillable="true" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Codigo que identifica uma funcionalidade do
+						sistema. Exemplos de funcionalidade para o
+						sistema: Ativacao e desativacao de
+						servicos, emitir carteira de identidade, emitir CNH, etc.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="10"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="dataTransacao" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:dateTime"/>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="nomeServico" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Nome do servico que foi invocado, exemplo:
+						consultaClienteCidadao, consultaFuncionario, etc.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="versao" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Define a versao do servico que esta sendo
+						invocado. O formato da versao deve sempre ser
+						99.99</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="\d?\d.\d\d?"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="cabecalhoSeplag" type="gr:CabecalhoSeplag"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:7001/V1/PasseLivre?SCHEMA%2FNegocio%2FPasseLivre%2FV1%2Fschema%2FPasseLivre</con:url><con:content><![CDATA[<schema targetNamespace="http://www.seplag.se.gov.br/PasseLivre" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:pl="http://www.seplag.se.gov.br/PasseLivre" xmlns:ebo="http://www.seplag.se.gov.br/EBO/v1">
+  <import schemaLocation="http://localhost:7001/V1/PasseLivre?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FCarteiraPasseLivre" namespace="http://www.seplag.se.gov.br/EBO/v1"/>
+  <import schemaLocation="http://localhost:7001/V1/PasseLivre?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FCarteiraIdentidade" namespace="http://www.seplag.se.gov.br/EBO/v1"/>
+  <element name="ParametroCancelarPasseLivre">
+    <complexType>
+      <sequence>
+        <element name="numeroCarteira" type="integer"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="ResultadoCancelarPasseLivre">
+    <complexType>
+      <sequence>
+        <element name="resultado" type="string"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="ParametroCadastrarPasseLivre">
+    <complexType>
+      <sequence>
+        <element name="codigoCpf" type="ebo:DocumentoCPF"/>
+        <element name="categoriaPasseLivre" type="ebo:CategoriaCarteiraPasseLivre"/>
+        <element name="tipoPasseLivre" type="ebo:TipoCarteiraPasseLivre"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="ResultadoCadastrarPasseLivre">
+    <complexType>
+      <sequence>
+        <element name="resultado" type="string"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="ParametroConsultarPasseLivre">
+    <complexType>
+      <sequence>
+        <element name="codigoCpf" type="ebo:DocumentoCPF"/>
+        <element name="codigoRG" type="ebo:CarteiraIdentidade"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="ResultadoConsultarPasseLivre">
+    <complexType>
+      <sequence>
+        <element name="carteiraPasseLivre" type="ebo:CarteiraPasseLivre" minOccurs="0" maxOccurs="unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:7001/V1/PasseLivre?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FCarteiraPasseLivre</con:url><con:content><![CDATA[<schema targetNamespace="http://www.seplag.se.gov.br/EBO/v1" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.seplag.se.gov.br/EBO/v1">
+  <include schemaLocation="http://localhost:7001/V1/PasseLivre?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FCpf"/>
+  <include schemaLocation="http://localhost:7001/V1/PasseLivre?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FCarteiraIdentidade"/>
+  <element name="carteiraPasseLivre" nillable="true" type="tns:CarteiraPasseLivre"/>
+  <element name="listaCarteiraPasseLivre" nillable="true" type="tns:ListaCarteiraPasseLivre"/>
+  <complexType name="ListaCarteiraPasseLivre">
+    <sequence>
+      <element name="carteiraPasseLivre" type="tns:CarteiraPasseLivre"/>
+    </sequence>
+  </complexType>
+  <complexType name="CarteiraPasseLivre">
+    <annotation>
+      <documentation>Carteira que permite acesso livre de pessoas com
+				deficiencia fisica ou
+				idosas a onibus intermunicipais.</documentation>
+    </annotation>
+    <sequence>
+      <element name="codigoCpf" type="tns:DocumentoCPF" nillable="true" minOccurs="0"/>
+      <element name="categoriaPasseLivre" nillable="true" type="tns:CategoriaCarteiraPasseLivre" minOccurs="0"/>
+      <element name="tipoPasseLivre" nillable="true" type="tns:TipoCarteiraPasseLivre" minOccurs="0"/>
+      <element name="numeroCarteiraPasseLivre" nillable="true" type="integer" minOccurs="0"/>
+      <element name="documentoRG" nillable="true" type="tns:CarteiraIdentidade" minOccurs="0"/>
+      <element name="dataEmissao" nillable="true" type="dateTime" minOccurs="0"/>
+      <element name="dataVencimento" nillable="true" type="dateTime" minOccurs="0"/>
+    </sequence>
+  </complexType>
+  <simpleType name="CategoriaCarteiraPasseLivre">
+    <annotation>
+      <documentation>Status da carteira, situacao da carteira do cidadao.</documentation>
+    </annotation>
+    <restriction base="string">
+      <enumeration value="PERMANENTE"/>
+      <enumeration value="PROVISORIO"/>
+      <enumeration value="CADASTRO"/>
+      <enumeration value="INDEFERIDO"/>
+      <enumeration value="VENCIDO"/>
+      <enumeration value="CANCELADO"/>
+    </restriction>
+  </simpleType>
+  <simpleType name="TipoCarteiraPasseLivre">
+    <annotation>
+      <documentation>Tipo da carteira, grupo que o requerente se enquadra.</documentation>
+    </annotation>
+    <restriction base="string">
+      <enumeration value="DEFICIENTE"/>
+      <enumeration value="IDOSO"/>
+    </restriction>
+  </simpleType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:7001/V1/PasseLivre?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FCpf</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.seplag.se.gov.br/EBO/v1" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:seplag="http://www.seplag.se.gov.br/EBO/v1">
+  <xsd:element name="listaCpf" nillable="true" type="seplag:ListaCpf"/>
+  <xsd:complexType name="ListaCpf">
+    <xsd:sequence>
+      <xsd:element name="documentoCPF" type="seplag:DocumentoCPF" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="DocumentoCPF">
+    <xsd:restriction base="xsd:string">
+      <xsd:length value="11"/>
+      <xsd:pattern value="([0-9])*"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:7001/V1/PasseLivre?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FCarteiraIdentidade</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.seplag.se.gov.br/EBO/v1" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:seplag="http://www.seplag.se.gov.br/EBO/v1">
+  <xsd:include schemaLocation="http://localhost:7001/V1/PasseLivre?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FUnidadeFederativa"/>
+  <xsd:element name="listaCarteiraIdentidade" nillable="true" type="seplag:ListaCarteiraIdentidade"/>
+  <xsd:complexType name="ListaCarteiraIdentidade">
+    <xsd:sequence>
+      <xsd:element name="carteiraIdentidade" type="seplag:CarteiraIdentidade" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CarteiraIdentidade">
+    <xsd:sequence>
+      <xsd:element name="numeroIdentidade" minOccurs="0" nillable="true" maxOccurs="1">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="80"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="numeroIdentidadeComplemento" nillable="true" minOccurs="0" maxOccurs="1">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="80"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="dataEmissao" type="xsd:dateTime" nillable="true" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="siglaUnidadeFederativa" nillable="true" type="seplag:UnidadeFederativa" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="orgaoEmissor" nillable="true" minOccurs="0" maxOccurs="1">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="80"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:7001/V1/PasseLivre?SCHEMA%2FModeloCanonico%2Fseplag%2FEBO%2Fv1%2FUnidadeFederativa</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.seplag.se.gov.br/EBO/v1" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.0" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:seplag="http://www.seplag.se.gov.br/EBO/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="listaUnidadeFederativa" nillable="true" type="seplag:ListaUnidadeFederativa"/>
+  <xsd:complexType name="ListaUnidadeFederativa">
+    <xsd:sequence>
+      <xsd:element name="unidadeFederativa" type="seplag:UnidadeFederativa" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="UnidadeFederativa">
+    <xsd:annotation>
+      <xsd:documentation>Corresponde as possíveis siglas das unidades federativas do país
+
+				Acre - AC
+				Alagoas - AL
+				Amapá - AP
+				Amazonas - AM
+				Bahia - BA
+				Ceará - CE
+				Distrito Federal  - DF
+				Espírito Santo - ES
+				Goiás - GO
+				Maranhão - MA 
+				Mato Grosso - MT 
+				Mato Grosso do Sul - MS 
+				Minas Gerais - MG 
+				Pará - PA 
+				Paraíba - PB 
+				Paraná - PR 
+				Pernambuco - PE 
+				Piauí - PI 
+				Rio de Janeiro  - RJ
+				Rio Grande do Norte  - RN 
+				Rio Grande do Sul - RS 
+				Rondônia - RO 
+				Roraima - RR 
+				Santa Catarina - SC 
+				São Paulo - SP 
+				Sergipe - SE 
+				Tocantins - TO
+
+				Exemplo de Sigla de Unidade Federativa: SE</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="AC"/>
+      <xsd:enumeration value="AL"/>
+      <xsd:enumeration value="AP"/>
+      <xsd:enumeration value="AM"/>
+      <xsd:enumeration value="BA"/>
+      <xsd:enumeration value="CE"/>
+      <xsd:enumeration value="DF"/>
+      <xsd:enumeration value="ES"/>
+      <xsd:enumeration value="GO"/>
+      <xsd:enumeration value="MA"/>
+      <xsd:enumeration value="MT"/>
+      <xsd:enumeration value="MS"/>
+      <xsd:enumeration value="MG"/>
+      <xsd:enumeration value="PA"/>
+      <xsd:enumeration value="PB"/>
+      <xsd:enumeration value="PR"/>
+      <xsd:enumeration value="PE"/>
+      <xsd:enumeration value="PI"/>
+      <xsd:enumeration value="RJ"/>
+      <xsd:enumeration value="RN"/>
+      <xsd:enumeration value="RS"/>
+      <xsd:enumeration value="RO"/>
+      <xsd:enumeration value="RR"/>
+      <xsd:enumeration value="SC"/>
+      <xsd:enumeration value="SP"/>
+      <xsd:enumeration value="SE"/>
+      <xsd:enumeration value="TO"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://POSEIDON.local:8088/mockPasseLivreSOAP</con:endpoint><con:endpoint>http://localhost:7001/V1/PasseLivre</con:endpoint><con:endpoint>http://osb.itconsulting.com.br:8011/V1/PasseLivre</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://www.seplag.se.gov.br/PasseLivre/CadastrarPasseLivre" name="CadastrarPasseLivre" bindingOperationName="CadastrarPasseLivre" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1" timeout="0"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://osb.itconsulting.com.br:8011/V1/PasseLivre</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.seplag.se.gov.br/commons/v1" xmlns:pas="http://www.seplag.se.gov.br/PasseLivre">
+   <soap:Header>
+      <v1:cabecalhoSeplag>
+         <v1:loginUsuario>marcio.dantas</v1:loginUsuario>
+            <v1:canalAtendimento>Ceac</v1:canalAtendimento>
+            <v1:nomeAplicacao>Ceac</v1:nomeAplicacao>
+      </v1:cabecalhoSeplag>
+   </soap:Header>
+   <soap:Body>
+      <pas:ParametroCadastrarPasseLivre>
+         <pas:codigoCpf>27014429825</pas:codigoCpf>
+         <pas:categoriaPasseLivre>CADASTRO</pas:categoriaPasseLivre>
+         <pas:tipoPasseLivre>IDOSO</pas:tipoPasseLivre>
+      </pas:ParametroCadastrarPasseLivre>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.seplag.se.gov.br/PasseLivre/PasseLivre/CadastrarPasseLivreRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Request 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://osb.itconsulting.com.br:8011/V1/PasseLivre</con:endpoint><con:request><![CDATA[<soap:Body xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.seplag.se.gov.br/commons/v1" xmlns:pas="http://www.seplag.se.gov.br/PasseLivre">
+   <sed:Cadastro xmlns:sed="http://sedurb.se.gov.br/">
+      <sed:_tpCarteira>ID</sed:_tpCarteira>
+      <sed:_status>PE</sed:_status>
+      <sed:_obs>OBS</sed:_obs>
+      <sed:_cidade>Arabupumga</sed:_cidade>
+      <sed:_bairro>São João da Praia Suja</sed:_bairro>
+      <sed:_rua>POVOADO BARRO VERMELHO</sed:_rua>
+      <sed:_numero>S/N</sed:_numero>
+      <sed:_cep>49890000</sed:_cep>
+      <sed:_siglaEstado>SE</sed:_siglaEstado>
+      <sed:_dtEmissaoRG>21/09/1994</sed:_dtEmissaoRG>
+      <sed:_dtNascimento>20/05/1978</sed:_dtNascimento>
+      <sed:_siglaEstadoRG>SE</sed:_siglaEstadoRG>
+      <sed:_nome>IVANILTON VICENTE FERREIRA</sed:_nome>
+      <sed:_rg>0000000000879887</sed:_rg>
+      <sed:_cpf>93049080515</sed:_cpf>
+      <sed:_profissao>ADIDO_ESTRANGEIRO</sed:_profissao>
+      <sed:_foto>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</sed:_foto>
+      <sed:_OrgaoRG>SSP</sed:_OrgaoRG>
+      <sed:_sexo>M</sed:_sexo>
+      <sed:_escolaridade>AN</sed:_escolaridade>
+      <sed:_rendaFamiliar>500</sed:_rendaFamiliar>
+      <sed:_salario>0.0</sed:_salario>
+      <sed:_dtEnvioCase>03/07/2014</sed:_dtEnvioCase>
+   </sed:Cadastro>
+</soap:Body>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.seplag.se.gov.br/PasseLivre/PasseLivre/CadastrarPasseLivreRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Request 3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://osb.itconsulting.com.br:8011/V1/PasseLivre</con:endpoint><con:request><![CDATA[<soapenv:Header xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+   <sed:Credencial xmlns:sed="http://sedurb.se.gov.br/">
+      <sed:login>ceac</sed:login>
+      <sed:senha>12345678</sed:senha>
+   </sed:Credencial>
+</soapenv:Header>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.seplag.se.gov.br/PasseLivre/PasseLivre/CadastrarPasseLivreRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Request 4"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://osb.itconsulting.com.br:8011/V1/PasseLivre</con:endpoint><con:request><![CDATA[<con:PesPessoaCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:con="http://xmlns.oracle.com/pcbpel/adapter/db/top/ConsultaCidadaoDadosPorCPF">
+   <con:PesPessoa>
+      <con:pesNrCpf>93049080515</con:pesNrCpf>
+      <con:pesNmCompleto>IVANILTON VICENTE FERREIRA</con:pesNmCompleto>
+      <con:pesTpSexo>1</con:pesTpSexo>
+      <con:pesDtNascimento>1978-05-20T00:00:00.000-03:00</con:pesDtNascimento>
+      <con:pesDtCadastramento>2014-06-23T15:34:03.000-03:00</con:pesDtCadastramento>
+      <con:pesDtAlteracao>2014-06-26T15:18:20.000-03:00</con:pesDtAlteracao>
+      <con:pesNmUsuarioSysCadastro>ETL</con:pesNmUsuarioSysCadastro>
+      <con:pesNmUsuarioSysAlteracao>ETL</con:pesNmUsuarioSysAlteracao>
+      <con:pesStInformacaoValidada>I</con:pesStInformacaoValidada>
+      <con:prfCdProfissao>
+         <con:prfCdProfissao>5</con:prfCdProfissao>
+         <con:prfNmProfissao>ADMINISTRADOR</con:prfNmProfissao>
+      </con:prfCdProfissao>
+      <con:eslCdEscolaridade>
+         <con:eslCdEscolaridade>5</con:eslCdEscolaridade>
+         <con:eslNmEscolaridade>SUPERIOR</con:eslNmEscolaridade>
+      </con:eslCdEscolaridade>
+      <con:pesPessoaCarteiraIdentidadeCollection>
+         <con:PesPessoaCarteiraIdentidade>
+            <con:pesCdPessoaCarteiraIdent>8104</con:pesCdPessoaCarteiraIdent>
+            <con:pesNrIdentidade>0000000000879887</con:pesNrIdentidade>
+            <con:pesNrIdentidadeComplement xsi:nil="true"/>
+            <con:pesDtEmissaoIdentidade>1994-09-21T00:00:00.000-03:00</con:pesDtEmissaoIdentidade>
+            <con:pesSgOrgEmissor>SSP</con:pesSgOrgEmissor>
+            <con:pesDtCadastramento>2014-06-23T16:42:15.000-03:00</con:pesDtCadastramento>
+            <con:pesDtAlteracao>2014-06-23T16:42:15.000-03:00</con:pesDtAlteracao>
+            <con:pesNmUsuarioSysCadastro>ELT</con:pesNmUsuarioSysCadastro>
+            <con:pesNmUsuarioSysAlteracao>ETL</con:pesNmUsuarioSysAlteracao>
+            <con:unfSgUnidadeFederativa>SE</con:unfSgUnidadeFederativa>
+         </con:PesPessoaCarteiraIdentidade>
+         <con:PesPessoaCarteiraIdentidade>
+            <con:pesCdPessoaCarteiraIdent>2597184</con:pesCdPessoaCarteiraIdent>
+            <con:pesNrIdentidade>0000000000879887</con:pesNrIdentidade>
+            <con:pesNrIdentidadeComplement xsi:nil="true"/>
+            <con:pesDtEmissaoIdentidade>1994-09-21T00:00:00.000-03:00</con:pesDtEmissaoIdentidade>
+            <con:pesSgOrgEmissor>SSP</con:pesSgOrgEmissor>
+            <con:pesDtCadastramento>2014-07-03T20:21:29.000-03:00</con:pesDtCadastramento>
+            <con:pesDtAlteracao>2014-07-03T20:21:29.000-03:00</con:pesDtAlteracao>
+            <con:pesNmUsuarioSysCadastro>ELT</con:pesNmUsuarioSysCadastro>
+            <con:pesNmUsuarioSysAlteracao>ETL</con:pesNmUsuarioSysAlteracao>
+            <con:unfSgUnidadeFederativa>SE</con:unfSgUnidadeFederativa>
+         </con:PesPessoaCarteiraIdentidade>
+      </con:pesPessoaCarteiraIdentidadeCollection>
+      <con:pesPessoaTelefoneCollection/>
+      <con:edrEnderecoCollection>
+         <con:EdrEndereco>
+            <con:edrCdEndereco>170961</con:edrCdEndereco>
+            <con:edrNmLogradouro>POVOADO BARRO VERMELHO</con:edrNmLogradouro>
+            <con:edrNrLogradouro>S/N</con:edrNrLogradouro>
+            <con:edrDsComplemento xsi:nil="true"/>
+            <con:edrNrCep>49890000</con:edrNrCep>
+            <con:edrNmBairro xsi:nil="true"/>
+            <con:edrTpLogradouro xsi:nil="true"/>
+            <con:edrNmUnidadeFederativa xsi:nil="true"/>
+            <con:edrNmPais xsi:nil="true"/>
+            <con:edrNmMunicipio xsi:nil="true"/>
+            <con:edrDtCadastramento>2014-06-23T18:48:56.000-03:00</con:edrDtCadastramento>
+            <con:edrDtAlteracao>2014-06-23T18:48:56.000-03:00</con:edrDtAlteracao>
+            <con:edrNmUsuarioSysCadastro>ETL</con:edrNmUsuarioSysCadastro>
+            <con:edrNmUsuarioSysAlteracao>ETL</con:edrNmUsuarioSysAlteracao>
+         </con:EdrEndereco>
+         <con:EdrEndereco>
+            <con:edrCdEndereco>822108</con:edrCdEndereco>
+            <con:edrNmLogradouro>POVOADO BARRO VERMELHO</con:edrNmLogradouro>
+            <con:edrNrLogradouro>S/N</con:edrNrLogradouro>
+            <con:edrDsComplemento xsi:nil="true"/>
+            <con:edrNrCep>49890000</con:edrNrCep>
+            <con:edrNmBairro xsi:nil="true"/>
+            <con:edrTpLogradouro xsi:nil="true"/>
+            <con:edrNmUnidadeFederativa xsi:nil="true"/>
+            <con:edrNmPais xsi:nil="true"/>
+            <con:edrNmMunicipio xsi:nil="true"/>
+            <con:edrDtCadastramento>2014-07-03T20:11:24.000-03:00</con:edrDtCadastramento>
+            <con:edrDtAlteracao>2014-07-03T20:11:24.000-03:00</con:edrDtAlteracao>
+            <con:edrNmUsuarioSysCadastro>ETL</con:edrNmUsuarioSysCadastro>
+            <con:edrNmUsuarioSysAlteracao>ETL</con:edrNmUsuarioSysAlteracao>
+         </con:EdrEndereco>
+      </con:edrEnderecoCollection>
+   </con:PesPessoa>
+</con:PesPessoaCollection>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.seplag.se.gov.br/PasseLivre/PasseLivre/CadastrarPasseLivreRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Request 5"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://osb.itconsulting.com.br:8011/V1/PasseLivre</con:endpoint><con:request><![CDATA[<soap:Body xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.seplag.se.gov.br/commons/v1" xmlns:pas="http://www.seplag.se.gov.br/PasseLivre">
+   <sed:Cadastro xmlns:sed="http://sedurb.se.gov.br/">
+      <sed:_tpCarteira>ID</sed:_tpCarteira>
+      <sed:_status>PE</sed:_status>
+      <sed:_cidade>Arabupumga</sed:_cidade>
+      <sed:_rua>POVOADO BARRO VERMELHO</sed:_rua>
+      <sed:_numero>S/N</sed:_numero>
+      <sed:_cep>49890000</sed:_cep>
+      <sed:_siglaEstado>SE</sed:_siglaEstado>
+      <sed:_dtEmissaoRG>21/09/1994</sed:_dtEmissaoRG>
+      <sed:_dtNascimento>20/05/1978</sed:_dtNascimento>
+      <sed:_siglaEstadoRG>SE</sed:_siglaEstadoRG>
+      <sed:_nome>IVANILTON VICENTE FERREIRA</sed:_nome>
+      <sed:_rg>0000000000879887</sed:_rg>
+      <sed:_cpf>93049080515</sed:_cpf>
+      <sed:_profissao>ADIDO_ESTRANGEIRO</sed:_profissao>
+      <sed:_foto>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</sed:_foto>
+      <sed:_OrgaoRG>SSP</sed:_OrgaoRG>
+      <sed:_sexo>M</sed:_sexo>
+      <sed:_escolaridade>AN</sed:_escolaridade>
+      <sed:_rendaFamiliar>500</sed:_rendaFamiliar>
+      <sed:_salario>0.0</sed:_salario>
+      <sed:_dtEnvioCase>02/07/2014</sed:_dtEnvioCase>
+   </sed:Cadastro>
+</soap:Body>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.seplag.se.gov.br/PasseLivre/PasseLivre/CadastrarPasseLivreRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Request 7"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://osb.itconsulting.com.br:8011/V1/PasseLivre</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.seplag.se.gov.br/commons/v1" xmlns:pas="http://www.seplag.se.gov.br/PasseLivre">
+   <soap:Header>
+      <v1:cabecalhoSeplag>
+         <v1:loginUsuario>?</v1:loginUsuario>
+         <v1:canalAtendimento>?</v1:canalAtendimento>
+         <!--Optional:-->
+         <v1:codigoSessao>?</v1:codigoSessao>
+         <!--Optional:-->
+         <v1:nomeAplicacao>?</v1:nomeAplicacao>
+         <!--Optional:-->
+         <v1:token>?</v1:token>
+         <!--Optional:-->
+         <v1:enderecoIP>?</v1:enderecoIP>
+         <!--Optional:-->
+         <v1:codigoFuncionalidade>?</v1:codigoFuncionalidade>
+         <!--Optional:-->
+         <v1:dataTransacao>?</v1:dataTransacao>
+         <!--Optional:-->
+         <v1:nomeServico>?</v1:nomeServico>
+         <!--Optional:-->
+         <v1:versao>?</v1:versao>
+      </v1:cabecalhoSeplag>
+   </soap:Header>
+   <soap:Body>
+      <pas:ParametroCadastrarPasseLivre>
+         <pas:codigoCpf>?</pas:codigoCpf>
+         <pas:categoriaPasseLivre>?</pas:categoriaPasseLivre>
+         <pas:tipoPasseLivre>?</pas:tipoPasseLivre>
+      </pas:ParametroCadastrarPasseLivre>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.seplag.se.gov.br/PasseLivre/PasseLivre/CadastrarPasseLivreRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://www.seplag.se.gov.br/PasseLivre/CancelarPasseLivre" name="CancelarPasseLivre" bindingOperationName="CancelarPasseLivre" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://osb.itconsulting.com.br:8011/V1/PasseLivre</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.seplag.se.gov.br/commons/v1" xmlns:pas="http://www.seplag.se.gov.br/PasseLivre">
+   <soap:Header>
+      <v1:cabecalhoSeplag>
+         <!--anonymous type-->
+         <v1:loginUsuario>?</v1:loginUsuario>
+         <!--anonymous type-->
+         <v1:canalAtendimento>?</v1:canalAtendimento>
+         <!--Optional:-->
+         <!--anonymous type-->
+         <v1:codigoSessao>?</v1:codigoSessao>
+         <!--Optional:-->
+         <!--anonymous type - enumeration: [Seides,Detran,Nat,Sedurb,Ssp,Integracao,Seguranca,Infra,Ses,Seplag,Banese,ReceitaFederal,Ceac,IpeSaude,Ctransp,Case,Portal,Mobile]-->
+         <v1:nomeAplicacao>?</v1:nomeAplicacao>
+         <!--Optional:-->
+         <!--anonymous type-->
+         <v1:token>?</v1:token>
+         <!--Optional:-->
+         <!--anonymous type-->
+         <v1:enderecoIP>?</v1:enderecoIP>
+         <!--Optional:-->
+         <!--anonymous type-->
+         <v1:codigoFuncionalidade>?</v1:codigoFuncionalidade>
+         <!--Optional:-->
+         <!--anonymous type-->
+         <v1:dataTransacao>?</v1:dataTransacao>
+         <!--Optional:-->
+         <!--anonymous type-->
+         <v1:nomeServico>?</v1:nomeServico>
+         <!--Optional:-->
+         <!--anonymous type-->
+         <v1:versao>?</v1:versao>
+      </v1:cabecalhoSeplag>
+   </soap:Header>
+   <soap:Body>
+      <pas:ParametroCancelarPasseLivre>
+         <!--type: integer-->
+         <pas:numeroCarteira>?</pas:numeroCarteira>
+      </pas:ParametroCancelarPasseLivre>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.seplag.se.gov.br/PasseLivre/PasseLivre/CancelarPasseLivreRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://www.seplag.se.gov.br/PasseLivre/ConsultarPasseLivre" name="ConsultarPasseLivre" bindingOperationName="ConsultarPasseLivre" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1" timeout="0"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://osb.itconsulting.com.br:8011/V1/PasseLivre</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.seplag.se.gov.br/commons/v1" xmlns:pas="http://www.seplag.se.gov.br/PasseLivre" xmlns:v11="http://www.seplag.se.gov.br/EBO/v1">
+   <soap:Header>
+      <v1:cabecalhoSeplag>
+         <v1:loginUsuario>marcio.dantas</v1:loginUsuario>
+         <v1:canalAtendimento>Ceac</v1:canalAtendimento>
+         <v1:nomeAplicacao>Ceac</v1:nomeAplicacao>
+         <v1:enderecoIP>192.168.0.153</v1:enderecoIP>
+      </v1:cabecalhoSeplag>
+   </soap:Header>
+   <soap:Body>
+      <pas:ParametroConsultarPasseLivre>
+         <pas:codigoCpf>27014429825</pas:codigoCpf>
+         <pas:codigoRG>
+            <v11:numeroIdentidade>254500031</v11:numeroIdentidade>
+            <v11:orgaoEmissor>SSP-SP</v11:orgaoEmissor>
+         </pas:codigoRG>
+      </pas:ParametroConsultarPasseLivre>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.seplag.se.gov.br/PasseLivre/PasseLivre/ConsultarPasseLivreRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Request 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://osb.itconsulting.com.br:8011/V1/PasseLivre</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.seplag.se.gov.br/commons/v1" xmlns:pas="http://www.seplag.se.gov.br/PasseLivre" xmlns:v11="http://www.seplag.se.gov.br/EBO/v1">
+   <soap:Header>
+      <v1:cabecalhoSeplag>
+         <!--anonymous type-->
+         <v1:loginUsuario>?</v1:loginUsuario>
+         <!--anonymous type-->
+         <v1:canalAtendimento>?</v1:canalAtendimento>
+         <!--Optional:-->
+         <!--anonymous type-->
+         <v1:codigoSessao>?</v1:codigoSessao>
+         <!--Optional:-->
+         <!--anonymous type - enumeration: [Seides,Detran,Nat,Sedurb,Ssp,Integracao,Seguranca,Infra,Ses,Seplag,Banese,ReceitaFederal,Ceac,IpeSaude,Ctransp,Case,Portal,Mobile]-->
+         <v1:nomeAplicacao>?</v1:nomeAplicacao>
+         <!--Optional:-->
+         <!--anonymous type-->
+         <v1:token>?</v1:token>
+         <!--Optional:-->
+         <!--anonymous type-->
+         <v1:enderecoIP>?</v1:enderecoIP>
+         <!--Optional:-->
+         <!--anonymous type-->
+         <v1:codigoFuncionalidade>?</v1:codigoFuncionalidade>
+         <!--Optional:-->
+         <!--anonymous type-->
+         <v1:dataTransacao>?</v1:dataTransacao>
+         <!--Optional:-->
+         <!--anonymous type-->
+         <v1:nomeServico>?</v1:nomeServico>
+         <!--Optional:-->
+         <!--anonymous type-->
+         <v1:versao>?</v1:versao>
+      </v1:cabecalhoSeplag>
+   </soap:Header>
+   <soap:Body>
+   <pas:ParametroConsultarPasseLivre>
+         <!--type: DocumentoCPF-->
+         <pas:codigoCpf>?</pas:codigoCpf>
+         <pas:codigoRG>
+            <!--Optional:-->
+            <!--anonymous type-->
+            <v11:numeroIdentidade>?</v11:numeroIdentidade>
+            <!--Optional:-->
+            <!--anonymous type-->
+            <v11:numeroIdentidadeComplemento>?</v11:numeroIdentidadeComplemento>
+            <!--Optional:-->
+            <!--type: dateTime-->
+            <v11:dataEmissao>?</v11:dataEmissao>
+            <!--Optional:-->
+            <!--type: UnidadeFederativa - enumeration: [AC,AL,AP,AM,BA,CE,DF,ES,GO,MA,MT,MS,MG,PA,PB,PR,PE,PI,RJ,RN,RS,RO,RR,SC,SP,SE,TO]-->
+            <v11:siglaUnidadeFederativa>?</v11:siglaUnidadeFederativa>
+            <!--Optional:-->
+            <!--anonymous type-->
+            <v11:orgaoEmissor>?</v11:orgaoEmissor>
+         </pas:codigoRG>
+      </pas:ParametroConsultarPasseLivre>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.seplag.se.gov.br/PasseLivre/PasseLivre/ConsultarPasseLivreRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Request 3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://osb.itconsulting.com.br:8011/V1/PasseLivre</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.seplag.se.gov.br/commons/v1" xmlns:pas="http://www.seplag.se.gov.br/PasseLivre" xmlns:v11="http://www.seplag.se.gov.br/EBO/v1">
+   <soap:Header>
+      <v1:cabecalhoSeplag>
+         <!--anonymous type-->
+         <v1:loginUsuario>?</v1:loginUsuario>
+         <!--anonymous type-->
+         <v1:canalAtendimento>?</v1:canalAtendimento>
+         <!--Optional:-->
+         <!--anonymous type-->
+         <v1:codigoSessao>?</v1:codigoSessao>
+         <!--Optional:-->
+         <!--anonymous type - enumeration: [Seides,Detran,Nat,Sedurb,Ssp,Integracao,Seguranca,Infra,Ses,Seplag,Banese,ReceitaFederal,Ceac,IpeSaude,Ctransp,Case,Portal,Mobile]-->
+         <v1:nomeAplicacao>?</v1:nomeAplicacao>
+         <!--Optional:-->
+         <!--anonymous type-->
+         <v1:token>?</v1:token>
+         <!--Optional:-->
+         <!--anonymous type-->
+         <v1:enderecoIP>?</v1:enderecoIP>
+         <!--Optional:-->
+         <!--anonymous type-->
+         <v1:codigoFuncionalidade>?</v1:codigoFuncionalidade>
+         <!--Optional:-->
+         <!--anonymous type-->
+         <v1:dataTransacao>?</v1:dataTransacao>
+         <!--Optional:-->
+         <!--anonymous type-->
+         <v1:nomeServico>?</v1:nomeServico>
+         <!--Optional:-->
+         <!--anonymous type-->
+         <v1:versao>?</v1:versao>
+      </v1:cabecalhoSeplag>
+   </soap:Header>
+   <soap:Body>
+      <pas:ParametroConsultarPasseLivre>
+         <!--type: DocumentoCPF-->
+         <pas:codigoCpf>?</pas:codigoCpf>
+         <pas:codigoRG>
+            <!--Optional:-->
+            <!--anonymous type-->
+            <v11:numeroIdentidade>?</v11:numeroIdentidade>
+            <!--Optional:-->
+            <!--anonymous type-->
+            <v11:numeroIdentidadeComplemento>?</v11:numeroIdentidadeComplemento>
+            <!--Optional:-->
+            <!--type: dateTime-->
+            <v11:dataEmissao>?</v11:dataEmissao>
+            <!--Optional:-->
+            <!--type: UnidadeFederativa - enumeration: [AC,AL,AP,AM,BA,CE,DF,ES,GO,MA,MT,MS,MG,PA,PB,PR,PE,PI,RJ,RN,RS,RO,RR,SC,SP,SE,TO]-->
+            <v11:siglaUnidadeFederativa>?</v11:siglaUnidadeFederativa>
+            <!--Optional:-->
+            <!--anonymous type-->
+            <v11:orgaoEmissor>?</v11:orgaoEmissor>
+         </pas:codigoRG>
+      </pas:ParametroConsultarPasseLivre>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.seplag.se.gov.br/PasseLivre/PasseLivre/ConsultarPasseLivreRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:mockService port="8088" path="/mockPasseLivreSOAP" host="POSEIDON.local" name="PasseLivreSOAP MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="CadastrarPasseLivre" interface="PasseLivreSOAP" operation="CadastrarPasseLivre"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:pas="http://www.seplag.se.gov.br/PasseLivre">
+   <soap:Header/>
+   <soap:Body>
+      <pas:ResultadoCadastrarPasseLivre>
+         <!--type: string-->
+         <pas:resultado>?</pas:resultado>
+      </pas:ResultadoCadastrarPasseLivre>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.seplag.se.gov.br/PasseLivre/PasseLivre/CadastrarPasseLivreResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="CancelarPasseLivre" interface="PasseLivreSOAP" operation="CancelarPasseLivre"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:pas="http://www.seplag.se.gov.br/PasseLivre">
+   <soap:Header/>
+   <soap:Body>
+      <pas:ResultadoCancelarPasseLivre>
+         <!--type: string-->
+         <pas:resultado>?</pas:resultado>
+      </pas:ResultadoCancelarPasseLivre>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.seplag.se.gov.br/PasseLivre/PasseLivre/CancelarPasseLivreResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="ConsultarPasseLivre" interface="PasseLivreSOAP" operation="ConsultarPasseLivre"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:pas="http://www.seplag.se.gov.br/PasseLivre" xmlns:v1="http://www.seplag.se.gov.br/EBO/v1">
+   <soap:Header/>
+   <soap:Body>
+      <pas:ResultadoConsultarPasseLivre>
+         <!--Zero or more repetitions:-->
+         <pas:carteiraPasseLivre>
+            <!--Optional:-->
+            <!--type: DocumentoCPF-->
+            <v1:codigoCpf>?</v1:codigoCpf>
+            <!--Optional:-->
+            <!--type: CategoriaCarteiraPasseLivre - enumeration: [PessoaComDeficiencia,Idoso]-->
+            <v1:categoriaPasseLivre>?</v1:categoriaPasseLivre>
+            <!--Optional:-->
+            <!--type: TipoCarteiraPasseLivre - enumeration: [Temporario,Permanente]-->
+            <v1:tipoPasseLivre>?</v1:tipoPasseLivre>
+            <!--Optional:-->
+            <!--type: integer-->
+            <v1:numeroCarteira>?</v1:numeroCarteira>
+            <!--Optional:-->
+            <v1:documentoRG>
+               <!--Optional:-->
+               <!--anonymous type-->
+               <v1:numeroIdentidade>?</v1:numeroIdentidade>
+               <!--Optional:-->
+               <!--anonymous type-->
+               <v1:numeroIdentidadeComplemento>?</v1:numeroIdentidadeComplemento>
+               <!--Optional:-->
+               <!--type: date-->
+               <v1:dataEmissao>?</v1:dataEmissao>
+               <!--Optional:-->
+               <!--type: UnidadeFederativa - enumeration: [AC,AL,AP,AM,BA,CE,DF,ES,GO,MA,MT,MS,MG,PA,PB,PR,PE,PI,RJ,RN,RS,RO,RR,SC,SP,SE,TO]-->
+               <v1:siglaUnidadeFederativa>?</v1:siglaUnidadeFederativa>
+               <!--Optional:-->
+               <!--anonymous type-->
+               <v1:orgaoEmissor>?</v1:orgaoEmissor>
+            </v1:documentoRG>
+            <!--Optional:-->
+            <!--type: dateTime-->
+            <v1:dataEmissao>?</v1:dataEmissao>
+            <!--Optional:-->
+            <!--type: dateTime-->
+            <v1:dataVencimento>?</v1:dataVencimento>
+         </pas:carteiraPasseLivre>
+      </pas:ResultadoConsultarPasseLivre>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.seplag.se.gov.br/PasseLivre/PasseLivre/ConsultarPasseLivreResponse"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>
